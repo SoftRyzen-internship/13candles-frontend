@@ -1,48 +1,187 @@
+# 13 Candle Bar
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with
 [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Technologies used:
 
-First, run the development server:
+- Next.js (app router)
+- TypeScript
+- Tailwind CSS
+- Strapi CMS
+
+## Vision
+
+E-commerce website for the 13 Candle Bar online store
+
+## Project Name
+
+13 Candle Bar
+
+## Project Goal
+
+Attracting new customers and selling goods through the online store
+
+## Target Audience
+
+- Age: 20-45+
+- Gender: Female
+
+## Product Scope
+
+Development of a multi-page e-commerce website for the 13 Candle Bar, whose main
+field of activity is the sale of flavored products online
+
+### Accessibility
+
+- Intuitive design.
+- Mobile-friendly.
+
+### Performance
+
+- Web resource available for any internet connection.
+
+### Supported Languages
+
+- Ukrainian
+- English
+
+### Design
+
+[Design Layout on Figma](https://www.figma.com/file/8TJ2ei6yVHA8S8vciTGkmm/13-Candles?node-id=246%3A3772&mode=dev)
+
+---
+
+## 🥁 Getting Started
+
+1. **Clone the repo**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git@github.com:SoftRyzen-internship/13candles-frontend.git
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the
-result.
+2. **Install dependencies** It's recommended to use npm:
 
-You can start editing the page by modifying `app/page.tsx`. The page
-auto-updates as you edit the file.
+```
+npm install
+```
 
-This project uses
-[`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to
-automatically optimize and load Inter, a custom Google Font.
+3. **Run the project**
 
-## Learn More
+```
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out
-[the Next.js GitHub repository](https://github.com/vercel/next.js/) - your
-feedback and contributions are welcome!
+> Attention! The project structure is not final and can be changed at any time.
 
-## Deploy on Vercel
+**💁‍♀️ Create a components folder for each module**
 
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
+<details>
 
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/deployment) for more
-details.
+<summary><b>💡 Example:</b></summary>
+
+<br/>
+
+```
+# ✅ Good
+
+├── layout
+    ├── Header
+        ├── index.ts
+        ├── Header.tsx
+    ├── Footer
+        ├── index.ts
+        ├── Footer.tsx
+```
+
+</details>
+
+---
+
+**💁‍♀️ Reusable css classes should be placed in the `styles` folder .**
+
+<details>
+
+<summary><b>💡 Example:</b></summary>
+
+<br/>
+
+```css
+/*globals.css */
+
+@layer components {
+  .your-class {
+    @apply ...;
+  }
+}
+```
+
+</details>
+
+---
+
+**💁‍♀️ Description of object structure**
+
+<details>
+
+<summary><b>💡 Structure: </b></summary>
+
+<br/>
+
+```
+
+|-- components -> folder with pages
+  | -- NamePage -> folder with components
+    |-- NameComponent -> folders for each component
+      |-- NameComponent.tsx -> main component
+      |-- NameComponent.module.css -> css styles for component
+      |-- index.ts -> file for re-export
+      |-- type.ts -> file for type and interface
+
+ |-- components/ui -> folder with reusable components
+  |-- NameComponent -> folders for each component
+    |-- NameComponent.tsx -> main component
+    |-- NameComponent.module.css -> css styles for component
+    |-- index.ts -> file for re-export
+    |-- type.ts -> file for type and interface
+
+|-- views -> folder with pages
+  |--NamePage -> folder with page sections
+
+|-- layout -> components that are used as a main template
+|-- app -> pages and routing
+|-- public -> static files
+|-- styles -> global styles
+
+<!-- You can create these folders already in work -->
+|-- data -> data for the project ( from graphql, json, etc.)
+|-- hooks -> custom users hooks
+|-- utils -> helpers, functions, etc.
+```
+
+</details>
+
+---
+
+## 📚 Components API
+
+Each component has its own API. You can find it in the component's folder. This
+is a list of more common components and their API. This is example of API for
+component `Heading`
+
+- ### Example
+
+| Prop          | Default     | Description                                     |
+| ------------- | ----------- | ----------------------------------------------- |
+| `tag`         | `h2`        | choose the tag of title you'd need: `h1` - `h3` |
+| `variant`     | `primary`   | `main`, `primary`, `secondary`, `tertiary`      |
+| `children`    | `undefined` | required, any content                           |
+| `className`   | `undefined` | add custom or additional css class you'd need   |
+| `data-shadow` | `undefined` | add text as a shadow decoration of the element  |
+
+---

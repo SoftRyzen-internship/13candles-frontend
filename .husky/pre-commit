@@ -36,13 +36,7 @@ npm run test-all ||
 # If everything passes... Now we can commit
 echo '✅✅✅✅  
 
-```
- _________________
-< You are amazing >
- -----------------
-       \  
-        \
-         \
+  You are amazing 
           \
           |\___/|
          =) oYo (=            
@@ -54,5 +48,5 @@ echo '✅✅✅✅
          \| | |_|/\
          //_// ___/
              \_) 
-```
+
 ✅✅✅✅'
