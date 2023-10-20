@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
+import BusinessIcon from '@/public/icons/icon_businesscase.svg';
 
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
@@ -15,10 +17,10 @@ export const ExampleSection = () => (
           section-title-secondary - e.g. Ми можемо бути корисними
         </h2>
       </div>
-      <button className="button mb-10" type="submit">
+      <button className="button mb-10 md:w-fit" type="submit">
         button
       </button>
-      <a className="button" href="./">
+      <a className="button mb-10 md:w-fit" href="./">
         link
       </a>
 
@@ -31,6 +33,13 @@ export const ExampleSection = () => (
       <div id="catalog" className="w-74 h-74 mt-[500px]">
         Scroll test
       </div>
+      <a className="link" href="./">
+        link with underline
+      </a>
+      <Link href="./" className="flex w-fit items-center justify-center gap-2">
+        <BusinessIcon width="24" height="24" />
+        <span className="link">Для Бізнесу</span>
+      </Link>
     </div>
   </section>
 );
