@@ -45,6 +45,6 @@ body {
 }
 
 .button {
-  @apply common-transition mx-auto block w-full max-w-[360px] cursor-pointer border border-black-light bg-body px-12 py-3 text-center;
-  @apply hover:bg-black-light hover:text-white focus:bg-black-light focus:text-white active:bg-black-light active:text-white;
+  @apply common-transition mx-auto block w-full max-w-[280px] cursor-pointer border px-12 py-3 text-center text-lg font-medium xl:border-black-light xl:bg-body xl:text-black-light notXl:bg-black-light notXl:text-white;
+  @apply xl:hover:bg-black-light xl:hover:text-white xl:focus:bg-black-light xl:focus:text-white xl:active:bg-black-light xl:active:text-white;
 }
