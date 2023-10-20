@@ -1,4 +1,5 @@
-import { TranslationExample } from '../TranslationExample';
+import Link from 'next/link';
+import BusinessIcon from '@/public/icons/icon_businesscase.svg';
 
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
@@ -21,7 +22,6 @@ export const ExampleSection = () => (
       <a className="button" href="./">
         link
       </a>
-
       <TranslationExample />
     </div>
   </section>

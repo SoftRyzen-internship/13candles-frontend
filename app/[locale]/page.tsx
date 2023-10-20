@@ -1,4 +1,4 @@
-import { ExampleSection } from '@/sections/homeSections/ExampleSection';
+import { ExampleSection } from '@/sections/home/ExampleSection';
 
 export default function Home() {
   return (
