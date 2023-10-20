@@ -10,7 +10,7 @@ echo '
 └─┘ ┴ ┴ ┴┴└─ ┴ '
 
 # Formatting
-npm run format
+npm run fix 
 
 git add .
 
