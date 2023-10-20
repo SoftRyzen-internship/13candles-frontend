@@ -13,10 +13,10 @@ export const ExampleSection = () => (
           section-title-secondary - e.g. Ми можемо бути корисними
         </h2>
       </div>
-      <button className="button mb-10" type="submit">
+      <button className="button mb-10 md:w-fit" type="submit">
         button
       </button>
-      <a className="button" href="./">
+      <a className="button mb-10 md:w-fit" href="./">
         link
       </a>
       <a className="link" href="./">
