@@ -1,5 +1,5 @@
 export const ExampleSection = () => (
-  <section>
+  <section className="section xl:pb-12 xl:pt-10">
     <div className="container">
       <div className="mb-10 flex flex-col gap-5">
         <h1 className="visually-hidden">I am a visually hidden heading</h1>

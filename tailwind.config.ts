@@ -20,6 +20,16 @@ const config: Config = {
     },
     // THEME
     extend: {
+      // CONTAINER
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1.25rem',
+          sm: '1.25rem',
+          md: '2rem',
+          xl: '1.875rem',
+        },
+      },
       // FONTS
       fontFamily: {
         montserrat: ['var(--font-montserrat)'],
@@ -41,17 +51,7 @@ const config: Config = {
           light: '#171717',
         },
         white: '#ffffff',
-        brown: '#c5c5c5',
-      },
-      // CONTAINER
-      container: {
-        center: true,
-        padding: {
-          DEFAULT: '1.25rem',
-          sm: '1.25rem',
-          md: '2rem',
-          xl: '1.875rem',
-        },
+        gray: '#c5c5c5',
       },
     },
   },
