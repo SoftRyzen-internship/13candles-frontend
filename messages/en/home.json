@@ -1,6 +1,7 @@
 {
     "Home": {
       "title": "Hello world!",
+      "language": "In English",
       "desc": {
         "one": "one"
       }
