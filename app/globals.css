@@ -3,5 +3,44 @@
 @tailwind utilities;
 
 body {
-  @apply font-raleway font-normal;
+  @apply bg-body font-raleway text-base font-normal text-black-light;
+}
+
+.common-transition {
+  @apply transition duration-300 ease-in-out;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.section-title-primary {
+  @apply text-xxl font-bold;
+}
+
+.section-title-secondary {
+  @apply text-lg font-bold md:text-xl xl:text-xxl;
+}
+
+.title-lg {
+  @apply text-xxl font-bold xl:text-xxxl;
+}
+
+.title-md {
+  @apply text-lg font-bold;
+}
+
+.title-sm {
+  @apply font-bold;
+}
+
+.button {
+  @apply common-transition mx-auto block w-full max-w-[360px] cursor-pointer border border-black-light bg-body px-12 py-3 text-center;
+  @apply hover:bg-black-light hover:text-white focus:bg-black-light focus:text-white active:bg-black-light active:text-white;
 }
