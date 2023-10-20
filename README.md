@@ -186,9 +186,6 @@ component `Heading`
 
 ---
 
-Sure, let's provide the README documentation for your `Button` component in
-English:
-
 ---
 
 ### `Button`
