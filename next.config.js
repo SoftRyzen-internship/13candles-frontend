@@ -20,22 +20,13 @@ const nextConfig = {
       },
     ],
   },
-  i18n: {
-    locales: ['en', 'uk_UA'],
-    defaultLocale: 'uk_UA',
-
-    //change domains after deploy
-    domains: [
-      {
-        domain: 'localhost:3000',
-        defaultLocale: 'uk_UA',
-      },
-      {
-        domain: 'localhost:3000/en',
-        defaultLocale: 'en',
-      },
-    ],
-  },
 };
 
-module.exports = nextConfig;
+const withNextIntl = require('next-intl/plugin')(
+  // This is the default (also the `src` folder is supported out of the box)
+  './i18n.ts'
+);
+
+module.exports = withNextIntl(
+  nextConfig
+);
