@@ -68,6 +68,9 @@ body {
   @apply common-transition bg-black-light;
 }
 
+a:hover .link::before,
+a:focus .link::before,
+a:active .link:before,
 .link:hover::before,
 .link:focus::before,
 .link:active:before {
