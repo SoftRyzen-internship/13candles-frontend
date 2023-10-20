@@ -45,6 +45,30 @@ body {
 }
 
 .button {
-  @apply common-transition mx-auto block w-full max-w-[360px] cursor-pointer border border-black-light bg-body px-12 py-3 text-center;
-  @apply hover:bg-black-light hover:text-white focus:bg-black-light focus:text-white active:bg-black-light active:text-white;
+  @apply common-transition mx-auto block w-full max-w-[360px] cursor-pointer border border-black-light bg-black-light px-12 py-3 text-center font-medium text-white;
+  @apply xl:bg-body xl:text-black-light xl:hover:bg-black-light xl:hover:text-white xl:focus:bg-black-light xl:focus:text-white xl:active:bg-black-light xl:active:text-white;
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1.1px;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+
+  @apply common-transition bg-black-light;
+}
+
+.link:hover::before,
+.link:focus::before,
+.link:active:before {
+  transform: scaleX(1);
 }

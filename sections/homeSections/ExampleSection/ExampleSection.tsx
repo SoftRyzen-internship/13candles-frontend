@@ -19,6 +19,9 @@ export const ExampleSection = () => (
       <a className="button" href="./">
         link
       </a>
+      <a className="link" href="./">
+        link with underline
+      </a>
     </div>
   </section>
 );
