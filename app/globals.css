@@ -50,22 +50,11 @@ body {
 }
 
 .link {
-  position: relative;
-  text-decoration: none;
-  font-weight: 500;
+  @apply relative font-medium no-underline before:content-[""];
 }
 
 .link::before {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 1.1px;
-  bottom: 0;
-  left: 0;
-  transform: scaleX(0);
-
-  @apply common-transition bg-black-light;
+  @apply common-transition absolute bottom-0 left-0 block h-[1.1px] w-full scale-x-0 bg-black-light;
 }
 
 a:hover .link::before,
@@ -74,5 +63,5 @@ a:active .link:before,
 .link:hover::before,
 .link:focus::before,
 .link:active:before {
-  transform: scaleX(1);
+  @apply scale-x-100;
 }
