@@ -185,3 +185,19 @@ component `Heading`
 | `data-shadow` | `undefined` | add text as a shadow decoration of the element  |
 
 ---
+
+Sure, let's provide the README documentation for your `Button` component in
+English:
+
+---
+
+### `Button`
+
+| Prop        | Default | Description                                                                                          |
+| ----------- | ------- | ---------------------------------------------------------------------------------------------------- |
+| `tag`       | `a`     | Choose the tag for your button: `a`, `button`. By default, it's a hyperlink (`a`).                   |
+| `label`     | —       | Required. The text of the button.                                                                    |
+| `href`      | —       | Optional. If provided, the button will perform a smooth scroll to the specified section on the page. |
+| `className` | —       | Optional. Add a custom or additional CSS class if needed.                                            |
+
+---
