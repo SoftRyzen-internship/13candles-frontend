@@ -1,7 +1,9 @@
+import { ExampleSection } from '@/sections/homeSections/ExampleSection';
+
 export default function Home() {
   return (
     <main>
-      <p>Here is Homepage</p>
+      <ExampleSection />
     </main>
   );
 }
