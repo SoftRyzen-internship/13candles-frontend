@@ -1,3 +1,5 @@
+import { Button } from '@/components/Button';
+
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
     <div className="container">
@@ -19,6 +21,11 @@ export const ExampleSection = () => (
       <a className="button" href="./">
         link
       </a>
+
+      <Button className="m-10" tag="a" label="Каталог" href="catalog" />
+      <div id="catalog" className="w-74 h-74 mt-[500px]">
+        Scroll test
+      </div>
     </div>
   </section>
 );
