@@ -1,3 +1,5 @@
+import { TranslationExample } from '../TranslationExample';
+
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
     <div className="container">
@@ -19,6 +21,8 @@ export const ExampleSection = () => (
       <a className="button" href="./">
         link
       </a>
+
+      <TranslationExample />
     </div>
   </section>
 );
