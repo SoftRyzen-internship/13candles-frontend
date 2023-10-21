@@ -1,18 +1,28 @@
 {
     "header": {
+        "sidePanelMenu": {
+            "openPanelBtnAriaText": "image of the sidebar button",
+            "closePanelBtnAriaText": "image of the sidebar close button"
+        },
+        "mobileMenu": {
+            "openMenuBtnAriaText": "image of the mobile menu button",
+            "closeMenuBtnAriaText": "image of the mobile menu close button"
+        },
         "nav": [
             {
-                "name": "Main"
+                "name": "Catalog",
+                "href": "/catalog"
             },
             {
-                "name": "Catalog"
-            },
-            {
-                "name": "About Us"
+                "name": "About Us",
+                "href": "/about"
             }
         ],
         "logoAriaLabelText": "Link with company logo",
-        "link": "For Business",
+        "link": {
+            "name": "For Business",
+            "href": "/business"
+        },
         "language": "eng"
     },
     "hero": [
@@ -125,13 +135,16 @@
         "social_text": "Social networks",
         "social": [
             {
-                "name": "Instagram"
+                "name": "Instagram",
+                "ariaLabelText": "contact us on Instagram"
             },
             {
-                "name": "Telegram"
+                "name": "Telegram",
+                "ariaLabelText": "contact us on telegram"
             },
             {
-                "name": "Viber"
+                "name": "Viber",
+                "ariaLabelText": "contact us on viber"
             }
         ],
         "soft_ryzen": "Made by SoftRyzen"

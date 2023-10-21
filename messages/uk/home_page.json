@@ -1,18 +1,28 @@
 {
     "header": {
+        "sidePanelMenu": {
+            "openPanelBtnAriaText": "Зображення кпопки бічної панелі",
+            "closePanelBtnAriaText": "Зображення кпопки закриття бічної панелі"
+        },
+        "mobileMenu": {
+            "openMenuBtnAriaText": "Зображення кпопки мобільного меню",
+            "closeMenuBtnAriaText": "Зображення кпопки закриття мобільного меню"
+        },
         "nav": [
             {
-                "name": "Головна"
+                "name": "Каталог",
+                "href": "/catalog"
             },
             {
-                "name": "Каталог"
-            },
-            {
-                "name": "Про Нас"
+                "name": "Про Нас",
+                "href": "/about"
             }
         ],
         "logoAriaLabelText": "Посилання із логотипом компанії",
-        "link": "Для Бізнесу",
+        "link": {
+            "name": "Для Бізнесу",
+            "href": "/business"
+        },
         "language": "ua"
     },
     "hero": [
@@ -125,13 +135,16 @@
         "social_text": "Соціальні мережі",
         "social": [
             {
-                "name": "Instagram"
+                "name": "Instagram",
+                "ariaLabelText": "Зв'яжися з нами у instagram"
             },
             {
-                "name": "Telegram"
+                "name": "Telegram",
+                "ariaLabelText": "Зв'яжися з нами у telegram"
             },
             {
-                "name": "Viber"
+                "name": "Viber",
+                "ariaLabelText": "Зв'яжися з нами у viber"
             }
         ],
         "soft_ryzen": "Made by SoftRyzen"
