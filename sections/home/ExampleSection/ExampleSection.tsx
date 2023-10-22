@@ -1,34 +1,32 @@
 import Link from 'next/link';
-import BusinessIcon from '@/public/icons/icon_businesscase.svg';
+import { ContactList } from '@/components/ContactList';
 
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
-    <div className="container">
-      <div className="mb-10 flex flex-col gap-5">
-        <h1 className="visually-hidden">I am a visually hidden heading</h1>
-        <h2 className="title-lg">title-lg - e.g. Договір оферти</h2>
-        <h2 className="title-md">title-md - e.g. Загальні положення</h2>
-        <h2 className="title-sm">title-sm - e.g. Навігація</h2>
-        <h2 className="section-title-primary">
-          section-title-primary - e.g. Каталог
-        </h2>
-        <h2 className="section-title-secondary">
-          section-title-secondary - e.g. Ми можемо бути корисними
-        </h2>
-      </div>
-      <button className="button mb-10 md:w-fit" type="submit">
+    <div className="container flex flex-col gap-5">
+      <h1 className="visually-hidden">I am a visually hidden heading</h1>
+      <h2 className="title-lg">title-lg - e.g. Договір оферти</h2>
+      <h2 className="title-md">title-md - e.g. Загальні положення</h2>
+      <h2 className="title-sm">title-sm - e.g. Навігація</h2>
+      <h2 className="section-title-primary">
+        section-title-primary - e.g. Каталог
+      </h2>
+      <h2 className="section-title-secondary">
+        section-title-secondary - e.g. Ми можемо бути корисними
+      </h2>
+      <button className="button md:w-fit" type="submit">
         button
       </button>
-      <a className="button mb-10 md:w-fit" href="./">
+      <a className="button md:w-fit" href="./">
         link
       </a>
-      <a className="link" href="./">
-        link with underline
+      <a className="link w-fit" href="./">
+        Договір оферти
       </a>
-      <Link href="./" className="flex w-fit items-center justify-center gap-2">
-        <BusinessIcon width="24" height="24" />
+      <Link href="/business" className="decor case">
         <span className="link">Для Бізнесу</span>
       </Link>
+      <ContactList />
     </div>
   </section>
 );

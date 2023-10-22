@@ -103,7 +103,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ---
 
-**💁‍♀️ Reusable css classes should be placed in the `styles` folder .**
+**💁‍♀️ Reusable css classes should be placed in the `app` folder .**
 
 <details>
 
@@ -135,33 +135,40 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```
 
-|-- components -> folder with pages
-  | -- NamePage -> folder with components
+|-- components -> folder with components
     |-- NameComponent -> folders for each component
       |-- NameComponent.tsx -> main component
-      |-- NameComponent.module.css -> css styles for component
+      |-- NameComponent.module.css -> css styles for the component
       |-- index.ts -> file for re-export
-      |-- type.ts -> file for type and interface
 
  |-- components/ui -> folder with reusable components
   |-- NameComponent -> folders for each component
     |-- NameComponent.tsx -> main component
-    |-- NameComponent.module.css -> css styles for component
+    |-- NameComponent.module.css -> css styles for the component
     |-- index.ts -> file for re-export
-    |-- type.ts -> file for type and interface
 
-|-- views -> folder with pages
+|-- sections -> folder with pages
   |--NamePage -> folder with page sections
+    |-- NameSectionComponent -> folders for each section component
+    |-- NameSectionComponent.tsx -> main section component
+    |-- NameSectionComponent.module.css -> css styles for the section component
+    |-- index.ts -> file for re-export
+
+|-- types -> types for data and components interfaces
+  |-- ComponentProps.ts
+  |-- Product.ts
+  |-- index.ts -> file for re-export
+
 
 |-- layout -> components that are used as a main template
 |-- app -> pages and routing
 |-- public -> static files
-|-- styles -> global styles
 
 <!-- You can create these folders already in work -->
 |-- data -> data for the project ( from graphql, json, etc.)
 |-- hooks -> custom users hooks
 |-- utils -> helpers, functions, etc.
+|-- constants -> hard-coded variables used throughout the project e.g. SCREEN_SIZES, NAV_LINKS
 ```
 
 </details>
