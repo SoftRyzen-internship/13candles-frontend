@@ -1,5 +1,18 @@
 import Link from 'next/link';
 import BusinessIcon from '@/public/icons/icon_businesscase.svg';
+import FooterNavRow, {
+  FooterNavRowProps,
+} from '@/components/FooterNavRow/FooterNavRow';
+
+const footerNavData: FooterNavRowProps = {
+  nav_text: 'Navigation',
+  nav: [
+    { name: 'Catalog', href: '/catalog' },
+    { name: 'About us', href: '/about' },
+    { name: 'Basket', href: '/basket' },
+    { name: 'For Business', href: '/business' },
+  ],
+};
 
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
@@ -29,6 +42,7 @@ export const ExampleSection = () => (
         <BusinessIcon width="24" height="24" />
         <span className="link">Для Бізнесу</span>
       </Link>
+      <FooterNavRow {...footerNavData} />
     </div>
   </section>
 );
