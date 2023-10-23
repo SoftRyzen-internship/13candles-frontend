@@ -1,9 +1,9 @@
 {
-    "Home": {
-      "title": "Привіт, світ!",
-      "language": "Eng",
-      "desc": {
-        "one": "один"
-      }
+  "Home": {
+    "title": "Привіт, світ!",
+    "language": "Eng",
+    "desc": {
+      "one": "один"
     }
   }
+}

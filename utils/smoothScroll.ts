@@ -5,7 +5,7 @@ export const smoothScroll = (
   e.preventDefault();
 
   if (href) {
-    const targetElement = document.getElementById(href.replace(/[/#]/g, ''));
+    const targetElement = document.getElementById(href);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth' });
     }
