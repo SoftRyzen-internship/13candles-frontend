@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { ContactLinkProps } from './ContactLinkProps';
+import { ContactLinkProps } from './types';
 
 export const ContactLink: React.FC<ContactLinkProps> = ({
   href,
