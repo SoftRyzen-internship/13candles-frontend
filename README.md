@@ -171,8 +171,18 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Internationalization
 
 If you want to add new text data and use it, create json files with same names
-inside 'messages' directory in every folder with locale name app/ │ └───
-messages/ │ ├─── en/ │ └── home.json │ └─── uk/ └── home.json
+inside 'messages' directory in every folder with locale name
+
+```plaintext
+app/
+│
+└─── messages/
+    │
+    ├─── en/
+    │    └── home.json
+    │
+    └─── uk/
+         └── home.json
 
 ❗️Then spread file to messages object inside getRequestConfig in i18n.ts file to
 merge your separate file to the big one json.
@@ -180,12 +190,15 @@ merge your separate file to the big one json.
 To use data from json files you need to include this hook to file component
 
 ```
+
 import { useTranslations } from 'next-intl';
+
 ```
 
 Get function this way and use it inside layout:
 
 ```
+
 const t = useTranslations('Home');
 
 <h1>{t('title')}</h1>
