@@ -6,7 +6,11 @@ body {
   @apply bg-body font-raleway text-base font-normal text-black-light;
 }
 
-/* ANIMATIONS */
+/* === ANIMATIONS === */
+
+.common-transition {
+  @apply transition duration-300 ease-in-out;
+}
 
 .zoom-image {
   @apply common-transition;
@@ -16,11 +20,7 @@ body {
   @apply scale-[1.15];
 }
 
-.common-transition {
-  @apply transition duration-300 ease-in-out;
-}
-
-/* COMMON STYLES */
+/* === COMMON STYLES === */
 
 .visually-hidden {
   position: absolute !important;
