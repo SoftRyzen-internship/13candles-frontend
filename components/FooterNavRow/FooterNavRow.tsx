@@ -1,23 +1,33 @@
 import React from 'react';
 import Link from 'next/link';
-
-export type FooterNavRowProps = {
-  nav_text: string;
-  nav: {
-    name: string;
-    href: string;
-  }[];
+import { FooterNavRowProps } from '@/components/FooterNavRow/types';
+// import { useTranslations } from 'next-intl';
+export const footerNavData: FooterNavRowProps = {
+  nav_text: 'Navigation',
+  nav: [
+    { name: 'Catalog', href: '/catalog' },
+    { name: 'About us', href: '/about' },
+    { name: 'Basket', href: '/basket' },
+    { name: 'For Business', href: '/business' },
+  ],
 };
+// const t = useTranslations('Home');
 
-const FooterNavRow: React.FC<FooterNavRowProps> = ({ nav_text, nav }) => {
+export const FooterNavRow: React.FC<FooterNavRowProps> = ({
+  nav_text,
+  nav,
+}) => {
   return (
-    <div className="bg-gray-800 hidden p-4 xl:block">
-      <p className="mb-2 ">{nav_text}</p>
-      <ul>
+    <div className=" hidden xl:grid xl:gap-3 xl:text-[16px] xl:leading-5">
+      <p className="xl:font-bold ">{nav_text}</p>
+      {/* <p className="xl:font-bold ">{t('nav_text')}</p> */}
+      <ul className="xl:grid xl:gap-3">
         {nav.map((item, index) => (
           <li key={index}>
             <Link href={item.href}>
-              <span className="link">{item.name}</span>
+              {/* <Link href={t('item.href')}> */}
+              <span className="link  xl:font-medium ">{item.name}</span>
+              {/* <span className="link  xl:font-medium ">{t('item.name')}</span> */}
             </Link>
           </li>
         ))}
@@ -25,5 +35,3 @@ const FooterNavRow: React.FC<FooterNavRowProps> = ({ nav_text, nav }) => {
     </div>
   );
 };
-
-export default FooterNavRow;
