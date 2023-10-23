@@ -8,8 +8,8 @@ export const TranslationSwitcher = () => {
   const lang = useLocale() === 'en' ? 'uk' : 'en';
 
   return (
-      <Link href="/" className="link" locale={lang}>
-        {t('language')}
-      </Link>
+    <Link href="/" className="link" locale={lang}>
+      {t('language')}
+    </Link>
   );
 };

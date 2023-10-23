@@ -1,153 +1,153 @@
 {
-    "header": {
-        "sidePanelMenu": {
-            "openPanelBtnAriaText": "Зображення кпопки бічної панелі",
-            "closePanelBtnAriaText": "Зображення кпопки закриття бічної панелі"
-        },
-        "mobileMenu": {
-            "openMenuBtnAriaText": "Зображення кпопки мобільного меню",
-            "closeMenuBtnAriaText": "Зображення кпопки закриття мобільного меню"
-        },
-        "nav": [
-            {
-                "name": "Каталог",
-                "href": "/catalog"
-            },
-            {
-                "name": "Про Нас",
-                "href": "/about"
-            }
-        ],
-        "logoAriaLabelText": "Посилання із логотипом компанії",
-        "link": {
-            "name": "Для Бізнесу",
-            "href": "/business"
-        },
-        "language": "Укр"
+  "header": {
+    "sidePanelMenu": {
+      "openPanelBtnAriaText": "Зображення кпопки бічної панелі",
+      "closePanelBtnAriaText": "Зображення кпопки закриття бічної панелі"
     },
-    "hero": [
-        {
-            "src": "/images/homepage/hero/1.webp",
-            "alt": "запашний дим"
-        },
-        {
-            "src": "/images/homepage/hero/2.webp",
-            "alt": "палаюча свічка"
-        },
-        {
-            "src": "/images/homepage/hero/4.webp",
-            "alt": "ароматичні свічки"
-        }
+    "mobileMenu": {
+      "openMenuBtnAriaText": "Зображення кпопки мобільного меню",
+      "closeMenuBtnAriaText": "Зображення кпопки закриття мобільного меню"
+    },
+    "nav": [
+      {
+        "name": "Каталог",
+        "href": "/catalog"
+      },
+      {
+        "name": "Про Нас",
+        "href": "/about"
+      }
     ],
-    "catalog": {
-        "title": "Каталог",
-        "text": "Оберіть категорію товарів, яка вас цікавить",
-        "products": [
-            {
-                "name": "Аромасвічки",
-                "src": "/images/homepage/catalog/aromacandle@2x.webp",
-                "alt": "Аромасвічки"
-            },
-            {
-                "name": "Аромадифузори",
-                "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
-                "alt": "Аромадифузори"
-            },
-            {
-                "name": "Пахощі (аромапалички)",
-                "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
-                "alt": "Пахощі (аромапалички)"
-            },
-            {
-                "name": "Аксесуари",
-                "src": "/images/homepage/catalog/accessories@2x.webp",
-                "alt": "Аксесуари"
-            },
-            {
-                "name": "Набори",
-                "src": "/images/homepage/catalog/sets@2x.webp",
-                "alt": "Набори"
-            },
-            {
-                "name": "Різне",
-                "src": "/images/homepage/catalog/different@2x.webp",
-                "alt": "Інша продукція"
-            }
-        ]
+    "logoAriaLabelText": "Посилання із логотипом компанії",
+    "link": {
+      "name": "Для Бізнесу",
+      "href": "/business"
     },
-    "about": {
-        "title": "Про нас",
-        "image": {
-            "src": "/images/homepage/about/about@2x.webp",
-            "alt": "Candle Bar"
-        },
-        "content": [
-                "13 Candle Bar - це сімейна майстерня ароматів і затишку. Наше невелике виробництво знаходиться в Київській області та спеціалізується на виготовленні аромадифузорів, ароматичних свічок, свічок в кашпо та інших предметах затишку.",
-                 "Наші клієнти обирають нас через високоякісний сервіс, використання виключно натуральних і топових матеріалів і компонентів, преміальні аромати та гарне співвідношення вартості з якістю. Також ми можемо виготовляти як оптові, так і корпоративні замовлення з розробкою продукції під існуючий бренд.",
-                 "Новим напрямком для нас стала ароматизація приміщень. Адже ми розуміємо, що бізнесу важливо закохувати в себе клієнтів, створюючи приємне враження за допомогою ароматів.",
-                 "Пишіть нам, задавайте питання, і ми залюбки познайомимо вас з всесвітом затишку і приємних ароматів в 13 Candle Bar."
-        ],
-        "button": "Каталог"
+    "language": "Укр"
+  },
+  "hero": [
+    {
+      "src": "/images/homepage/hero/1.webp",
+      "alt": "запашний дим"
     },
-    "footer": {
-        "contacts": {
-            "phone": "096 680 21 51",
-            "email": "13candlebar@gmail.com"
-        },
-        "nav_text": "Навігація",
-        "nav": [
-            {
-                "name": "Каталог",
-                "href": "/catalog"
-            },
-            {
-                "name": "Про нас",
-                "href": "/about"
-            },
-            {
-                "name": "Кошик"
-            },
-            {
-                "name": "Для Бізнесу",
-                "href": "/business"
-            }
-        ],
-        "info_text": "Інформація",
-        "info": [
-            {
-                "name": "Договір оферти"
-            },
-            {
-                "name": "Гарантії та повернення"
-            },
-            {
-                "name": "Доставка і оплата"
-            },
-            {
-                "name": "Правила користування сайтом"
-            }
-        ],
-        "social_text": "Соціальні мережі",
-        "social": [
-            {
-                "name": "Instagram",
-                "ariaLabelText": "Зв'яжися з нами у instagram",
-                "href": ""
-            },
-            {
-                "name": "Telegram",
-                "ariaLabelText": "Зв'яжися з нами у telegram",
-                "href": ""
-            },
-            {
-                "name": "Viber",
-                "ariaLabelText": "Зв'яжися з нами у viber",
-                "href": ""
-            }
-        ],
-        "soft_ryzen": {
-            "name": "Made by SoftRyzen",
-            "href": "https://internship.softryzen.com"
-        }
+    {
+      "src": "/images/homepage/hero/2.webp",
+      "alt": "палаюча свічка"
+    },
+    {
+      "src": "/images/homepage/hero/4.webp",
+      "alt": "ароматичні свічки"
     }
+  ],
+  "catalog": {
+    "title": "Каталог",
+    "text": "Оберіть категорію товарів, яка вас цікавить",
+    "products": [
+      {
+        "name": "Аромасвічки",
+        "src": "/images/homepage/catalog/aromacandle@2x.webp",
+        "alt": "Аромасвічки"
+      },
+      {
+        "name": "Аромадифузори",
+        "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
+        "alt": "Аромадифузори"
+      },
+      {
+        "name": "Пахощі (аромапалички)",
+        "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
+        "alt": "Пахощі (аромапалички)"
+      },
+      {
+        "name": "Аксесуари",
+        "src": "/images/homepage/catalog/accessories@2x.webp",
+        "alt": "Аксесуари"
+      },
+      {
+        "name": "Набори",
+        "src": "/images/homepage/catalog/sets@2x.webp",
+        "alt": "Набори"
+      },
+      {
+        "name": "Різне",
+        "src": "/images/homepage/catalog/different@2x.webp",
+        "alt": "Інша продукція"
+      }
+    ]
+  },
+  "about": {
+    "title": "Про нас",
+    "image": {
+      "src": "/images/homepage/about/about@2x.webp",
+      "alt": "Candle Bar"
+    },
+    "content": [
+      "13 Candle Bar - це сімейна майстерня ароматів і затишку. Наше невелике виробництво знаходиться в Київській області та спеціалізується на виготовленні аромадифузорів, ароматичних свічок, свічок в кашпо та інших предметах затишку.",
+      "Наші клієнти обирають нас через високоякісний сервіс, використання виключно натуральних і топових матеріалів і компонентів, преміальні аромати та гарне співвідношення вартості з якістю. Також ми можемо виготовляти як оптові, так і корпоративні замовлення з розробкою продукції під існуючий бренд.",
+      "Новим напрямком для нас стала ароматизація приміщень. Адже ми розуміємо, що бізнесу важливо закохувати в себе клієнтів, створюючи приємне враження за допомогою ароматів.",
+      "Пишіть нам, задавайте питання, і ми залюбки познайомимо вас з всесвітом затишку і приємних ароматів в 13 Candle Bar."
+    ],
+    "button": "Каталог"
+  },
+  "footer": {
+    "contacts": {
+      "phone": "096 680 21 51",
+      "email": "13candlebar@gmail.com"
+    },
+    "nav_text": "Навігація",
+    "nav": [
+      {
+        "name": "Каталог",
+        "href": "/catalog"
+      },
+      {
+        "name": "Про нас",
+        "href": "/about"
+      },
+      {
+        "name": "Кошик"
+      },
+      {
+        "name": "Для Бізнесу",
+        "href": "/business"
+      }
+    ],
+    "info_text": "Інформація",
+    "info": [
+      {
+        "name": "Договір оферти"
+      },
+      {
+        "name": "Гарантії та повернення"
+      },
+      {
+        "name": "Доставка і оплата"
+      },
+      {
+        "name": "Правила користування сайтом"
+      }
+    ],
+    "social_text": "Соціальні мережі",
+    "social": [
+      {
+        "name": "Instagram",
+        "ariaLabelText": "Зв'яжися з нами у instagram",
+        "href": ""
+      },
+      {
+        "name": "Telegram",
+        "ariaLabelText": "Зв'яжися з нами у telegram",
+        "href": ""
+      },
+      {
+        "name": "Viber",
+        "ariaLabelText": "Зв'яжися з нами у viber",
+        "href": ""
+      }
+    ],
+    "soft_ryzen": {
+      "name": "Made by SoftRyzen",
+      "href": "https://internship.softryzen.com"
+    }
+  }
 }

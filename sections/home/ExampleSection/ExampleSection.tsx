@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import BusinessIcon from '@/public/icons/icon_businesscase.svg';
 import { TranslationSwitcher } from '@/components/TranslationSwitcherButton';
+import { Button } from '@/components/ui/Button';
 
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
@@ -23,6 +24,15 @@ export const ExampleSection = () => (
       <a className="button mb-10 md:w-fit" href="./">
         link
       </a>
+      <Button
+        className="m-10 max-w-[280px] md:max-w-[172px]"
+        tag="a"
+        label="Каталог"
+        href="catalog"
+      />
+      <div id="catalog" className="w-74 h-74 mt-[500px]">
+        Scroll test
+      </div>
       <a className="link" href="./">
         link with underline
       </a>
