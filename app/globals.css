@@ -65,3 +65,27 @@ a:active .link:before,
 .link:active:before {
   @apply scale-x-100;
 }
+
+/* === SLIDER === */
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: url('/icons/icon_arrow.svg') !important;
+  @apply common-transition absolute top-0 opacity-25 hover:opacity-100 notXl:hidden;
+}
+
+.swiper-button-prev::after {
+  @apply right-0 rotate-180;
+}
+
+.swiper-button-next::after {
+  @apply left-0;
+}
+
+.swiper-pagination-bullet {
+  @apply !bg-black-light;
+}
+
+.swiper-pagination {
+  @apply !static mt-[20px] md:mt-[50px] xl:mt-[16px];
+}
