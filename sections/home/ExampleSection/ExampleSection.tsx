@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import BusinessIcon from '@/public/icons/icon_businesscase.svg';
 import { SocialsMenu } from '@/components/SocialsMenu';
+import { TranslationSwitcher } from '@/components/TranslationSwitcherButton';
 
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
@@ -32,6 +33,7 @@ export const ExampleSection = () => (
       </Link>
 
       <SocialsMenu />
+      <TranslationSwitcher />
     </div>
   </section>
 );
