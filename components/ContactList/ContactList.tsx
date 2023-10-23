@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { ContactLink } from '../ui/ContactLink';
-import { ContactListProps } from '@/types';
+import { ContactListProps } from './ContactListProps';
 
 const links = [
   {

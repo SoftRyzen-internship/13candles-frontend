@@ -49,20 +49,20 @@ body {
   @apply xl:bg-body xl:text-black-light xl:hover:bg-black-light xl:hover:text-white xl:focus:bg-black-light xl:focus:text-white xl:active:bg-black-light xl:active:text-white;
 }
 
-.link {
+.link-underline {
   @apply relative font-medium no-underline before:content-[""];
 }
 
-.link::before {
+.link-underline::before {
   @apply common-transition absolute bottom-[-3px] left-0 block h-[1.2px] w-full scale-x-0 bg-black-light;
 }
 
-a:hover .link::before,
-a:focus .link::before,
-a:active .link:before,
-.link:hover::before,
-.link:focus::before,
-.link:active:before {
+a:hover .link-underline::before,
+a:focus .link-underline::before,
+a:active .link-underline:before,
+.link-underline:hover::before,
+.link-underline:focus::before,
+.link-underline:active:before {
   @apply scale-x-100;
 }
 

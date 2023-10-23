@@ -136,29 +136,25 @@ Open [http://localhost:3000](http://localhost:3000).
 ```
 
 |-- components -> folder with components
-    |-- NameComponent -> folders for each component
-      |-- NameComponent.tsx -> main component
-      |-- NameComponent.module.css -> css styles for the component
-      |-- index.ts -> file for re-export
-
- |-- components/ui -> folder with reusable components
-  |-- NameComponent -> folders for each component
+  |-- NameComponent -> folder for a component
     |-- NameComponent.tsx -> main component
     |-- NameComponent.module.css -> css styles for the component
+    |-- types.ts -> file for the component types
+    |-- index.ts -> file for re-export
+
+|-- components/ui -> folder with reusable components
+  |-- NameComponent -> folder for a component
+    |-- NameComponent.tsx -> main component
+    |-- NameComponent.module.css -> css styles for the component
+    |-- types.ts -> file for the component types
     |-- index.ts -> file for re-export
 
 |-- sections -> folder with pages
-  |--NamePage -> folder with page sections
+  |--NamePage -> folder with certain page sections
     |-- NameSectionComponent -> folders for each section component
-    |-- NameSectionComponent.tsx -> main section component
-    |-- NameSectionComponent.module.css -> css styles for the section component
-    |-- index.ts -> file for re-export
-
-|-- types -> types for data and components interfaces
-  |-- ComponentProps.ts
-  |-- Product.ts
-  |-- index.ts -> file for re-export
-
+      |-- NameSectionComponent.tsx -> main section component
+      |-- NameSectionComponent.module.css -> css styles for the section component
+      |-- index.ts -> file for re-export
 
 |-- layout -> components that are used as a main template
 |-- app -> pages and routing
@@ -167,8 +163,8 @@ Open [http://localhost:3000](http://localhost:3000).
 <!-- You can create these folders already in work -->
 |-- data -> data for the project ( from graphql, json, etc.)
 |-- hooks -> custom users hooks
+|-- types -> types for data
 |-- utils -> helpers, functions, etc.
-|-- constants -> hard-coded variables used throughout the project e.g. SCREEN_SIZES, NAV_LINKS
 ```
 
 </details>

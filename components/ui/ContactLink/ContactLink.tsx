@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { ContactLinkProps } from '@/types/ContactLinkProps';
+import { ContactLinkProps } from './ContactLinkProps';
 
 export const ContactLink: React.FC<ContactLinkProps> = ({
   href,
@@ -11,7 +11,7 @@ export const ContactLink: React.FC<ContactLinkProps> = ({
 
   return (
     <a href={href} className={linkClasses}>
-      <span className="link font-montserrat">{text}</span>
+      <span className="link-underline font-montserrat">{text}</span>
     </a>
   );
 };
