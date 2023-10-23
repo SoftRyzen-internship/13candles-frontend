@@ -184,4 +184,12 @@ component `Heading`
 | `className`   | `undefined` | add custom or additional css class you'd need   |
 | `data-shadow` | `undefined` | add text as a shadow decoration of the element  |
 
+- ### Logo
+
+| Prop        | Default     | Description                                   |
+| ----------- | ----------- | --------------------------------------------- |
+| `position`  | `header`    | place, where logo used                        |
+| `aria`      | `''`        | logo aria-label                               |
+| `className` | `undefined` | add custom or additional css class you'd need |
+
 ---

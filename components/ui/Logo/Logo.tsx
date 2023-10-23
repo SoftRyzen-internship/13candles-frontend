@@ -5,6 +5,7 @@ import { LogoProps } from './types';
 
 export const Logo: React.FC<LogoProps> = ({
   position = 'header',
+  aria = '',
   className,
 }) => {
   const logoSvgStyles = classNames('h-[48px] w-[87px]', {
@@ -14,6 +15,7 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <a
       href="/"
+      aria-label={aria}
       className={`common-transition block max-w-max text-black-light hover:text-black focus:text-black ${className}`}
     >
       <Logosvg width={116} height={64} className={logoSvgStyles} />
