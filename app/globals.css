@@ -6,9 +6,21 @@ body {
   @apply bg-body font-raleway text-base font-normal text-black-light;
 }
 
+/* ANIMATIONS */
+
+.zoom-image {
+  @apply common-transition;
+}
+
+.zoom:hover .zoom-image {
+  @apply scale-[1.15];
+}
+
 .common-transition {
   @apply transition duration-300 ease-in-out;
 }
+
+/* COMMON STYLES */
 
 .visually-hidden {
   position: absolute !important;
@@ -54,7 +66,7 @@ body {
 }
 
 .link::before {
-  @apply common-transition absolute bottom-0 left-0 block h-[1.1px] w-full scale-x-0 bg-black-light;
+  @apply common-transition absolute bottom-[-3px] left-0 block h-[1.2px] w-full scale-x-0 bg-black-light;
 }
 
 a:hover .link::before,
@@ -64,4 +76,68 @@ a:active .link:before,
 .link:focus::before,
 .link:active:before {
   @apply scale-x-100;
+}
+
+/* === DECOR ICONS === */
+
+/* decor icons common */
+
+.decor {
+  @apply relative before:content-[""];
+}
+
+.decor::before {
+  @apply absolute left-0 top-1/2 -translate-y-1/2 bg-cover bg-center bg-no-repeat;
+}
+
+/* decor icons sizes */
+
+.case {
+  @apply pl-9 md:pl-8;
+}
+
+.case::before {
+  @apply h-7 w-7 md:h-6 md:w-6;
+}
+
+.phone,
+.email,
+.instagram,
+.telegram,
+.viber {
+  @apply pl-8;
+}
+
+.phone::before,
+.email::before,
+.instagram::before,
+.telegram::before,
+.viber::before {
+  @apply h-6 w-6;
+}
+
+/* decore icons bg */
+
+.case::before {
+  @apply bg-[url('/icons/icon_businesscase.svg')];
+}
+
+.email::before {
+  @apply bg-[url('/icons/icon_email.svg')];
+}
+
+.phone::before {
+  @apply bg-[url('/icons/icon_phone.svg')];
+}
+
+.instagram::before {
+  @apply bg-[url('/icons/icon_instagram.svg')];
+}
+
+.telegram::before {
+  @apply bg-[url('/icons/icon_telegram.svg')];
+}
+
+.viber::before {
+  @apply bg-[url('/icons/icon_viber.svg')];
 }

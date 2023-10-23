@@ -103,7 +103,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ---
 
-**💁‍♀️ Reusable css classes should be placed in the `styles` folder .**
+**💁‍♀️ Reusable css classes should be placed in the `app` folder .**
 
 <details>
 
@@ -135,32 +135,35 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```
 
-|-- components -> folder with pages
-  | -- NamePage -> folder with components
-    |-- NameComponent -> folders for each component
-      |-- NameComponent.tsx -> main component
-      |-- NameComponent.module.css -> css styles for component
-      |-- index.ts -> file for re-export
-      |-- type.ts -> file for type and interface
-
- |-- components/ui -> folder with reusable components
-  |-- NameComponent -> folders for each component
+|-- components -> folder with components
+  |-- NameComponent -> folder for a component
     |-- NameComponent.tsx -> main component
-    |-- NameComponent.module.css -> css styles for component
+    |-- NameComponent.module.css -> css styles for the component
+    |-- types.ts -> file for the component types
     |-- index.ts -> file for re-export
-    |-- type.ts -> file for type and interface
 
-|-- views -> folder with pages
-  |--NamePage -> folder with page sections
+|-- components/ui -> folder with reusable components
+  |-- NameComponent -> folder for a component
+    |-- NameComponent.tsx -> main component
+    |-- NameComponent.module.css -> css styles for the component
+    |-- types.ts -> file for the component types
+    |-- index.ts -> file for re-export
+
+|-- sections -> folder with pages
+  |--NamePage -> folder with certain page sections
+    |-- NameSectionComponent -> folders for each section component
+      |-- NameSectionComponent.tsx -> main section component
+      |-- NameSectionComponent.module.css -> css styles for the section component
+      |-- index.ts -> file for re-export
 
 |-- layout -> components that are used as a main template
 |-- app -> pages and routing
 |-- public -> static files
-|-- styles -> global styles
 
 <!-- You can create these folders already in work -->
 |-- data -> data for the project ( from graphql, json, etc.)
 |-- hooks -> custom users hooks
+|-- types -> types for data
 |-- utils -> helpers, functions, etc.
 ```
 
@@ -174,7 +177,7 @@ Each component has its own API. You can find it in the component's folder. This
 is a list of more common components and their API. This is example of API for
 component `Heading`
 
-- ### Example
+- ### Heading (example)
 
 | Prop          | Default     | Description                                     |
 | ------------- | ----------- | ----------------------------------------------- |
@@ -183,5 +186,24 @@ component `Heading`
 | `children`    | `undefined` | required, any content                           |
 | `className`   | `undefined` | add custom or additional css class you'd need   |
 | `data-shadow` | `undefined` | add text as a shadow decoration of the element  |
+
+- ### ContactLink
+
+| Prop        | Default     | Description                                                 |
+| ----------- | ----------- | ----------------------------------------------------------- |
+| `href`      | ``          | required, href for a link                                   |
+| `icon`      | ``          | required, css className which should be used in globals.css |
+|             |             | to create a decor icon                                      |
+| `text`      | ``          | required, any text content                                  |
+| `className` | `undefined` | add custom or additional css class you'd need               |
+
+- ### CategoryCard
+
+| Prop        | Default     | Description                                    |
+| ----------- | ----------- | ---------------------------------------------- |
+| `href`      | ``          | required, href for a link                      |
+| `text`      | ``          | required, any text content                     |
+| `image`     | ``          | required, object with src and alt for an image |
+| `className` | `undefined` | add custom or additional css class you'd need  |
 
 ---
