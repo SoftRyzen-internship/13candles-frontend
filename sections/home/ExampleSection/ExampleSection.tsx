@@ -20,11 +20,11 @@ export const ExampleSection = () => (
       <a className="button md:w-fit" href="./">
         link
       </a>
-      <a className="link-underline w-fit" href="./">
+      <a className="link w-fit" href="./">
         Договір оферти
       </a>
       <Link href="/business" className="decor case">
-        <span className="link-underline">Для Бізнесу</span>
+        <span className="link">Для Бізнесу</span>
       </Link>
       <ContactList />
     </div>

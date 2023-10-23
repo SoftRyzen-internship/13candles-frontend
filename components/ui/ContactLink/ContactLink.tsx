@@ -11,7 +11,7 @@ export const ContactLink: React.FC<ContactLinkProps> = ({
 
   return (
     <a href={href} className={linkClasses}>
-      <span className="link-underline font-montserrat">{text}</span>
+      <span className="link font-montserrat">{text}</span>
     </a>
   );
 };

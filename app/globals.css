@@ -6,10 +6,6 @@ body {
   @apply bg-body font-raleway text-base font-normal text-black-light;
 }
 
-.common-transition {
-  @apply transition duration-300 ease-in-out;
-}
-
 .visually-hidden {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
@@ -18,6 +14,10 @@ body {
   height: 1px !important;
   width: 1px !important;
   overflow: hidden;
+}
+
+.common-transition {
+  @apply transition duration-300 ease-in-out;
 }
 
 .section {
@@ -49,20 +49,20 @@ body {
   @apply xl:bg-body xl:text-black-light xl:hover:bg-black-light xl:hover:text-white xl:focus:bg-black-light xl:focus:text-white xl:active:bg-black-light xl:active:text-white;
 }
 
-.link-underline {
+.link {
   @apply relative font-medium no-underline before:content-[""];
 }
 
-.link-underline::before {
+.link::before {
   @apply common-transition absolute bottom-[-3px] left-0 block h-[1.2px] w-full scale-x-0 bg-black-light;
 }
 
-a:hover .link-underline::before,
-a:focus .link-underline::before,
-a:active .link-underline:before,
-.link-underline:hover::before,
-.link-underline:focus::before,
-.link-underline:active:before {
+a:hover .link::before,
+a:focus .link::before,
+a:active .link:before,
+.link:hover::before,
+.link:focus::before,
+.link:active:before {
   @apply scale-x-100;
 }
 
