@@ -1,7 +1,7 @@
-export type FooterNavRowProps = {
+export type TranslationsType = {
   nav_text: string;
   nav: {
     name: string;
-    href: string;
+    href?: string;
   }[];
 };
