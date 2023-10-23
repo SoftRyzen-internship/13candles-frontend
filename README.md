@@ -197,4 +197,20 @@ component `Heading`
 | `href`      | —       | Optional. If provided, the button will perform a smooth scroll to the specified section on the page. |
 | `className` | —       | Optional. Add a custom or additional CSS class if needed.                                            |
 
+### `SideMenu`
+
+| Prop           | Default | Description                                               |
+| -------------- | ------- | --------------------------------------------------------- |
+| `links`        | `[]`    | Required. Array of navigations links.                     |
+| `btnAriaOpen`  | —       | Required. Aria text when menu opened.                     |
+| `btnAriaClose` | —       | Required. Aria text when menu closed.                     |
+| `className`    | —       | Optional. Add a custom or additional CSS class if needed. |
+
+### `NavLinks`
+
+| Prop        | Default | Description                                               |
+| ----------- | ------- | --------------------------------------------------------- | --- |
+| `links`     | `[]`    | Required. Array of navigations links.                     |
+| `className` | —       | Optional. Add a custom or additional CSS class if needed. |     |
+
 ---
