@@ -3,7 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 import { smoothScroll } from '@/utils';
-import { ButtonProps } from '@/types';
+import { ButtonProps } from '@/components/ui/Button/types';
 
 export const Button: React.FC<ButtonProps> = ({
   tag: Tag = 'a',
