@@ -171,8 +171,8 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Internationalization
 
 If you want to add new text data and use it, create json files with same names
-inside 'messages' directory in every folder with locale name ├── app ├──
-messages ├── en ├── home.json ├── uk ├── home.json
+inside 'messages' directory in every folder with locale name app/ │ └───
+messages/ │ ├─── en/ │ └── home.json │ └─── uk/ └── home.json
 
 ❗️Then spread file to messages object inside getRequestConfig in i18n.ts file to
 merge your separate file to the big one json.
