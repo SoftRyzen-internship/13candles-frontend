@@ -22,14 +22,14 @@ const Example = () => {
   const onModalClose = () => setShowModal(false);
   const onModalOpen = ()=> setShowModal(true)
 
-  
+
   return (
     <>
       <button onClick={) => {
         onModalOpen();
         setTypeContent("basket")
       }}> Show modal </button>
-              
+
           <Portal onModalClose={onModalClose} showModal={showModal}>
             <ModalWindow className="text-black" onModalClose={onModalClose} showModal={showModal}>
               {typeContent === "basket" && <div className="h-[200px] ">content of basket</div>}

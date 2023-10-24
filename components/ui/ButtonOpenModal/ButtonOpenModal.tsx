@@ -1,6 +1,4 @@
-
 import React from 'react';
-
 
 import { ButtonProps } from './types';
 
@@ -10,16 +8,17 @@ export const ButtonOpenModal: React.FC<ButtonProps> = ({
   onModalOpen,
   setTypeContent,
   typeContent,
-
 }) => {
- const content = !!setTypeContent && !!typeContent
+  const content = !!setTypeContent && !!typeContent;
   return (
     <button
-      type='button'
+      type="button"
       onClick={() => {
         onModalOpen();
-       
-         {content && setTypeContent(typeContent)}
+
+        {
+          content && setTypeContent(typeContent);
+        }
       }}
       className={className}
     >

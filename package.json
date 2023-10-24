@@ -1,5 +1,6 @@
 {
   "name": "13candles-frontend",
+  "prettier": "./.prettierrc.json",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -43,7 +44,7 @@
     "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.3",
     "postcss": "^8",
-    "prettier": "3.0.3",
+    "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss": "^3",
     "typescript": "^5"

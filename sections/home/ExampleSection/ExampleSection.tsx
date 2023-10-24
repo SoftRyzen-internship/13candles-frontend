@@ -3,13 +3,10 @@ import Link from 'next/link';
 import BusinessIcon from '@/public/icons/icon_businesscase.svg';
 
 import { TranslationSwitcher } from '@/components/TranslationSwitcherButton';
-import { Information } from "@/components/Information";
-import { BasketButton } from "@/components/ui/BasketButton";
-
+import { Information } from '@/components/Information';
+import { BasketButton } from '@/components/ui/BasketButton';
 
 export const ExampleSection = () => {
-
-
   return (
     <section className="section xl:pb-12 xl:pt-10">
       <div className="container">
@@ -34,7 +31,10 @@ export const ExampleSection = () => {
         <a className="link" href="./">
           link with underline
         </a>
-        <Link href="./" className="flex w-fit items-center justify-center gap-2">
+        <Link
+          href="./"
+          className="flex w-fit items-center justify-center gap-2"
+        >
           <BusinessIcon width="24" height="24" />
           <span className="link">Для Бізнесу</span>
         </Link>
@@ -44,9 +44,7 @@ export const ExampleSection = () => {
         <Information />
 
         <BasketButton />
-
       </div>
     </section>
-  )
+  );
 };
-
