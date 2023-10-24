@@ -71,7 +71,7 @@ a:active .link:before,
 .swiper-button-prev::after,
 .swiper-button-next::after {
   content: url('/icons/icon_arrow.svg') !important;
-  @apply common-transition absolute top-0 opacity-25 hover:opacity-100 notXl:hidden;
+  @apply common-transition absolute top-0 opacity-25 hover:opacity-100;
 }
 
 .swiper-button-prev::after {

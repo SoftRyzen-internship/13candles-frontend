@@ -3,6 +3,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
+import { desktop, mobile, tablet } from '@/data/screens';
 import { SliderProps } from './types';
 
 import 'swiper/css';
@@ -15,24 +16,46 @@ export const Slider: React.FC<SliderProps> = ({
   element: Element,
   isLoop = false,
   isAutoplay = false,
-  isNavigation = false,
   isPagination = false,
   isInteractive = false,
+  isNavigation = false,
+  navigationBreakpoints = {
+    isMobile: true,
+    isTablet: true,
+    isDesktop: true,
+  },
 }) => {
+  const breakpoints = {
+    [mobile]: {
+      navigation: {
+        enabled: navigationBreakpoints.isMobile,
+      },
+    },
+    [tablet]: {
+      navigation: {
+        enabled: navigationBreakpoints.isTablet,
+      },
+    },
+    [desktop]: {
+      navigation: {
+        enabled: navigationBreakpoints.isDesktop,
+      },
+    },
+  };
+
   return (
     <Swiper
       modules={[Autoplay, Navigation, Pagination]}
       autoplay={isAutoplay}
       loop={isLoop}
-      navigation={{
-        enabled: isNavigation,
-      }}
       pagination={{
         enabled: isPagination,
         type: 'bullets',
       }}
       allowTouchMove={isInteractive}
       grabCursor={isInteractive}
+      navigation={isNavigation}
+      breakpoints={breakpoints}
     >
       {data.map((props, index) => (
         <SwiperSlide key={index}>

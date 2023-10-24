@@ -25,8 +25,13 @@ export const BannerSlider = () => {
       element={Banner}
       isAutoplay={true}
       isLoop={true}
-      isNavigation={true}
       isPagination={true}
+      isNavigation={true}
+      navigationBreakpoints={{
+        isMobile: false,
+        isTablet: false,
+        isDesktop: true,
+      }}
     />
   );
 };
