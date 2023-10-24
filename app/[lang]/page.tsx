@@ -2,6 +2,7 @@ import { getDictionary } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 import { ExampleSection } from '@/sections/home/ExampleSection';
 import { TranslationSwitcher } from '@/components/TranslationSwitcher';
+import { AboutSection } from '@/sections/home/AboutSection';
 
 export default async function Home({
   params: { lang },
@@ -13,7 +14,8 @@ export default async function Home({
   return (
     <main>
       <ExampleSection />
-      <TranslationSwitcher lang={allData.header.language} />
+      {/* <TranslationSwitcher lang={header.language} /> */}
+      <AboutSection about={allData.about} />
     </main>
   );
 }
