@@ -75,11 +75,11 @@ a:active .link:before,
 }
 
 .swiper-button-prev::after {
-  @apply right-0 rotate-180;
+  @apply -right-2 rotate-180;
 }
 
 .swiper-button-next::after {
-  @apply left-0;
+  @apply -left-2;
 }
 
 .swiper-pagination-bullet {

@@ -17,6 +17,7 @@ export const Slider: React.FC<SliderProps> = ({
   isAutoplay = false,
   isNavigation = false,
   isPagination = false,
+  isInteractive = false,
 }) => {
   return (
     <Swiper
@@ -30,6 +31,8 @@ export const Slider: React.FC<SliderProps> = ({
         enabled: isPagination,
         type: 'bullets',
       }}
+      allowTouchMove={isInteractive}
+      grabCursor={isInteractive}
     >
       {data.map((props, index) => (
         <SwiperSlide key={index}>

@@ -5,4 +5,5 @@ export interface SliderProps {
   isAutoplay?: boolean;
   isNavigation?: boolean;
   isPagination?: boolean;
+  isInteractive?: boolean;
 }
