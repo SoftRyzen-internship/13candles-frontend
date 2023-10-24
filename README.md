@@ -223,6 +223,14 @@ component `Heading`
 | `className`   | `undefined` | add custom or additional css class you'd need   |
 | `data-shadow` | `undefined` | add text as a shadow decoration of the element  |
 
+- ### Logo
+
+| Prop        | Default  | Description                                   |
+| ----------- | -------- | --------------------------------------------- |
+| `position`  | `header` | place, where logo used                        |
+| `aria`      | `''`     | logo aria-label                               |
+| `className` | `''`     | add custom or additional css class you'd need |
+
 - ### `Button`
 
 | Prop         | Default | Description                                                                                          |
@@ -234,5 +242,18 @@ component `Heading`
 | `buttonType` | —       | Optional. Define the type of the button (`button`, `submit`). Can be used with `button` .            |
 | `disabled`   | —       | Optional. Determine if the button is disabled. Can be used with `button`.                            |
 | `onClick`    | —       | Optional. A callback to be triggered when the button is clicked. Can used with both `a` and `button` |
+
+- ### Slider
+
+| Prop            | Default     | Description                                                                                |
+| --------------- | ----------- | ------------------------------------------------------------------------------------------ |
+| `element`       | `undefined` | required, Functional Component that is rendered inside each slide                          |
+| `data`          | `undefined` | required, data that is Used inside the Functinal Component you provided via "element" prop |
+| `isLoop`        | `false`     | set to true to enable continuous loop mode                                                 |
+| `isAutoplay`    | `false`     | set to true to enable autoplay                                                             |
+| `isNavigation`  | `false`     | set to true to enable navigation                                                           |
+| `isPagination`  | `false`     | set to true to enable pagination                                                           |
+| `isInteractive` | `false`     | set to true to enable swipe on touch and grabcursor                                        |
+| `className`     | `undefined` | add custom or additional css class you'd need                                              |
 
 ---
