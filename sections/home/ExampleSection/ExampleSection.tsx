@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/Button';
 import { ContactList } from '@/components/ContactList';
-import { TranslationSwitcher } from '@/components/TranslationSwitcherButton';
 import { SideMenu } from '@/components/SideMenu';
+import TranslationSwitcher from '@/components/TranslationSwitcher/TranslationSwitcher';
+import { Button } from '@/components/ui/Button';
 import { Logo } from '@/components/ui/Logo';
 
 const data = {
@@ -68,7 +68,7 @@ export const ExampleSection = () => (
       />
 
       <ContactList contacts={data.contacts} />
-      <TranslationSwitcher />
+      <TranslationSwitcher lang="uk" />
 
       <div id="catalog" className="w-74 h-74 mt-[500px]">
         Scroll test

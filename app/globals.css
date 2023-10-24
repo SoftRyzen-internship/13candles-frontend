@@ -58,7 +58,7 @@ body {
 }
 
 a:hover .link::before,
-a:focus .link::before,
+a:focus-visible .link::before,
 a:active .link:before,
 .link:hover::before,
 .link:focus::before,
