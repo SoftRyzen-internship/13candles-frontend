@@ -70,11 +70,11 @@ body {
 }
 
 a:hover .link::before,
-a:focus .link::before,
 a:active .link:before,
+a:focus-visible .link::before,
 .link:hover::before,
-.link:focus::before,
-.link:active:before {
+.link:active:before,
+.link:focus-visible::before {
   @apply scale-x-100;
 }
 
