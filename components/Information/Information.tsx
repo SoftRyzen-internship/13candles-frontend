@@ -8,6 +8,8 @@ import { ModalWindow } from '@/components/ui/ModalWindow';
 
 import { IInfoProps } from './type';
 
+import { arrayContent } from './arrayContent';
+
 export const Information = ({ info_text, info }: IInfoProps) => {
   const [showModal, setShowModal] = useState(false);
   const [typeContent, setTypeContent] = useState('');
@@ -20,46 +22,18 @@ export const Information = ({ info_text, info }: IInfoProps) => {
         {info_text}
       </h2>
       <ul className="flex flex-col gap-2 text-center text-base md:gap-3 md:text-start">
-        <li>
-          <ButtonOpenModal
-            className="link "
-            setTypeContent={setTypeContent}
-            onModalOpen={onModalOpen}
-            typeContent="contract"
-          >
-            {info[0]}
-          </ButtonOpenModal>
-        </li>
-        <li>
-          <ButtonOpenModal
-            className="link"
-            setTypeContent={setTypeContent}
-            onModalOpen={onModalOpen}
-            typeContent="guarantees"
-          >
-            {info[1]}
-          </ButtonOpenModal>
-        </li>
-        <li>
-          <ButtonOpenModal
-            className="link"
-            setTypeContent={setTypeContent}
-            onModalOpen={onModalOpen}
-            typeContent="delivery"
-          >
-            {info[2]}
-          </ButtonOpenModal>
-        </li>
-        <li>
-          <ButtonOpenModal
-            className="link"
-            setTypeContent={setTypeContent}
-            onModalOpen={onModalOpen}
-            typeContent="rules"
-          >
-            {info[3]}
-          </ButtonOpenModal>
-        </li>
+        {info.map((el, ind) => (
+          <li key={ind}>
+            <ButtonOpenModal
+              className="link "
+              setTypeContent={setTypeContent}
+              onModalOpen={onModalOpen}
+              typeContent={arrayContent[ind]}
+            >
+              {el}
+            </ButtonOpenModal>
+          </li>
+        ))}
       </ul>
       <Portal onModalClose={onModalClose} showModal={showModal}>
         <ModalWindow
