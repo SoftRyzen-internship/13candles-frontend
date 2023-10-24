@@ -239,3 +239,32 @@ component `Heading`
 | `onClick`    | —       | Optional. A callback to be triggered when the button is clicked. Can used with both `a` and `button` |
 
 ---
+
+---
+
+### `Button`
+
+| Prop        | Default | Description                                                                                          |
+| ----------- | ------- | ---------------------------------------------------------------------------------------------------- |
+| `tag`       | `a`     | Choose the tag for your button: `a`, `button`. By default, it's a hyperlink (`a`).                   |
+| `label`     | —       | Required. The text of the button.                                                                    |
+| `href`      | —       | Optional. If provided, the button will perform a smooth scroll to the specified section on the page. |
+| `className` | —       | Optional. Add a custom or additional CSS class if needed.                                            |
+
+### `SideMenu`
+
+| Prop           | Default | Description                                               |
+| -------------- | ------- | --------------------------------------------------------- |
+| `links`        | `[]`    | Required. Array of navigations links.                     |
+| `btnAriaOpen`  | —       | Required. Aria text when menu opened.                     |
+| `btnAriaClose` | —       | Required. Aria text when menu closed.                     |
+| `className`    | `''`    | Optional. Add a custom or additional CSS class if needed. |
+
+### `NavLinks`
+
+| Prop        | Default | Description                                               |
+| ----------- | ------- | --------------------------------------------------------- | --- |
+| `links`     | `[]`    | Required. Array of navigations links.                     |
+| `className` | `''`    | Optional. Add a custom or additional CSS class if needed. |     |
+
+---
