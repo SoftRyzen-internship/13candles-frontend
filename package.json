@@ -1,6 +1,5 @@
 {
   "name": "13candles-frontend",
-  "prettier": "./.prettierrc.json",
   "version": "0.1.0",
   "private": true,
   "scripts": {
