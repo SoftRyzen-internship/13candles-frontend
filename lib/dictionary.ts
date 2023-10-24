@@ -3,7 +3,6 @@ import type { Locale } from '@/i18n.config';
 
 const dictionaries = {
   en: async () => ({
-    ...(await import(`@/dictionaries/en/home.json`)).default,
     ...(await import(`@/dictionaries/en/delivery_and_payment.json`)).default,
     ...(await import(`@/dictionaries/en/home_page.json`)).default,
     ...(await import(`@/dictionaries/en/offer_contract.json`)).default,
@@ -12,7 +11,6 @@ const dictionaries = {
   }),
 
   uk: async () => ({
-    ...(await import(`@/dictionaries/uk/home.json`)).default,
     ...(await import(`@/dictionaries/uk/delivery_and_payment.json`)).default,
     ...(await import(`@/dictionaries/uk/home_page.json`)).default,
     ...(await import(`@/dictionaries/uk/offer_contract.json`)).default,
