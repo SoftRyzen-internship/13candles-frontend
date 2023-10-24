@@ -1,6 +1,6 @@
 "use client"
 
-import  { useState } from 'react';
+import { useState } from 'react';
 
 import BasketIcon from "/public//icons//icon_cart.svg"
 
@@ -20,7 +20,7 @@ export const BasketButton = () => {
       <ButtonOpenModal className="w-7 h-7" onModalOpen={onModalOpen} ><BasketIcon /></ButtonOpenModal>
       <Portal onModalClose={onModalClose} showModal={showModal}>
         <ModalWindow className="text-black" onModalClose={onModalClose} showModal={showModal}>
-         <div>content of basket</div> 
+          <div>content of basket</div>
         </ModalWindow>
       </Portal>
     </>

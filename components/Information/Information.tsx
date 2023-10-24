@@ -7,6 +7,7 @@ import { ButtonOpenModal } from '@/components/ui/ButtonOpenModal';
 import { Portal } from '@/components/ui/Portal';
 import { ModalWindow } from '@/components/ui/ModalWindow';
 
+import data from "@/dictionaries/uk/home_page.json"
 
 export const Information = () => {
 
@@ -15,19 +16,21 @@ export const Information = () => {
   const onModalClose = () => setShowModal(false);
   const onModalOpen = () => setShowModal(true)
 
+  const { footer: {info} } = data;
+ 
   return (
     <>
       <ul >
         <li>
-          <ButtonOpenModal className='link' setTypeContent={setTypeContent} onModalOpen={onModalOpen} typeContent="contract">Договір оферти</ButtonOpenModal>
+          <ButtonOpenModal className='link' setTypeContent={setTypeContent} onModalOpen={onModalOpen} typeContent="contract">{ info[0]}</ButtonOpenModal>
         </li>
-        <li>  <ButtonOpenModal className='link' setTypeContent={setTypeContent} onModalOpen={onModalOpen} typeContent="guarantees">Гарантії та повернення</ButtonOpenModal>
-        </li>
-        <li>
-          <ButtonOpenModal className='link' setTypeContent={setTypeContent} onModalOpen={onModalOpen} typeContent="delivery">Доставка і оплата</ButtonOpenModal>
+        <li>  <ButtonOpenModal className='link' setTypeContent={setTypeContent} onModalOpen={onModalOpen} typeContent="guarantees">{ info[1]}</ButtonOpenModal>
         </li>
         <li>
-          <ButtonOpenModal className='link' setTypeContent={setTypeContent} onModalOpen={onModalOpen} typeContent="rules">Правила користування сайтом</ButtonOpenModal>
+          <ButtonOpenModal className='link' setTypeContent={setTypeContent} onModalOpen={onModalOpen} typeContent="delivery">{ info[2]}</ButtonOpenModal>
+        </li>
+        <li>
+          <ButtonOpenModal className='link' setTypeContent={setTypeContent} onModalOpen={onModalOpen} typeContent="rules">{ info[3]}</ButtonOpenModal>
         </li>
       </ul>
       <Portal onModalClose={onModalClose} showModal={showModal}>

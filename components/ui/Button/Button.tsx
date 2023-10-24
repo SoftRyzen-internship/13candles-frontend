@@ -1,4 +1,5 @@
 'use client';
+
 import React from 'react';
 import classNames from 'classnames';
 
@@ -31,7 +32,12 @@ export const Button: React.FC<ButtonProps> = ({
       type={buttonType}
       disabled={disabled}
       className={btnStyles}
-      onClick={onClick}
+        onClick={onClick}
+        
+
+
+
+        
     >
       {label}
     </button>
