@@ -1,16 +1,12 @@
 import React from 'react';
 
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
 
-import { TranslationsType } from '@/components/FooterNavRow/types';
-import data from '@/data/footer.json';
+import { FooterNavRowProps } from '@/components/FooterNavRow/types';
 
-export const FooterNavRow: React.FC = () => {
-  const footerNavData = useTranslations(data.footer);
-
-  const navText = footerNavData(data.nav_text);
-  const nav = footerNavData.raw(data.nav) as TranslationsType['nav'];
+export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
+  const navText = data.nav_text;
+  const nav = data.nav;
 
   if (!nav || !Array.isArray(nav)) {
     return null;
@@ -22,8 +18,8 @@ export const FooterNavRow: React.FC = () => {
       <ul className="xl:grid xl:gap-3">
         {nav.map(item => (
           <li key={item.href || item.name}>
-            <Link href={item.href || '#'}>
-              <span className="link xl:font-medium">{item.name}</span>
+            <Link className="link xl:font-medium" href={item.href || '#'}>
+              {item.name}
             </Link>
           </li>
         ))}
