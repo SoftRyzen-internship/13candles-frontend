@@ -1,9 +1,7 @@
-// import { ExampleSection } from '@/sections/home/ExampleSection';
-
 import { getDictionary } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
-import TranslationSwitcher from '@/components/TranslationSwitcher/TranslationSwitcher';
 import { ExampleSection } from '@/sections/home/ExampleSection';
+import { TranslationSwitcher } from '@/components/TranslationSwitcher';
 
 export default async function Home({
   params: { lang },
