@@ -16,13 +16,14 @@ export const Information = () => {
   const onModalClose = () => setShowModal(false);
   const onModalOpen = () => setShowModal(true)
 
-  const { footer: {info} } = data;
+  const { footer: {info, info_text} } = data;
  
   return (
     <>
-      <ul >
+      <h2 className=' text-center mb-3 text-base font-bold md:text-start'>{info_text}</h2>
+      <ul className='flex flex-col gap-2 md:gap-3 text-center md:text-start text-base'>
         <li>
-          <ButtonOpenModal className='link' setTypeContent={setTypeContent} onModalOpen={onModalOpen} typeContent="contract">{ info[0]}</ButtonOpenModal>
+          <ButtonOpenModal className='link ' setTypeContent={setTypeContent} onModalOpen={onModalOpen} typeContent="contract">{ info[0]}</ButtonOpenModal>
         </li>
         <li>  <ButtonOpenModal className='link' setTypeContent={setTypeContent} onModalOpen={onModalOpen} typeContent="guarantees">{ info[1]}</ButtonOpenModal>
         </li>
