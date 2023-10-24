@@ -83,7 +83,7 @@ a:focus-visible .link::before,
 /* decor icons common */
 
 .decor {
-  @apply relative before:content-[""];
+  @apply relative block before:content-[""];
 }
 
 .decor::before {
