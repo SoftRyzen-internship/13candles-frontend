@@ -218,13 +218,21 @@ component `Heading`
 
 - ### Example
 
-| Prop          | Default     | Description                                     |
-| ------------- | ----------- | ----------------------------------------------- |
-| `tag`         | `h2`        | choose the tag of title you'd need: `h1` - `h3` |
-| `variant`     | `primary`   | `main`, `primary`, `secondary`, `tertiary`      |
-| `children`    | `undefined` | required, any content                           |
-| `className`   | `undefined` | add custom or additional css class you'd need   |
-| `data-shadow` | `undefined` | add text as a shadow decoration of the element  |
+| Prop          | Default   | Description                                     |
+| ------------- | --------- | ----------------------------------------------- |
+| `tag`         | `h2`      | choose the tag of title you'd need: `h1` - `h3` |
+| `variant`     | `primary` | `main`, `primary`, `secondary`, `tertiary`      |
+| `className`   | `''`      | add custom or additional css class you'd need   |
+| `children`    | —         | required, any content                           |
+| `data-shadow` | —         | add text as a shadow decoration of the element  |
+
+- ### Logo
+
+| Prop        | Default  | Description                                   |
+| ----------- | -------- | --------------------------------------------- |
+| `position`  | `header` | place, where logo used                        |
+| `aria`      | `''`     | logo aria-label                               |
+| `className` | `''`     | add custom or additional css class you'd need |
 
 - ### ExternalLink
 
@@ -232,12 +240,12 @@ A link componet that is created with tag "a" and has such attributes as
 rel="noopener noreferrer nofollow" and target="\_blank". Additionally, there is
 a decorative icon in the component.
 
-| Prop        | Default     | Description                                                                        |
-| ----------- | ----------- | ---------------------------------------------------------------------------------- |
-| `href`      | ``          | required, href for a link                                                          |
-| `icon`      | ``          | required, css className which should be used in globals.css to create a decor icon |
-| `text`      | ``          | required, any text content                                                         |
-| `className` | `undefined` | add custom or additional css class you'd need                                      |
+| Prop        | Default | Description                                                                        |
+| ----------- | ------- | ---------------------------------------------------------------------------------- |
+| `href`      | —       | Required, href for a link                                                          |
+| `icon`      | —       | Required, css className which should be used in globals,css to create a decor icon |
+| `text`      | —       | Required, any text content                                                         |
+| `className` | `''`    | Optional, add custom or additional css class you'd need                            |
 
 - ### `Button`
 
@@ -250,5 +258,21 @@ a decorative icon in the component.
 | `buttonType` | —       | Optional. Define the type of the button (`button`, `submit`). Can be used with `button` .            |
 | `disabled`   | —       | Optional. Determine if the button is disabled. Can be used with `button`.                            |
 | `onClick`    | —       | Optional. A callback to be triggered when the button is clicked. Can used with both `a` and `button` |
+
+- ### `SideMenu`
+
+| Prop           | Default | Description                                               |
+| -------------- | ------- | --------------------------------------------------------- |
+| `links`        | `[]`    | Required. Array of navigations links.                     |
+| `btnAriaOpen`  | —       | Required. Aria text when menu opened.                     |
+| `btnAriaClose` | —       | Required. Aria text when menu closed.                     |
+| `className`    | `''`    | Optional. Add a custom or additional CSS class if needed. |
+
+- ### `NavLinks`
+
+| Prop        | Default | Description                                               |
+| ----------- | ------- | --------------------------------------------------------- | --- |
+| `links`     | `[]`    | Required. Array of navigations links.                     |
+| `className` | `''`    | Optional. Add a custom or additional CSS class if needed. |     |
 
 ---

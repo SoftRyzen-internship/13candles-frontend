@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
+    "hamburger-react": "^2.5.0",
     "i18next": "^23.6.0",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.2",
@@ -24,13 +25,15 @@
     "next-i18next": "^14.0.3",
     "next-intl": "^3.0.0-beta.19",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-transition-group": "^4.4.8",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "autoprefixer": "^10",
