@@ -173,39 +173,30 @@ Open [http://localhost:3000](http://localhost:3000).
 If you want to add new text data and use it, create json files with same names
 inside 'messages' directory in every folder with locale name
 
-```plaintext
-app/
-│
-└─── messages/
-    │
-    ├─── en/
-    │    └── home.json
-    │
-    └─── uk/
-         └── home.json
-
-❗️Then spread file to messages object inside getRequestConfig in i18n.ts file to
-merge your separate file to the big one json.
-
-To use data from json files you need to include this hook to file component
-
+```
+├── app
+  ├── dictionaries
+    ├── en
+      ├── home.json
+    ├── uk
+      ├── home.json
 ```
 
-import { useTranslations } from 'next-intl';
+❗️Then spread file to messages object inside lib/dictionary.ts file to merge
+your separate file into one json.
+
+If you need to get access to translation file, get lang as a param into
+component and pass it through async function getDictionary. This function return
+a key from json as an object and you can use it as a simple object and put it as
+a props in children component.
 
 ```
-
-Get function this way and use it inside layout:
-
+const { about } = await getDictionary(lang);
 ```
 
-const t = useTranslations('Home');
-
-<h1>{t('title')}</h1>
 ```
-
-❗️ If you want to use translation in client component, simply pass it as a prop
-to it.
+<h1>{about.title}</h1>
+```
 
 ## 📚 Components API
 
@@ -246,5 +237,34 @@ component `Heading`
 | `buttonType` | —       | Optional. Define the type of the button (`button`, `submit`). Can be used with `button` .            |
 | `disabled`   | —       | Optional. Determine if the button is disabled. Can be used with `button`.                            |
 | `onClick`    | —       | Optional. A callback to be triggered when the button is clicked. Can used with both `a` and `button` |
+
+---
+
+---
+
+### `Button`
+
+| Prop        | Default | Description                                                                                          |
+| ----------- | ------- | ---------------------------------------------------------------------------------------------------- |
+| `tag`       | `a`     | Choose the tag for your button: `a`, `button`. By default, it's a hyperlink (`a`).                   |
+| `label`     | —       | Required. The text of the button.                                                                    |
+| `href`      | —       | Optional. If provided, the button will perform a smooth scroll to the specified section on the page. |
+| `className` | —       | Optional. Add a custom or additional CSS class if needed.                                            |
+
+### `SideMenu`
+
+| Prop           | Default | Description                                               |
+| -------------- | ------- | --------------------------------------------------------- |
+| `links`        | `[]`    | Required. Array of navigations links.                     |
+| `btnAriaOpen`  | —       | Required. Aria text when menu opened.                     |
+| `btnAriaClose` | —       | Required. Aria text when menu closed.                     |
+| `className`    | `''`    | Optional. Add a custom or additional CSS class if needed. |
+
+### `NavLinks`
+
+| Prop        | Default | Description                                               |
+| ----------- | ------- | --------------------------------------------------------- | --- |
+| `links`     | `[]`    | Required. Array of navigations links.                     |
+| `className` | `''`    | Optional. Add a custom or additional CSS class if needed. |     |
 
 ---

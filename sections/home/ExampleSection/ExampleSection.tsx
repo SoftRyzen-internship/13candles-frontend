@@ -1,8 +1,5 @@
 import Link from 'next/link';
 import BusinessIcon from '@/public/icons/icon_businesscase.svg';
-import { FooterNavRow } from '@/components/FooterNavRow';
-import { TranslationSwitcher } from '@/components/TranslationSwitcherButton';
-import temporaryData from '@/dictionaries/en/home_page.json';
 
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
@@ -32,8 +29,6 @@ export const ExampleSection = () => (
         <BusinessIcon width="24" height="24" />
         <span className="link">Для Бізнесу</span>
       </Link>
-      <FooterNavRow data={temporaryData.footer} />
-      <TranslationSwitcher />
     </div>
   </section>
 );
