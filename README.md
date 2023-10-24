@@ -224,3 +224,19 @@ component `Heading`
 | `data-shadow` | `undefined` | add text as a shadow decoration of the element  |
 
 ---
+
+---
+
+### `Button`
+
+| Prop         | Default | Description                                                                                          |
+| ------------ | ------- | ---------------------------------------------------------------------------------------------------- |
+| `tag`        | `a`     | Choose the tag for your button: `a`, `button`. By default, it's a hyperlink (`a`).                   |
+| `label`      | —       | Required. The text of the button.                                                                    |
+| `href`       | —       | Optional. If provided, the button will perform a smooth scroll to the specified section on the page. |
+| `className`  | —       | Optional. Add a custom or additional CSS class if needed.                                            |
+| `buttonType` | —       | Optional. Define the type of the button (`button`, `submit`). Can be used with `button` .            |
+| `disabled`   | —       | Optional. Determine if the button is disabled. Can be used with `button`.                            |
+| `onClick`    | —       | Optional. A callback to be triggered when the button is clicked. Can used with both `a` and `button` |
+
+---
