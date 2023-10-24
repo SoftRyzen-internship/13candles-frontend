@@ -27,6 +27,7 @@ export const BannerSlider = () => {
       isLoop={true}
       isPagination={true}
       isNavigation={true}
+      isInteractive={true}
       navigationBreakpoints={{
         isMobile: false,
         isTablet: false,
