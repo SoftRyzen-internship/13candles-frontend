@@ -1,5 +1,3 @@
-// import { ExampleSection } from '@/sections/home/ExampleSection';
-
 import { getDictionary } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 import TranslationSwitcher from '@/components/TranslationSwitcher/TranslationSwitcher';

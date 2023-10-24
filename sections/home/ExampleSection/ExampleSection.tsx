@@ -1,7 +1,9 @@
 import { ContactList } from '@/components/ContactList';
 import { SideMenu } from '@/components/SideMenu';
+import { BusinessLink } from '@/components/ui/BusinessLink';
 import { Button } from '@/components/ui/Button';
 import { Logo } from '@/components/ui/Logo';
+import { ABOUT, CATALOG } from '@/data/routes';
 
 const data = {
   contacts: [
@@ -19,17 +21,18 @@ const data = {
   sidemenu: [
     {
       name: 'Catalog',
-      href: '/catalog',
+      href: CATALOG,
     },
     {
       name: 'About Us',
-      href: '/about',
+      href: ABOUT,
     },
   ],
   button: {
     text: 'Каталог',
-    href: 'catalog',
+    href: CATALOG,
   },
+  businessLinkText: 'Для бізнесу',
 };
 
 export const ExampleSection = () => (
@@ -63,9 +66,11 @@ export const ExampleSection = () => (
         href={data.button.href}
       />
       <ContactList contacts={data.contacts} />
-      <div id="catalog" className="w-74 h-74 mt-[500px]">
+      <div id={CATALOG} className="w-74 h-74 mt-[500px]">
         Scroll test
       </div>
+      <BusinessLink isIcon={true} text={data.businessLinkText} />
+      <BusinessLink isIcon={false} text={data.businessLinkText} />
     </div>
   </section>
 );

@@ -1,18 +1,17 @@
 import Link from 'next/link';
 import classNames from 'classnames';
 import { BusinessLinkProps } from './types';
+import { FOR_BUSINESS } from '@/data/routes';
 
-const businessLink = {
-  href: '/business',
-  text: 'Для Бізнесу',
-};
-
-export const BusinessLink: React.FC<BusinessLinkProps> = ({ className }) => {
-  const { href, text } = businessLink;
-  const linkClasses = classNames('decor case', className);
+export const BusinessLink: React.FC<BusinessLinkProps> = ({
+  isIcon = false,
+  text,
+  className,
+}) => {
+  const linkClasses = classNames({ 'decor case': isIcon }, className);
 
   return (
-    <Link href={href} className={linkClasses}>
+    <Link href={FOR_BUSINESS} className={linkClasses}>
       <span className="link">{text}</span>
     </Link>
   );
