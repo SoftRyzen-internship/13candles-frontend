@@ -6,7 +6,7 @@ import { NavLinksProps } from './types';
 export const NavLinks: React.FC<NavLinksProps> = ({
   links = [],
   onClick,
-  className,
+  className = '',
 }) => {
   return (
     <ul className={`grid gap-4 md:flex  smOnly:text-lg ${className}`}>

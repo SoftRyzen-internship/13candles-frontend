@@ -11,7 +11,7 @@ export const SideMenu: React.FC<SideMenuProps> = ({
   links = [],
   btnAriaOpen,
   btnAriaClose,
-  className,
+  className = '',
 }) => {
   const [isOpen, setOpen] = useState(false);
   const nodeRef = useRef(null);

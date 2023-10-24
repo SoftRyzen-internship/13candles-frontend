@@ -1,9 +1,29 @@
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
 import BusinessIcon from '@/public/icons/icon_businesscase.svg';
+import { TranslationSwitcher } from '@/components/TranslationSwitcherButton';
+import { SideMenu } from '@/components/SideMenu';
+import { Logo } from '@/components/ui/Logo';
 
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
+    <div className="container flex items-center justify-between">
+      <SideMenu
+        btnAriaClose="menu open"
+        btnAriaOpen="menu close"
+        links={[
+          {
+            name: 'Catalog',
+            href: '/catalog',
+          },
+          {
+            name: 'About Us',
+            href: '/about',
+          },
+        ]}
+      />
+      <Logo aria="logo" position="header" />
+    </div>
     <div className="container">
       <div className="mb-10 flex flex-col gap-5">
         <h1 className="visually-hidden">I am a visually hidden heading</h1>
@@ -40,6 +60,7 @@ export const ExampleSection = () => (
         <BusinessIcon width="24" height="24" />
         <span className="link">Для Бізнесу</span>
       </Link>
+      <TranslationSwitcher />
     </div>
   </section>
 );
