@@ -1,6 +1,5 @@
 import { ContactList } from '@/components/ContactList';
 import { SideMenu } from '@/components/SideMenu';
-import TranslationSwitcher from '@/components/TranslationSwitcher/TranslationSwitcher';
 import { Button } from '@/components/ui/Button';
 import { Logo } from '@/components/ui/Logo';
 
@@ -46,7 +45,6 @@ export const ExampleSection = () => (
       <h2 className="section-title-secondary">
         section-title-secondary - e.g. Ми можемо бути корисними
       </h2>
-
       <div className="flex items-center justify-between">
         <SideMenu
           btnAriaClose="menu open"
@@ -55,24 +53,20 @@ export const ExampleSection = () => (
         />
         <Logo aria="logo" position="header" />
       </div>
-
       <a className="link w-fit" href="./">
         Договір оферти
       </a>
-
       <Button
         className="m-10 max-w-[280px] md:max-w-[172px]"
         tag="a"
         label={data.button.text}
         href={data.button.href}
       />
-
       <ContactList contacts={data.contacts} />
-      <TranslationSwitcher lang="uk" />
-
       <div id="catalog" className="w-74 h-74 mt-[500px]">
         Scroll test
       </div>
+      <ContactList contacts={data.contacts} />1
     </div>
   </section>
 );

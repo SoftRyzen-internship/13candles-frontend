@@ -207,7 +207,7 @@ Each component has its own API. You can find it in the component's folder. This
 is a list of more common components and their API. This is example of API for
 component `Heading`
 
-- ### Example
+- ### Heading (example)
 
 | Prop          | Default   | Description                                     |
 | ------------- | --------- | ----------------------------------------------- |
@@ -224,6 +224,25 @@ component `Heading`
 | `position`  | `header` | place, where logo used                        |
 | `aria`      | `''`     | logo aria-label                               |
 | `className` | `''`     | add custom or additional css class you'd need |
+
+- ### ContactLink
+
+| Prop        | Default     | Description                                                 |
+| ----------- | ----------- | ----------------------------------------------------------- |
+| `href`      | ``          | required, href for a link                                   |
+| `icon`      | ``          | required, css className which should be used in globals.css |
+|             |             | to create a decor icon                                      |
+| `text`      | ``          | required, any text content                                  |
+| `className` | `undefined` | add custom or additional css class you'd need               |
+
+- ### CategoryCard
+
+| Prop        | Default     | Description                                    |
+| ----------- | ----------- | ---------------------------------------------- |
+| `href`      | ``          | required, href for a link                      |
+| `text`      | ``          | required, any text content                     |
+| `image`     | ``          | required, object with src and alt for an image |
+| `className` | `undefined` | add custom or additional css class you'd need  |
 
 - ### ExternalLink
 
