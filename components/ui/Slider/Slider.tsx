@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export const Slider: React.FC<SliderProps> = ({
-  data,
+  data = [],
   element: Element,
   isLoop = false,
   isAutoplay = false,
