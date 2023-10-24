@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import { Montserrat, Raleway } from 'next/font/google';
-import './globals.css';
+import { notFound } from 'next/navigation';
+import { Locale } from '../../types/locale';
+
+import '../globals.css';
+
+const locales: Locale[] = ['en', 'uk'];
 
 const montserrat = Montserrat({
   subsets: ['cyrillic', 'latin'],
@@ -20,11 +25,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode;
+  params: { locale: Locale };
 }) {
+  const isValidLocale = locales.some(cur => cur === locale);
+  if (!isValidLocale) notFound();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${montserrat.variable} ${raleway.variable}`}>
         {children}
       </body>
