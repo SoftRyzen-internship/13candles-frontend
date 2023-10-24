@@ -6,6 +6,22 @@ body {
   @apply bg-body font-raleway text-base font-normal text-black-light;
 }
 
+/* === ANIMATIONS === */
+
+.common-transition {
+  @apply transition duration-300 ease-in-out;
+}
+
+.zoom-image {
+  @apply common-transition;
+}
+
+.zoom:hover .zoom-image {
+  @apply scale-[1.15];
+}
+
+/* === COMMON STYLES === */
+
 .visually-hidden {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
@@ -14,10 +30,6 @@ body {
   height: 1px !important;
   width: 1px !important;
   overflow: hidden;
-}
-
-.common-transition {
-  @apply transition duration-300 ease-in-out;
 }
 
 .section {
@@ -58,11 +70,11 @@ body {
 }
 
 a:hover .link::before,
-a:focus .link::before,
 a:active .link:before,
+a:focus-visible .link::before,
 .link:hover::before,
-.link:focus::before,
-.link:active:before {
+.link:active:before,
+.link:focus-visible::before {
   @apply scale-x-100;
 }
 
@@ -71,7 +83,7 @@ a:active .link:before,
 /* decor icons common */
 
 .decor {
-  @apply relative before:content-[""];
+  @apply relative block before:content-[""];
 }
 
 .decor::before {
