@@ -103,7 +103,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ---
 
-**💁‍♀️ Reusable css classes should be placed in the `styles` folder .**
+**💁‍♀️ Reusable css classes should be placed in the `app` folder .**
 
 <details>
 
@@ -135,32 +135,35 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```
 
-|-- components -> folder with pages
-  | -- NamePage -> folder with components
-    |-- NameComponent -> folders for each component
-      |-- NameComponent.tsx -> main component
-      |-- NameComponent.module.css -> css styles for component
-      |-- index.ts -> file for re-export
-      |-- type.ts -> file for type and interface
-
- |-- components/ui -> folder with reusable components
-  |-- NameComponent -> folders for each component
+|-- components -> folder with components
+  |-- NameComponent -> folder for a component
     |-- NameComponent.tsx -> main component
-    |-- NameComponent.module.css -> css styles for component
+    |-- NameComponent.module.css -> css styles for the component
+    |-- types.ts -> file for the component types
     |-- index.ts -> file for re-export
-    |-- type.ts -> file for type and interface
 
-|-- views -> folder with pages
-  |--NamePage -> folder with page sections
+|-- components/ui -> folder with reusable components
+  |-- NameComponent -> folder for a component
+    |-- NameComponent.tsx -> main component
+    |-- NameComponent.module.css -> css styles for the component
+    |-- types.ts -> file for the component types
+    |-- index.ts -> file for re-export
+
+|-- sections -> folder with pages
+  |--NamePage -> folder with certain page sections
+    |-- NameSectionComponent -> folders for each section component
+      |-- NameSectionComponent.tsx -> main section component
+      |-- NameSectionComponent.module.css -> css styles for the section component
+      |-- index.ts -> file for re-export
 
 |-- layout -> components that are used as a main template
 |-- app -> pages and routing
 |-- public -> static files
-|-- styles -> global styles
 
 <!-- You can create these folders already in work -->
 |-- data -> data for the project ( from graphql, json, etc.)
 |-- hooks -> custom users hooks
+|-- types -> types for data
 |-- utils -> helpers, functions, etc.
 ```
 
@@ -206,13 +209,13 @@ component `Heading`
 
 - ### Example
 
-| Prop          | Default     | Description                                     |
-| ------------- | ----------- | ----------------------------------------------- |
-| `tag`         | `h2`        | choose the tag of title you'd need: `h1` - `h3` |
-| `variant`     | `primary`   | `main`, `primary`, `secondary`, `tertiary`      |
-| `children`    | `undefined` | required, any content                           |
-| `className`   | `undefined` | add custom or additional css class you'd need   |
-| `data-shadow` | `undefined` | add text as a shadow decoration of the element  |
+| Prop          | Default   | Description                                     |
+| ------------- | --------- | ----------------------------------------------- |
+| `tag`         | `h2`      | choose the tag of title you'd need: `h1` - `h3` |
+| `variant`     | `primary` | `main`, `primary`, `secondary`, `tertiary`      |
+| `className`   | `''`      | add custom or additional css class you'd need   |
+| `children`    | —         | required, any content                           |
+| `data-shadow` | —         | add text as a shadow decoration of the element  |
 
 - ### Logo
 
@@ -222,11 +225,20 @@ component `Heading`
 | `aria`      | `''`     | logo aria-label                               |
 | `className` | `''`     | add custom or additional css class you'd need |
 
----
+- ### ExternalLink
 
----
+A link componet that is created with tag "a" and has such attributes as
+rel="noopener noreferrer nofollow" and target="\_blank". Additionally, there is
+a decorative icon in the component.
 
-### `Button`
+| Prop        | Default | Description                                                                        |
+| ----------- | ------- | ---------------------------------------------------------------------------------- |
+| `href`      | —       | Required, href for a link                                                          |
+| `icon`      | —       | Required, css className which should be used in globals,css to create a decor icon |
+| `text`      | —       | Required, any text content                                                         |
+| `className` | `''`    | Optional, add custom or additional css class you'd need                            |
+
+- ### `Button`
 
 | Prop         | Default | Description                                                                                          |
 | ------------ | ------- | ---------------------------------------------------------------------------------------------------- |
@@ -238,20 +250,7 @@ component `Heading`
 | `disabled`   | —       | Optional. Determine if the button is disabled. Can be used with `button`.                            |
 | `onClick`    | —       | Optional. A callback to be triggered when the button is clicked. Can used with both `a` and `button` |
 
----
-
----
-
-### `Button`
-
-| Prop        | Default | Description                                                                                          |
-| ----------- | ------- | ---------------------------------------------------------------------------------------------------- |
-| `tag`       | `a`     | Choose the tag for your button: `a`, `button`. By default, it's a hyperlink (`a`).                   |
-| `label`     | —       | Required. The text of the button.                                                                    |
-| `href`      | —       | Optional. If provided, the button will perform a smooth scroll to the specified section on the page. |
-| `className` | —       | Optional. Add a custom or additional CSS class if needed.                                            |
-
-### `SideMenu`
+- ### `SideMenu`
 
 | Prop           | Default | Description                                               |
 | -------------- | ------- | --------------------------------------------------------- |
@@ -260,7 +259,7 @@ component `Heading`
 | `btnAriaClose` | —       | Required. Aria text when menu closed.                     |
 | `className`    | `''`    | Optional. Add a custom or additional CSS class if needed. |
 
-### `NavLinks`
+- ### `NavLinks`
 
 | Prop        | Default | Description                                               |
 | ----------- | ------- | --------------------------------------------------------- | --- |
