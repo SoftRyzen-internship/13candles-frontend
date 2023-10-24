@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Montserrat, Raleway } from 'next/font/google';
-// import { notFound } from 'next/navigation';
-import { Locale, i18n } from '@/i18n.config'
+import { Locale, i18n } from '@/i18n.config';
 
 import '../globals.css';
 
@@ -22,12 +21,12 @@ export const metadata: Metadata = {
 };
 
 export async function generateStaticParams() {
-  return i18n.locales.map(locale => ({lang: locale}))
+  return i18n.locales.map(locale => ({ lang: locale }));
 }
 
 export default function RootLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
   params: { lang: Locale };

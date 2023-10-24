@@ -10,13 +10,12 @@ export default async function Home({
 }: {
   params: { lang: Locale };
 }) {
-  const { about } = await getDictionary(lang);
+  const allData = await getDictionary(lang);
 
   return (
     <main>
       <ExampleSection />
-      <h1>{about.title}</h1>
-      <TranslationSwitcher />
+      <TranslationSwitcher lang={allData.header.language} />
     </main>
   );
 }

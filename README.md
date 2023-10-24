@@ -171,15 +171,24 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Internationalization
 
 If you want to add new text data and use it, create json files with same names
-inside 'messages' directory in every folder with locale name ├── app ├──
-dictionaries ├── en ├── home.json ├── uk ├── home.json
+inside 'messages' directory in every folder with locale name
+
+```
+├── app
+  ├── dictionaries
+    ├── en
+      ├── home.json
+    ├── uk
+      ├── home.json
+```
 
 ❗️Then spread file to messages object inside lib/dictionary.ts file to merge
 your separate file into one json.
 
 If you need to get access to translation file, get lang as a param into
 component and pass it through async function getDictionary. This function return
-a key from json as an object and you can use it as a simple object.
+a key from json as an object and you can use it as a simple object and put it as
+a props in children component.
 
 ```
 const { about } = await getDictionary(lang);
