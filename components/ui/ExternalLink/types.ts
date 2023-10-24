@@ -1,4 +1,4 @@
-export interface ContactLinkProps {
+export interface ExternalLinkProps {
   href: string;
   icon: string;
   text: string;

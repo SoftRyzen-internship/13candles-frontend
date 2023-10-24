@@ -226,15 +226,18 @@ component `Heading`
 | `className`   | `undefined` | add custom or additional css class you'd need   |
 | `data-shadow` | `undefined` | add text as a shadow decoration of the element  |
 
-- ### ContactLink
+- ### ExternalLink
 
-| Prop        | Default     | Description                                                 |
-| ----------- | ----------- | ----------------------------------------------------------- |
-| `href`      | ``          | required, href for a link                                   |
-| `icon`      | ``          | required, css className which should be used in globals.css |
-|             |             | to create a decor icon                                      |
-| `text`      | ``          | required, any text content                                  |
-| `className` | `undefined` | add custom or additional css class you'd need               |
+A link componet that is created with tag "a" and has such attributes as
+rel="noopener noreferrer nofollow" and target="\_blank". Additionally, there is
+a decorative icon in the component.
+
+| Prop        | Default     | Description                                                                        |
+| ----------- | ----------- | ---------------------------------------------------------------------------------- |
+| `href`      | ``          | required, href for a link                                                          |
+| `icon`      | ``          | required, css className which should be used in globals.css to create a decor icon |
+| `text`      | ``          | required, any text content                                                         |
+| `className` | `undefined` | add custom or additional css class you'd need                                      |
 
 - ### `Button`
 

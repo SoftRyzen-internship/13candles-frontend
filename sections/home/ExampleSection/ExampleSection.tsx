@@ -2,6 +2,21 @@ import Link from 'next/link';
 import { ContactList } from '@/components/ContactList';
 import { TranslationSwitcher } from '@/components/TranslationSwitcherButton';
 
+const data = {
+  contacts: [
+    {
+      href: 'tel:380634293499',
+      icon: 'phone',
+      text: '38 (063) 429 34 99',
+    },
+    {
+      href: 'mailto:13candlebar@gmail.com',
+      icon: 'email',
+      text: '13candlebar@gmail.com',
+    },
+  ],
+};
+
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
     <div className="container flex flex-col gap-5">
@@ -27,7 +42,7 @@ export const ExampleSection = () => (
       <Link href="/business" className="decor case">
         <span className="link">Для Бізнесу</span>
       </Link>
-      <ContactList />
+      <ContactList contacts={data.contacts} />
       <TranslationSwitcher />
     </div>
   </section>
