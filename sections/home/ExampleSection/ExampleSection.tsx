@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { ContactList } from '@/components/ContactList';
 import { TranslationSwitcher } from '@/components/TranslationSwitcherButton';
+import { BusinessLink } from '@/components/ui/BusinessLink';
 
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
@@ -15,18 +15,10 @@ export const ExampleSection = () => (
       <h2 className="section-title-secondary">
         section-title-secondary - e.g. Ми можемо бути корисними
       </h2>
-      <button className="button md:w-fit" type="submit">
-        button
-      </button>
-      <a className="button md:w-fit" href="./">
-        link
-      </a>
       <a className="link w-fit" href="./">
         Договір оферти
       </a>
-      <Link href="/business" className="decor case">
-        <span className="link">Для Бізнесу</span>
-      </Link>
+      <BusinessLink />
       <ContactList />
       <TranslationSwitcher />
     </div>
