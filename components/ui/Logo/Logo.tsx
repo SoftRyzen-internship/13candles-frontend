@@ -6,7 +6,7 @@ import { LogoProps } from './types';
 export const Logo: React.FC<LogoProps> = ({
   position = 'header',
   aria = '',
-  className,
+  className = '',
 }) => {
   const logoSvgStyles = classNames('h-[48px] w-[87px]', {
     'xl:w-[116px] xl:h-[64px]': position === 'header',

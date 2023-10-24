@@ -225,11 +225,11 @@ component `Heading`
 
 - ### Logo
 
-| Prop        | Default     | Description                                   |
-| ----------- | ----------- | --------------------------------------------- |
-| `position`  | `header`    | place, where logo used                        |
-| `aria`      | `''`        | logo aria-label                               |
-| `className` | `undefined` | add custom or additional css class you'd need |
+| Prop        | Default  | Description                                   |
+| ----------- | -------- | --------------------------------------------- |
+| `position`  | `header` | place, where logo used                        |
+| `aria`      | `''`     | logo aria-label                               |
+| `className` | `''`     | add custom or additional css class you'd need |
 
 ---
 
