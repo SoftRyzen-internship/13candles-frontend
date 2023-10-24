@@ -171,8 +171,18 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Internationalization
 
 If you want to add new text data and use it, create json files with same names
-inside 'messages' directory in every folder with locale name ├── app ├──
-messages ├── en ├── home.json ├── uk ├── home.json
+inside 'messages' directory in every folder with locale name
+
+```plaintext
+app/
+│
+└─── messages/
+    │
+    ├─── en/
+    │    └── home.json
+    │
+    └─── uk/
+         └── home.json
 
 ❗️Then spread file to messages object inside getRequestConfig in i18n.ts file to
 merge your separate file to the big one json.
@@ -180,12 +190,15 @@ merge your separate file to the big one json.
 To use data from json files you need to include this hook to file component
 
 ```
+
 import { useTranslations } from 'next-intl';
+
 ```
 
 Get function this way and use it inside layout:
 
 ```
+
 const t = useTranslations('Home');
 
 <h1>{t('title')}</h1>
@@ -209,5 +222,17 @@ component `Heading`
 | `children`    | `undefined` | required, any content                           |
 | `className`   | `undefined` | add custom or additional css class you'd need   |
 | `data-shadow` | `undefined` | add text as a shadow decoration of the element  |
+
+- ### `Button`
+
+| Prop         | Default | Description                                                                                          |
+| ------------ | ------- | ---------------------------------------------------------------------------------------------------- |
+| `tag`        | `a`     | Choose the tag for your button: `a`, `button`. By default, it's a hyperlink (`a`).                   |
+| `label`      | —       | Required. The text of the button.                                                                    |
+| `href`       | —       | Optional. If provided, the button will perform a smooth scroll to the specified section on the page. |
+| `className`  | —       | Optional. Add a custom or additional CSS class if needed.                                            |
+| `buttonType` | —       | Optional. Define the type of the button (`button`, `submit`). Can be used with `button` .            |
+| `disabled`   | —       | Optional. Determine if the button is disabled. Can be used with `button`.                            |
+| `onClick`    | —       | Optional. A callback to be triggered when the button is clicked. Can used with both `a` and `button` |
 
 ---
