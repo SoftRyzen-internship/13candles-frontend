@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
 import BusinessIcon from '@/public/icons/icon_businesscase.svg';
-import { TranslationSwitcher } from '@/components/TranslationSwitcherButton';
 import { SideMenu } from '@/components/SideMenu';
 import { Logo } from '@/components/ui/Logo';
 
@@ -60,7 +59,6 @@ export const ExampleSection = () => (
         <BusinessIcon width="24" height="24" />
         <span className="link">Для Бізнесу</span>
       </Link>
-      <TranslationSwitcher />
     </div>
   </section>
 );

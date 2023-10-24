@@ -173,39 +173,30 @@ Open [http://localhost:3000](http://localhost:3000).
 If you want to add new text data and use it, create json files with same names
 inside 'messages' directory in every folder with locale name
 
-```plaintext
-app/
-│
-└─── messages/
-    │
-    ├─── en/
-    │    └── home.json
-    │
-    └─── uk/
-         └── home.json
-
-❗️Then spread file to messages object inside getRequestConfig in i18n.ts file to
-merge your separate file to the big one json.
-
-To use data from json files you need to include this hook to file component
-
+```
+├── app
+  ├── dictionaries
+    ├── en
+      ├── home.json
+    ├── uk
+      ├── home.json
 ```
 
-import { useTranslations } from 'next-intl';
+❗️Then spread file to messages object inside lib/dictionary.ts file to merge
+your separate file into one json.
+
+If you need to get access to translation file, get lang as a param into
+component and pass it through async function getDictionary. This function return
+a key from json as an object and you can use it as a simple object and put it as
+a props in children component.
 
 ```
-
-Get function this way and use it inside layout:
-
+const { about } = await getDictionary(lang);
 ```
 
-const t = useTranslations('Home');
-
-<h1>{t('title')}</h1>
 ```
-
-❗️ If you want to use translation in client component, simply pass it as a prop
-to it.
+<h1>{about.title}</h1>
+```
 
 ## 📚 Components API
 
