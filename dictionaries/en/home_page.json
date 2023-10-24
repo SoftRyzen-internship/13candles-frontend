@@ -1,30 +1,4 @@
 {
-  "header": {
-    "sidePanelMenu": {
-      "openPanelBtnAriaText": "image of the sidebar button",
-      "closePanelBtnAriaText": "image of the sidebar close button"
-    },
-    "mobileMenu": {
-      "openMenuBtnAriaText": "image of the mobile menu button",
-      "closeMenuBtnAriaText": "image of the mobile menu close button"
-    },
-    "nav": [
-      {
-        "name": "Catalog",
-        "href": "/catalog"
-      },
-      {
-        "name": "About Us",
-        "href": "/about"
-      }
-    ],
-    "logoAriaLabelText": "Link with company logo",
-    "link": {
-      "name": "For Business",
-      "href": "/business"
-    },
-    "language": "Eng"
-  },
   "hero": [
     {
       "src": "/images/homepage/hero/1.webp",
@@ -88,66 +62,5 @@
       "_english_ Пишіть нам, задавайте питання, і ми залюбки познайомимо вас з всесвітом затишку і приємних ароматів в 13 Candle Bar."
     ],
     "button": "Catalog"
-  },
-  "footer": {
-    "contacts": {
-      "phone": "096 680 21 51",
-      "email": "13candlebar@gmail.com"
-    },
-    "nav_text": "Navigation",
-    "nav": [
-      {
-        "name": "Catalog",
-        "href": "/catalog"
-      },
-      {
-        "name": "About us",
-        "href": "/about"
-      },
-      {
-        "name": "Basket"
-      },
-      {
-        "name": "For Business",
-        "href": "/business"
-      }
-    ],
-    "info_text": "Information",
-    "info": [
-      {
-        "name": "Offer contract"
-      },
-      {
-        "name": "Warranties and returns"
-      },
-      {
-        "name": "Delivery and payment"
-      },
-      {
-        "name": "Terms of use of the site"
-      }
-    ],
-    "social_text": "Social networks",
-    "social": [
-      {
-        "name": "Instagram",
-        "ariaLabelText": "contact us on Instagram",
-        "href": ""
-      },
-      {
-        "name": "Telegram",
-        "ariaLabelText": "contact us on telegram",
-        "href": ""
-      },
-      {
-        "name": "Viber",
-        "ariaLabelText": "contact us on viber",
-        "href": ""
-      }
-    ],
-    "soft_ryzen": {
-      "name": "Made by SoftRyzen",
-      "href": "https://internship.softryzen.com"
-    }
   }
 }
