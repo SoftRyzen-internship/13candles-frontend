@@ -245,15 +245,20 @@ component `Heading`
 
 - ### Slider
 
-| Prop            | Default     | Description                                                                                |
-| --------------- | ----------- | ------------------------------------------------------------------------------------------ |
-| `element`       | `undefined` | required, Functional Component that is rendered inside each slide                          |
-| `data`          | `undefined` | required, data that is Used inside the Functinal Component you provided via "element" prop |
-| `isLoop`        | `false`     | set to true to enable continuous loop mode                                                 |
-| `isAutoplay`    | `false`     | set to true to enable autoplay                                                             |
-| `isNavigation`  | `false`     | set to true to enable navigation                                                           |
-| `isPagination`  | `false`     | set to true to enable pagination                                                           |
-| `isInteractive` | `false`     | set to true to enable swipe on touch and grabcursor                                        |
-| `className`     | `undefined` | add custom or additional css class you'd need                                              |
+| Prop                    | Default          | Description                                                                                |
+| ----------------------- | ---------------- | ------------------------------------------------------------------------------------------ |
+| `className`             | `undefined`      | add custom or additional css class you'd need                                              |
+| `element`               | `undefined`      | required, Functional Component that is rendered inside each slide                          |
+| `data`                  | `undefined`      | required, data that is Used inside the Functinal Component you provided via "element" prop |
+| `isLoop`                | `false`          | set to true to enable continuous loop mode                                                 |
+| `isAutoplay`            | `false`          | set to true to enable autoplay                                                             |
+| `isPagination`          | `false`          | set to true to enable pagination                                                           |
+| `isInteractive`         | `false`          | set to true to enable swipe on touch and grabcursor                                        |
+| `isNavigation`          | `false`          | set to true to enable navigation                                                           |
+| `navigationBreakpoints` | `{               |                                                                                            |
+|                         | isMobile: true,  | set to false to disable navigation on mobile                                               |
+|                         | isTablet: true,  | set to false to disable navigation on tablet                                               |
+|                         | isDesktop: true, | set to false to disable navigation on desktop                                              |
+|                         | }`               | (provide options for all screens if you want to provide customised breakpoints)            |
 
 ---
