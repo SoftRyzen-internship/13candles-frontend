@@ -19,17 +19,22 @@
       }
     ],
     "logoAriaLabelText": "Посилання із логотипом компанії",
-    "link": {
-      "name": "Для Бізнесу",
-      "href": "/business"
-    },
+    "forBusinesBtnText": "Для Бізнесу",
     "language": "Укр"
   },
   "footer": {
-    "contacts": {
-      "phone": "096 680 21 51",
-      "email": "13candlebar@gmail.com"
-    },
+    "contacts": [
+      {
+        "href": "tel:380634293499",
+        "icon": "phone",
+        "text": "38 (063) 429 34 99"
+      },
+      {
+        "href": "mailto:13candlebar@gmail.com",
+        "icon": "email",
+        "text": "13candlebar@gmail.com"
+      }
+    ],
     "nav_text": "Навігація",
     "nav": [
       {
@@ -42,43 +47,32 @@
       },
       {
         "name": "Кошик"
-      },
-      {
-        "name": "Для Бізнесу",
-        "href": "/business"
       }
     ],
+    "forBusinesBtnText": "Для Бізнесу",
     "info_text": "Інформація",
     "info": [
-      {
-        "name": "Договір оферти"
-      },
-      {
-        "name": "Гарантії та повернення"
-      },
-      {
-        "name": "Доставка і оплата"
-      },
-      {
-        "name": "Правила користування сайтом"
-      }
+      "Договір оферти",
+      "Гарантії та повернення",
+      "Доставка і оплата",
+      "Правила користування сайтом"
     ],
     "social_text": "Соціальні мережі",
     "social": [
       {
-        "name": "Instagram",
-        "ariaLabelText": "Зв'яжися з нами у instagram",
-        "href": ""
+        "href": "/",
+        "icon": "instagram",
+        "text": "Instagram"
       },
       {
-        "name": "Telegram",
-        "ariaLabelText": "Зв'яжися з нами у telegram",
-        "href": ""
+        "href": "/",
+        "icon": "telegram",
+        "text": "Telegram"
       },
       {
-        "name": "Viber",
-        "ariaLabelText": "Зв'яжися з нами у viber",
-        "href": ""
+        "href": "/",
+        "icon": "viber",
+        "text": "Viber"
       }
     ],
     "soft_ryzen": {

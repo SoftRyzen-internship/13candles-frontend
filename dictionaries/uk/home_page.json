@@ -15,37 +15,55 @@
   ],
   "catalog": {
     "title": "Каталог",
-    "text": "Оберіть категорію товарів, яка вас цікавить",
-    "products": [
+    "subtitle": "Оберіть категорію товарів, яка вас цікавить",
+    "categories": [
       {
-        "name": "Аромасвічки",
-        "src": "/images/homepage/catalog/aromacandle@2x.webp",
-        "alt": "Аромасвічки"
+        "href": "/",
+        "text": "Аромасвічки",
+        "image": {
+          "src": "/images/homepage/catalog/aromacandle@2x.webp",
+          "alt": "Аромасвічки"
+        }
       },
       {
-        "name": "Аромадифузори",
-        "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
-        "alt": "Аромадифузори"
+        "href": "/",
+        "text": "Аромадифузори",
+        "image": {
+          "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
+          "alt": "Аромадифузори"
+        }
       },
       {
-        "name": "Пахощі (аромапалички)",
-        "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
-        "alt": "Пахощі (аромапалички)"
+        "href": "/",
+        "text": "Пахощі (аромапалички)",
+        "image": {
+          "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
+          "alt": "Пахощі (аромапалички)"
+        }
       },
       {
-        "name": "Аксесуари",
-        "src": "/images/homepage/catalog/accessories@2x.webp",
-        "alt": "Аксесуари"
+        "href": "/",
+        "text": "Аксесуари",
+        "image": {
+          "src": "/images/homepage/catalog/accessories@2x.webp",
+          "alt": "Аксесуари"
+        }
       },
       {
-        "name": "Набори",
-        "src": "/images/homepage/catalog/sets@2x.webp",
-        "alt": "Набори"
+        "href": "/",
+        "text": "Набори",
+        "image": {
+          "src": "/images/homepage/catalog/sets@2x.webp",
+          "alt": "Набори"
+        }
       },
       {
-        "name": "Різне",
-        "src": "/images/homepage/catalog/different@2x.webp",
-        "alt": "Інша продукція"
+        "href": "/",
+        "text": "Різне",
+        "image": {
+          "src": "/images/homepage/catalog/different@2x.webp",
+          "alt": "Інша продукція"
+        }
       }
     ]
   },

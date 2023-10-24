@@ -15,37 +15,55 @@
   ],
   "catalog": {
     "title": "Catalog",
-    "text": "Select the product category that interests you",
-    "products": [
+    "subtitle": "Select the product category that interests you",
+    "categories": [
       {
-        "name": "Scented candles",
-        "src": "/images/homepage/catalog/aromacandle@2x.webp",
-        "alt": "Scented candles"
+        "href": "/",
+        "text": "Scented candles",
+        "image": {
+          "src": "/images/homepage/catalog/aromacandle@2x.webp",
+          "alt": "Scented candles"
+        }
       },
       {
-        "name": "Aroma diffusers",
-        "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
-        "alt": "Aroma diffusers"
+        "href": "/",
+        "text": "Aroma diffusers",
+        "image": {
+          "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
+          "alt": "Aroma diffusers"
+        }
       },
       {
-        "name": "Incense (aroma sticks)",
-        "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
-        "alt": "Incense (aroma sticks)"
+        "href": "/",
+        "text": "Incense (aroma sticks)",
+        "image": {
+          "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
+          "alt": "Incense (aroma sticks)"
+        }
       },
       {
-        "name": "Accessories",
-        "src": "/images/homepage/catalog/accessories@2x.webp",
-        "alt": "Accessories"
+        "href": "/",
+        "text": "Accessories",
+        "image": {
+          "src": "/images/homepage/catalog/accessories@2x.webp",
+          "alt": "Accessories"
+        }
       },
       {
-        "name": "Sets",
-        "src": "/images/homepage/catalog/sets@2x.webp",
-        "alt": "Sets"
+        "href": "/",
+        "text": "Sets",
+        "image": {
+          "src": "/images/homepage/catalog/sets@2x.webp",
+          "alt": "Sets"
+        }
       },
       {
-        "name": "Other",
-        "src": "/images/homepage/catalog/different@2x.webp",
-        "alt": "Other products"
+        "href": "/",
+        "text": "Other",
+        "image": {
+          "src": "/images/homepage/catalog/different@2x.webp",
+          "alt": "Other products"
+        }
       }
     ]
   },

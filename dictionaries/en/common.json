@@ -19,17 +19,22 @@
       }
     ],
     "logoAriaLabelText": "Link with company logo",
-    "link": {
-      "name": "For Business",
-      "href": "/business"
-    },
+    "forBusinesBtnText": "For Business",
     "language": "Eng"
   },
   "footer": {
-    "contacts": {
-      "phone": "096 680 21 51",
-      "email": "13candlebar@gmail.com"
-    },
+    "contacts": [
+      {
+        "href": "tel:380634293499",
+        "icon": "phone",
+        "text": "38 (063) 429 34 99"
+      },
+      {
+        "href": "mailto:13candlebar@gmail.com",
+        "icon": "email",
+        "text": "13candlebar@gmail.com"
+      }
+    ],
     "nav_text": "Navigation",
     "nav": [
       {
@@ -42,43 +47,32 @@
       },
       {
         "name": "Basket"
-      },
-      {
-        "name": "For Business",
-        "href": "/business"
       }
     ],
+    "forBusinesBtnText": "For Business",
     "info_text": "Information",
     "info": [
-      {
-        "name": "Offer contract"
-      },
-      {
-        "name": "Warranties and returns"
-      },
-      {
-        "name": "Delivery and payment"
-      },
-      {
-        "name": "Terms of use of the site"
-      }
+      "Offer contract",
+      "Warranties and returns",
+      "Delivery and payment",
+      "Terms of use of the site"
     ],
     "social_text": "Social networks",
     "social": [
       {
-        "name": "Instagram",
-        "ariaLabelText": "contact us on Instagram",
-        "href": ""
+        "href": "/",
+        "icon": "instagram",
+        "text": "Instagram"
       },
       {
-        "name": "Telegram",
-        "ariaLabelText": "contact us on telegram",
-        "href": ""
+        "href": "/",
+        "icon": "telegram",
+        "text": "Telegram"
       },
       {
-        "name": "Viber",
-        "ariaLabelText": "contact us on viber",
-        "href": ""
+        "href": "/",
+        "icon": "viber",
+        "text": "Viber"
       }
     ],
     "soft_ryzen": {
