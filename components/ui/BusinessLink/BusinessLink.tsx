@@ -4,9 +4,9 @@ import { BusinessLinkProps } from './types';
 import { FOR_BUSINESS } from '@/data/routes';
 
 export const BusinessLink: React.FC<BusinessLinkProps> = ({
-  isIcon = false,
   text,
-  className,
+  isIcon = false,
+  className = '',
 }) => {
   const linkClasses = classNames({ 'decor case': isIcon }, className);
 

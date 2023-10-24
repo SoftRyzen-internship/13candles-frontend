@@ -1,5 +1,5 @@
 export interface BusinessLinkProps {
-  isIcon: boolean;
   text: string;
+  isIcon?: boolean;
   className?: string;
 }
