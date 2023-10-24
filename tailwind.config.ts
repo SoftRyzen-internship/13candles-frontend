@@ -37,12 +37,12 @@ const config: Config = {
         raleway: ['var(--font-raleway)'],
       },
       fontSize: {
-        base: ['16px', '1.5'],
-        md: ['18px', '1.5'],
-        lg: ['20px', '1.5'],
-        xl: ['24px', '1.5'],
-        xxl: ['32px', '1.5'],
-        xxxl: ['40px', '1.5'],
+        base: ['16px', '1.2'],
+        md: ['18px', '1.2'],
+        lg: ['20px', '1.2'],
+        xl: ['24px', '1.2'],
+        xxl: ['32px', '1.2'],
+        xxxl: ['40px', '1.2'],
       },
       // COLORS
       colors: {
