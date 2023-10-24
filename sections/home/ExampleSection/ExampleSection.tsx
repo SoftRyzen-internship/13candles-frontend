@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ContactList } from '@/components/ContactList';
+import { TranslationSwitcher } from '@/components/TranslationSwitcherButton';
 
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
@@ -27,6 +28,7 @@ export const ExampleSection = () => (
         <span className="link">Для Бізнесу</span>
       </Link>
       <ContactList />
+      <TranslationSwitcher />
     </div>
   </section>
 );
