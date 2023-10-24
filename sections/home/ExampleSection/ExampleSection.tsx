@@ -8,6 +8,10 @@ import { BasketButton } from '@/components/ui/BasketButton';
 import { SideMenu } from '@/components/SideMenu';
 import { Logo } from '@/components/ui/Logo';
 
+import data from '@/dictionaries/uk/home_page.json';
+const {
+  footer: { info, info_text },
+} = data;
 export const ExampleSection = () => (
   <section className="section xl:pb-12 xl:pt-10">
     <div className="container flex items-center justify-between">
@@ -64,7 +68,7 @@ export const ExampleSection = () => (
         <span className="link">Для Бізнесу</span>
       </Link>
 
-      <Information />
+      <Information info={info} info_text={info_text} />
 
       <BasketButton />
     </div>

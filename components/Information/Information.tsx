@@ -6,17 +6,13 @@ import { ButtonOpenModal } from '@/components/ui/ButtonOpenModal';
 import { Portal } from '@/components/ui/Portal';
 import { ModalWindow } from '@/components/ui/ModalWindow';
 
-import data from '@/dictionaries/uk/home_page.json';
+import { IInfoProps } from './type';
 
-export const Information = () => {
+export const Information = ({ info_text, info }: IInfoProps) => {
   const [showModal, setShowModal] = useState(false);
   const [typeContent, setTypeContent] = useState('');
   const onModalClose = () => setShowModal(false);
   const onModalOpen = () => setShowModal(true);
-
-  const {
-    footer: { info, info_text },
-  } = data;
 
   return (
     <>
@@ -35,7 +31,6 @@ export const Information = () => {
           </ButtonOpenModal>
         </li>
         <li>
-          {' '}
           <ButtonOpenModal
             className="link"
             setTypeContent={setTypeContent}

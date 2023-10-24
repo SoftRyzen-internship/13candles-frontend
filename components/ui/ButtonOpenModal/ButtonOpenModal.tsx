@@ -4,7 +4,7 @@ import { ButtonProps } from './types';
 
 export const ButtonOpenModal: React.FC<ButtonProps> = ({
   children,
-  className,
+  className = '',
   onModalOpen,
   setTypeContent,
   typeContent,
