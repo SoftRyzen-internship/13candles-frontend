@@ -17,12 +17,15 @@ export default async function Home({
 }: {
   params: { lang: Locale };
 }) {
-  const { header, catalog, about, footer } = await getDictionary(lang);
+  const { common, homepage } = await getDictionary(lang);
 
+  const { header, footer } = common;
   const { language, sidePanelMenu, nav, logoAriaLabelText } = header;
   const { closePanelBtnAriaText, openPanelBtnAriaText } = sidePanelMenu;
-  const { button } = about;
   const { contacts } = footer;
+
+  const { catalog, about } = homepage;
+  const { button } = about;
 
   return (
     <main>
@@ -35,7 +38,7 @@ export default async function Home({
       <div className="container mt-10 flex flex-col gap-10">
         <TranslationSwitcher lang={language} />
 
-        <ContactList contacts={contacts} />
+        <ContactList contacts={contacts} className="font-montserrat" />
 
         <BusinessLink isIcon={true} text={header.forBusinesBtnText} />
         <BusinessLink

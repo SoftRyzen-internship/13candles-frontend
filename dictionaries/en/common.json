@@ -1,83 +1,85 @@
 {
-  "header": {
-    "sidePanelMenu": {
-      "openPanelBtnAriaText": "image of the sidebar button",
-      "closePanelBtnAriaText": "image of the sidebar close button"
+  "common": {
+    "header": {
+      "sidePanelMenu": {
+        "openPanelBtnAriaText": "image of the sidebar button",
+        "closePanelBtnAriaText": "image of the sidebar close button"
+      },
+      "mobileMenu": {
+        "openMenuBtnAriaText": "image of the mobile menu button",
+        "closeMenuBtnAriaText": "image of the mobile menu close button"
+      },
+      "nav": [
+        {
+          "name": "Catalog",
+          "href": "/catalog"
+        },
+        {
+          "name": "About Us",
+          "href": "/about"
+        }
+      ],
+      "logoAriaLabelText": "Link with company logo",
+      "forBusinesBtnText": "For Business",
+      "language": "Eng"
     },
-    "mobileMenu": {
-      "openMenuBtnAriaText": "image of the mobile menu button",
-      "closeMenuBtnAriaText": "image of the mobile menu close button"
-    },
-    "nav": [
-      {
-        "name": "Catalog",
-        "href": "/catalog"
-      },
-      {
-        "name": "About Us",
-        "href": "/about"
+    "footer": {
+      "contacts": [
+        {
+          "href": "tel:380634293499",
+          "icon": "phone",
+          "text": "38 (063) 429 34 99"
+        },
+        {
+          "href": "mailto:13candlebar@gmail.com",
+          "icon": "email",
+          "text": "13candlebar@gmail.com"
+        }
+      ],
+      "nav_text": "Navigation",
+      "nav": [
+        {
+          "name": "Catalog",
+          "href": "/catalog"
+        },
+        {
+          "name": "About us",
+          "href": "/about"
+        },
+        {
+          "name": "Basket"
+        }
+      ],
+      "forBusinesBtnText": "For Business",
+      "info_text": "Information",
+      "info": [
+        "Offer contract",
+        "Warranties and returns",
+        "Delivery and payment",
+        "Terms of use of the site"
+      ],
+      "social_text": "Social networks",
+      "social": [
+        {
+          "href": "/",
+          "icon": "instagram",
+          "text": "Instagram"
+        },
+        {
+          "href": "/",
+          "icon": "telegram",
+          "text": "Telegram"
+        },
+        {
+          "href": "/",
+          "icon": "viber",
+          "text": "Viber"
+        }
+      ],
+      "soft_ryzen": {
+        "name": "Made by SoftRyzen",
+        "href": "https://internship.softryzen.com"
       }
-    ],
-    "logoAriaLabelText": "Link with company logo",
-    "forBusinesBtnText": "For Business",
-    "language": "Eng"
-  },
-  "footer": {
-    "contacts": [
-      {
-        "href": "tel:380634293499",
-        "icon": "phone",
-        "text": "38 (063) 429 34 99"
-      },
-      {
-        "href": "mailto:13candlebar@gmail.com",
-        "icon": "email",
-        "text": "13candlebar@gmail.com"
-      }
-    ],
-    "nav_text": "Navigation",
-    "nav": [
-      {
-        "name": "Catalog",
-        "href": "/catalog"
-      },
-      {
-        "name": "About us",
-        "href": "/about"
-      },
-      {
-        "name": "Basket"
-      }
-    ],
-    "forBusinesBtnText": "For Business",
-    "info_text": "Information",
-    "info": [
-      "Offer contract",
-      "Warranties and returns",
-      "Delivery and payment",
-      "Terms of use of the site"
-    ],
-    "social_text": "Social networks",
-    "social": [
-      {
-        "href": "/",
-        "icon": "instagram",
-        "text": "Instagram"
-      },
-      {
-        "href": "/",
-        "icon": "telegram",
-        "text": "Telegram"
-      },
-      {
-        "href": "/",
-        "icon": "viber",
-        "text": "Viber"
-      }
-    ],
-    "soft_ryzen": {
-      "name": "Made by SoftRyzen",
-      "href": "https://internship.softryzen.com"
     }
   }
 }
