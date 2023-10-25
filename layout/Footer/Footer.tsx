@@ -4,13 +4,11 @@ import { Logo } from '@/components/ui/Logo';
 import { FooterNavRow } from '@/components/FooterNavRow';
 import { Information } from '@/components/Information';
 import { ContactList } from '@/components/ContactList';
+// import { SocialsMenu } from '@/components/SocialsMenu';
 import { SoftRyzen } from '@/components/SoftRyzen';
 import { FooterProps } from '@/layout/Footer/types';
 
-// import { SocialNetworks } from './SocialNetworks';
-{
-  /* <SocialNetworks /> */
-}
+// Integration on page//
 {
   /* <Footer {...footer} /> */
 }
@@ -18,6 +16,8 @@ export const Footer: React.FC<FooterProps> = ({
   logoAriaLabelText,
   contacts,
   soft_ryzen,
+  // social_text,
+  // social,
   ...restProps
 }) => {
   return (
@@ -37,10 +37,11 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
           <FooterNavRow data={restProps} />
           <Information {...restProps} />
-          <Information {...restProps} />
+          {/* TODO// */}
+          {/* <SocialsMenu socials={socials} title={social_text} /> */}
         </div>
         <div className="mt-8">
-          <SoftRyzen name={soft_ryzen.name} href={soft_ryzen.href} />
+          <SoftRyzen {...soft_ryzen} />
         </div>
       </div>
     </footer>
