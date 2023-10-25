@@ -116,7 +116,7 @@ a:focus-visible .link::before,
   @apply h-6 w-6;
 }
 
-/* decore icons bg */
+/* decor icons bg */
 
 .case::before {
   @apply bg-[url('/icons/icon_businesscase.svg')];

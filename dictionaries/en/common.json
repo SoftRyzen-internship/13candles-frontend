@@ -59,19 +59,22 @@
       "social_text": "Social networks",
       "social": [
         {
-          "href": "/",
+          "href": "https://www.instagram.com/13.candle.bar/",
           "icon": "instagram",
-          "text": "Instagram"
+          "text": "Instagram",
+          "altText": "Redirect link to Instagram page"
         },
         {
-          "href": "/",
+          "href": "https://t.me/+380966802151",
           "icon": "telegram",
-          "text": "Telegram"
+          "text": "Telegram",
+          "altText": "Redirect link to Telegram account"
         },
         {
-          "href": "/",
+          "href": "viber://chat?number=380966802151",
           "icon": "viber",
-          "text": "Viber"
+          "text": "Viber",
+          "altText": "Redirect link to Viber account"
         }
       ],
       "soft_ryzen": {

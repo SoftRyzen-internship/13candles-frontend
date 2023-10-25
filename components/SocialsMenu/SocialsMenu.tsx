@@ -1,50 +1,29 @@
 import React from 'react';
-import { SocialContact } from './types';
+import { SocialItem, SocialsProps } from './types';
 
-export const SocialsMenu = () => {
-
-  const socialData = [
-    {
-      name: 'Instagram',
-      link: 'https://www.instagram.com/13.candle.bar/',
-      ariaLabelText: 'посилання на інстаграм',
-      className: 'instagram',
-    },
-    {
-      name: 'Telegram',
-      link: 'https://www.instagram.com/13.candle.bar/',
-      ariaLabelText: 'посилання на телеграм',
-      className: 'telegram',
-    },
-    {
-      name: 'Viber',
-      link: 'https://www.instagram.com/13.candle.bar/',
-      ariaLabelText: 'посилання на вайбер',
-      className: 'viber',
-    },
-  ];
-
+export const SocialsMenu: React.FC<SocialsProps> = ({
+  socials,
+  title = '',
+}) => {
   return (
     <div className="md:font-medium">
       <span className="mx-auto mb-3.5 block text-center font-bold md:mb-3 md:text-left">
-        Соціальні мережі
+        {title}
       </span>
       <ul className="flex flex-col items-center gap-3 md:items-start md:gap-3.5">
-        {socialData.map(
-          ({ link, name, ariaLabelText, className }: SocialContact) => (
-            <li key={name}>
-              <a
-                href={link}
-                rel="noopener noreferrer nofollow"
-                target="_blank"
-                className={className}
-                aria-label={ariaLabelText}
-              >
-                {name}
-              </a>
-            </li>
-          ),
-        )}
+        {socials.map(({ href, icon, text, altText }: SocialItem) => (
+          <li key={text}>
+            <a
+              href={href}
+              rel="noopener noreferrer nofollow"
+              target="_blank"
+              className={`decor ${icon}`}
+              aria-label={altText}
+            >
+              {text}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   );

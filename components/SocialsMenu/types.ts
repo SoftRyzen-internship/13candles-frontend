@@ -1,7 +1,11 @@
-export type SocialContact = {
-    name: string;
-    link: string;
-    icon?: any;
-    ariaLabelText: string;
-    className?: string
-  };
+export type SocialItem = {
+  href: string;
+  icon: string;
+  text: string;
+  altText: string;
+};
+
+export type SocialsProps = {
+  socials: SocialItem[];
+  title: string;
+};

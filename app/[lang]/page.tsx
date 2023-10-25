@@ -11,6 +11,7 @@ import { ExampleSection } from '@/sections/home/ExampleSection';
 import { CatalogSection } from '@/sections/home/CatalogSection';
 
 import { CATALOG } from '@/data/links';
+import { SocialsMenu } from '@/components/SocialsMenu';
 
 export default async function Home({
   params: { lang },
@@ -22,7 +23,7 @@ export default async function Home({
   const { header, footer } = common;
   const { language, sidePanelMenu, nav, logoAriaLabelText } = header;
   const { closePanelBtnAriaText, openPanelBtnAriaText } = sidePanelMenu;
-  const { contacts } = footer;
+  const { contacts, social, social_text } = footer;
 
   const { catalog, about } = homepage;
   const { button } = about;
@@ -63,6 +64,7 @@ export default async function Home({
           />
           <Logo aria={logoAriaLabelText} position="header" />
         </div>
+        <SocialsMenu socials={social} title={social_text} />
       </div>
 
       <div id={CATALOG} className="w-74 h-74 mt-[500px]">
