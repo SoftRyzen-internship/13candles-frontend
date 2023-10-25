@@ -78,6 +78,30 @@ a:focus-visible .link::before,
   @apply scale-x-100;
 }
 
+/* === SLIDER === */
+
+#homepage-hero .swiper-button-prev::after,
+#homepage-hero .swiper-button-next::after {
+  content: url('/icons/icon_arrow.svg') !important;
+  @apply common-transition absolute top-0 h-12 w-12 bg-white/50 opacity-25 hover:opacity-100;
+}
+
+#homepage-hero .swiper-button-prev::after {
+  @apply -right-16 rotate-180;
+}
+
+#homepage-hero .swiper-button-next::after {
+  @apply -left-16;
+}
+
+#homepage-hero .swiper-pagination-bullet {
+  @apply !bg-black-light;
+}
+
+#homepage-hero .swiper-pagination {
+  @apply !static mt-[20px] md:mt-[50px] xl:mt-[16px];
+}
+
 /* === DECOR ICONS === */
 
 /* decor icons common */
