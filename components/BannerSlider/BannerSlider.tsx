@@ -2,24 +2,13 @@
 
 import { Banner } from '../ui/Banner';
 import { Slider } from '../ui/Slider';
+import { BannerSliderProps } from './types';
 
-const banners = [
-  {
-    src: '/images/homepage/hero/1.webp',
-    alt: 'Palo-santo',
-  },
-  {
-    src: '/images/homepage/hero/2.webp',
-    alt: 'Безкоштовна доставка',
-  },
-  {
-    src: '/images/homepage/hero/4.webp',
-    alt: 'Осіння колекція',
-  },
-];
-
-export const BannerSlider = () => {
-  return (
+export const BannerSlider: React.FC<BannerSliderProps> = ({
+  banners,
+  className,
+}) => (
+  <div className={className}>
     <Slider
       data={banners}
       element={Banner}
@@ -34,5 +23,5 @@ export const BannerSlider = () => {
         isDesktop: true,
       }}
     />
-  );
-};
+  </div>
+);

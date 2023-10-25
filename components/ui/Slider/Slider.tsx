@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
-import { desktop, mobile, tablet } from '@/data/screens';
+import { desktop, mobile, tablet } from '@/data';
 import { SliderProps } from './types';
 
 import 'swiper/css';
