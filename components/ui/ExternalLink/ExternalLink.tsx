@@ -16,7 +16,7 @@ export const ExternalLink: React.FC<ExternalLinkProps> = ({
       rel="noopener noreferrer nofollow"
       target="_blank"
     >
-      <span className="link font-montserrat">{text}</span>
+      <span className="link">{text}</span>
     </a>
   );
 };
