@@ -24,6 +24,7 @@
       "language": "Укр"
     },
     "footer": {
+      "logoAriaLabelText": "Посилання із логотипом компанії",
       "contacts": [
         {
           "href": "tel:380634293499",

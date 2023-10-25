@@ -24,6 +24,7 @@
       "language": "Eng"
     },
     "footer": {
+      "logoAriaLabelText": "Link with company logo",
       "contacts": [
         {
           "href": "tel:380634293499",
