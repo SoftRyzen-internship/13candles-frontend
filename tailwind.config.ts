@@ -54,6 +54,15 @@ const config: Config = {
         white: '#ffffff',
         gray: '#c5c5c5',
       },
+      transitionTimingFunction: {
+        'in-expo': 'cubic-bezier(0.55, 0.055, 0.675, 0.19)',
+        'out-expo': 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+      },
+      // transitionProperty: {
+      //   top: 'top',
+      //   bottom:
+      //     'bottom 0.1s 0.14s ease, transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19)',
+      // },
     },
   },
   plugins: [],

@@ -165,3 +165,81 @@ a:focus-visible .link::before,
 .viber::before {
   @apply bg-[url('/icons/icon_viber.svg')];
 }
+
+/*
+ * Humburger styles
+ */
+
+.hamburger {
+  @apply -ml-[14px] h-12 w-12 cursor-pointer  bg-transparent px-[14px] py-[17px];
+}
+.hamburger-box {
+  @apply relative h-[14px] w-5;
+}
+
+.hamburger-inner {
+  @apply absolute top-1/2 -mt-[1px] block h-[2px] w-5 rounded bg-black-light;
+  @apply before:absolute before:top-[-6px] before:block before:h-[2px] before:w-5;
+  @apply before:rounded before:bg-black-light before:content-[''];
+  @apply after:absolute after:bottom-[-6px] after:block after:h-[2px] after:w-5;
+  @apply after:rounded after:bg-black-light after:content-[''];
+}
+
+/*
+ * Squeeze humburger animation
+ */
+.hamburger--squeeze .hamburger-inner {
+  @apply duration-100 ease-in-expo;
+}
+.hamburger--squeeze .hamburger-inner::before {
+  @apply transition-[top] delay-150 duration-100 ease-in;
+}
+.hamburger--squeeze .hamburger-inner::after {
+  transition:
+    bottom 0.1s 0.14s ease,
+    transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--squeeze.is-active .hamburger-inner {
+  @apply rotate-45 delay-150 ease-out-expo;
+}
+.hamburger--squeeze.is-active .hamburger-inner::before {
+  @apply top-0 opacity-0 transition-[top] duration-100 ease-in;
+}
+.hamburger--squeeze.is-active .hamburger-inner::after {
+  @apply bottom-0 -rotate-90 transition-[bottom] duration-100 ease-in;
+  transition:
+    bottom 0.1s ease,
+    transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/*
+ * Side panel animation
+ */
+.fade-enter {
+  @apply opacity-0;
+}
+.fade-enter-active {
+  @apply opacity-100 transition duration-300 ease-in-out;
+}
+.fade-exit {
+  @apply opacity-100;
+}
+.fade-exit-active {
+  @apply opacity-0 transition duration-300 ease-in-out;
+}
+
+/*
+ * Mobile menu animation
+ */
+.mobile-enter {
+  @apply translate-y-[100vh] opacity-0;
+}
+.mobile-enter-active {
+  @apply translate-y-0 opacity-100 transition duration-300 ease-in-out;
+}
+.mobile-exit {
+  @apply translate-y-0 opacity-100;
+}
+.mobile-exit-active {
+  @apply translate-y-[100vh] opacity-0 transition duration-300 ease-in-out;
+}

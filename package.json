@@ -20,13 +20,12 @@
     "classnames": "^2.3.2",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
-    "hamburger-react": "^2.5.0",
     "negotiator": "^0.6.3",
     "next": "13.5.6",
     "react": "^18",
     "react-dom": "^18",
-    "swiper": "^10.3.1",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "swiper": "^10.3.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

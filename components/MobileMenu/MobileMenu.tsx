@@ -1,15 +1,14 @@
 'use client';
+import React, { useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { Squash as Hamburger } from 'hamburger-react';
-import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'next/navigation';
 
 import { NavLinks } from '../ui/NavLinks';
 import { TranslationSwitcher } from '../TranslationSwitcher';
 import { BusinessLink } from '../ui/BusinessLink';
+import { MenuButton } from '../ui/MenuButton';
 
 import { MobileMenuProps } from './types';
-import css from './MobileMenu.module.css';
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({
   businessText,
@@ -35,34 +34,20 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 
   return (
     <>
-      <button
-        type="button"
+      <MenuButton
+        btnAriaClose={btnAriaClose}
+        btnAriaOpen={btnAriaOpen}
+        isOpen={isOpen}
         onClick={() => setOpen(prev => !prev)}
-        aria-label={isOpen ? btnAriaClose : btnAriaOpen}
         className=" md:hidden"
-      >
-        <Hamburger
-          duration={0.3}
-          toggled={isOpen}
-          distance="sm"
-          size={20}
-          color="#171717"
-          easing="ease-in-out"
-          rounded
-        />
-      </button>
+      />
 
       <CSSTransition
         in={isOpen}
         nodeRef={nodeRef}
         timeout={300}
         unmountOnExit
-        classNames={{
-          enter: css['mobile-enter'],
-          enterActive: css['mobile-enter-active'],
-          exit: css['mobile-exit'],
-          exitActive: css['mobile-exit-active'],
-        }}
+        classNames="mobile"
       >
         <div
           ref={nodeRef}
@@ -70,7 +55,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         >
           <div className="container grid gap-9 py-7 text-center text-lg">
             <TranslationSwitcher lang={currentLang} />
-
             {isHomePage && (
               <NavLinks
                 onClick={() => setOpen(false)}
