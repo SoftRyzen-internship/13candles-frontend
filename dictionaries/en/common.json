@@ -12,11 +12,11 @@
       "nav": [
         {
           "name": "Catalog",
-          "href": "/catalog"
+          "href": "catalog"
         },
         {
           "name": "About Us",
-          "href": "/about"
+          "href": "about"
         }
       ],
       "logoAriaLabelText": "Link with company logo",
@@ -41,11 +41,11 @@
       "nav": [
         {
           "name": "Catalog",
-          "href": "/catalog"
+          "href": "catalog"
         },
         {
           "name": "About us",
-          "href": "/about"
+          "href": "about"
         }
       ],
       "basketText": "Basket",
