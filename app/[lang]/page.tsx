@@ -32,7 +32,7 @@ export default async function Home({
 
   return (
     <main>
-      <div className="container flex items-center justify-between bg-body pb-2 pt-9 smOnly:fixed smOnly:left-0 smOnly:top-0 smOnly:z-10 ">
+      <div className="container flex items-center justify-between bg-body pb-4 pt-9 smOnly:fixed smOnly:left-0 smOnly:top-0 smOnly:z-10 ">
         <SideMenu
           btnAriaClose={closePanelBtnAriaText}
           btnAriaOpen={openPanelBtnAriaText}
