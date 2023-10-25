@@ -45,11 +45,9 @@
         {
           "name": "About us",
           "href": "/about"
-        },
-        {
-          "name": "Basket"
         }
       ],
+      "basketText": "Basket",
       "forBusinesBtnText": "For Business",
       "info_text": "Information",
       "info": [

@@ -45,11 +45,9 @@
         {
           "name": "Про нас",
           "href": "/about"
-        },
-        {
-          "name": "Кошик"
         }
       ],
+      "basketText": "Кошик",
       "forBusinesBtnText": "Для Бізнесу",
       "info_text": "Інформація",
       "info": [
