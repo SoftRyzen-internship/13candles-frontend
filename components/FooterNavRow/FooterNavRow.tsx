@@ -1,10 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+
 import { FooterNavRowProps } from '@/components/FooterNavRow/types';
-// import { BasketButton } from '../ui/BasketButton';
+import { BasketButton } from '@/components/ui/BasketButton';
+import { BusinessLink } from '@/components/ui/BusinessLink';
 
 export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
-  const { nav_text, nav } = data;
+  const { nav_text, nav, forBusinesBtnText, basketText } = data;
 
   return (
     nav?.length > 0 && (
@@ -18,12 +20,16 @@ export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
               </Link>
             </li>
           ))}
-          {/* <li>
-            <BasketButton href={FOR_BUSINESS} />
+          <li>
+            <BasketButton
+              className="xl:text-[16px] xl:font-medium xl:leading-5"
+              text={basketText}
+              isIcon={false}
+            />
           </li>
           <li>
-            <BasketButton href={CATALOG} />
-          </li> */}
+            <BusinessLink isIcon={false} text={forBusinesBtnText} />
+          </li>
         </ul>
       </div>
     )
