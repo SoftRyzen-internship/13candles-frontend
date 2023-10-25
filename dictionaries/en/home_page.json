@@ -114,18 +114,10 @@
     ],
     "info_text": "Information",
     "info": [
-      {
-        "name": "Offer contract"
-      },
-      {
-        "name": "Warranties and returns"
-      },
-      {
-        "name": "Delivery and payment"
-      },
-      {
-        "name": "Terms of use of the site"
-      }
+      "Offer contract",
+      "Warranties and returns",
+      "Delivery and payment",
+      "Terms of use of the site"
     ],
     "social_text": "Social networks",
     "social": [
