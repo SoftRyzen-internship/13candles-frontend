@@ -21,7 +21,8 @@
       ],
       "logoAriaLabelText": "Link with company logo",
       "forBusinesBtnText": "For Business",
-      "language": "Eng"
+      "language": "Eng",
+      "basketAriaLabel": "Open basket button"
     },
     "footer": {
       "contacts": [

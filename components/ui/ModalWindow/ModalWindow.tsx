@@ -1,23 +1,31 @@
+import { Portal } from '../Portal';
+import { ModalWindowPrps } from './types';
 import IconClose from '/public/icons/icon_close.svg';
-import { IPortal } from '@/components/ui/Portal/types';
 
-export const ModalWindow = ({
+export const ModalWindow: React.FC<ModalWindowPrps> = ({
   onModalClose,
+  showModal,
   children,
   className = '',
-}: IPortal) => {
+}) => {
+  // const ariaLabel = 'Кнопка закриття мобадтно вікна';
+  const ariaLabel = 'Modal close button';
+
   return (
-    <div
-      className={`xl:max-w-[1220px]xl:p-12 container relative z-40 mt-[252px] bg-body ${className}`}
-    >
-      <button
-        type="button"
-        onClick={onModalClose}
-        className="absolute right-[20px] top-[36px] z-20 h-7 w-7 md:right-[32px]"
+    <Portal onModalClose={onModalClose} showModal={showModal}>
+      <div
+        className={`container relative z-40 mt-[252px] bg-body xl:max-w-[1220px] xl:p-12 ${className}`}
       >
-        <IconClose />
-      </button>
-      {children}
-    </div>
+        <button
+          type="button"
+          aria-label={ariaLabel}
+          onClick={onModalClose}
+          className="absolute right-[20px] top-[36px] z-20 h-7 w-7 md:right-[32px]"
+        >
+          <IconClose width={28} height={28} />
+        </button>
+        {children}
+      </div>
+    </Portal>
   );
 };

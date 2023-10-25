@@ -4,11 +4,15 @@ import { useRef, MouseEvent, KeyboardEvent, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Transition } from 'react-transition-group';
 
-import { IPortal } from './types';
+import { PortalProps } from './types';
 
 import { defaultStyle, duration, transitionStyles } from './variants';
 
-export const Portal = ({ onModalClose, children, showModal }: IPortal) => {
+export const Portal: React.FC<PortalProps> = ({
+  onModalClose,
+  children,
+  showModal,
+}) => {
   const nodeRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -47,11 +51,10 @@ export const Portal = ({ onModalClose, children, showModal }: IPortal) => {
             ref={nodeRef}
             tabIndex={0}
             onClick={handleBackdrop}
-            className={` fixed left-0 top-0 z-20 h-[100%] w-[100%] overflow-auto bg-black-light/50 `}
+            className={`fixed left-0 top-0 z-20 h-[100%] w-[100%] overflow-auto bg-black-light/50 `}
           >
             {children}
           </div>,
-
           document.getElementById('modal')!,
         );
       }}

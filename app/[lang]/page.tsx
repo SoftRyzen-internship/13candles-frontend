@@ -11,6 +11,8 @@ import { ExampleSection } from '@/sections/home/ExampleSection';
 import { CatalogSection } from '@/sections/home/CatalogSection';
 
 import { CATALOG } from '@/data/links';
+import { Information } from '@/components/Information';
+import { BasketButton } from '@/components/ui/BasketButton';
 
 export default async function Home({
   params: { lang },
@@ -20,9 +22,10 @@ export default async function Home({
   const { common, homepage } = await getDictionary(lang);
 
   const { header, footer } = common;
-  const { language, sidePanelMenu, nav, logoAriaLabelText } = header;
+  const { language, sidePanelMenu, nav, logoAriaLabelText, basketAriaLabel } =
+    header;
   const { closePanelBtnAriaText, openPanelBtnAriaText } = sidePanelMenu;
-  const { contacts } = footer;
+  const { contacts, info, info_text, basketText } = footer;
 
   const { catalog, about } = homepage;
   const { button } = about;
@@ -36,6 +39,12 @@ export default async function Home({
       {/* Examples using translations */}
 
       <div className="container mt-10 flex flex-col gap-10">
+        <Information info={info} info_text={info_text} />
+
+        <BasketButton isIcon={true} ariaLabel={basketAriaLabel} />
+
+        <BasketButton isIcon={false} text={basketText} />
+
         <TranslationSwitcher lang={language} />
 
         <ContactList contacts={contacts} className="font-montserrat" />

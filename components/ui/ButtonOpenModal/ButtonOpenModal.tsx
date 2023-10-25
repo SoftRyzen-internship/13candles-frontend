@@ -1,28 +1,34 @@
-import React from 'react';
+'use client';
 
+import { useState } from 'react';
+import { ModalWindow } from '../ModalWindow';
 import { ButtonProps } from './types';
+import classNames from 'classnames';
 
 export const ButtonOpenModal: React.FC<ButtonProps> = ({
   children,
+  element: Element,
+  data,
   className = '',
-  onModalOpen,
-  setTypeContent,
-  typeContent,
 }) => {
-  const content = !!setTypeContent && !!typeContent;
-  return (
-    <button
-      type="button"
-      onClick={() => {
-        onModalOpen();
+  const [showModal, setShowModal] = useState(false);
+  const onToggleShowModal = () => setShowModal(prev => !prev);
 
-        {
-          content && setTypeContent(typeContent);
-        }
-      }}
-      className={className}
-    >
-      {children}
-    </button>
+  const buttonClasses = classNames('link', className);
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={onToggleShowModal}
+        className={buttonClasses}
+      >
+        {children}
+      </button>
+
+      <ModalWindow onModalClose={onToggleShowModal} showModal={showModal}>
+        <Element {...data} />
+      </ModalWindow>
+    </>
   );
 };
