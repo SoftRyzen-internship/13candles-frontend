@@ -9,7 +9,7 @@ import { Logo } from '@/components/ui/Logo';
 
 import { CatalogSection } from '@/sections/home/CatalogSection';
 
-import { ExampleSection } from '@/sections/home/ExampleSection';
+// import { ExampleSection } from '@/sections/home/ExampleSection';
 import { TranslationSwitcher } from '@/components/TranslationSwitcher';
 import { MobileMenu } from '@/components/MobileMenu';
 import { CATALOG } from '@/data';
@@ -53,7 +53,7 @@ export default async function Home({
       <HeroSection {...hero} />
       <CatalogSection {...catalog} />
 
-      <ExampleSection />
+      {/* <ExampleSection /> */}
 
       {/* Examples using translations */}
 
