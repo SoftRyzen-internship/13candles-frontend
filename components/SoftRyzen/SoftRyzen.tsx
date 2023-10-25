@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SoftRyzenProps } from './types';
 
 export const SoftRyzen: React.FC<SoftRyzenProps> = ({ name, href }) => (
-  <div className="my-4 text-end">
+  <div className="my-4 text-center md:text-end">
     <Link
       href={href}
       target="_blank"
