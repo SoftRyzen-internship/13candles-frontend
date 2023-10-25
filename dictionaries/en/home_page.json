@@ -1,145 +1,86 @@
 {
-  "header": {
-    "sidePanelMenu": {
-      "openPanelBtnAriaText": "image of the sidebar button",
-      "closePanelBtnAriaText": "image of the sidebar close button"
-    },
-    "mobileMenu": {
-      "openMenuBtnAriaText": "image of the mobile menu button",
-      "closeMenuBtnAriaText": "image of the mobile menu close button"
-    },
-    "nav": [
+  "homepage": {
+    "hero": [
       {
-        "name": "Catalog",
-        "href": "/catalog"
+        "src": "/images/homepage/hero/1.webp",
+        "alt": "fragrant smoke"
       },
       {
-        "name": "About Us",
-        "href": "/about"
+        "src": "/images/homepage/hero/2.webp",
+        "alt": "burning candle"
+      },
+      {
+        "src": "/images/homepage/hero/4.webp",
+        "alt": "aromatic candles"
       }
     ],
-    "logoAriaLabelText": "Link with company logo",
-    "link": {
-      "name": "For Business",
-      "href": "/business"
+    "catalog": {
+      "title": "Catalog",
+      "subtitle": "Select the product category that interests you",
+      "categories": [
+        {
+          "href": "/",
+          "text": "Scented candles",
+          "image": {
+            "src": "/images/homepage/catalog/aromacandle@2x.webp",
+            "alt": "Scented candles"
+          }
+        },
+        {
+          "href": "/",
+          "text": "Aroma diffusers",
+          "image": {
+            "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
+            "alt": "Aroma diffusers"
+          }
+        },
+        {
+          "href": "/",
+          "text": "Incense (aroma sticks)",
+          "image": {
+            "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
+            "alt": "Incense (aroma sticks)"
+          }
+        },
+        {
+          "href": "/",
+          "text": "Accessories",
+          "image": {
+            "src": "/images/homepage/catalog/accessories@2x.webp",
+            "alt": "Accessories"
+          }
+        },
+        {
+          "href": "/",
+          "text": "Sets",
+          "image": {
+            "src": "/images/homepage/catalog/sets@2x.webp",
+            "alt": "Sets"
+          }
+        },
+        {
+          "href": "/",
+          "text": "Other",
+          "image": {
+            "src": "/images/homepage/catalog/different@2x.webp",
+            "alt": "Other products"
+          }
+        }
+      ]
     },
-    "language": "Eng"
-  },
-  "hero": [
-    {
-      "src": "/images/homepage/hero/1.webp",
-      "alt": "fragrant smoke"
-    },
-    {
-      "src": "/images/homepage/hero/2.webp",
-      "alt": "burning candle"
-    },
-    {
-      "src": "/images/homepage/hero/4.webp",
-      "alt": "aromatic candles"
-    }
-  ],
-  "catalog": {
-    "title": "Catalog",
-    "text": "Select the product category that interests you",
-    "products": [
-      {
-        "name": "Scented candles",
-        "src": "/images/homepage/catalog/aromacandle@2x.webp",
-        "alt": "Scented candles"
+    "about": {
+      "title": "About Us",
+      "image": {
+        "src": "/images/homepage/about/about@2x.webp",
+        "alt": "Candle Bar"
       },
-      {
-        "name": "Aroma diffusers",
-        "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
-        "alt": "Aroma diffusers"
-      },
-      {
-        "name": "Incense (aroma sticks)",
-        "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
-        "alt": "Incense (aroma sticks)"
-      },
-      {
-        "name": "Accessories",
-        "src": "/images/homepage/catalog/accessories@2x.webp",
-        "alt": "Accessories"
-      },
-      {
-        "name": "Sets",
-        "src": "/images/homepage/catalog/sets@2x.webp",
-        "alt": "Sets"
-      },
-      {
-        "name": "Other",
-        "src": "/images/homepage/catalog/different@2x.webp",
-        "alt": "Other products"
-      }
-    ]
-  },
-  "about": {
-    "title": "About Us",
-    "image": {
-      "src": "/images/homepage/about/abouttablet@2x.webp",
-      "alt": "Candle Bar"
-    },
-    "content": [
-      "13 Candle Bar is a family workshop of aromas and coziness. Our small factory is located in the Kyiv region and specializes in the production of aroma diffusers, scented candles, candles in pots, and other comfort items.",
-      "Our customers choose us because of our high-quality service, use of only natural and top-quality materials and components, premium aromas, and good value for money. We can also make both wholesale and corporate orders with the development of products under the existing brand.",
-      "A new direction for us has become the aromatization of premises. After all, we understand that it is important for businesses to make customers fall in love with themselves, creating a pleasant impression with the help of aromas.",
-      "Don't hesitate to contact us or ask questions. We will gladly introduce you to the universe of comfort and pleasant aromas at 13 Candle Bar."
-    ],
-    "button": "Catalog"
-  },
-  "footer": {
-    "contacts": {
-      "phone": "096 680 21 51",
-      "email": "13candlebar@gmail.com"
-    },
-    "nav_text": "Navigation",
-    "nav": [
-      {
-        "name": "Catalog",
-        "href": "/catalog"
-      },
-      {
-        "name": "About us",
-        "href": "/about"
-      },
-      {
-        "name": "Basket"
-      },
-      {
-        "name": "For Business",
-        "href": "/business"
-      }
-    ],
-    "info_text": "Information",
-    "info": [
-      "Offer contract",
-      "Warranties and returns",
-      "Delivery and payment",
-      "Terms of use of the site"
-    ],
-    "social_text": "Social networks",
-    "social": [
-      {
-        "name": "Instagram",
-        "ariaLabelText": "contact us on Instagram",
-        "href": ""
-      },
-      {
-        "name": "Telegram",
-        "ariaLabelText": "contact us on telegram",
-        "href": ""
-      },
-      {
-        "name": "Viber",
-        "ariaLabelText": "contact us on viber",
-        "href": ""
-      }
-    ],
-    "soft_ryzen": {
-      "name": "Made by SoftRyzen",
-      "href": "https://internship.softryzen.com"
+      "content": [
+        "13 Candle Bar is a family workshop of aromas and coziness. Our small factory is located in the Kyiv region and specializes in the production of aroma diffusers, scented candles, candles in pots, and other comfort items.",
+        "Our customers choose us because of our high-quality service, use of only natural and top-quality materials and components, premium aromas, and good value for money. We can also make both wholesale and corporate orders with the development of products under the existing brand.",
+        "A new direction for us has become the aromatization of premises. After all, we understand that it is important for businesses to make customers fall in love with themselves, creating a pleasant impression with the help of aromas.",
+        "Don't hesitate to contact us or ask questions. We will gladly introduce you to the universe of comfort and pleasant aromas at 13 Candle Bar."
+      ],
+      "button": "Catalog"
     }
   }
 }

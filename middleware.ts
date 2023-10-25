@@ -37,7 +37,15 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
+  // Configuration for the URL matcher, which ignores specific paths like
+  // `/_next/`, `/api/`, `public/images`, `public/icons`, `public/meta`, and `favicon.ico`.
+
+  // This configuration is crucial for static data and images rendering.
+
+  // For example, if this configuration does not work properly, a URL like "http://localhost:3000/icons/icon_businesscase.svg"
+  // would include the locale(e.g., "uk" or "en") and become "http://localhost:3000/uk/icons/icon_businesscase.svg,"
+  // making it inaccessible and preventing icon rendering.
+
   matcher: [
     '/((?!api|_next/static|_next/image|public|images|icons|meta|favicon.ico).*)',
   ],
