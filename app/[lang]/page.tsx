@@ -12,6 +12,7 @@ import { CatalogSection } from '@/sections/home/CatalogSection';
 
 import { CATALOG } from '@/data';
 import { HeroSection } from '@/sections/home/HeroSection';
+import { Footer } from '@/layout/Footer';
 
 export default async function Home({
   params: { lang },
@@ -32,11 +33,8 @@ export default async function Home({
     <main>
       <HeroSection {...hero} />
       <CatalogSection {...catalog} />
-
       <ExampleSection />
-
       {/* Examples using translations */}
-
       <div className="container mt-10 flex flex-col gap-10">
         <TranslationSwitcher lang={language} />
 
@@ -66,10 +64,10 @@ export default async function Home({
           <Logo aria={logoAriaLabelText} position="header" />
         </div>
       </div>
-
       <div id={CATALOG} className="w-74 h-74 mt-[500px]">
         Scroll test
       </div>
+      <Footer {...footer} />
     </main>
   );
 }

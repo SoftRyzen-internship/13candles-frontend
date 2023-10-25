@@ -12,7 +12,7 @@ export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
 
   return (
     nav?.length > 0 && (
-      <div className="hidden xl:grid xl:gap-3 xl:text-[16px] xl:leading-5">
+      <div className="hidden xl:grid xl:gap-3 xl:text-base">
         <p className="xl:font-bold">{nav_text}</p>
         <ul className="xl:grid xl:gap-3">
           {nav.map(item => (
@@ -28,7 +28,7 @@ export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
           ))}
           <li>
             <BasketButton
-              className="xl:text-[16px] xl:font-medium xl:leading-5"
+              className="xl:text-base xl:font-medium"
               text={basketText}
               isIcon={false}
             />
