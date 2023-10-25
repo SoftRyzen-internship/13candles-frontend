@@ -1,6 +1,12 @@
+import { useParams } from 'next/navigation';
 import { Portal } from '../Portal';
 import { ModalWindowPrps } from './types';
 import IconClose from '/public/icons/icon_close.svg';
+
+const ariaLabel = {
+  uk: 'Кнопка закриття модального вікна',
+  en: 'Modal close button',
+};
 
 export const ModalWindow: React.FC<ModalWindowPrps> = ({
   onModalClose,
@@ -8,8 +14,9 @@ export const ModalWindow: React.FC<ModalWindowPrps> = ({
   children,
   className = '',
 }) => {
-  // const ariaLabel = 'Кнопка закриття мобадтно вікна';
-  const ariaLabel = 'Modal close button';
+  const { lang } = useParams();
+  const { uk, en } = ariaLabel;
+  const currentAriaLabel = lang.toString() === 'en' ? en : uk;
 
   return (
     <Portal onModalClose={onModalClose} showModal={showModal}>
@@ -18,7 +25,7 @@ export const ModalWindow: React.FC<ModalWindowPrps> = ({
       >
         <button
           type="button"
-          aria-label={ariaLabel}
+          aria-label={currentAriaLabel}
           onClick={onModalClose}
           className="absolute right-[20px] top-[36px] z-20 h-7 w-7 md:right-[32px]"
         >

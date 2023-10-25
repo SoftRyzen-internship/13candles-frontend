@@ -1,18 +1,19 @@
 import { getDictionary } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
+import { HeroSection } from '@/sections/home/HeroSection';
+import { CatalogSection } from '@/sections/home/CatalogSection';
+
+import { ExampleSection } from '@/sections/home/ExampleSection';
 import TranslationSwitcher from '@/components/TranslationSwitcher/TranslationSwitcher';
 import { ContactList } from '@/components/ContactList';
 import { BusinessLink } from '@/components/ui/BusinessLink';
 import { Button } from '@/components/ui/Button';
 import { SideMenu } from '@/components/SideMenu';
 import { Logo } from '@/components/ui/Logo';
-import { ExampleSection } from '@/sections/home/ExampleSection';
-import { CatalogSection } from '@/sections/home/CatalogSection';
-
-import { CATALOG } from '@/data/links';
 import { Information } from '@/components/Information';
 import { BasketButton } from '@/components/ui/BasketButton';
+import { CATALOG } from '@/data';
 
 export default async function Home({
   params: { lang },
@@ -27,11 +28,12 @@ export default async function Home({
   const { closePanelBtnAriaText, openPanelBtnAriaText } = sidePanelMenu;
   const { contacts, info, info_text, basketText } = footer;
 
-  const { catalog, about } = homepage;
+  const { hero, catalog, about } = homepage;
   const { button } = about;
 
   return (
     <main>
+      <HeroSection {...hero} />
       <CatalogSection {...catalog} />
 
       <ExampleSection />
