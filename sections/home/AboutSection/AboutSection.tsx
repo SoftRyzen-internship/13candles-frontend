@@ -18,7 +18,7 @@ export const AboutSection: React.FC<AboutProps> = ({ about }) => {
               style={{ objectFit: 'cover' }}
             />
           </div>
-          <ul className="flex-1 text-justify leading-[19px] xl:text-lg smOnly:mb-6">
+          <ul className="flex-1 text-justify md:m-auto md:leading-[19px] xl:text-lg smOnly:mb-6">
             {about.content.map((p, i) => (
               <li key={i} className="mb-3 last:mb-0 last:tracking-[-0.16px]">
                 {p}
