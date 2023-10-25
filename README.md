@@ -281,8 +281,16 @@ a decorative icon in the component.
 - ### `NavLinks`
 
 | Prop        | Default | Description                                               |
-| ----------- | ------- | --------------------------------------------------------- | --- |
+| ----------- | ------- | --------------------------------------------------------- |
 | `links`     | `[]`    | Required. Array of navigations links.                     |
-| `className` | `''`    | Optional. Add a custom or additional CSS class if needed. |     |
+| `className` | `''`    | Optional. Add a custom or additional CSS class if needed. |
+
+- ### BusinesslLink
+
+| Prop        | Default | Description                                             |
+| ----------- | ------- | ------------------------------------------------------- |
+| `text`      | —       | Required, any text content                              |
+| `isIcon`    | `false` | Optional, set true to use decor icon                    |
+| `className` | `''`    | Optional, add custom or additional css class you'd need |
 
 ---

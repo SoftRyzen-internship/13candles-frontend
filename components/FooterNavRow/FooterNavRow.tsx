@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FooterNavRowProps } from '@/components/FooterNavRow/types';
+// import { BasketButton } from '../ui/BasketButton';
 
 export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
   const { nav_text, nav } = data;
@@ -17,6 +18,12 @@ export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
               </Link>
             </li>
           ))}
+          {/* <li>
+            <BasketButton href={FOR_BUSINESS} />
+          </li>
+          <li>
+            <BasketButton href={CATALOG} />
+          </li> */}
         </ul>
       </div>
     )
