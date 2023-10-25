@@ -20,7 +20,7 @@ export const SocialsMenu: React.FC<SocialsProps> = ({
               className={`decor ${icon}`}
               aria-label={altText}
             >
-              {text}
+              <span className="link">{text}</span>
             </a>
           </li>
         ))}
