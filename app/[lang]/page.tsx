@@ -10,7 +10,7 @@ import { Logo } from '@/components/ui/Logo';
 import { ExampleSection } from '@/sections/home/ExampleSection';
 import { CatalogSection } from '@/sections/home/CatalogSection';
 
-import { CATALOG } from '@/data/routes';
+import { CATALOG } from '@/data/links';
 
 export default async function Home({
   params: { lang },
