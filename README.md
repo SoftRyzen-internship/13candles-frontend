@@ -271,21 +271,24 @@ a decorative icon in the component.
 
 - ### Slider
 
-| Prop                    | Default          | Description                                                                                |
-| ----------------------- | ---------------- | ------------------------------------------------------------------------------------------ |
-| `className`             | `''`             | add custom or additional css class you'd need                                              |
-| `element`               | —                | required, Functional Component that is rendered inside each slide                          |
-| `data`                  | `[]`             | required, data that is Used inside the Functinal Component you provided via "element" prop |
-| `isLoop`                | `false`          | set to true to enable continuous loop mode                                                 |
-| `isAutoplay`            | `false`          | set to true to enable autoplay                                                             |
-| `isPagination`          | `false`          | set to true to enable pagination                                                           |
-| `isInteractive`         | `false`          | set to true to enable swipe on touch and grabcursor                                        |
-| `isNavigation`          | `false`          | set to true to enable navigation                                                           |
-| `navigationBreakpoints` | `{               |                                                                                            |
-|                         | isMobile: true,  | set to false to disable navigation on mobile                                               |
-|                         | isTablet: true,  | set to false to disable navigation on tablet                                               |
-|                         | isDesktop: true, | set to false to disable navigation on desktop                                              |
-|                         | }`               | (provide options for all screens if you want to provide customised breakpoints)            |
+| Prop                    | Default          | Description                                                                      |
+| ----------------------- | ---------------- | -------------------------------------------------------------------------------- |
+| `className`             | `''`             | Optional, add custom or additional css class you'd need                          |
+| `id`                    | —                | Required, id for the slider                                                      |
+| `element`               | —                | Required, Functional Component that is rendered inside each slide                |
+| `data`                  | `[]`             | Required, data that is used inside the Component you provided via "element" prop |
+| `isLoop`                | `false`          | Optional, set to true to enable continuous loop mode                             |
+| `isAutoplay`            | `false`          | Optional, set to true to enable autoplay                                         |
+| `isPagination`          | `false`          | Optional, set to true to enable pagination                                       |
+| `isInteractive`         | `false`          | Optional, set to true to enable swipe on touch and grabcursor                    |
+| `isFadeEffect`          | `false`          | Optional, set to true to enable fade effect                                      |
+| `isNavigation`          | `false`          | Optional, set to true to enable navigation                                       |
+| `navigationBreakpoints` | `{               |                                                                                  |
+|                         | isMobile: true,  | set to false to disable navigation on mobile                                     |
+|                         | isTablet: true,  | set to false to disable navigation on tablet                                     |
+|                         | isDesktop: true, | set to false to disable navigation on desktop                                    |
+|                         | }`               | (Is is required to provide options for all screens                               |
+|                         |                  | if you want to provide customised breakpoints)                                   |
 
 - ### `SideMenu`
 

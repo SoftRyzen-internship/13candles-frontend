@@ -10,13 +10,15 @@ export const BannerSlider: React.FC<BannerSliderProps> = ({
 }) => (
   <div className={className}>
     <Slider
+      id="homepage-hero"
       data={banners}
       element={Banner}
       isAutoplay={true}
       isLoop={true}
       isPagination={true}
-      isNavigation={true}
       isInteractive={true}
+      isFadeEffect={true}
+      isNavigation={true}
       navigationBreakpoints={{
         isMobile: false,
         isTablet: false,

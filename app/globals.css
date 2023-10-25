@@ -80,25 +80,25 @@ a:focus-visible .link::before,
 
 /* === SLIDER === */
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
+#homepage-hero .swiper-button-prev::after,
+#homepage-hero .swiper-button-next::after {
   content: url('/icons/icon_arrow.svg') !important;
-  @apply common-transition absolute top-0 opacity-25 hover:opacity-100;
+  @apply common-transition absolute top-0 h-12 w-12 bg-white/50 opacity-25 hover:opacity-100;
 }
 
-.swiper-button-prev::after {
-  @apply -right-2 rotate-180;
+#homepage-hero .swiper-button-prev::after {
+  @apply -right-16 rotate-180;
 }
 
-.swiper-button-next::after {
-  @apply -left-2;
+#homepage-hero .swiper-button-next::after {
+  @apply -left-16;
 }
 
-.swiper-pagination-bullet {
+#homepage-hero .swiper-pagination-bullet {
   @apply !bg-black-light;
 }
 
-.swiper-pagination {
+#homepage-hero .swiper-pagination {
   @apply !static mt-[20px] md:mt-[50px] xl:mt-[16px];
 }
 

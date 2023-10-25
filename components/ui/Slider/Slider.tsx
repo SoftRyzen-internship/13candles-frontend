@@ -1,23 +1,26 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination, EffectFade, Navigation } from 'swiper/modules';
 
 import { desktop, mobile, tablet } from '@/data';
 import { SliderProps } from './types';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
 
 export const Slider: React.FC<SliderProps> = ({
+  id,
   data = [],
   element: Element,
+  isInteractive = false,
+  isFadeEffect = false,
   isLoop = false,
   isAutoplay = false,
   isPagination = false,
-  isInteractive = false,
   isNavigation = false,
   navigationBreakpoints = {
     isMobile: true,
@@ -45,17 +48,20 @@ export const Slider: React.FC<SliderProps> = ({
 
   return (
     <Swiper
-      modules={[Autoplay, Navigation, Pagination]}
-      autoplay={isAutoplay}
-      loop={isLoop}
-      pagination={{
-        enabled: isPagination,
-        type: 'bullets',
-      }}
+      id={id}
+      modules={[Autoplay, Pagination, EffectFade, Navigation]}
       allowTouchMove={isInteractive}
       grabCursor={isInteractive}
+      effect={isFadeEffect ? 'fade' : ''}
+      autoplay={isAutoplay ? { disableOnInteraction: false } : false}
+      loop={isLoop}
       navigation={isNavigation}
       breakpoints={breakpoints}
+      pagination={{
+        enabled: isPagination,
+        clickable: true,
+        type: 'bullets',
+      }}
     >
       {data.map((props, index) => (
         <SwiperSlide key={index}>
