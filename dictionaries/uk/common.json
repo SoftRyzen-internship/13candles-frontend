@@ -61,20 +61,17 @@
         {
           "href": "https://www.instagram.com/13.candle.bar/",
           "icon": "instagram",
-          "text": "Instagram",
-          "altText": "Кнопка переходу на Instagram сторінку"
+          "text": "Instagram"
         },
         {
           "href": "https://t.me/+380966802151",
           "icon": "telegram",
-          "text": "Telegram",
-          "altText": "Кнопка переходу на Telegram профіль"
+          "text": "Telegram"
         },
         {
           "href": "/",
           "icon": "viber",
-          "text": "Viber",
-          "altText": "Кнопка переходу на Viber профіль"
+          "text": "Viber"
         }
       ],
       "soft_ryzen": {

@@ -61,20 +61,17 @@
         {
           "href": "https://www.instagram.com/13.candle.bar/",
           "icon": "instagram",
-          "text": "Instagram",
-          "altText": "Redirect link to Instagram page"
+          "text": "Instagram"
         },
         {
           "href": "https://t.me/+380966802151",
           "icon": "telegram",
-          "text": "Telegram",
-          "altText": "Redirect link to Telegram account"
+          "text": "Telegram"
         },
         {
           "href": "viber://chat?number=380966802151",
           "icon": "viber",
-          "text": "Viber",
-          "altText": "Redirect link to Viber account"
+          "text": "Viber"
         }
       ],
       "soft_ryzen": {

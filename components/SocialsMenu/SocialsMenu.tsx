@@ -1,5 +1,5 @@
 import React from 'react';
-import { SocialItem, SocialsProps } from './types';
+import { SocialsProps } from './types';
 
 export const SocialsMenu: React.FC<SocialsProps> = ({
   socials,
@@ -11,16 +11,15 @@ export const SocialsMenu: React.FC<SocialsProps> = ({
         {title}
       </span>
       <ul className="flex flex-col items-center gap-3 md:items-start md:gap-3.5">
-        {socials.map(({ href, icon, text, altText }: SocialItem) => (
+        {socials.map(({ href, icon, text}) => (
           <li key={text}>
             <a
               href={href}
               rel="noopener noreferrer nofollow"
               target="_blank"
               className={`decor ${icon}`}
-              aria-label={altText}
             >
-              <span className="link">{text}</span>
+              <span className="link ">{text}</span>
             </a>
           </li>
         ))}
