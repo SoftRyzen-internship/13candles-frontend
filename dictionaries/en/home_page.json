@@ -1,25 +1,28 @@
 {
   "homepage": {
-    "hero": [
-      {
-        "src": "/images/homepage/hero/1.webp",
-        "alt": "fragrant smoke"
-      },
-      {
-        "src": "/images/homepage/hero/2.webp",
-        "alt": "burning candle"
-      },
-      {
-        "src": "/images/homepage/hero/4.webp",
-        "alt": "aromatic candles"
-      }
-    ],
+    "hero": {
+      "hiddenTitle": "13 candle bar",
+      "banners": [
+        {
+          "src": "/images/homepage/hero/1.webp",
+          "alt": "fragrant smoke"
+        },
+        {
+          "src": "/images/homepage/hero/2.webp",
+          "alt": "burning candle"
+        },
+        {
+          "src": "/images/homepage/hero/4.webp",
+          "alt": "aromatic candles"
+        }
+      ]
+    },
     "catalog": {
       "title": "Catalog",
       "subtitle": "Select the product category that interests you",
       "categories": [
         {
-          "href": "/",
+          "href": "/1",
           "text": "Scented candles",
           "image": {
             "src": "/images/homepage/catalog/aromacandle@2x.webp",
@@ -27,7 +30,7 @@
           }
         },
         {
-          "href": "/",
+          "href": "/2",
           "text": "Aroma diffusers",
           "image": {
             "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
@@ -35,7 +38,7 @@
           }
         },
         {
-          "href": "/",
+          "href": "/3",
           "text": "Incense (aroma sticks)",
           "image": {
             "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
@@ -43,7 +46,7 @@
           }
         },
         {
-          "href": "/",
+          "href": "/4",
           "text": "Accessories",
           "image": {
             "src": "/images/homepage/catalog/accessories@2x.webp",
@@ -51,7 +54,7 @@
           }
         },
         {
-          "href": "/",
+          "href": "/5",
           "text": "Sets",
           "image": {
             "src": "/images/homepage/catalog/sets@2x.webp",
@@ -59,7 +62,7 @@
           }
         },
         {
-          "href": "/",
+          "href": "/6",
           "text": "Other",
           "image": {
             "src": "/images/homepage/catalog/different@2x.webp",
