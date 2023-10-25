@@ -12,6 +12,7 @@ import { CatalogSection } from '@/sections/home/CatalogSection';
 import { CATALOG } from '@/data/links';
 import { ExampleSection } from '@/sections/home/ExampleSection';
 import { TranslationSwitcher } from '@/components/TranslationSwitcher';
+import { MobileMenu } from '@/components/MobileMenu';
 
 export default async function Home({
   params: { lang },
@@ -21,7 +22,8 @@ export default async function Home({
   const { common, homepage } = await getDictionary(lang);
 
   const { header, footer } = common;
-  const { language, sidePanelMenu, nav, logoAriaLabelText } = header;
+  const { language, sidePanelMenu, nav, logoAriaLabelText, mobileMenu } =
+    header;
   const { closePanelBtnAriaText, openPanelBtnAriaText } = sidePanelMenu;
   const { contacts } = footer;
 
@@ -30,6 +32,23 @@ export default async function Home({
 
   return (
     <main>
+      <div className="container flex items-center justify-between bg-body pb-2 pt-9 smOnly:fixed smOnly:left-0 smOnly:top-0 smOnly:z-10 ">
+        <SideMenu
+          btnAriaClose={closePanelBtnAriaText}
+          btnAriaOpen={openPanelBtnAriaText}
+          links={nav}
+        />
+
+        <MobileMenu
+          links={nav}
+          isHomePage={true}
+          btnAriaClose={mobileMenu.closeMenuBtnAriaText}
+          btnAriaOpen={mobileMenu.openMenuBtnAriaText}
+          businessText={header.forBusinesBtnText}
+        />
+        <Logo aria={logoAriaLabelText} position="header" />
+      </div>
+
       <CatalogSection {...catalog} />
 
       <ExampleSection />
@@ -55,15 +74,6 @@ export default async function Home({
           label={button}
           href={CATALOG}
         />
-
-        <div className="flex items-center justify-between">
-          <SideMenu
-            btnAriaClose={closePanelBtnAriaText}
-            btnAriaOpen={openPanelBtnAriaText}
-            links={nav}
-          />
-          <Logo aria={logoAriaLabelText} position="header" />
-        </div>
       </div>
 
       <div id={CATALOG} className="w-74 h-74 mt-[500px]">

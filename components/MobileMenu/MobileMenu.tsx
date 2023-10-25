@@ -2,10 +2,10 @@
 import { CSSTransition } from 'react-transition-group';
 import { Squash as Hamburger } from 'hamburger-react';
 import { useEffect, useRef, useState } from 'react';
-// import { useParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 import { NavLinks } from '../ui/NavLinks';
-// import { TranslationSwitcher } from '../TranslationSwitcher';
+import { TranslationSwitcher } from '../TranslationSwitcher';
 import { BusinessLink } from '../ui/BusinessLink';
 
 import { MobileMenuProps } from './types';
@@ -20,8 +20,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 }) => {
   const [isOpen, setOpen] = useState(false);
   const nodeRef = useRef(null);
-  //   const { lang } = useParams();
-  //   const currentLang = lang.toString() === 'en' ? 'Eng' : 'Укр';
+  const { lang } = useParams();
+  const currentLang = lang.toString() === 'en' ? 'Eng' : 'Укр';
 
   useEffect(() => {
     if (isOpen) {
@@ -69,7 +69,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           className=" fixed bottom-0 left-0 right-0 top-[92px] z-10 overflow-auto bg-body md:hidden"
         >
           <div className="container grid gap-9 py-7 text-center text-lg">
-            {/* <TranslationSwitcher lang={currentLang} /> */}
+            <TranslationSwitcher lang={currentLang} />
 
             {isHomePage && (
               <NavLinks
