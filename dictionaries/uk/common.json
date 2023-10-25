@@ -1,0 +1,83 @@
+{
+  "common": {
+    "header": {
+      "sidePanelMenu": {
+        "openPanelBtnAriaText": "Зображення кпопки бічної панелі",
+        "closePanelBtnAriaText": "Зображення кпопки закриття бічної панелі"
+      },
+      "mobileMenu": {
+        "openMenuBtnAriaText": "Зображення кпопки мобільного меню",
+        "closeMenuBtnAriaText": "Зображення кпопки закриття мобільного меню"
+      },
+      "nav": [
+        {
+          "name": "Каталог",
+          "href": "/catalog"
+        },
+        {
+          "name": "Про Нас",
+          "href": "/about"
+        }
+      ],
+      "logoAriaLabelText": "Посилання із логотипом компанії",
+      "forBusinesBtnText": "Для Бізнесу",
+      "language": "Укр"
+    },
+    "footer": {
+      "contacts": [
+        {
+          "href": "tel:380634293499",
+          "icon": "phone",
+          "text": "38 (063) 429 34 99"
+        },
+        {
+          "href": "mailto:13candlebar@gmail.com",
+          "icon": "email",
+          "text": "13candlebar@gmail.com"
+        }
+      ],
+      "nav_text": "Навігація",
+      "nav": [
+        {
+          "name": "Каталог",
+          "href": "/catalog"
+        },
+        {
+          "name": "Про нас",
+          "href": "/about"
+        }
+      ],
+      "basketText": "Кошик",
+      "forBusinesBtnText": "Для Бізнесу",
+      "info_text": "Інформація",
+      "info": [
+        "Договір оферти",
+        "Гарантії та повернення",
+        "Доставка і оплата",
+        "Правила користування сайтом"
+      ],
+      "social_text": "Соціальні мережі",
+      "social": [
+        {
+          "href": "/",
+          "icon": "instagram",
+          "text": "Instagram"
+        },
+        {
+          "href": "/",
+          "icon": "telegram",
+          "text": "Telegram"
+        },
+        {
+          "href": "/",
+          "icon": "viber",
+          "text": "Viber"
+        }
+      ],
+      "soft_ryzen": {
+        "name": "Made by SoftRyzen",
+        "href": "https://internship.softryzen.com"
+      }
+    }
+  }
+}

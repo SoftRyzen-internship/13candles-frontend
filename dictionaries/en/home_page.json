@@ -1,0 +1,86 @@
+{
+  "homepage": {
+    "hero": [
+      {
+        "src": "/images/homepage/hero/1.webp",
+        "alt": "fragrant smoke"
+      },
+      {
+        "src": "/images/homepage/hero/2.webp",
+        "alt": "burning candle"
+      },
+      {
+        "src": "/images/homepage/hero/4.webp",
+        "alt": "aromatic candles"
+      }
+    ],
+    "catalog": {
+      "title": "Catalog",
+      "subtitle": "Select the product category that interests you",
+      "categories": [
+        {
+          "href": "/",
+          "text": "Scented candles",
+          "image": {
+            "src": "/images/homepage/catalog/aromacandle@2x.webp",
+            "alt": "Scented candles"
+          }
+        },
+        {
+          "href": "/",
+          "text": "Aroma diffusers",
+          "image": {
+            "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
+            "alt": "Aroma diffusers"
+          }
+        },
+        {
+          "href": "/",
+          "text": "Incense (aroma sticks)",
+          "image": {
+            "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
+            "alt": "Incense (aroma sticks)"
+          }
+        },
+        {
+          "href": "/",
+          "text": "Accessories",
+          "image": {
+            "src": "/images/homepage/catalog/accessories@2x.webp",
+            "alt": "Accessories"
+          }
+        },
+        {
+          "href": "/",
+          "text": "Sets",
+          "image": {
+            "src": "/images/homepage/catalog/sets@2x.webp",
+            "alt": "Sets"
+          }
+        },
+        {
+          "href": "/",
+          "text": "Other",
+          "image": {
+            "src": "/images/homepage/catalog/different@2x.webp",
+            "alt": "Other products"
+          }
+        }
+      ]
+    },
+    "about": {
+      "title": "About Us",
+      "image": {
+        "src": "/images/homepage/about/about@2x.webp",
+        "alt": "Candle Bar"
+      },
+      "content": [
+        "_english_ 13 Candle Bar - це сімейна майстерня ароматів і затишку. Наше невелике виробництво знаходиться в Київській області та спеціалізується на виготовленні аромадифузорів, ароматичних свічок, свічок в кашпо та інших предметах затишку.",
+        "_english_ Наші клієнти обирають нас через високоякісний сервіс, використання виключно натуральних і топових матеріалів і компонентів, преміальні аромати та гарне співвідношення вартості з якістю. Також ми можемо виготовляти як оптові, так і корпоративні замовлення з розробкою продукції під існуючий бренд.",
+        "_english_ Новим напрямком для нас стала ароматизація приміщень. Адже ми розуміємо, що бізнесу важливо закохувати в себе клієнтів, створюючи приємне враження за допомогою ароматів.",
+        "_english_ Пишіть нам, задавайте питання, і ми залюбки познайомимо вас з всесвітом затишку і приємних ароматів в 13 Candle Bar."
+      ],
+      "button": "Catalog"
+    }
+  }
+}
