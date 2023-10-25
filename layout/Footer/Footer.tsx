@@ -12,7 +12,7 @@ import { FooterProps } from '@/layout/Footer/types';
   /* <SocialNetworks /> */
 }
 {
-  /* <Footer {...footer} />; */
+  /* <Footer {...footer} /> */
 }
 export const Footer: React.FC<FooterProps> = ({
   logoAriaLabelText,
