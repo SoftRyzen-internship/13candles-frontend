@@ -2,11 +2,10 @@ import { getDictionary } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 import { ContactList } from '@/components/ContactList';
 import { BusinessLink } from '@/components/ui/BusinessLink';
-import { Button } from '@/components/ui/Button';
 import { SideMenu } from '@/components/SideMenu';
 import { Logo } from '@/components/ui/Logo';
 import { ExampleSection } from '@/sections/home/ExampleSection';
-// import { TranslationSwitcher } from '@/components/TranslationSwitcher';
+import { TranslationSwitcher } from '@/components/TranslationSwitcher';
 import { AboutSection } from '@/sections/home/AboutSection';
 import { CatalogSection } from '@/sections/home/CatalogSection';
 
@@ -25,23 +24,20 @@ export default async function Home({
   const { contacts } = footer;
 
   const { catalog, about } = homepage;
-  const { button } = about;
 
   return (
     <main>
       <CatalogSection {...catalog} />
 
       <ExampleSection />
-      {/* <TranslationSwitcher lang={header.language} /> */}
-      {/* <AboutSection about={allData.about} /> */}
 
       {/* Examples using translations */}
 
       <div className="container mt-10 flex flex-col gap-10">
-        {/* <TranslationSwitcher lang={language} /> */}
+        <TranslationSwitcher lang={language} />
 
         <ContactList contacts={contacts} className="font-montserrat" />
-
+        <AboutSection about={about} />
         <BusinessLink isIcon={true} text={header.forBusinesBtnText} />
         <BusinessLink
           className="text-lg"
@@ -49,13 +45,6 @@ export default async function Home({
           text={header.forBusinesBtnText}
         />
         <BusinessLink isIcon={false} text={footer.forBusinesBtnText} />
-
-        <Button
-          className="m-10 max-w-[280px] md:max-w-[172px]"
-          tag="a"
-          label={button}
-          href={CATALOG}
-        />
 
         <div className="flex items-center justify-between">
           <SideMenu
