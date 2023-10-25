@@ -1,16 +1,17 @@
 import { getDictionary } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
-import TranslationSwitcher from '@/components/TranslationSwitcher/TranslationSwitcher';
 import { ContactList } from '@/components/ContactList';
 import { BusinessLink } from '@/components/ui/BusinessLink';
 import { Button } from '@/components/ui/Button';
 import { SideMenu } from '@/components/SideMenu';
 import { Logo } from '@/components/ui/Logo';
-import { ExampleSection } from '@/sections/home/ExampleSection';
+
 import { CatalogSection } from '@/sections/home/CatalogSection';
 
 import { CATALOG } from '@/data/links';
+import { ExampleSection } from '@/sections/home/ExampleSection';
+import { TranslationSwitcher } from '@/components/TranslationSwitcher';
 
 export default async function Home({
   params: { lang },
