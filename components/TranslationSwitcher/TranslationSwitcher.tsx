@@ -14,11 +14,8 @@ export default function TranslationSwitcher({ lang }: { lang: string }) {
   };
 
   return (
-    <Link
-      href={redirectedPathName(lang === 'Eng' ? 'uk' : 'en')}
-      className="link"
-    >
-      {lang === 'Eng' ? 'Укр' : 'Eng'}
+    <Link href={redirectedPathName(lang === 'Eng' ? 'uk' : 'en')}>
+      <span className="link">{lang === 'Eng' ? 'Укр' : 'Eng'}</span>
     </Link>
   );
 }
