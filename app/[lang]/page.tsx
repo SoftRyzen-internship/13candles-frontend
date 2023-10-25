@@ -10,7 +10,8 @@ import { Logo } from '@/components/ui/Logo';
 import { ExampleSection } from '@/sections/home/ExampleSection';
 import { CatalogSection } from '@/sections/home/CatalogSection';
 
-import { CATALOG } from '@/data/links';
+import { CATALOG } from '@/data';
+import { HeroSection } from '@/sections/home/HeroSection';
 
 export default async function Home({
   params: { lang },
@@ -24,11 +25,12 @@ export default async function Home({
   const { closePanelBtnAriaText, openPanelBtnAriaText } = sidePanelMenu;
   const { contacts } = footer;
 
-  const { catalog, about } = homepage;
+  const { hero, catalog, about } = homepage;
   const { button } = about;
 
   return (
     <main>
+      <HeroSection {...hero} />
       <CatalogSection {...catalog} />
 
       <ExampleSection />

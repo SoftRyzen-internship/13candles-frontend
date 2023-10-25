@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import classNames from 'classnames';
 import { BusinessLinkProps } from './types';
-import { FOR_BUSINESS } from '@/data/routes';
+import { FOR_BUSINESS } from '@/data';
 
 export const BusinessLink: React.FC<BusinessLinkProps> = ({
   text,
