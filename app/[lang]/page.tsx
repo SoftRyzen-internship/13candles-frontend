@@ -28,7 +28,7 @@ export default async function Home({
   const { button } = about;
 
   return (
-    <main>
+    <>
       <CatalogSection {...catalog} />
 
       <ExampleSection />
@@ -68,6 +68,6 @@ export default async function Home({
       <div id={CATALOG} className="w-74 h-74 mt-[500px]">
         Scroll test
       </div>
-    </main>
+    </>
   );
 }

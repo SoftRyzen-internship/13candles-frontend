@@ -246,7 +246,7 @@ component `Heading`
 
 - ### ExternalLink
 
-A link componet that is created with tag "a" and has such attributes as
+A link component that is created with tag "a" and has such attributes as
 rel="noopener noreferrer nofollow" and target="\_blank". Additionally, there is
 a decorative icon in the component.
 
@@ -285,7 +285,7 @@ a decorative icon in the component.
 | `links`     | `[]`    | Required. Array of navigations links.                     |
 | `className` | `''`    | Optional. Add a custom or additional CSS class if needed. |
 
-- ### BusinesslLink
+- ### BusinessLink
 
 | Prop        | Default | Description                                             |
 | ----------- | ------- | ------------------------------------------------------- |

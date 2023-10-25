@@ -3,6 +3,7 @@ import { Montserrat, Raleway } from 'next/font/google';
 import { Locale, i18n } from '@/i18n.config';
 
 import '../globals.css';
+import { Header } from '@/components/Header';
 
 const montserrat = Montserrat({
   subsets: ['cyrillic', 'latin'],
@@ -34,7 +35,8 @@ export default function RootLayout({
   return (
     <html lang={params.lang}>
       <body className={`${montserrat.variable} ${raleway.variable}`}>
-        {children}
+        <Header />
+        <main>{children}</main>
         <div id="modal" />
       </body>
     </html>
