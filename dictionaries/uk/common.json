@@ -12,11 +12,11 @@
       "nav": [
         {
           "name": "Каталог",
-          "href": "/catalog"
+          "href": "catalog"
         },
         {
           "name": "Про Нас",
-          "href": "/about"
+          "href": "about"
         }
       ],
       "logoAriaLabelText": "Посилання із логотипом компанії",
@@ -40,11 +40,11 @@
       "nav": [
         {
           "name": "Каталог",
-          "href": "/catalog"
+          "href": "catalog"
         },
         {
           "name": "Про нас",
-          "href": "/about"
+          "href": "about"
         }
       ],
       "basketText": "Кошик",

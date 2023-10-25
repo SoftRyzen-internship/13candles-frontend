@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
 
+import { smoothScroll } from '@/utils';
 import { FooterNavRowProps } from '@/components/FooterNavRow/types';
 import { BasketButton } from '@/components/ui/BasketButton';
 import { BusinessLink } from '@/components/ui/BusinessLink';
@@ -15,7 +17,11 @@ export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
         <ul className="xl:grid xl:gap-3">
           {nav.map(item => (
             <li key={item.href || item.name}>
-              <Link className="link xl:font-medium" href={item.href || '#'}>
+              <Link
+                className="link xl:font-medium"
+                href={item.href || '#'}
+                onClick={e => smoothScroll(e, item.href)}
+              >
                 {item.name}
               </Link>
             </li>
