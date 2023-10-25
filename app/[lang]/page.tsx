@@ -55,14 +55,14 @@ export default async function Home({
           href={CATALOG}
         />
 
-        <div className="flex items-center justify-between">
+        {/* <div className="flex items-center justify-between">
           <SideMenu
             btnAriaClose={closePanelBtnAriaText}
             btnAriaOpen={openPanelBtnAriaText}
             links={nav}
           />
           <Logo aria={logoAriaLabelText} position="header" />
-        </div>
+        </div> */}
       </div>
 
       <div id={CATALOG} className="w-74 h-74 mt-[500px]">

@@ -1,22 +1,22 @@
-import { useState } from 'react';
-import { ButtonOpenModal } from '../ui/ButtonOpenModal';
+import { Logo } from '../ui/Logo';
+import { SideMenu } from '../SideMenu';
+import { HeaderProps } from '@/types/HeaderProps';
 
-export const Header = () => {
-  const [showModal, setShowModal] = useState(false);
-  //   const [typeContent, setTypeContent] = useState('');
-  const onModalToggle = () => setShowModal(!showModal);
-  //   const onModalOpen = () => setShowModal(true);
+export const Header: React.FC<HeaderProps> = ({ header }) => {
+  const { sidePanelMenu, nav, toHomePage, logoAriaLabelText } = header;
+  console.log(sidePanelMenu);
   return (
     <header>
       <div className="container h-[100px]">
-        <h2>Header</h2>
-
-        <ButtonOpenModal
-          className="link"
-          //   setTypeContent={setTypeContent}
-          onModalOpen={onModalToggle}
-          //   typeContent={arrayContent[ind]
-        />
+        <nav className="flex items-center justify-between">
+          {/* //if not home page */}
+          <SideMenu
+            btnAriaClose={sidePanelMenu.closePanelBtnAriaText}
+            btnAriaOpen={sidePanelMenu.openPanelBtnAriaText}
+            links={nav}
+          />
+          <Logo aria={logoAriaLabelText} position="header" />
+        </nav>
       </div>
     </header>
   );

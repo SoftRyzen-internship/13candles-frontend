@@ -4,6 +4,7 @@ import { Locale, i18n } from '@/i18n.config';
 
 import '../globals.css';
 import { Header } from '@/components/Header';
+import { getCommonDictionaries } from '@/lib/dictionary';
 
 const montserrat = Montserrat({
   subsets: ['cyrillic', 'latin'],
@@ -25,17 +26,21 @@ export async function generateStaticParams() {
   return i18n.locales.map(locale => ({ lang: locale }));
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
   params: { lang: Locale };
 }) {
+  const { common } = await getCommonDictionaries(params.lang);
+
+  // console.log(common.header);
+
   return (
     <html lang={params.lang}>
       <body className={`${montserrat.variable} ${raleway.variable}`}>
-        <Header />
+        <Header header={common.header} />
         <main>{children}</main>
         <div id="modal" />
       </body>
