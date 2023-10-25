@@ -1,7 +1,18 @@
+import Link from 'next/link';
+
+import BusinessIcon from '@/public/icons/icon_businesscase.svg';
+
+// import { Information } from '@/components/Information';
+import { BasketButton } from '@/components/ui/BasketButton';
 import { ContactList } from '@/components/ContactList';
 import { SideMenu } from '@/components/SideMenu';
 import { Button } from '@/components/ui/Button';
 import { Logo } from '@/components/ui/Logo';
+
+// import dataFooter from '@/dictionaries/uk/common.json';
+// const {
+//   footer: { info, info_text },
+// } = dataFooter;
 
 const data = {
   contacts: [
@@ -66,7 +77,17 @@ export const ExampleSection = () => (
       <div id="catalog" className="w-74 h-74 mt-[500px]">
         Scroll test
       </div>
-      <ContactList contacts={data.contacts} />1
+      <a className="link" href="./">
+        link with underline
+      </a>
+      <Link href="./" className="flex w-fit items-center justify-center gap-2">
+        <BusinessIcon width="24" height="24" />
+        <span className="link">Для Бізнесу</span>
+      </Link>
+
+      {/* <Information info={info} info_text={info_text} /> */}
+
+      <BasketButton />
     </div>
   </section>
 );
