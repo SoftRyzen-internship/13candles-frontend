@@ -1,5 +1,5 @@
 export interface HeaderProps {
-  header: {
+  data: {
     sidePanelMenu: {
       openPanelBtnAriaText: string;
       closePanelBtnAriaText: string;
@@ -18,6 +18,6 @@ export interface HeaderProps {
     };
     logoAriaLabelText: string;
     forBusinesBtnText: string;
-    language: string;
+    languageButtonText: string;
   };
 }
