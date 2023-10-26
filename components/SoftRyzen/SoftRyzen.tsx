@@ -11,13 +11,7 @@ export const SoftRyzen: React.FC<SoftRyzenProps> = ({ name, href }) => (
       rel="noopener noreferrer"
       className="link text-[12px] text-sm font-medium leading-4"
     >
-      <span className="animate-pulse text-red-500 duration-500 ease-in-out">
-        ❤️
-      </span>
       {name}
-      <span className="animate-pulse text-red-500 duration-500 ease-in-out">
-        ❤️
-      </span>
     </Link>
   </div>
 );
