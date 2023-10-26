@@ -9,6 +9,7 @@ const dictionaries = {
     ...(await import(`@/dictionaries/en/offer_contract.json`)).default,
     ...(await import(`@/dictionaries/en/rules_of_use.json`)).default,
     ...(await import(`@/dictionaries/en/warranties_and_returns.json`)).default,
+    ...(await import(`@/dictionaries/en/business_page.json`)).default,
   }),
 
   uk: async () => ({
@@ -18,6 +19,7 @@ const dictionaries = {
     ...(await import(`@/dictionaries/uk/offer_contract.json`)).default,
     ...(await import(`@/dictionaries/uk/rules_of_use.json`)).default,
     ...(await import(`@/dictionaries/uk/warranties_and_returns.json`)).default,
+    ...(await import(`@/dictionaries/uk/business_page.json`)).default,
   }),
 };
 
