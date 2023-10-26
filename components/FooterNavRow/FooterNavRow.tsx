@@ -12,7 +12,7 @@ export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
 
   return (
     nav?.length > 0 && (
-      <div className="hidden xl:grid xl:gap-3 xl:text-base">
+      <div className="hidden xl:flex xl:flex-col xl:gap-3 xl:text-base">
         <p className="xl:font-bold">{nav_text}</p>
         <ul className="xl:grid xl:gap-3">
           {nav.map(item => (
