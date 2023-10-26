@@ -1,0 +1,31 @@
+{
+  "businessPage": {
+    "hero": {},
+    "secondSection": {},
+    "form": {
+      "inputs": {
+        "name": {
+          "label": "Your name *",
+          "placeholder": "Іванов Іван",
+          "error": "Невірне імʼя"
+        },
+        "phone": {
+          "label": "Your phone number *",
+          "placeholder": "+380981234567",
+          "error": "Невірний телефон"
+        },
+        "email": {
+          "label": "Your E-mail",
+          "placeholder": "your@mail.com",
+          "error": "Невірний e-mail"
+        }
+      },
+      "button": {
+        "sendText": "SEND",
+        "sentText": "Відправлено",
+        "loadingText": "Відправляється...",
+        "errorText": "Виникла помилка"
+      }
+    }
+  }
+}
