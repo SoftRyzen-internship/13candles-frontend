@@ -9,6 +9,7 @@ import { Logo } from '@/components/ui/Logo';
 
 import { CatalogSection } from '@/sections/home/CatalogSection';
 
+import { SocialsMenu } from '@/components/SocialsMenu';
 // import { ExampleSection } from '@/sections/home/ExampleSection';
 import { TranslationSwitcher } from '@/components/TranslationSwitcher';
 import { MobileMenu } from '@/components/MobileMenu';
@@ -26,7 +27,7 @@ export default async function Home({
   const { language, sidePanelMenu, nav, logoAriaLabelText, mobileMenu } =
     header;
   const { closePanelBtnAriaText, openPanelBtnAriaText } = sidePanelMenu;
-  const { contacts } = footer;
+  const { contacts, social, social_text } = footer;
 
   const { hero, catalog, about } = homepage;
   const { button } = about;
@@ -76,6 +77,7 @@ export default async function Home({
           label={button}
           href={CATALOG}
         />
+        <SocialsMenu socials={social} title={social_text} />
       </div>
 
       <div id={CATALOG} className="w-74 h-74 mt-[500px]">

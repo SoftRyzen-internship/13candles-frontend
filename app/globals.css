@@ -127,20 +127,18 @@ a:focus-visible .link::before,
 .phone,
 .email,
 .instagram,
-.telegram,
-.viber {
+.telegram {
   @apply pl-8;
 }
 
 .phone::before,
 .email::before,
 .instagram::before,
-.telegram::before,
-.viber::before {
+.telegram::before {
   @apply h-6 w-6;
 }
 
-/* decore icons bg */
+/* decor icons bg */
 
 .case::before {
   @apply bg-[url('/icons/icon_businesscase.svg')];
@@ -160,8 +158,4 @@ a:focus-visible .link::before,
 
 .telegram::before {
   @apply bg-[url('/icons/icon_telegram.svg')];
-}
-
-.viber::before {
-  @apply bg-[url('/icons/icon_viber.svg')];
 }

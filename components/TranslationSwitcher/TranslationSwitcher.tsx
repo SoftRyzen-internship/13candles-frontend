@@ -15,8 +15,8 @@ export const TranslationSwitcher: React.FC<{ lang: string }> = ({ lang }) => {
 
   return (
     <Link
+      className="link max-w-fit"
       href={redirectedPathName(lang === 'Eng' ? 'uk' : 'en')}
-      className="link"
     >
       {lang === 'Eng' ? 'Укр' : 'Eng'}
     </Link>
