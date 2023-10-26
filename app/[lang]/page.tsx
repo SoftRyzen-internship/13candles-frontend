@@ -32,12 +32,12 @@ export default async function Home({
       <ExampleSection />
 
       {/* Examples using translations */}
-
+      <AboutSection about={about} />
       <div className="container mt-10 flex flex-col gap-10">
         <TranslationSwitcher lang={language} />
 
         <ContactList contacts={contacts} className="font-montserrat" />
-        <AboutSection about={about} />
+
         <BusinessLink isIcon={true} text={header.forBusinesBtnText} />
         <BusinessLink
           className="text-lg"
