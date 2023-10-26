@@ -22,6 +22,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
   const nodeRef = useRef(null);
   const lang = useParams().lang as Locale;
   const path = usePathname();
+
   const homePage = path === '/en' || path === '/uk';
   const businessPage = path.includes('business');
 
@@ -60,7 +61,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
             <TranslationSwitcher
               lang={lang}
               buttonText={languageButtonText}
-              className="mx-auto inline-flex "
+              className="mx-auto inline-flex"
             />
             {homePage && (
               <NavLinks
