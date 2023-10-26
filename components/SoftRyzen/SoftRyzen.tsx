@@ -1,17 +1,15 @@
 import React from 'react';
-import Link from 'next/link';
 
 import { SoftRyzenProps } from './types';
+import { ExternalLink } from '../ui/ExternalLink';
 
-export const SoftRyzen: React.FC<SoftRyzenProps> = ({ name, href }) => (
-  <div className="my-4 text-center md:text-end">
-    <Link
+export const SoftRyzen: React.FC<SoftRyzenProps> = ({ made, name, href }) => (
+  <div className="my-4 flex flex-row items-baseline justify-around text-center md:text-end">
+    <span>{made}</span>
+    <ExternalLink
+      text={name}
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="link text-[12px] text-sm font-medium leading-4"
-    >
-      {name}
-    </Link>
+      className="text-[12px] text-sm font-medium leading-4"
+    />
   </div>
 );

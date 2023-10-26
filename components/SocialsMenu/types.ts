@@ -7,4 +7,5 @@ export type SocialItem = {
 export type SocialsProps = {
   socials: SocialItem[];
   title: string;
+  className?: string;
 };

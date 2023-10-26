@@ -21,6 +21,7 @@ export type FooterProps = {
     text: string;
   }[];
   soft_ryzen: {
+    made: string;
     name: string;
     href: string;
   };

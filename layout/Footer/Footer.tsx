@@ -33,10 +33,14 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
           <FooterNavRow data={restProps} />
           <Information {...restProps} />
-          <SocialsMenu socials={social} title={social_text} />
-        </div>
-        <div className="mt-8">
-          <SoftRyzen {...soft_ryzen} />
+          <div>
+            <SocialsMenu
+              className="mb-[41px]"
+              socials={social}
+              title={social_text}
+            />
+            <SoftRyzen {...soft_ryzen} />
+          </div>
         </div>
       </div>
     </footer>

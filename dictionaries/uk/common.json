@@ -71,7 +71,8 @@
         }
       ],
       "soft_ryzen": {
-        "name": "Made by SoftRyzen",
+        "made": "Made by",
+        "name": "SoftRyzen",
         "href": "https://softryzen.com/"
       }
     }
