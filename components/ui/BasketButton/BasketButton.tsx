@@ -17,11 +17,7 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
   const [showModal, setShowModal] = useState(false);
   const onModalClose = () => setShowModal(false);
   const onModalOpen = () => setShowModal(true);
-  const buttonClasses = classNames(
-    'h-7 w-7',
-    { 'decor case': isIcon },
-    className,
-  );
+  const buttonClasses = classNames('h-7 w-7', className);
 
   return (
     <>

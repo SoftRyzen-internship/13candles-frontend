@@ -9,8 +9,10 @@ import { BusinessLink } from '../ui/BusinessLink';
 import { MenuButton } from '../ui/MenuButton';
 
 import { MobileMenuProps } from './types';
+import { Locale } from '@/i18n.config';
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({
+  languageButtonText,
   businessText,
   links,
   btnAriaOpen,
@@ -18,8 +20,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 }) => {
   const [isOpen, setOpen] = useState(false);
   const nodeRef = useRef(null);
-  const { lang } = useParams();
-  const currentLang = lang.toString() === 'en' ? 'Eng' : 'Укр';
+  const lang = useParams().lang as Locale;
   const path = usePathname();
   const homePage = path === '/en' || path === '/uk';
   const businessPage = path.includes('business');
@@ -56,7 +57,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           className=" fixed bottom-0 left-0 right-0 top-[100px] z-10 overflow-auto bg-body md:hidden"
         >
           <div className="container grid gap-9 py-7 text-center text-lg">
-            <TranslationSwitcher lang={currentLang} />
+            <TranslationSwitcher
+              lang={lang}
+              buttonText={languageButtonText}
+              className="mx-auto inline-flex "
+            />
             {homePage && (
               <NavLinks
                 onClick={() => setOpen(false)}

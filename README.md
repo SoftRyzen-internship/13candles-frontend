@@ -316,13 +316,14 @@ a decorative icon in the component.
 
 - ### MenuButton
 
-| Prop           | Default | Description                                             |
-| -------------- | ------- | ------------------------------------------------------- |
-| `isOpen`       | `-`     | Required, is menu open                                  |
-| `onClick`      | —       | Required, toggle menu                                   |
-| `btnAriaOpen`  | —       | Required. Aria text when menu opened.                   |
-| `btnAriaClose` | —       | Required. Aria text when menu closed.                   |
-| `className`    | `''`    | Optional, add custom or additional css class you'd need |
+| Prop                 | Default | Description                                             |
+| -------------------- | ------- | ------------------------------------------------------- |
+| `isOpen`             | `-`     | Required, is menu open                                  |
+| `onClick`            | —       | Required, toggle menu                                   |
+| `btnAriaOpen`        | —       | Required. Aria text when menu opened.                   |
+| `btnAriaClose`       | —       | Required. Aria text when menu closed.                   |
+| `className`          | `''`    | Optional, add custom or additional css class you'd need |
+| `languageButtonText` | -       | Required, the language applied by clicking the button   |
 
 - ### `MobileMenu`
 
