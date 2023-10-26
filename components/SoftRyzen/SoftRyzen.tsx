@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { SoftRyzenProps } from './types';
-import { ExternalLink } from '../ui/ExternalLink';
+import { SoftRyzenProps } from '@/components/SoftRyzen/types';
+import { ExternalLink } from '@/components/ui/ExternalLink';
 
 export const SoftRyzen: React.FC<SoftRyzenProps> = ({ made, name, href }) => (
   <div className="my-4 flex flex-row items-baseline justify-around text-center md:text-end">
