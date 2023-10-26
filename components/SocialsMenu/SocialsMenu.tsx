@@ -11,7 +11,7 @@ export const SocialsMenu: React.FC<SocialsProps> = ({
         {title}
       </span>
       <ul className="flex flex-col items-center gap-3 md:items-start md:gap-3.5">
-        {socials.map(({ href, icon, text}) => (
+        {socials.map(({ href, icon, text }) => (
           <li key={text}>
             <a
               href={href}
