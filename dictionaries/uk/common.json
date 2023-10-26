@@ -12,11 +12,11 @@
       "nav": [
         {
           "name": "Каталог",
-          "href": "/catalog"
+          "href": "catalog"
         },
         {
           "name": "Про Нас",
-          "href": "/about"
+          "href": "about"
         }
       ],
       "logoAriaLabelText": "Посилання із логотипом компанії",
@@ -25,6 +25,7 @@
       "basketAriaLabel": "Кнопка відкриття корзини"
     },
     "footer": {
+      "logoAriaLabelText": "Посилання із логотипом компанії",
       "contacts": [
         {
           "href": "tel:380634293499",
@@ -41,43 +42,32 @@
       "nav": [
         {
           "name": "Каталог",
-          "href": "/catalog"
+          "href": "catalog"
         },
         {
           "name": "Про нас",
-          "href": "/about"
+          "href": "about"
         }
       ],
       "basketText": "Кошик",
       "forBusinesBtnText": "Для Бізнесу",
-      "info_text": "Інформація",
-      "info": [
-        "Договір оферти",
-        "Гарантії та повернення",
-        "Доставка і оплата",
-        "Правила користування сайтом"
-      ],
       "social_text": "Соціальні мережі",
       "social": [
         {
-          "href": "/",
+          "href": "https://www.instagram.com/13.candle.bar/",
           "icon": "instagram",
           "text": "Instagram"
         },
         {
-          "href": "/",
+          "href": "https://t.me/+380966802151",
           "icon": "telegram",
           "text": "Telegram"
-        },
-        {
-          "href": "/",
-          "icon": "viber",
-          "text": "Viber"
         }
       ],
       "soft_ryzen": {
-        "name": "Made by SoftRyzen",
-        "href": "https://internship.softryzen.com"
+        "made": "Made by",
+        "name": "SoftRyzen",
+        "href": "https://softryzen.com/"
       }
     }
   }

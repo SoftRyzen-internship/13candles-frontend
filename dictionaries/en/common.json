@@ -12,11 +12,11 @@
       "nav": [
         {
           "name": "Catalog",
-          "href": "/catalog"
+          "href": "catalog"
         },
         {
           "name": "About Us",
-          "href": "/about"
+          "href": "about"
         }
       ],
       "logoAriaLabelText": "Link with company logo",
@@ -25,6 +25,7 @@
       "basketAriaLabel": "Open basket button"
     },
     "footer": {
+      "logoAriaLabelText": "Link with company logo",
       "contacts": [
         {
           "href": "tel:380634293499",
@@ -41,43 +42,32 @@
       "nav": [
         {
           "name": "Catalog",
-          "href": "/catalog"
+          "href": "catalog"
         },
         {
           "name": "About us",
-          "href": "/about"
+          "href": "about"
         }
       ],
       "basketText": "Basket",
       "forBusinesBtnText": "For Business",
-      "info_text": "Information",
-      "info": [
-        "Offer contract",
-        "Warranties and returns",
-        "Delivery and payment",
-        "Terms of use of the site"
-      ],
       "social_text": "Social networks",
       "social": [
         {
-          "href": "/",
+          "href": "https://www.instagram.com/13.candle.bar/",
           "icon": "instagram",
           "text": "Instagram"
         },
         {
-          "href": "/",
+          "href": "https://t.me/+380966802151",
           "icon": "telegram",
           "text": "Telegram"
-        },
-        {
-          "href": "/",
-          "icon": "viber",
-          "text": "Viber"
         }
       ],
       "soft_ryzen": {
-        "name": "Made by SoftRyzen",
-        "href": "https://internship.softryzen.com"
+        "made": "Made by",
+        "name": "SoftRyzen",
+        "href": "https://softryzen.com/"
       }
     }
   }

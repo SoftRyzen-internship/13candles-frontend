@@ -253,7 +253,7 @@ a decorative icon in the component.
 | Prop        | Default | Description                                                                        |
 | ----------- | ------- | ---------------------------------------------------------------------------------- |
 | `href`      | —       | Required, href for a link                                                          |
-| `icon`      | —       | Required, css className which should be used in globals,css to create a decor icon |
+| `icon`      | —       | Optional, css className which should be used in globals,css to create a decor icon |
 | `text`      | —       | Required, any text content                                                         |
 | `className` | `''`    | Optional, add custom or additional css class you'd need                            |
 
@@ -313,5 +313,24 @@ a decorative icon in the component.
 | `text`      | —       | Required, any text content                              |
 | `isIcon`    | `false` | Optional, set true to use decor icon                    |
 | `className` | `''`    | Optional, add custom or additional css class you'd need |
+
+- ### MenuButton
+
+| Prop           | Default | Description                                             |
+| -------------- | ------- | ------------------------------------------------------- |
+| `isOpen`       | `-`     | Required, is menu open                                  |
+| `onClick`      | —       | Required, toggle menu                                   |
+| `btnAriaOpen`  | —       | Required. Aria text when menu opened.                   |
+| `btnAriaClose` | —       | Required. Aria text when menu closed.                   |
+| `className`    | `''`    | Optional, add custom or additional css class you'd need |
+
+- ### `MobileMenu`
+
+| Prop           | Default | Description                           |
+| -------------- | ------- | ------------------------------------- |
+| `links`        | `[]`    | Required. Array of navigations links. |
+| `btnAriaOpen`  | —       | Required. Aria text when menu opened. |
+| `btnAriaClose` | —       | Required. Aria text when menu closed. |
+| `businessText` | —       | Required. Business link text          |
 
 ---

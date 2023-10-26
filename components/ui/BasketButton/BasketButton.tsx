@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 import { ModalWindow } from '@/components/ui/ModalWindow';
-import BasketIcon from '/public/icons/icon_cart.svg';
 import { BasketButtonProps } from './types';
+import BasketIcon from '/public/icons/icon_cart.svg';
 
 export const BasketButton: React.FC<BasketButtonProps> = ({
   isIcon,

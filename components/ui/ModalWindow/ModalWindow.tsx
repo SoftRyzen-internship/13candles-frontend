@@ -1,10 +1,12 @@
+import classNames from 'classnames';
 import { useParams } from 'next/navigation';
+
 import { Portal } from '../Portal';
-import { ModalWindowPrps } from './types';
 import { Locale } from '@/i18n.config';
+import { ModalWindowPrps } from './types';
+
 import data from '@/data/modalWindow.json';
 import IconClose from '/public/icons/icon_close.svg';
-import classNames from 'classnames';
 
 export const ModalWindow: React.FC<ModalWindowPrps> = ({
   onModalClose,

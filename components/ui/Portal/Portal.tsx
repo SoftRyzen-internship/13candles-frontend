@@ -4,9 +4,8 @@ import { useRef, MouseEvent, KeyboardEvent, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Transition } from 'react-transition-group';
 
-import { PortalProps } from './types';
-
 import { defaultStyle, duration, transitionStyles } from './variants';
+import { PortalProps } from './types';
 
 export const Portal: React.FC<PortalProps> = ({
   onModalClose,
