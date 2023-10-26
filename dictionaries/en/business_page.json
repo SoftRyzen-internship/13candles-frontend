@@ -1,6 +1,31 @@
 {
   "businessPage": {
     "hero": {},
-    "secondSection": {}
+    "secondSection": {
+      "image": {
+        "src": "/images/business_page/second/main-img@2x.webp",
+        "alt": "Aromatic products in glass jars on wooden shelves"
+      },
+      "staticData": [
+        {
+          "title": "Magic of aroma",
+          "regularDescription1": "Today, to create new perfume compositions, masters of fragrance use more than 6500 different components, most of which are of natural origin. For example, to produce 1 liter of Bulgarian rose oil, it is necessary to process more than 5 tons of rose petals. And",
+          "accentDescription": " people can recall odors with an accuracy of 65% after a year",
+          "regularDescription2": ", while they remember visual objects only by 50% after three months."
+        },
+        {
+          "title": "Scents form the first impression",
+          "regularDescription1": "The impact of fragrances on offline business, in our opinion, is very underestimated. You must admit that when you enter a room for the first time, whether it's a hotel lobby, restaurant, apartment, or even get into a car,",
+          "accentDescription": " the scent has a huge impact on your impression",
+          "regularDescription2": ". This is especially important when it is the first impression, because it can never be changed."
+        },
+        {
+          "title": "The aromatic secret of success",
+          "regularDescription1": "At \"13 Candle Bar\", we believe that it is as important for offline businesses to control the aroma as it is to control the cleanliness of the premises. That's why we help businesses interact with customers through scents by creating room fragrances, scented candles, aroma diffusers, and more.",
+          "accentDescription": " We will help you create your own unique scent",
+          "regularDescription2": ", that matches your brand style, or offer ready-made solutions from our production line."
+        }
+      ]
+    }
   }
 }
