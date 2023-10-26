@@ -73,6 +73,30 @@
         "name": "Made by SoftRyzen",
         "href": "https://internship.softryzen.com"
       }
+    },
+    "meta": {
+      "metadata": {
+        "title": "13 Candle Bar",
+        "description": "Family workshop of aromas and coziness",
+        "keywords": "Aroma Candles,  Candles in planters, Aroma diffusers, Aroma sprays, Incense",
+        "manifest": "/meta/site.webmanifest"
+      },
+      "twitter": {},
+      "openGraph": {
+        "title": "13 Candle Bar",
+        "description": "Family workshop of aromas and coziness",
+        "siteName": "13 Candle Bar",
+        "locale": "en_US",
+        "type": "website",
+        "images": [
+          {
+            "url": "/images/ogp-image.jpg",
+            "width": 1200,
+            "height": 630,
+            "alt": "Varicose Vein Treatment in Kyiv | Vascular Surgeon - Sergii Voitsitskyi"
+          }
+        ]
+      }
     }
   }
 }

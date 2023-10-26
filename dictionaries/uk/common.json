@@ -73,6 +73,22 @@
         "name": "Made by SoftRyzen",
         "href": "https://internship.softryzen.com"
       }
+    },
+    "meta": {
+      "metadata": {
+        "title": "13 Candle Bar ",
+        "description": "Сімейна майстерня ароматів і затишку",
+        "keywords": "Аромасвічки, Свічки в кашпо, Аромадифузори, Аромаспреї, Пахощі",
+        "manifest": "/meta/site.webmanifest"
+      },
+      "twitter": {},
+      "openGraph": {
+        "title": "13 Candle Bar",
+        "description": "Сімейна майстерня ароматів і затишку",
+        "siteName": "13 Candle Bar",
+        "locale": "uk_UA",
+        "type": "website"
+      }
     }
   }
 }
