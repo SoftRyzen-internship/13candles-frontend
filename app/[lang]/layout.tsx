@@ -3,7 +3,7 @@ import { Montserrat, Raleway } from 'next/font/google';
 import { Locale, i18n } from '@/i18n.config';
 
 import '../globals.css';
-import { Header } from '@/components/Header';
+import { Header } from '@/layout/Header';
 import { getCommonDictionaries } from '@/lib/dictionary';
 
 const montserrat = Montserrat({
@@ -34,8 +34,6 @@ export default async function RootLayout({
   params: { lang: Locale };
 }) {
   const { common } = await getCommonDictionaries(params.lang);
-
-  // console.log(common.header);
 
   return (
     <html lang={params.lang}>

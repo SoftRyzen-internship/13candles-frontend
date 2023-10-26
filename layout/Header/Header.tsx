@@ -1,10 +1,14 @@
-import { Logo } from '../ui/Logo';
-import { SideMenu } from '../SideMenu';
-import { HeaderProps } from '@/types/HeaderProps';
+'use client';
+
+import { usePathname } from 'next/navigation';
+import { Logo } from '../../components/ui/Logo';
+import { SideMenu } from '../../components/SideMenu';
+import { HeaderProps } from './types';
 
 export const Header: React.FC<HeaderProps> = ({ header }) => {
   const { sidePanelMenu, nav, toHomePage, logoAriaLabelText } = header;
-  console.log(sidePanelMenu);
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <header>
       <div className="container h-[100px]">
