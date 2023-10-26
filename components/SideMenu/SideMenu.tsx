@@ -1,6 +1,7 @@
 'use client';
 import React, { useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { usePathname } from 'next/navigation';
 
 import { MenuButton } from '../ui/MenuButton';
 import { NavLinks } from '../ui/NavLinks';
@@ -14,6 +15,8 @@ export const SideMenu: React.FC<SideMenuProps> = ({
 }) => {
   const [isOpen, setOpen] = useState(false);
   const nodeRef = useRef(null);
+  const path = usePathname();
+  const homePage = path === '/en' || path === '/uk';
 
   return (
     <div className={` flex items-center smOnly:hidden ${className}`}>
@@ -32,7 +35,7 @@ export const SideMenu: React.FC<SideMenuProps> = ({
         classNames={'fade'}
       >
         <div ref={nodeRef}>
-          <NavLinks links={links} className="ml-6" />
+          {homePage && <NavLinks links={links} className="ml-6" />}
         </div>
       </CSSTransition>
     </div>

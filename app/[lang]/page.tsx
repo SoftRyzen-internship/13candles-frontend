@@ -42,7 +42,6 @@ export default async function Home({
 
         <MobileMenu
           links={nav}
-          isHomePage={true}
           btnAriaClose={mobileMenu.closeMenuBtnAriaText}
           btnAriaOpen={mobileMenu.openMenuBtnAriaText}
           businessText={header.forBusinesBtnText}
