@@ -1,25 +1,28 @@
 {
   "homepage": {
-    "hero": [
-      {
-        "src": "/images/homepage/hero/1.webp",
-        "alt": "запашний дим"
-      },
-      {
-        "src": "/images/homepage/hero/2.webp",
-        "alt": "палаюча свічка"
-      },
-      {
-        "src": "/images/homepage/hero/4.webp",
-        "alt": "ароматичні свічки"
-      }
-    ],
+    "hero": {
+      "hiddenTitle": "13 candle bar",
+      "banners": [
+        {
+          "src": "/images/homepage/hero/1.webp",
+          "alt": "запашний дим"
+        },
+        {
+          "src": "/images/homepage/hero/2.webp",
+          "alt": "палаюча свічка"
+        },
+        {
+          "src": "/images/homepage/hero/4.webp",
+          "alt": "ароматичні свічки"
+        }
+      ]
+    },
     "catalog": {
       "title": "Каталог",
       "subtitle": "Оберіть категорію товарів, яка вас цікавить",
       "categories": [
         {
-          "href": "/",
+          "href": "/1",
           "text": "Аромасвічки",
           "image": {
             "src": "/images/homepage/catalog/aromacandle@2x.webp",
@@ -27,7 +30,7 @@
           }
         },
         {
-          "href": "/",
+          "href": "/2",
           "text": "Аромадифузори",
           "image": {
             "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
@@ -35,7 +38,7 @@
           }
         },
         {
-          "href": "/",
+          "href": "/3",
           "text": "Пахощі (аромапалички)",
           "image": {
             "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
@@ -43,7 +46,7 @@
           }
         },
         {
-          "href": "/",
+          "href": "/4",
           "text": "Аксесуари",
           "image": {
             "src": "/images/homepage/catalog/accessories@2x.webp",
@@ -51,7 +54,7 @@
           }
         },
         {
-          "href": "/",
+          "href": "/5",
           "text": "Набори",
           "image": {
             "src": "/images/homepage/catalog/sets@2x.webp",
@@ -59,7 +62,7 @@
           }
         },
         {
-          "href": "/",
+          "href": "/6",
           "text": "Різне",
           "image": {
             "src": "/images/homepage/catalog/different@2x.webp",

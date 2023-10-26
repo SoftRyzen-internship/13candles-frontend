@@ -78,6 +78,30 @@ a:focus-visible .link::before,
   @apply scale-x-100;
 }
 
+/* === SLIDER === */
+
+#homepage-hero .swiper-button-prev::after,
+#homepage-hero .swiper-button-next::after {
+  content: url('/icons/icon_arrow.svg') !important;
+  @apply common-transition absolute top-0 h-12 w-12 bg-white/50 opacity-25 hover:opacity-100;
+}
+
+#homepage-hero .swiper-button-prev::after {
+  @apply -right-16 rotate-180;
+}
+
+#homepage-hero .swiper-button-next::after {
+  @apply -left-16;
+}
+
+#homepage-hero .swiper-pagination-bullet {
+  @apply !bg-black-light;
+}
+
+#homepage-hero .swiper-pagination {
+  @apply !static mt-[20px] md:mt-[50px] xl:mt-[16px];
+}
+
 /* === DECOR ICONS === */
 
 /* decor icons common */
@@ -103,20 +127,18 @@ a:focus-visible .link::before,
 .phone,
 .email,
 .instagram,
-.telegram,
-.viber {
+.telegram {
   @apply pl-8;
 }
 
 .phone::before,
 .email::before,
 .instagram::before,
-.telegram::before,
-.viber::before {
+.telegram::before {
   @apply h-6 w-6;
 }
 
-/* decore icons bg */
+/* decor icons bg */
 
 .case::before {
   @apply bg-[url('/icons/icon_businesscase.svg')];
@@ -140,4 +162,57 @@ a:focus-visible .link::before,
 
 .viber::before {
   @apply bg-[url('/icons/icon_viber.svg')];
+}
+
+/*
+ * Humburger styles
+ */
+.hamburger {
+  @apply relative -ml-[14px] h-12 w-12 bg-transparent px-[14px] py-[17px];
+}
+
+.hamburger span {
+  @apply absolute left-[14px] block h-[2px] w-5 cursor-pointer rounded bg-black-light transition-all duration-300 ease-in-out;
+  @apply before:absolute before:top-[-6px] before:block before:h-[2px] before:w-5 before:cursor-pointer before:rounded;
+  @apply before:bg-black-light before:transition-all before:duration-300 before:ease-in-out before:content-[''];
+  @apply after:absolute after:top-[6px] after:block after:h-[2px] after:w-5 after:cursor-pointer after:rounded;
+  @apply after:bg-black-light after:transition-all after:duration-300 after:ease-in-out after:content-[''];
+}
+
+.hamburger.is-active span {
+  @apply bg-transparent;
+  @apply before:top-0 before:rotate-[135deg];
+  @apply after:top-0 after:rotate-[-135deg];
+}
+
+/*
+ * Side panel animation
+ */
+.fade-enter {
+  @apply opacity-0;
+}
+.fade-enter-active {
+  @apply opacity-100 transition duration-300 ease-in-out;
+}
+.fade-exit {
+  @apply opacity-100;
+}
+.fade-exit-active {
+  @apply opacity-0 transition duration-300 ease-in-out;
+}
+
+/*
+ * Mobile menu animation
+ */
+.mobile-enter {
+  @apply translate-y-[100vh] opacity-0;
+}
+.mobile-enter-active {
+  @apply translate-y-0 opacity-100 transition duration-300 ease-in-out;
+}
+.mobile-exit {
+  @apply translate-y-0 opacity-100;
+}
+.mobile-exit-active {
+  @apply translate-y-[100vh] opacity-0 transition duration-300 ease-in-out;
 }

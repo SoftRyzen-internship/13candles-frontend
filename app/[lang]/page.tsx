@@ -2,14 +2,15 @@ import { getDictionary } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 import { ContactList } from '@/components/ContactList';
 import { BusinessLink } from '@/components/ui/BusinessLink';
-import { SideMenu } from '@/components/SideMenu';
-import { Logo } from '@/components/ui/Logo';
-import { ExampleSection } from '@/sections/home/ExampleSection';
+// import { ExampleSection } from '@/sections/home/ExampleSection';
 import { TranslationSwitcher } from '@/components/TranslationSwitcher';
 import { AboutSection } from '@/sections/home/AboutSection';
 import { CatalogSection } from '@/sections/home/CatalogSection';
 
 import { CATALOG } from '@/data/links';
+import { HeroSection } from '@/sections/home/HeroSection';
+import { Button } from '@/components/ui/Button';
+import { SocialsMenu } from '@/components/SocialsMenu';
 
 export default async function Home({
   params: { lang },
@@ -19,17 +20,17 @@ export default async function Home({
   const { common, homepage } = await getDictionary(lang);
 
   const { header, footer } = common;
-  const { language, sidePanelMenu, nav, logoAriaLabelText } = header;
-  const { closePanelBtnAriaText, openPanelBtnAriaText } = sidePanelMenu;
-  const { contacts } = footer;
-
-  const { catalog, about } = homepage;
+  const { language } = header;
+  const { contacts, social, social_text } = footer;
+  const { hero, catalog, about } = homepage;
+  const { button } = about;
 
   return (
     <main>
+      <HeroSection {...hero} />
       <CatalogSection {...catalog} />
 
-      <ExampleSection />
+      {/* <ExampleSection /> */}
 
       {/* Examples using translations */}
       <AboutSection about={about} />
@@ -46,14 +47,13 @@ export default async function Home({
         />
         <BusinessLink isIcon={false} text={footer.forBusinesBtnText} />
 
-        <div className="flex items-center justify-between">
-          <SideMenu
-            btnAriaClose={closePanelBtnAriaText}
-            btnAriaOpen={openPanelBtnAriaText}
-            links={nav}
-          />
-          <Logo aria={logoAriaLabelText} position="header" />
-        </div>
+        <Button
+          className="m-10 max-w-[280px] md:max-w-[172px]"
+          tag="a"
+          label={button}
+          href={CATALOG}
+        />
+        <SocialsMenu socials={social} title={social_text} />
       </div>
 
       <div id={CATALOG} className="w-74 h-74 mt-[500px]">
