@@ -102,7 +102,7 @@ a:focus-visible .link::before,
 /* decor icons common */
 
 .decor {
-  @apply relative inline before:content-[""];
+  @apply relative inline-block before:content-[""];
 }
 
 .decor::before {
