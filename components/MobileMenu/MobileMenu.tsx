@@ -1,27 +1,28 @@
 'use client';
+import React, { useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { Squash as Hamburger } from 'hamburger-react';
-import { useEffect, useRef, useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 
 import { NavLinks } from '../ui/NavLinks';
 import { TranslationSwitcher } from '../TranslationSwitcher';
 import { BusinessLink } from '../ui/BusinessLink';
+import { MenuButton } from '../ui/MenuButton';
 
 import { MobileMenuProps } from './types';
-import css from './MobileMenu.module.css';
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({
   businessText,
   links,
   btnAriaOpen,
   btnAriaClose,
-  isHomePage = true,
 }) => {
   const [isOpen, setOpen] = useState(false);
   const nodeRef = useRef(null);
   const { lang } = useParams();
   const currentLang = lang.toString() === 'en' ? 'Eng' : 'Укр';
+  const path = usePathname();
+  const homePage = path === '/en' || path === '/uk';
+  const businessPage = path.includes('business');
 
   useEffect(() => {
     if (isOpen) {
@@ -35,34 +36,20 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 
   return (
     <>
-      <button
-        type="button"
+      <MenuButton
+        btnAriaClose={btnAriaClose}
+        btnAriaOpen={btnAriaOpen}
+        isOpen={isOpen}
         onClick={() => setOpen(prev => !prev)}
-        aria-label={isOpen ? btnAriaClose : btnAriaOpen}
         className=" md:hidden"
-      >
-        <Hamburger
-          duration={0.3}
-          toggled={isOpen}
-          distance="sm"
-          size={20}
-          color="#171717"
-          easing="ease-in-out"
-          rounded
-        />
-      </button>
+      />
 
       <CSSTransition
         in={isOpen}
         nodeRef={nodeRef}
         timeout={300}
         unmountOnExit
-        classNames={{
-          enter: css['mobile-enter'],
-          enterActive: css['mobile-enter-active'],
-          exit: css['mobile-exit'],
-          exitActive: css['mobile-exit-active'],
-        }}
+        classNames="mobile"
       >
         <div
           ref={nodeRef}
@@ -70,8 +57,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         >
           <div className="container grid gap-9 py-7 text-center text-lg">
             <TranslationSwitcher lang={currentLang} />
-
-            {isHomePage && (
+            {homePage && (
               <NavLinks
                 onClick={() => setOpen(false)}
                 className="grid"
@@ -79,11 +65,13 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               />
             )}
 
-            <BusinessLink
-              className="mx-auto inline-flex text-lg"
-              isIcon={true}
-              text={businessText}
-            />
+            {!businessPage && (
+              <BusinessLink
+                className="mx-auto inline-flex text-lg"
+                isIcon={true}
+                text={businessText}
+              />
+            )}
           </div>
         </div>
       </CSSTransition>

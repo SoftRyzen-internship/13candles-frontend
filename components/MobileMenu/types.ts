@@ -5,5 +5,4 @@ export interface MobileMenuProps {
   links: NavLink[];
   btnAriaOpen: string;
   btnAriaClose: string;
-  isHomePage: boolean;
 }

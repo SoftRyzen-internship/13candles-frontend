@@ -59,19 +59,14 @@
       "social_text": "Соціальні мережі",
       "social": [
         {
-          "href": "/",
+          "href": "https://www.instagram.com/13.candle.bar/",
           "icon": "instagram",
           "text": "Instagram"
         },
         {
-          "href": "/",
+          "href": "https://t.me/+380966802151",
           "icon": "telegram",
           "text": "Telegram"
-        },
-        {
-          "href": "/",
-          "icon": "viber",
-          "text": "Viber"
         }
       ],
       "soft_ryzen": {
