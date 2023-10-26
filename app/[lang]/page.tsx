@@ -4,15 +4,12 @@ import { Locale } from '@/i18n.config';
 import { ContactList } from '@/components/ContactList';
 import { BusinessLink } from '@/components/ui/BusinessLink';
 import { Button } from '@/components/ui/Button';
-import { SideMenu } from '@/components/SideMenu';
-import { Logo } from '@/components/ui/Logo';
 
 import { CatalogSection } from '@/sections/home/CatalogSection';
 
 import { SocialsMenu } from '@/components/SocialsMenu';
 // import { ExampleSection } from '@/sections/home/ExampleSection';
 import { TranslationSwitcher } from '@/components/TranslationSwitcher';
-import { MobileMenu } from '@/components/MobileMenu';
 import { CATALOG } from '@/data';
 import { HeroSection } from '@/sections/home/HeroSection';
 
@@ -24,33 +21,13 @@ export default async function Home({
   const { common, homepage } = await getDictionary(lang);
 
   const { header, footer } = common;
-  const { language, sidePanelMenu, nav, logoAriaLabelText, mobileMenu } =
-    header;
-  const { closePanelBtnAriaText, openPanelBtnAriaText } = sidePanelMenu;
+  const { language } = header;
   const { contacts, social, social_text } = footer;
-
   const { hero, catalog, about } = homepage;
   const { button } = about;
 
   return (
     <main>
-      <div className="container flex items-center justify-between bg-body pb-4 pt-9 smOnly:fixed smOnly:left-0 smOnly:top-0 smOnly:z-10 ">
-        <SideMenu
-          btnAriaClose={closePanelBtnAriaText}
-          btnAriaOpen={openPanelBtnAriaText}
-          links={nav}
-        />
-
-        <MobileMenu
-          links={nav}
-          isHomePage={true}
-          btnAriaClose={mobileMenu.closeMenuBtnAriaText}
-          btnAriaOpen={mobileMenu.openMenuBtnAriaText}
-          businessText={header.forBusinesBtnText}
-        />
-        <Logo aria={logoAriaLabelText} position="header" />
-      </div>
-
       <HeroSection {...hero} />
       <CatalogSection {...catalog} />
 
