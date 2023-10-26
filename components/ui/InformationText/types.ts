@@ -1,6 +1,5 @@
-type TextTypes = 'mainTitle' | 'title' | 'subtitle' | 'text';
+export type TextType = 'mainTitle' | 'title' | 'subtitle' | 'text';
 
 export interface InformationTextProps {
-  textType: TextTypes;
-  content: string | string[];
+  text: string;
 }

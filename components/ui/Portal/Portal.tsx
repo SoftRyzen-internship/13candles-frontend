@@ -16,12 +16,19 @@ export const Portal: React.FC<PortalProps> = ({
   const nodeRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    if (showModal) document.body.classList.add('overflow-hidden');
+    if (!showModal) document.body.classList.remove('overflow-hidden');
+  }, [showModal]);
+
+  useEffect(() => {
     const onClickEscape = (e: KeyboardEvent<Document>) => {
       if (e.code === 'Escape') {
         onModalClose();
       }
     };
+
     document.addEventListener('keydown', onClickEscape as any);
+
     return () => {
       document.removeEventListener('keydown', onClickEscape as any);
     };
@@ -51,7 +58,7 @@ export const Portal: React.FC<PortalProps> = ({
             ref={nodeRef}
             tabIndex={0}
             onClick={handleBackdrop}
-            className={`fixed left-0 top-0 z-20 h-[100%] w-[100%] overflow-auto bg-black-light/50 `}
+            className="fixed bottom-0 left-0 right-0 top-0 z-20 bg-black-light/50"
           >
             {children}
           </div>,

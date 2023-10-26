@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { ModalWindow } from '../ModalWindow';
-import { ButtonProps } from './types';
 import classNames from 'classnames';
 
-export const ButtonOpenModal: React.FC<ButtonProps> = ({
+import { ModalWindow } from '../ModalWindow';
+import { InformationText } from '../InformationText';
+import { InformationBtnPtops } from './types';
+
+export const InformationBtn: React.FC<InformationBtnPtops> = ({
   children,
-  element: Element,
   data,
   className = '',
 }) => {
@@ -27,7 +28,9 @@ export const ButtonOpenModal: React.FC<ButtonProps> = ({
       </button>
 
       <ModalWindow onModalClose={onToggleShowModal} showModal={showModal}>
-        <Element {...data} />
+        {data.map(text => (
+          <InformationText key={text} text={text} />
+        ))}
       </ModalWindow>
     </>
   );

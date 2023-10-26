@@ -21,7 +21,14 @@ export default async function Home({
 }: {
   params: { lang: Locale };
 }) {
-  const { common, homepage } = await getDictionary(lang);
+  const {
+    common,
+    homepage,
+    deliveryAndPayment,
+    offerContract,
+    rulesOfUse,
+    warrantiesAndReturns,
+  } = await getDictionary(lang);
 
   const { header, footer } = common;
   const { language, sidePanelMenu, nav, logoAriaLabelText, basketAriaLabel } =
@@ -31,6 +38,25 @@ export default async function Home({
 
   const { hero, catalog, about } = homepage;
   const { button } = about;
+
+  const infoButtonsArr = [
+    {
+      text: info[0],
+      data: offerContract,
+    },
+    {
+      text: info[1],
+      data: warrantiesAndReturns,
+    },
+    {
+      text: info[2],
+      data: deliveryAndPayment,
+    },
+    {
+      text: info[3],
+      data: rulesOfUse,
+    },
+  ];
 
   return (
     <main>
@@ -42,7 +68,7 @@ export default async function Home({
       {/* Examples using translations */}
 
       <div className="container mt-10 flex flex-col gap-10">
-        <Information info={info} info_text={info_text} />
+        <Information info={infoButtonsArr} info_text={info_text} />
 
         <BasketButton isIcon={true} ariaLabel={basketAriaLabel} />
 

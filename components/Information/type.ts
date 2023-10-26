@@ -1,4 +1,4 @@
-export interface InfoProps {
+export interface InformationProps {
   info_text: string;
-  info: string[];
+  info: { text: string; data: string[] }[];
 }
