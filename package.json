@@ -16,16 +16,24 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.4.2",
     "classnames": "^2.3.2",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
+    "negotiator": "^0.6.3",
     "next": "13.5.6",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-transition-group": "^4.4.5",
+    "swiper": "^10.3.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
+    "@types/negotiator": "^0.6.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-transition-group": "^4.4.8",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "autoprefixer": "^10",

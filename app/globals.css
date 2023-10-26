@@ -3,5 +3,216 @@
 @tailwind utilities;
 
 body {
-  @apply font-raleway font-normal;
+  @apply bg-body font-raleway text-base font-normal text-black-light;
+}
+
+/* === ANIMATIONS === */
+
+.common-transition {
+  @apply transition duration-300 ease-in-out;
+}
+
+.zoom-image {
+  @apply common-transition;
+}
+
+.zoom:hover .zoom-image {
+  @apply scale-[1.15];
+}
+
+/* === COMMON STYLES === */
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.section {
+  @apply smOnly:py-4 mdOnly:py-[18px];
+}
+
+.section-title-primary {
+  @apply text-xxl font-bold;
+}
+
+.section-title-secondary {
+  @apply text-lg font-bold md:text-xl xl:text-xxl;
+}
+
+.title-lg {
+  @apply text-xxl font-bold xl:text-xxxl;
+}
+
+.title-md {
+  @apply text-lg font-bold;
+}
+
+.title-sm {
+  @apply font-bold;
+}
+
+.button {
+  @apply common-transition block w-full cursor-pointer border border-black-light bg-black-light px-12 py-3 text-center font-medium text-white;
+  @apply xl:bg-body xl:text-black-light xl:hover:bg-black-light xl:hover:text-white xl:focus:bg-black-light xl:focus:text-white xl:active:bg-black-light xl:active:text-white;
+}
+
+.link {
+  @apply relative font-medium no-underline before:content-[""];
+}
+
+.link::before {
+  @apply common-transition absolute bottom-[-3px] left-0 block h-[1.2px] w-full scale-x-0 bg-black-light;
+}
+
+a:hover .link::before,
+a:active .link:before,
+a:focus-visible .link::before,
+.link:hover::before,
+.link:active:before,
+.link:focus-visible::before {
+  @apply scale-x-100;
+}
+
+/* === SLIDER === */
+
+#homepage-hero .swiper-button-prev::after,
+#homepage-hero .swiper-button-next::after {
+  content: url('/icons/icon_arrow.svg') !important;
+  @apply common-transition absolute top-0 h-12 w-12 bg-white/50 opacity-25 hover:opacity-100;
+}
+
+#homepage-hero .swiper-button-prev::after {
+  @apply -right-16 rotate-180;
+}
+
+#homepage-hero .swiper-button-next::after {
+  @apply -left-16;
+}
+
+#homepage-hero .swiper-pagination-bullet {
+  @apply !bg-black-light;
+}
+
+#homepage-hero .swiper-pagination {
+  @apply !static mt-[20px] md:mt-[50px] xl:mt-[16px];
+}
+
+/* === DECOR ICONS === */
+
+/* decor icons common */
+
+.decor {
+  @apply relative block before:content-[""];
+}
+
+.decor::before {
+  @apply absolute left-0 top-1/2 -translate-y-1/2 bg-cover bg-center bg-no-repeat;
+}
+
+/* decor icons sizes */
+
+.case {
+  @apply pl-9 md:pl-8;
+}
+
+.case::before {
+  @apply h-7 w-7 md:h-6 md:w-6;
+}
+
+.phone,
+.email,
+.instagram,
+.telegram {
+  @apply pl-8;
+}
+
+.phone::before,
+.email::before,
+.instagram::before,
+.telegram::before {
+  @apply h-6 w-6;
+}
+
+/* decor icons bg */
+
+.case::before {
+  @apply bg-[url('/icons/icon_businesscase.svg')];
+}
+
+.email::before {
+  @apply bg-[url('/icons/icon_email.svg')];
+}
+
+.phone::before {
+  @apply bg-[url('/icons/icon_phone.svg')];
+}
+
+.instagram::before {
+  @apply bg-[url('/icons/icon_instagram.svg')];
+}
+
+.telegram::before {
+  @apply bg-[url('/icons/icon_telegram.svg')];
+}
+
+.viber::before {
+  @apply bg-[url('/icons/icon_viber.svg')];
+}
+
+/*
+ * Humburger styles
+ */
+.hamburger {
+  @apply relative -ml-[14px] h-12 w-12 bg-transparent px-[14px] py-[17px];
+}
+
+.hamburger span {
+  @apply absolute left-[14px] block h-[2px] w-5 cursor-pointer rounded bg-black-light transition-all duration-300 ease-in-out;
+  @apply before:absolute before:top-[-6px] before:block before:h-[2px] before:w-5 before:cursor-pointer before:rounded;
+  @apply before:bg-black-light before:transition-all before:duration-300 before:ease-in-out before:content-[''];
+  @apply after:absolute after:top-[6px] after:block after:h-[2px] after:w-5 after:cursor-pointer after:rounded;
+  @apply after:bg-black-light after:transition-all after:duration-300 after:ease-in-out after:content-[''];
+}
+
+.hamburger.is-active span {
+  @apply bg-transparent;
+  @apply before:top-0 before:rotate-[135deg];
+  @apply after:top-0 after:rotate-[-135deg];
+}
+
+/*
+ * Side panel animation
+ */
+.fade-enter {
+  @apply opacity-0;
+}
+.fade-enter-active {
+  @apply opacity-100 transition duration-300 ease-in-out;
+}
+.fade-exit {
+  @apply opacity-100;
+}
+.fade-exit-active {
+  @apply opacity-0 transition duration-300 ease-in-out;
+}
+
+/*
+ * Mobile menu animation
+ */
+.mobile-enter {
+  @apply translate-y-[100vh] opacity-0;
+}
+.mobile-enter-active {
+  @apply translate-y-0 opacity-100 transition duration-300 ease-in-out;
+}
+.mobile-exit {
+  @apply translate-y-0 opacity-100;
+}
+.mobile-exit-active {
+  @apply translate-y-[100vh] opacity-0 transition duration-300 ease-in-out;
 }
