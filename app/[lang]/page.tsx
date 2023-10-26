@@ -13,6 +13,7 @@ import { SideMenu } from '@/components/SideMenu';
 import { Logo } from '@/components/ui/Logo';
 import { Information } from '@/components/Information';
 import { BasketButton } from '@/components/ui/BasketButton';
+
 import { CATALOG } from '@/data';
 
 export default async function Home({
