@@ -1,24 +1,22 @@
 'use client';
 
+import { Locale } from '@/i18n.config';
+import { redirectedPathName } from '@/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export const TranslationSwitcher: React.FC<{ lang: string }> = ({ lang }) => {
+export const TranslationSwitcher = ({
+  lang,
+  buttonText,
+}: {
+  lang: Locale;
+  buttonText: string;
+}) => {
   const pathName = usePathname();
 
-  const redirectedPathName = (locale: string) => {
-    if (!pathName) return '/';
-    const segments = pathName.split('/');
-    segments[1] = locale;
-    return segments.join('/');
-  };
-
   return (
-    <Link
-      className="link max-w-fit"
-      href={redirectedPathName(lang === 'Eng' ? 'uk' : 'en')}
-    >
-      {lang === 'Eng' ? 'Укр' : 'Eng'}
+    <Link className="link max-w-fit" href={redirectedPathName(lang, pathName)}>
+      {buttonText}
     </Link>
   );
 };

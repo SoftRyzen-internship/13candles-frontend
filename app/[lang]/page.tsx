@@ -21,7 +21,6 @@ export default async function Home({
   const { common, homepage } = await getDictionary(lang);
 
   const { header, footer } = common;
-  const { language } = header;
   const { contacts, social, social_text } = footer;
   const { hero, catalog, about } = homepage;
   const { button } = about;
@@ -36,7 +35,10 @@ export default async function Home({
       {/* Examples using translations */}
 
       <div className="container mt-10 flex flex-col gap-10">
-        <TranslationSwitcher lang={language} />
+        <TranslationSwitcher
+          lang={lang}
+          buttonText={header.languageButtonText}
+        />
 
         <ContactList contacts={contacts} className="font-montserrat" />
 
