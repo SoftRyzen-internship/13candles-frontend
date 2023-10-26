@@ -1,64 +1,27 @@
 import { getDictionary } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
-import { ContactList } from '@/components/ContactList';
-import { BusinessLink } from '@/components/ui/BusinessLink';
-// import { ExampleSection } from '@/sections/home/ExampleSection';
-import { TranslationSwitcher } from '@/components/TranslationSwitcher';
-import { AboutSection } from '@/sections/home/AboutSection';
-import { CatalogSection } from '@/sections/home/CatalogSection';
-
-import { CATALOG } from '@/data/links';
+// import { TranslationSwitcher } from '@/components/TranslationSwitcher';
 import { HeroSection } from '@/sections/home/HeroSection';
-import { Button } from '@/components/ui/Button';
-import { SocialsMenu } from '@/components/SocialsMenu';
+import { CatalogSection } from '@/sections/home/CatalogSection';
+import { AboutSection } from '@/sections/home/AboutSection';
 
 export default async function Home({
   params: { lang },
 }: {
   params: { lang: Locale };
 }) {
-  const { common, homepage } = await getDictionary(lang);
+  const { homepage } = await getDictionary(lang);
 
-  const { header, footer } = common;
-  const { language } = header;
-  const { contacts, social, social_text } = footer;
+  // const { language } = header;
   const { hero, catalog, about } = homepage;
-  const { button } = about;
 
   return (
     <main>
+      {/* <TranslationSwitcher lang={language} />
+      <BusinessLink isIcon={true} text={header.forBusinesBtnText} /> */}
       <HeroSection {...hero} />
       <CatalogSection {...catalog} />
-
-      {/* <ExampleSection /> */}
-
-      {/* Examples using translations */}
       <AboutSection about={about} />
-      <div className="container mt-10 flex flex-col gap-10">
-        <TranslationSwitcher lang={language} />
-
-        <ContactList contacts={contacts} className="font-montserrat" />
-
-        <BusinessLink isIcon={true} text={header.forBusinesBtnText} />
-        <BusinessLink
-          className="text-lg"
-          isIcon={true}
-          text={header.forBusinesBtnText}
-        />
-        <BusinessLink isIcon={false} text={footer.forBusinesBtnText} />
-
-        <Button
-          className="m-10 max-w-[280px] md:max-w-[172px]"
-          tag="a"
-          label={button}
-          href={CATALOG}
-        />
-        <SocialsMenu socials={social} title={social_text} />
-      </div>
-
-      <div id={CATALOG} className="w-74 h-74 mt-[500px]">
-        Scroll test
-      </div>
     </main>
   );
 }
