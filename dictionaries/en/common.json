@@ -12,11 +12,11 @@
       "nav": [
         {
           "name": "Catalog",
-          "href": "/catalog"
+          "href": "catalog"
         },
         {
           "name": "About Us",
-          "href": "/about"
+          "href": "about"
         }
       ],
       "toHomePage": {
@@ -44,11 +44,11 @@
       "nav": [
         {
           "name": "Catalog",
-          "href": "/catalog"
+          "href": "catalog"
         },
         {
           "name": "About us",
-          "href": "/about"
+          "href": "about"
         }
       ],
       "basketText": "Basket",
@@ -63,19 +63,14 @@
       "social_text": "Social networks",
       "social": [
         {
-          "href": "/",
+          "href": "https://www.instagram.com/13.candle.bar/",
           "icon": "instagram",
           "text": "Instagram"
         },
         {
-          "href": "/",
+          "href": "https://t.me/+380966802151",
           "icon": "telegram",
           "text": "Telegram"
-        },
-        {
-          "href": "/",
-          "icon": "viber",
-          "text": "Viber"
         }
       ],
       "soft_ryzen": {

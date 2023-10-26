@@ -229,19 +229,19 @@ component `Heading`
 
 | Prop        | Default     | Description                                                 |
 | ----------- | ----------- | ----------------------------------------------------------- |
-| `href`      | ``          | required, href for a link                                   |
-| `icon`      | ``          | required, css className which should be used in globals.css |
+| `href`      | —           | required, href for a link                                   |
+| `icon`      | —           | required, css className which should be used in globals.css |
 |             |             | to create a decor icon                                      |
-| `text`      | ``          | required, any text content                                  |
+| `text`      | —           | required, any text content                                  |
 | `className` | `undefined` | add custom or additional css class you'd need               |
 
 - ### CategoryCard
 
 | Prop        | Default     | Description                                    |
 | ----------- | ----------- | ---------------------------------------------- |
-| `href`      | ``          | required, href for a link                      |
-| `text`      | ``          | required, any text content                     |
-| `image`     | ``          | required, object with src and alt for an image |
+| `href`      | —           | required, href for a link                      |
+| `text`      | —           | required, any text content                     |
+| `image`     | —           | required, object with src and alt for an image |
 | `className` | `undefined` | add custom or additional css class you'd need  |
 
 - ### ExternalLink
@@ -269,6 +269,27 @@ a decorative icon in the component.
 | `disabled`   | —       | Optional. Determine if the button is disabled. Can be used with `button`.                            |
 | `onClick`    | —       | Optional. A callback to be triggered when the button is clicked. Can used with both `a` and `button` |
 
+- ### Slider
+
+| Prop                    | Default          | Description                                                                      |
+| ----------------------- | ---------------- | -------------------------------------------------------------------------------- |
+| `className`             | `''`             | Optional, add custom or additional css class you'd need                          |
+| `id`                    | —                | Required, id for the slider                                                      |
+| `element`               | —                | Required, Functional Component that is rendered inside each slide                |
+| `data`                  | `[]`             | Required, data that is used inside the Component you provided via "element" prop |
+| `isLoop`                | `false`          | Optional, set to true to enable continuous loop mode                             |
+| `isAutoplay`            | `false`          | Optional, set to true to enable autoplay                                         |
+| `isPagination`          | `false`          | Optional, set to true to enable pagination                                       |
+| `isInteractive`         | `false`          | Optional, set to true to enable swipe on touch and grabcursor                    |
+| `isFadeEffect`          | `false`          | Optional, set to true to enable fade effect                                      |
+| `isNavigation`          | `false`          | Optional, set to true to enable navigation                                       |
+| `navigationBreakpoints` | `{               |                                                                                  |
+|                         | isMobile: true,  | set to false to disable navigation on mobile                                     |
+|                         | isTablet: true,  | set to false to disable navigation on tablet                                     |
+|                         | isDesktop: true, | set to false to disable navigation on desktop                                    |
+|                         | }`               | (Is is required to provide options for all screens                               |
+|                         |                  | if you want to provide customised breakpoints)                                   |
+
 - ### `SideMenu`
 
 | Prop           | Default | Description                                               |
@@ -292,5 +313,24 @@ a decorative icon in the component.
 | `text`      | —       | Required, any text content                              |
 | `isIcon`    | `false` | Optional, set true to use decor icon                    |
 | `className` | `''`    | Optional, add custom or additional css class you'd need |
+
+- ### MenuButton
+
+| Prop           | Default | Description                                             |
+| -------------- | ------- | ------------------------------------------------------- |
+| `isOpen`       | `-`     | Required, is menu open                                  |
+| `onClick`      | —       | Required, toggle menu                                   |
+| `btnAriaOpen`  | —       | Required. Aria text when menu opened.                   |
+| `btnAriaClose` | —       | Required. Aria text when menu closed.                   |
+| `className`    | `''`    | Optional, add custom or additional css class you'd need |
+
+- ### `MobileMenu`
+
+| Prop           | Default | Description                           |
+| -------------- | ------- | ------------------------------------- |
+| `links`        | `[]`    | Required. Array of navigations links. |
+| `btnAriaOpen`  | —       | Required. Aria text when menu opened. |
+| `btnAriaClose` | —       | Required. Aria text when menu closed. |
+| `businessText` | —       | Required. Business link text          |
 
 ---
