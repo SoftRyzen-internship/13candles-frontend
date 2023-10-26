@@ -6,14 +6,14 @@ import { MenuButtonProps } from './types';
 export const MenuButton: React.FC<MenuButtonProps> = ({
   isOpen,
   onClick,
-  btnAriaClose,
-  btnAriaOpen,
+  btnAriaClose = '',
+  btnAriaOpen = '',
   className = '',
 }) => {
   const burgerStyle = classNames(
-    'hamburger hamburger--squeeze',
+    'hamburger',
     {
-      'is-active': isOpen === true,
+      'is-active': isOpen,
     },
     className,
   );
@@ -25,9 +25,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
       aria-label={isOpen ? btnAriaClose : btnAriaOpen}
       className={burgerStyle}
     >
-      <span className="hamburger-box">
-        <span className="hamburger-inner"></span>
-      </span>
+      <span></span>
     </button>
   );
 };

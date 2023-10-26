@@ -314,4 +314,23 @@ a decorative icon in the component.
 | `isIcon`    | `false` | Optional, set true to use decor icon                    |
 | `className` | `''`    | Optional, add custom or additional css class you'd need |
 
+- ### MenuButton
+
+| Prop           | Default | Description                                             |
+| -------------- | ------- | ------------------------------------------------------- |
+| `isOpen`       | `-`     | Required, is menu open                                  |
+| `onClick`      | —       | Required, toggle menu                                   |
+| `btnAriaOpen`  | —       | Required. Aria text when menu opened.                   |
+| `btnAriaClose` | —       | Required. Aria text when menu closed.                   |
+| `className`    | `''`    | Optional, add custom or additional css class you'd need |
+
+- ### `MobileMenu`
+
+| Prop           | Default | Description                           |
+| -------------- | ------- | ------------------------------------- |
+| `links`        | `[]`    | Required. Array of navigations links. |
+| `btnAriaOpen`  | —       | Required. Aria text when menu opened. |
+| `btnAriaClose` | —       | Required. Aria text when menu closed. |
+| `businessText` | —       | Required. Business link text          |
+
 ---
