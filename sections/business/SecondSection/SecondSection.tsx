@@ -12,7 +12,7 @@ export const SecondSection: FC<SecondSectionProps> = ({
 
   return (
     <section id="second" className={className}>
-      <div className="container bg-blue-300">
+      <div className="container">
         <div className="mb-6 flex h-[200px] w-full items-center overflow-hidden md:mb-9 md:h-[312px] xl:mb-12 xl:h-[545px]">
           <Image
             src={src}
