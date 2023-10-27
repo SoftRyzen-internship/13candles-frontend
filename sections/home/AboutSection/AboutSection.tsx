@@ -5,7 +5,10 @@ import { ABOUT, CATALOG } from '@/data/links';
 
 export const AboutSection: React.FC<AboutProps> = ({ about }) => {
   return (
-    <section id={ABOUT} className="section xl:pb-[59px] xl:pt-[50px]">
+    <section
+      id={ABOUT}
+      className="section extra-padding"
+    >
       <div className="container">
         <h2 className="section-title-primary mb-4 md:mb-6 xl:mb-7">
           {about.title}
