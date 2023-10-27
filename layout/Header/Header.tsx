@@ -1,19 +1,19 @@
 'use client';
 
-import React from 'react';
+import Link from 'next/link';
 import { useParams, usePathname } from 'next/navigation';
+import { defineCurrentPage } from '@/utils';
+
 import { Logo } from '../../components/ui/Logo';
 import { SideMenu } from '../../components/SideMenu';
-import { HeaderProps } from './types';
 import { MobileMenu } from '@/components/MobileMenu';
 import { BasketButton } from '@/components/ui/BasketButton';
 import { BusinessLink } from '@/components/ui/BusinessLink';
 import { TranslationSwitcher } from '@/components/TranslationSwitcher';
-import { Locale } from '@/i18n.config';
-import { defineCurrentPage } from '@/utils';
 
-import Link from 'next/link';
+import { Locale } from '@/i18n.config';
 import { Pages } from '@/types/Pages';
+import { HeaderProps } from './types';
 
 export const Header: React.FC<HeaderProps> = ({ data }) => {
   const {
@@ -24,7 +24,9 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
     languageButtonText,
     logoAriaLabelText,
     forBusinesBtnText,
+    basketAriaLabel,
   } = data;
+
   const pathname = usePathname();
 
   const lang = useParams().lang as Locale;
@@ -74,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
               buttonText={languageButtonText}
               className="md:mr-7 xl:mr-9 smOnly:hidden"
             />
-            <BasketButton isIcon={true} />
+            <BasketButton isIcon={true} ariaLabel={basketAriaLabel} />
           </div>
         </nav>
       </div>

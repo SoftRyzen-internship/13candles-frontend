@@ -33,14 +33,15 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: Locale };
 }) {
-  const { common } = await getDictionary(lang);
+  const { common, information } = await getDictionary(lang);
   const { footer } = common;
+
   return (
     <html lang={lang}>
       <body className={`${montserrat.variable} ${raleway.variable} `}>
         <Header data={common.header} />
         <main>{children}</main>
-        <Footer {...footer} />
+        <Footer footer={footer} information={information} />
         <div id="modal" />
       </body>
     </html>

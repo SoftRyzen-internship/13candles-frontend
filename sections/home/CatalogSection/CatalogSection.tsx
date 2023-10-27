@@ -3,9 +3,7 @@ import { CatalogSectionProps } from './types';
 import { CATALOG } from '@/data';
 
 export const CatalogSection: React.FC<CatalogSectionProps> = ({
-  title,
-  subtitle,
-  categories,
+  catalog: { title, subtitle, categories },
 }) => (
   <section id={CATALOG} className="section xl:pb-[50px] xl:pt-[15px]">
     <div className="container">

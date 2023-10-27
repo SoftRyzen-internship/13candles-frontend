@@ -15,5 +15,6 @@ export interface HeaderProps {
     logoAriaLabelText: string;
     forBusinesBtnText: string;
     languageButtonText: string;
+    basketAriaLabel: string;
   };
 }
