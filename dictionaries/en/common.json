@@ -19,9 +19,14 @@
           "href": "about"
         }
       ],
+      "toHomePage": {
+        "name": "To Home Page",
+        "href": "/"
+      },
       "logoAriaLabelText": "Link with company logo",
       "forBusinesBtnText": "For Business",
-      "language": "Eng"
+      "languageButtonText": "Укр",
+      "basketAriaLabel": "Open basket button"
     },
     "footer": {
       "logoAriaLabelText": "Link with company logo",
@@ -50,13 +55,6 @@
       ],
       "basketText": "Basket",
       "forBusinesBtnText": "For Business",
-      "info_text": "Information",
-      "info": [
-        "Offer contract",
-        "Warranties and returns",
-        "Delivery and payment",
-        "Terms of use of the site"
-      ],
       "social_text": "Social networks",
       "social": [
         {

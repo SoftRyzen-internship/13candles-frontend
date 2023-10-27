@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { getBase64, shimmer } from '@/utils';
 import { BannerProps } from './types';
 
 export const Banner: React.FC<BannerProps> = ({ src, alt }) => (
@@ -10,6 +11,8 @@ export const Banner: React.FC<BannerProps> = ({ src, alt }) => (
       src={src}
       alt={alt}
       sizes="100wv"
+      placeholder="blur"
+      blurDataURL={`data:image/svg+xml;base64,${getBase64(shimmer(700, 475))}`}
     />
   </div>
 );

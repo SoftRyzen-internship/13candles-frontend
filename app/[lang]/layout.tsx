@@ -1,10 +1,9 @@
 import { Montserrat, Raleway } from 'next/font/google';
-
 import { Locale, i18n } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
-import '../globals.css';
-
+import { Header } from '@/layout/Header';
 import { Footer } from '@/layout/Footer';
+import '../globals.css';
 
 const montserrat = Montserrat({
   subsets: ['cyrillic', 'latin'],
@@ -28,13 +27,15 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: Locale };
 }) {
-  const { common } = await getDictionary(lang);
+  const { common, information } = await getDictionary(lang);
   const { footer } = common;
+
   return (
     <html lang={lang}>
-      <body className={`${montserrat.variable} ${raleway.variable}`}>
-        {children}
-        <Footer {...footer} />
+      <body className={`${montserrat.variable} ${raleway.variable} `}>
+        <Header data={common.header} />
+        <main>{children}</main>
+        <Footer footer={footer} information={information} />
         <div id="modal" />
       </body>
     </html>
