@@ -22,7 +22,7 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
   return (
     <>
       <ButtonOpenModal className={buttonClasses} onModalOpen={onModalOpen}>
-        {isIcon && <BasketIcon />}
+        {isIcon && <BasketIcon className="h-7 w-7" />}
         <span className="link">{text}</span>
       </ButtonOpenModal>
       <Portal onModalClose={onModalClose} showModal={showModal}>
