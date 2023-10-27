@@ -21,4 +21,17 @@ const dictionaries = {
   }),
 };
 
+const metatada = {
+  en: async () => ({
+    ...(await import(`@/dictionaries/en/meta/common.json`)).default,
+    ...(await import(`@/dictionaries/en/meta/home.json`)).default,
+  }),
+
+  uk: async () => ({
+    ...(await import(`@/dictionaries/uk/meta/common.json`)).default,
+    ...(await import(`@/dictionaries/uk/meta/home.json`)).default,
+  }),
+};
+
 export const getDictionary = async (locale: Locale) => dictionaries[locale]();
+export const getMetadata = async (locale: Locale) => metatada[locale]();
