@@ -17,7 +17,7 @@ export const Information = ({ info_text, info }: IInfoProps) => {
   const onModalOpen = () => setShowModal(true);
 
   return (
-    <>
+    <div className="flex flex-col">
       <h2 className=" mb-3 text-center text-base font-bold md:text-start">
         {info_text}
       </h2>
@@ -55,6 +55,6 @@ export const Information = ({ info_text, info }: IInfoProps) => {
           )}
         </ModalWindow>
       </Portal>
-    </>
+    </div>
   );
 };

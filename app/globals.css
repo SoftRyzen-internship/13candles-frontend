@@ -56,11 +56,6 @@ body {
   @apply font-bold;
 }
 
-.button {
-  @apply common-transition block w-full cursor-pointer border border-black-light bg-black-light px-12 py-3 text-center font-medium text-white;
-  @apply xl:bg-body xl:text-black-light xl:hover:bg-black-light xl:hover:text-white xl:focus:bg-black-light xl:focus:text-white xl:active:bg-black-light xl:active:text-white;
-}
-
 .link {
   @apply relative font-medium no-underline before:content-[""];
 }
@@ -107,7 +102,7 @@ a:focus-visible .link::before,
 /* decor icons common */
 
 .decor {
-  @apply relative block before:content-[""];
+  @apply relative inline-block before:content-[""];
 }
 
 .decor::before {
