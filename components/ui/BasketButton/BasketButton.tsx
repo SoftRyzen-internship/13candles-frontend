@@ -17,16 +17,12 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
   const [showModal, setShowModal] = useState(false);
   const onModalClose = () => setShowModal(false);
   const onModalOpen = () => setShowModal(true);
-  const buttonClasses = classNames(
-    'h-7 w-7',
-    { 'decor case': isIcon },
-    className,
-  );
+  const buttonClasses = classNames({ 'decor case': isIcon }, className);
 
   return (
     <>
       <ButtonOpenModal className={buttonClasses} onModalOpen={onModalOpen}>
-        {isIcon && <BasketIcon />}
+        {isIcon && <BasketIcon className="h-7 w-7" />}
         <span className="link">{text}</span>
       </ButtonOpenModal>
       <Portal onModalClose={onModalClose} showModal={showModal}>

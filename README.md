@@ -253,7 +253,7 @@ a decorative icon in the component.
 | Prop        | Default | Description                                                                        |
 | ----------- | ------- | ---------------------------------------------------------------------------------- |
 | `href`      | —       | Required, href for a link                                                          |
-| `icon`      | —       | Required, css className which should be used in globals,css to create a decor icon |
+| `icon`      | —       | Optional, css className which should be used in globals,css to create a decor icon |
 | `text`      | —       | Required, any text content                                                         |
 | `className` | `''`    | Optional, add custom or additional css class you'd need                            |
 
