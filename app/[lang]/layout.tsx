@@ -30,12 +30,15 @@ export async function generateMetadata({
   const { metadata, twitter, openGraph, icons } = meta;
   const { title, description, keywords, manifest } = metadata;
 
+  //TODO: delete localhost:3000 / create .env.local
+  const baseUrl = process.env.BASE_URL || 'http://localhost:3000/';
+
   return {
     title,
     description,
-    metadataBase: new URL(process.env.BASE_URL as string),
+    metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `${process.env.BASE_URL}${lang}`,
+      canonical: `${baseUrl}${lang}`,
       languages: {
         'uk-UA': '/uk',
         'en-US': '/en',
@@ -44,7 +47,7 @@ export async function generateMetadata({
     keywords,
     manifest,
     twitter,
-    openGraph: { ...openGraph, url: `${process.env.BASE_URL}${lang}` },
+    openGraph: { ...openGraph, url: `${baseUrl}${lang}` },
     icons,
   };
 }
