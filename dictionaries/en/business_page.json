@@ -26,6 +26,17 @@
           "regularDescription2": ", that matches your brand style, or offer ready-made solutions from our production line."
         }
       ]
+    },
+    "helpfulSection": {
+      "image": {
+        "src": "/images/business_page/helpful/main-img@2x.webp",
+        "alt": "The interior of a cozy restaurant"
+      },
+      "staticData": {
+        "title": "We can be helpful",
+        "description1": "We help you attract customers and create an incredible impression of you. We organize the flavoring of your business or home, create the right mood and atmosphere.",
+        "description2": "We can also make corporate orders, wholesale or for your brand. Scented candles, aroma diffusers, aroma sprays, and more. We can create products for your brand with incredible scents and packaging."
+      }
     }
   }
 }
