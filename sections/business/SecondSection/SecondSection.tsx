@@ -27,8 +27,10 @@ export const SecondSection: FC<SecondSectionProps> = ({
             return (
               <li key={item.title} className="md:w-[213px] xl:w-[364px]">
                 <div>
-                  <p className="mb-3 xl:mb-6">{item.title}</p>
-                  <p className="text-justify">
+                  <p className="mb-3 font-bold leading-[1.17] xl:mb-6 xl:text-lg">
+                    {item.title}
+                  </p>
+                  <p className="text-justify leading-[1.17] xl:text-lg">
                     {item.regularDescription1}
                     <span className="whitespace-pre-wrap font-semibold">
                       {item.accentDescription}
