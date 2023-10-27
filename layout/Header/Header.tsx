@@ -11,8 +11,9 @@ import { BusinessLink } from '@/components/ui/BusinessLink';
 import { TranslationSwitcher } from '@/components/TranslationSwitcher';
 import { Locale } from '@/i18n.config';
 import { defineCurrentPage } from '@/utils';
-import { Pages } from '@/types/pages';
+
 import Link from 'next/link';
+import { Pages } from '@/types/Pages';
 
 export const Header: React.FC<HeaderProps> = ({ data }) => {
   const {
