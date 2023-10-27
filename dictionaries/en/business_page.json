@@ -26,6 +26,22 @@
           "regularDescription2": ", that matches your brand style, or offer ready-made solutions from our production line."
         }
       ]
+    },
+    "usefulWhom": {
+      "title": "Our benefit",
+      "options": [
+        { "id": "01", "text": "Any offline business" },
+        { "id": "02", "text": "Hotels" },
+        { "id": "03", "text": "Restaurants" },
+        { "id": "04", "text": "Beauty salons" },
+        { "id": "05", "text": "Yoga studios" },
+        { "id": "06", "text": "Massage parlors" },
+        { "id": "07", "text": "Spas" },
+        { "id": "08", "text": "Offices" },
+        { "id": "09", "text": "Retail" },
+        { "id": "10", "text": "Gyms" }
+      ],
+      "info": "We are also considering cooperation with offline and online stores of themed goods."
     }
   }
 }
