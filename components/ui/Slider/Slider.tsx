@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade, Navigation } from 'swiper/modules';
+import classNames from 'classnames';
 
-import { desktop, mobile, tablet } from '@/data';
 import { SliderProps } from './types';
 
 import 'swiper/css';
@@ -12,6 +12,8 @@ import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
+
+//TODO: redme slider
 
 export const Slider: React.FC<SliderProps> = ({
   id,
@@ -31,30 +33,27 @@ export const Slider: React.FC<SliderProps> = ({
 }) => {
   const [isFirstRender, setIsFirstRender] = useState<boolean>(true);
 
+  // hide navigation buttons on certain breakpoints
   useEffect(() => {
     if (isFirstRender) setIsFirstRender(false);
-  }, [isFirstRender]);
+    if (!isFirstRender) {
+      const navButtonsClasses = classNames({
+        'smOnly:!hidden': !navigationBreakpoints.isMobile,
+        'mdOnly:!hidden': !navigationBreakpoints.isTablet,
+        'xl:!hidden': !navigationBreakpoints.isDesktop,
+      });
 
-  const breakpoints = {
-    [mobile]: {
-      navigation: {
-        enabled: navigationBreakpoints.isMobile,
-        hiddenClass: 'visually-hidden',
-      },
-    },
-    [tablet]: {
-      navigation: {
-        enabled: navigationBreakpoints.isTablet,
-        hiddenClass: 'visually-hidden',
-      },
-    },
-    [desktop]: {
-      navigation: {
-        enabled: navigationBreakpoints.isDesktop,
-        hiddenClass: 'visually-hidden',
-      },
-    },
-  };
+      const buttonPrev = document.querySelector('.swiper-button-prev');
+      const buttonNext = document.querySelector('.swiper-button-next');
+
+      if (navButtonsClasses) {
+        const parsedClasses = navButtonsClasses.split(' ');
+
+        if (buttonPrev) buttonPrev.classList.add(...parsedClasses);
+        if (buttonNext) buttonNext.classList.add(...parsedClasses);
+      }
+    }
+  }, [isFirstRender, navigationBreakpoints]);
 
   return isFirstRender ? null : (
     <Swiper
@@ -66,7 +65,6 @@ export const Slider: React.FC<SliderProps> = ({
       autoplay={isAutoplay ? { disableOnInteraction: false } : false}
       loop={isLoop}
       navigation={isNavigation}
-      breakpoints={breakpoints}
       pagination={{
         enabled: isPagination,
         clickable: true,
