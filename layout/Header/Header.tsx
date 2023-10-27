@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
               <BusinessLink
                 isIcon={true}
                 text={forBusinesBtnText}
-                className="md:mr-6 xl:mr-[88px] smOnly:hidden"
+                className="h-6 items-center sm:flex md:mr-6 xl:mr-[88px] smOnly:hidden"
               />
             )}
             <TranslationSwitcher
