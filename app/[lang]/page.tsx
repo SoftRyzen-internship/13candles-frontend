@@ -15,8 +15,8 @@ export default async function Home({
 
   return (
     <main>
-      <HeroSection {...hero} />
-      <CatalogSection {...catalog} />
+      <HeroSection hero={hero} />
+      <CatalogSection catalog={catalog} />
       <AboutSection about={about} />
     </main>
   );

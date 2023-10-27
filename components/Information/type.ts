@@ -1,5 +1,7 @@
 export interface InformationProps {
-  title: string;
-  buttons: { text: string; data: string[] }[];
-  className?: string;
+  information: {
+    title: string;
+    buttons: { text: string; data: string[] }[];
+    className?: string;
+  };
 }

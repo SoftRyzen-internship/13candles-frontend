@@ -15,7 +15,13 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
   const [showModal, setShowModal] = useState(false);
   const onToggleShowModal = () => setShowModal(prev => !prev);
 
-  const buttonClasses = classNames('', className);
+  const buttonClasses = classNames(
+    {
+      'h-7 w-7': isIcon,
+      link: !isIcon,
+    },
+    className,
+  );
 
   return (
     <>
@@ -29,7 +35,11 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
           <BasketIcon width={28} height={28} />
         </button>
       ) : (
-        <button className={className} type="button" onClick={onToggleShowModal}>
+        <button
+          className={buttonClasses}
+          onClick={onToggleShowModal}
+          type="button"
+        >
           {text}
         </button>
       )}

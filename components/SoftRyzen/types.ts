@@ -1,5 +1,3 @@
 export type SoftRyzenProps = {
-  made: string;
-  name: string;
-  href: string;
+  softRyzen: { made: string; name: string; href: string };
 };

@@ -1,7 +1,15 @@
-import { CateryCardProps } from '@/components/ui/CategoryCard/types';
-
 export interface CatalogSectionProps {
-  title: string;
-  subtitle: string;
-  categories: CateryCardProps[];
+  catalog: {
+    title: string;
+    subtitle: string;
+    categories: {
+      href: string;
+      text: string;
+      className?: string;
+      image: {
+        src: string;
+        alt: string;
+      };
+    }[];
+  };
 }

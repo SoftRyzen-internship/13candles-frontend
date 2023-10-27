@@ -4,9 +4,7 @@ import { InformationBtn } from '../ui/InformationBtn';
 import { InformationProps } from './type';
 
 export const Information: React.FC<InformationProps> = ({
-  title,
-  buttons,
-  className = '',
+  information: { title, buttons, className = '' },
 }) => (
   <div className={className}>
     <h2 className="mb-3 text-center font-bold md:text-start">{title}</h2>

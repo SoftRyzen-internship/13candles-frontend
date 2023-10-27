@@ -40,7 +40,7 @@ export default async function RootLayout({
     <html lang={lang}>
       <body className={`${montserrat.variable} ${raleway.variable}`}>
         {children}
-        <Footer {...footer} information={information} />
+        <Footer footer={footer} information={information} />
         <div id="modal" />
       </body>
     </html>
