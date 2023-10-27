@@ -32,9 +32,9 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
   const page: Pages = defineCurrentPage(pathname);
 
   return (
-    <header className="z-10 w-full bg-body smOnly:fixed">
+    <header className="z-10 w-full bg-body pb-6 pt-9 md:pb-8 xl:pb-10 smOnly:fixed">
       <div className="smOnly:header-underline container relative">
-        <nav className="grid grid-cols-3 items-center justify-items-stretch pt-9 smOnly:pb-4">
+        <nav className="grid grid-cols-3 items-center justify-items-stretch">
           {page === 'Home' ? (
             <SideMenu
               btnAriaClose={sidePanelMenu.closePanelBtnAriaText}
