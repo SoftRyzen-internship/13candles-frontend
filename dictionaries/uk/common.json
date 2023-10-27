@@ -19,9 +19,13 @@
           "href": "about"
         }
       ],
+      "toHomePage": {
+        "name": "На Головну",
+        "href": "/"
+      },
       "logoAriaLabelText": "Посилання із логотипом компанії",
       "forBusinesBtnText": "Для Бізнесу",
-      "language": "Укр",
+      "languageButtonText": "Eng",
       "basketAriaLabel": "Кнопка відкриття корзини"
     },
     "footer": {

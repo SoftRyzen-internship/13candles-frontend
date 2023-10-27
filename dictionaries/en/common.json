@@ -19,9 +19,13 @@
           "href": "about"
         }
       ],
+      "toHomePage": {
+        "name": "To Home Page",
+        "href": "/"
+      },
       "logoAriaLabelText": "Link with company logo",
       "forBusinesBtnText": "For Business",
-      "language": "Eng",
+      "languageButtonText": "Укр",
       "basketAriaLabel": "Open basket button"
     },
     "footer": {

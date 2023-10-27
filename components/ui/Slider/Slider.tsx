@@ -13,8 +13,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 
-//TODO: redme slider
-
 export const Slider: React.FC<SliderProps> = ({
   id,
   data = [],
