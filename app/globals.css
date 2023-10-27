@@ -222,7 +222,3 @@ a:focus-visible .link::before,
 .header-underline::before {
   @apply absolute bottom-0 left-0 h-[1px] w-full bg-black-light;
 }
-
-.extra-padding {
-  @apply pb-12 md:pb-9 xl:mb-[118px] xl:pt-[50px];
-}
