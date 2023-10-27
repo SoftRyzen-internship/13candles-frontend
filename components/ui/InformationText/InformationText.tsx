@@ -1,7 +1,7 @@
 import { InformationTextProps, TextType } from './types';
 
 export const InformationText: React.FC<InformationTextProps> = ({ text }) => {
-  const [textType, content] = text.split('_') as [TextType, string];
+  const [textType, content] = text.split('*_type_*') as [TextType, string];
 
   return (
     <>

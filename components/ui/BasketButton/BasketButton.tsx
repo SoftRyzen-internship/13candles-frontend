@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { ModalWindow } from '@/components/ui/ModalWindow';
 import { BasketButtonProps } from './types';
 import BasketIcon from '/public/icons/icon_cart.svg';
+import { Basket } from '@/components/Basket';
 
 export const BasketButton: React.FC<BasketButtonProps> = ({
   isIcon,
@@ -45,7 +46,7 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
       )}
 
       <ModalWindow onModalClose={onToggleShowModal} showModal={showModal}>
-        <div className="text-black">content of basket</div>
+        <Basket basket={{ title: 'Кошик' }} />
       </ModalWindow>
     </>
   );

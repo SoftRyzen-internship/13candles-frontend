@@ -20,7 +20,7 @@ export const Portal: React.FC<PortalProps> = ({
   }, [showModal]);
 
   useEffect(() => {
-    const onClickEscape = (e: KeyboardEvent<Document>) => {
+    const onClickEscape = (e: KeyboardEvent) => {
       if (e.code === 'Escape') {
         onModalClose();
       }
