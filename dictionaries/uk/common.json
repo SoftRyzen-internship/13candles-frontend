@@ -24,6 +24,7 @@
       "language": "Укр"
     },
     "footer": {
+      "logoAriaLabelText": "Посилання із логотипом компанії",
       "contacts": [
         {
           "href": "tel:380634293499",
@@ -70,8 +71,9 @@
         }
       ],
       "soft_ryzen": {
-        "name": "Made by SoftRyzen",
-        "href": "https://internship.softryzen.com"
+        "made": "Made by",
+        "name": "SoftRyzen",
+        "href": "https://softryzen.com/"
       }
     }
   }
