@@ -22,13 +22,8 @@ const dictionaries = {
 };
 
 const commonDictionaries = {
-  en: async () => ({
-    ...(await import(`@/dictionaries/en/common.json`)).default,
-  }),
-
-  uk: async () => ({
-    ...(await import(`@/dictionaries/uk/common.json`)).default,
-  }),
+  en: async () => (await import(`@/dictionaries/en/common.json`)).default,
+  uk: async () => (await import(`@/dictionaries/uk/common.json`)).default,
 };
 
 export const getDictionary = async (locale: Locale) => dictionaries[locale]();
