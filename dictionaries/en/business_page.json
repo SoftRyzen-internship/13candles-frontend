@@ -3,28 +3,58 @@
     "hero": {},
     "secondSection": {},
     "form": {
-      "inputs": {
-        "name": {
+      "title": {
+        "hero": "Fall in love with yourself with \"13 Candle Bar\" \uD83D\uDC99",
+        "contacts": "Залишай заявку і ми зв'яжемось з тобою"
+      },
+      "inputs": [
+        {
+          "name": "name",
           "label": "Your name *",
-          "placeholder": "Іванов Іван",
-          "error": "Невірне імʼя"
+          "placeholder": "Ivanov Ivan",
+          "errorMessage": "Incorrect name",
+          "type": "text",
+          "options": {
+            "required": "Required",
+            "pattern": "^(?![\\s-]*[\\s-])(?!.*--)(?!.*- )(?!.* -)(?!.*'-)(?=.*[A-Za-zА-Яа-яЇїІіЄєҐґ])[A-Za-zА-Яа-яЇїІіЄєҐґ' -]+$",
+            "minLength": 3,
+            "maxLength": 70
+          }
         },
-        "phone": {
+        {
+          "name": "phone",
           "label": "Your phone number *",
           "placeholder": "+380981234567",
-          "error": "Невірний телефон"
+          "errorMessage": "Wrong phone number",
+          "type": "text",
+          "options": {
+            "required": "Required",
+            "pattern": "^\\+[0-9]+$",
+            "minLength": 12,
+            "maxLength": 13
+          }
         },
-        "email": {
+        {
+          "name": "email",
           "label": "Your E-mail",
           "placeholder": "your@mail.com",
-          "error": "Невірний e-mail"
+          "errorMessage": "Incorrect email address",
+          "type": "email",
+          "options": {
+            "required": false,
+            "pattern": "^(?=.{6,63}$)[a-zA-Z0-9]+[a-zA-Z0-9._-]*@[a-zA-Z0-9.-]+(?:[a-zA-Z0-9-]+)*.[a-zA-Z]{2,}$",
+            "minLength": 6,
+            "maxLength": 63
+          }
         }
-      },
-      "button": {
-        "sendText": "SEND",
-        "sentText": "Відправлено",
-        "loadingText": "Відправляється...",
-        "errorText": "Виникла помилка"
+      ],
+      "button": "SEND",
+      "notifications": {
+        "success": {
+          "title": "Thanks, your request has been sent \uD83D\uDC99",
+          "text": "Our manager will contact you shortly"
+        },
+        "error": "An error occurred while sending a request"
       }
     }
   }

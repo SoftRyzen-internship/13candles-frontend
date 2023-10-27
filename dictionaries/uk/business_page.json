@@ -3,28 +3,58 @@
     "hero": {},
     "secondSection": {},
     "form": {
-      "inputs": {
-        "name": {
+      "title": {
+        "hero": "Закохуйте в себе разом з \"13 Candle Bar\" \uD83D\uDC99",
+        "contacts": "Залишай заявку і ми зв'яжемось з тобою"
+      },
+      "inputs": [
+        {
+          "name": "name",
           "label": "Ваше імʼя *",
           "placeholder": "Іванов Іван",
-          "error": "Невірне імʼя"
+          "errorMessage": "Невірне імʼя",
+          "type": "text",
+          "options": {
+            "required": "Поле обов'язкове",
+            "pattern": "^(?![\\s-]*[\\s-])(?!.*--)(?!.*- )(?!.* -)(?!.*'-)(?=.*[A-Za-zА-Яа-яЇїІіЄєҐґ])[A-Za-zА-Яа-яЇїІіЄєҐґ' -]+$",
+            "minLength": 3,
+            "maxLength": 70
+          }
         },
-        "phone": {
+        {
+          "name": "phone",
           "label": "Ваш телефон *",
           "placeholder": "+380981234567",
-          "error": "Невірний телефон"
+          "errorMessage": "Невірний телефон",
+          "type": "text",
+          "options": {
+            "required": "Поле обов'язкове",
+            "pattern": "^\\+[0-9]+$",
+            "minLength": 12,
+            "maxLength": 13
+          }
         },
-        "email": {
+        {
+          "name": "email",
           "label": "Ваш e-mail",
           "placeholder": "your@mail.com",
-          "error": "Невірний e-mail"
+          "errorMessage": "Невірний e-mail",
+          "type": "text",
+          "options": {
+            "required": false,
+            "pattern": "^(?=.{6,63}$)[a-zA-Z0-9]+[a-zA-Z0-9._-]*@[a-zA-Z0-9.-]+(?:[a-zA-Z0-9-]+)*.[a-zA-Z]{2,}$",
+            "minLength": 6,
+            "maxLength": 63
+          }
         }
-      },
-      "button": {
-        "sendText": "Залишити заявку",
-        "sentText": "Відправлено",
-        "loadingText": "Відправляється...",
-        "errorText": "Виникла помилка"
+      ],
+      "button": "Залишити заявку",
+      "notifications": {
+        "success": {
+          "title": "Дякуємо, ваша заявка відправлена \uD83D\uDC99",
+          "text": "Незабаром з вами звʼяжеться наш менеджер"
+        },
+        "error": "При відправленні заявки виникла помилка"
       }
     }
   }
