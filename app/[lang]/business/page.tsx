@@ -1,17 +1,22 @@
 import { getDictionary } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
-// import { BusinessForm } from '@/components/BusinessForm';
-import { BusinessFormWithPopUp } from '@/components/BusinessFormWithPopUp';
 
-export default async function Home({
+import { SecondSection } from '@/sections/business/SecondSection';
+import { HelpfulSection } from '@/sections/business/HelpfulSection';
+
+import { BusinessFormWithPopUp } from '@/components/BusinessFormWithPopUp';
+// import { BusinessForm } from '@/components/BusinessForm';
+
+export default async function BusinessPage({
   params: { lang },
 }: {
   params: { lang: Locale };
 }) {
   const { businessPage } = await getDictionary(lang);
+  const { secondSection, helpfulSection } = businessPage;
 
   const dataString = JSON.stringify(businessPage.form);
-  const staticData = JSON.parse(dataString);
+  const staticFormData = JSON.parse(dataString);
 
   return (
     <main>
@@ -19,7 +24,9 @@ export default async function Home({
            staticData={staticData}
         section="hero"
       /> */}
-      <BusinessFormWithPopUp staticData={staticData} />
+      <SecondSection className="section xl:py-[50px]" {...secondSection} />
+      <HelpfulSection className="section xl:py-[50px]" {...helpfulSection} />
+      <BusinessFormWithPopUp staticData={staticFormData} />
     </main>
   );
 }
