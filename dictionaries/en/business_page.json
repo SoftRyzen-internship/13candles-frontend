@@ -1,7 +1,10 @@
 {
   "businessPage": {
     "hero": {
-      "image": { "alt": "Workshop" },
+      "image": {
+        "alt": "Workshop",
+        "src": "/images/homepage/about/about@2x.webp"
+      },
       "overtitle": "Increase the horizons of your business with 13 Candle Bar!",
       "title": "Corporate orders and flavours for your business",
       "services": [

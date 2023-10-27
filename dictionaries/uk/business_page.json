@@ -1,7 +1,10 @@
 {
   "businessPage": {
     "hero": {
-      "image": { "alt": "Майстерня" },
+      "image": {
+        "alt": "Майстерня",
+        "src": "/images/homepage/about/about@2x.webp"
+      },
       "overtitle": "Збільшуйте горизонти свого бізнесу разом з 13 Candle Bar!",
       "title": "Корпоративні замовлення та ароматизація для вашого бізнесу",
       "services": [
