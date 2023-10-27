@@ -19,6 +19,7 @@ export const SecondSection: FC<SecondSectionProps> = ({
             width={1220}
             height={899}
             alt={alt}
+            sizes="(max-width: 767px) 440px, (max-width: 1279px) 704px, 1220px"
             className="grayscale transition-all duration-300"
           />
         </div>

@@ -14,7 +14,13 @@ export const HelpfulSection: FC<HelpfulSectionProps> = ({
     <section id="helpful" className={className}>
       <div className="container md:flex md:items-center md:justify-between">
         <div className="mb-6 flex h-[280px] w-full items-center overflow-hidden md:mb-0 md:h-[348px] md:w-[334px] xl:h-[604px] xl:w-[578px]">
-          <Image src={src} width={578} height={604} alt={alt} />
+          <Image
+            src={src}
+            width={578}
+            height={604}
+            alt={alt}
+            sizes="(max-width: 767px) 440px, (max-width: 1279px) 334px, 578px"
+          />
         </div>
 
         <div className="md:w-[350px] xl:w-[578px]">
