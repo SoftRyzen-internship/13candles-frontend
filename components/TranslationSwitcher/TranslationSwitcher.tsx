@@ -1,19 +1,15 @@
 'use client';
 
-import { Locale } from '@/i18n.config';
 import { redirectedPathName } from '@/utils';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { TranslationButtonProps } from './types';
 
-export const TranslationSwitcher = ({
+export const TranslationSwitcher: React.FC<TranslationButtonProps> = ({
   lang,
   buttonText,
   className = '',
-}: {
-  lang: Locale;
-  buttonText: string;
-  className: string;
 }) => {
   const pathName = usePathname();
 

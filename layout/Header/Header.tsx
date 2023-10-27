@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
 
   return (
     <header>
-      <div className="container z-10 h-[108px] w-full bg-body smOnly:fixed">
+      <div className="container z-10 h-[100px] w-full bg-body smOnly:fixed">
         <nav className="grid grid-cols-3 justify-items-stretch pt-9">
           {/* //if home page */}
 
@@ -58,7 +58,6 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
             //put link to main page here
             // Link
           }
-          {/* <div className="flex items-center"> */}
           <div className="justify-self-center">
             <Logo aria={logoAriaLabelText} position="header" />
           </div>
@@ -75,7 +74,6 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
             />
 
             <BasketButton isIcon={true} />
-            {/* </div> */}
           </div>
         </nav>
       </div>
