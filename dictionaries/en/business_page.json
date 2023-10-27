@@ -4,7 +4,7 @@
     "secondSection": {},
     "form": {
       "title": {
-        "hero": "Fall in love with yourself with \"13 Candle Bar\" \uD83D\uDC99",
+        "hero": "Fall in love with yourself with \"13 Candle Bar\" 🖤",
         "contacts": "Залишай заявку і ми зв'яжемось з тобою"
       },
       "inputs": [
@@ -42,7 +42,7 @@
           "type": "email",
           "options": {
             "required": false,
-            "pattern": "^(?=.{6,63}$)[a-zA-Z0-9]+[a-zA-Z0-9._-]*@[a-zA-Z0-9.-]+(?:[a-zA-Z0-9-]+)*.[a-zA-Z]{2,}$",
+            "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?@[a-zA-Z0-9.-]+(?:.[a-zA-Z]{2,})+$",
             "minLength": 6,
             "maxLength": 63
           }
@@ -51,7 +51,7 @@
       "button": "SEND",
       "notifications": {
         "success": {
-          "title": "Thanks, your request has been sent \uD83D\uDC99",
+          "title": "Thanks, your request has been sent 🖤",
           "text": "Our manager will contact you shortly"
         },
         "error": "An error occurred while sending a request"

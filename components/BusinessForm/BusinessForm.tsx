@@ -4,8 +4,9 @@ import { FC, useState } from 'react';
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import classnames from 'classnames';
-import { BusinessInput } from '@/components/BusinessInput/BusinessInput';
-import { Button } from '@/components/ui/Button/Button';
+
+import { ButtonLoader } from '@/components/ButtonLoader';
+import { BusinessInput } from '@/components/BusinessInput';
 import { BusinessFormProps } from './types';
 
 const FORM_DATA_KEY = 'form_data';
@@ -13,6 +14,7 @@ const FORM_DATA_KEY = 'form_data';
 export const BusinessForm: FC<BusinessFormProps> = ({
   staticData,
   section,
+  setPopUpType,
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { title, inputs, button } = staticData;
@@ -33,7 +35,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   const onSubmit: SubmitHandler<FieldValues> = async data => {
     const sendFormData = async (data: any) => {
       try {
-        //  await sendDataToTelegram(data);
+        //  await sendDataToTelegram(data as IDataToSend);
         // return true;
 
         //delete!!!!!!!
@@ -57,8 +59,10 @@ export const BusinessForm: FC<BusinessFormProps> = ({
       if (isSuccess) {
         reset();
         localStorage.removeItem(FORM_DATA_KEY);
+        setPopUpType('success');
       }
     } catch (error) {
+      setPopUpType('error');
       console.error('Something went wrong');
     } finally {
       setIsLoading(false);
@@ -84,6 +88,12 @@ export const BusinessForm: FC<BusinessFormProps> = ({
     },
   );
 
+  const btnStyles = classnames(
+    'common-transition bg-black-light text-white mx-auto block',
+    'w-full cursor-pointer px-12 py-3 text-center text-[20px] font-medium leading-6 xl:border xl:py-[11px]',
+    'xl:hover:bg-white xl:hover:text-black-light xl:active:bg-white xl:active:text-black-light',
+  );
+
   return (
     <div>
       <h2 className={titleClass}>
@@ -100,12 +110,13 @@ export const BusinessForm: FC<BusinessFormProps> = ({
             />
           ))}
         </div>
-        <Button
-          tag="button"
-          buttonType="submit"
-          label={button}
-          className="xl:!bg-black-light xl:py-[11px] xl:!text-white xl:hover:!bg-white  xl:hover:!text-black-light xl:active:!bg-white xl:active:!text-black-light"
-        />
+        <button type="submit" disabled={isLoading} className={btnStyles}>
+          {isLoading ? (
+            <ButtonLoader color="#ffffff" className="justify-center" />
+          ) : (
+            button
+          )}
+        </button>
       </form>
     </div>
   );

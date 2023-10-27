@@ -1,6 +1,7 @@
 import { getDictionary } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
-import { BusinessForm } from '@/components/BusinessForm';
+// import { BusinessForm } from '@/components/BusinessForm';
+import { BusinessFormWithPopUp } from '@/components/BusinessFormWithPopUp';
 
 export default async function Home({
   params: { lang },
@@ -14,8 +15,11 @@ export default async function Home({
 
   return (
     <main>
-      <BusinessForm staticData={staticData} section="hero" />
-      <BusinessForm staticData={staticData} section="contacts" />
+      {/* <BusinessForm
+           staticData={staticData}
+        section="hero"
+      /> */}
+      <BusinessFormWithPopUp staticData={staticData} />
     </main>
   );
 }
