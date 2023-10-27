@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade, Navigation } from 'swiper/modules';
 
@@ -28,6 +29,12 @@ export const Slider: React.FC<SliderProps> = ({
     isDesktop: true,
   },
 }) => {
+  const [isFirstRender, setIsFirstRender] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (isFirstRender) setIsFirstRender(false);
+  }, [isFirstRender]);
+
   const breakpoints = {
     [mobile]: {
       navigation: {
@@ -46,7 +53,7 @@ export const Slider: React.FC<SliderProps> = ({
     },
   };
 
-  return (
+  return isFirstRender ? null : (
     <Swiper
       id={id}
       modules={[Autoplay, Pagination, EffectFade, Navigation]}
