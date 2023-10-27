@@ -288,7 +288,7 @@ a decorative icon in the component.
 |                         | isTablet: true,  | set to false to disable navigation on tablet                                     |
 |                         | isDesktop: true, | set to false to disable navigation on desktop                                    |
 |                         | }`               | (Is is required to provide options for all screens                               |
-|                         |                  | if you want to provide customised breakpoints)                                   |
+|                         |                  | if you want to provide customized breakpoints)                                   |
 
 - ### `SideMenu`
 
@@ -303,7 +303,7 @@ a decorative icon in the component.
 
 | Prop        | Default | Description                                               |
 | ----------- | ------- | --------------------------------------------------------- |
-| `links`     | `[]`    | Required. Array of navigations links.                     |
+| `links`     | `[]`    | Required. Array of navigation links.                      |
 | `className` | `''`    | Optional. Add a custom or additional CSS class if needed. |
 
 - ### BusinessLink
@@ -316,22 +316,22 @@ a decorative icon in the component.
 
 - ### MenuButton
 
-| Prop                 | Default | Description                                             |
-| -------------------- | ------- | ------------------------------------------------------- |
-| `isOpen`             | `-`     | Required, is menu open                                  |
-| `onClick`            | —       | Required, toggle menu                                   |
-| `btnAriaOpen`        | —       | Required. Aria text when menu opened.                   |
-| `btnAriaClose`       | —       | Required. Aria text when menu closed.                   |
-| `className`          | `''`    | Optional, add custom or additional css class you'd need |
-| `languageButtonText` | -       | Required, the language applied by clicking the button   |
+| Prop           | Default | Description                                             |
+| -------------- | ------- | ------------------------------------------------------- |
+| `isOpen`       | `-`     | Required, is menu open                                  |
+| `onClick`      | —       | Required, toggle menu                                   |
+| `btnAriaOpen`  | —       | Required. Aria text when menu opened.                   |
+| `btnAriaClose` | —       | Required. Aria text when menu closed.                   |
+| `className`    | `''`    | Optional, add custom or additional css class you'd need |
 
 - ### `MobileMenu`
 
-| Prop           | Default | Description                           |
-| -------------- | ------- | ------------------------------------- |
-| `links`        | `[]`    | Required. Array of navigations links. |
-| `btnAriaOpen`  | —       | Required. Aria text when menu opened. |
-| `btnAriaClose` | —       | Required. Aria text when menu closed. |
-| `businessText` | —       | Required. Business link text          |
+| Prop                 | Default | Description                                           |
+| -------------------- | ------- | ----------------------------------------------------- |
+| `links`              | `[]`    | Required. Array of navigation links.                  |
+| `btnAriaOpen`        | —       | Required. Aria text when menu opened.                 |
+| `btnAriaClose`       | —       | Required. Aria text when menu closed.                 |
+| `businessText`       | —       | Required. Business link text                          |
+| `languageButtonText` | -       | Required, the language applied by clicking the button |
 
 ---
