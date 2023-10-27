@@ -24,6 +24,7 @@ export async function generateMetadata({
   const {
     common: { meta },
   } = await getDictionary(lang);
+
   const { metadata, twitter, openGraph, icons } = meta;
   const { title, description, keywords, manifest } = metadata;
 
