@@ -39,16 +39,19 @@ export const Slider: React.FC<SliderProps> = ({
     [mobile]: {
       navigation: {
         enabled: navigationBreakpoints.isMobile,
+        disabledClass: 'visually-hidden',
       },
     },
     [tablet]: {
       navigation: {
         enabled: navigationBreakpoints.isTablet,
+        disabledClass: 'visually-hidden',
       },
     },
     [desktop]: {
       navigation: {
         enabled: navigationBreakpoints.isDesktop,
+        disabledClass: 'visually-hidden',
       },
     },
   };
