@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import { CSSTransition } from 'react-transition-group';
 import { useParams, usePathname } from 'next/navigation';
 
@@ -17,6 +18,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
   links,
   btnAriaOpen,
   btnAriaClose,
+  toHomePage,
 }) => {
   const [isOpen, setOpen] = useState(false);
   const nodeRef = useRef(null);
@@ -71,11 +73,20 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               />
             )}
 
+            <Link
+              href={`${toHomePage.href}${lang}`}
+              onClick={() => setOpen(false)}
+              className="link mx-auto max-w-max"
+            >
+              {toHomePage.name}
+            </Link>
+
             {!businessPage && (
               <BusinessLink
                 className="mx-auto inline-flex text-lg"
                 isIcon={true}
                 text={businessText}
+                onClick={() => setOpen(false)}
               />
             )}
           </div>

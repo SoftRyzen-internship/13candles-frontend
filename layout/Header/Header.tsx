@@ -58,6 +58,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
             languageButtonText={languageButtonText}
             btnAriaClose={mobileMenu.closeMenuBtnAriaText}
             btnAriaOpen={mobileMenu.openMenuBtnAriaText}
+            toHomePage={toHomePage}
           />
 
           <div className="justify-self-center">
