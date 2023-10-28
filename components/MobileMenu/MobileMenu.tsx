@@ -11,6 +11,8 @@ import { MenuButton } from '../ui/MenuButton';
 
 import { MobileMenuProps } from './types';
 import { Locale } from '@/i18n.config';
+import { checkPageName } from '@/utils';
+import { FOR_BUSINESS, HOME } from '@/data';
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({
   languageButtonText,
@@ -22,11 +24,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 }) => {
   const [isOpen, setOpen] = useState(false);
   const nodeRef = useRef(null);
-  const lang = useParams().lang as Locale;
-  const path = usePathname();
 
-  const homePage = path === '/en' || path === '/uk';
-  const businessPage = path.includes('business');
+  const pathname = usePathname();
+  const lang = useParams().lang as Locale;
+  const isHomePage = checkPageName(pathname, HOME);
+  const isBusinessPage = checkPageName(pathname, FOR_BUSINESS);
 
   useEffect(() => {
     if (isOpen) {
@@ -65,23 +67,23 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               buttonText={languageButtonText}
               className="mx-auto inline-flex"
             />
-            {homePage && (
+            {isHomePage ? (
               <NavLinks
                 onClick={() => setOpen(false)}
                 className="grid"
                 links={links}
               />
+            ) : (
+              <Link
+                href={`${toHomePage.href}${lang}`}
+                onClick={() => setOpen(false)}
+                className="link mx-auto max-w-max"
+              >
+                {toHomePage.name}
+              </Link>
             )}
 
-            <Link
-              href={`${toHomePage.href}${lang}`}
-              onClick={() => setOpen(false)}
-              className="link mx-auto max-w-max"
-            >
-              {toHomePage.name}
-            </Link>
-
-            {!businessPage && (
+            {!isBusinessPage && (
               <BusinessLink
                 className="mx-auto inline-flex text-lg"
                 isIcon={true}
