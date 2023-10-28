@@ -19,11 +19,13 @@ const metatada = {
   en: async () => ({
     ...(await import(`@/dictionaries/en/meta/common.json`)).default,
     ...(await import(`@/dictionaries/en/meta/home.json`)).default,
+    ...(await import(`@/dictionaries/en/meta/business.json`)).default,
   }),
 
   uk: async () => ({
     ...(await import(`@/dictionaries/uk/meta/common.json`)).default,
     ...(await import(`@/dictionaries/uk/meta/home.json`)).default,
+    ...(await import(`@/dictionaries/uk/meta/business.json`)).default,
   }),
 };
 
