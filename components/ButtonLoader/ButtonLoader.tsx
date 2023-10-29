@@ -5,9 +5,9 @@ import { ButtonLoaderProps } from './types';
 export const ButtonLoader: FC<ButtonLoaderProps> = ({ color, className }) => {
   return (
     <ThreeDots
-      height="20"
+      height="14"
       width="80"
-      radius="4"
+      radius="9"
       color={color}
       ariaLabel="three-dots-loading"
       wrapperClass={className}

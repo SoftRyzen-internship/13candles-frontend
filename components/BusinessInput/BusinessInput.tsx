@@ -19,7 +19,7 @@ export const BusinessInput: FC<BusinessInputProps> = ({
   );
 
   return (
-    <label className="relative flex flex-col gap-1 xl:flex-row xl:justify-between">
+    <label className="relative flex w-full flex-col gap-1 xl:flex-row xl:items-center xl:justify-between">
       <span> {label}</span>
       <input
         className={inputClass}

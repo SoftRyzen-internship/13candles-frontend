@@ -70,7 +70,6 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   };
 
   const titleClass = classnames(
-    '',
     {
       'title-lg smOnly:text-xl mb-4 text-center md:mb-9 xl:mb-12':
         section === 'hero',
@@ -90,7 +89,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
 
   const btnStyles = classnames(
     'common-transition bg-black-light text-white mx-auto block',
-    'w-full cursor-pointer px-12 py-3 text-center text-[20px] font-medium leading-6 xl:border xl:py-[11px]',
+    'w-full cursor-pointer px-12 text-center text-[20px] h-[47px] font-medium leading-6 xl:border ',
     'xl:hover:bg-white xl:hover:text-black-light xl:active:bg-white xl:active:text-black-light',
   );
 
@@ -112,7 +111,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
         </div>
         <button type="submit" disabled={isLoading} className={btnStyles}>
           {isLoading ? (
-            <ButtonLoader color="#ffffff" className="justify-center" />
+            <ButtonLoader color="grey" className="justify-center" />
           ) : (
             button
           )}
