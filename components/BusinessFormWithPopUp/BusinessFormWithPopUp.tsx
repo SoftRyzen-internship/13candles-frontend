@@ -2,7 +2,6 @@
 
 import { useEffect, useState, FC } from 'react';
 
-import { Portal } from '@/components/ui/Portal';
 import { ModalWindow } from '@/components/ui/ModalWindow';
 import { BusinessForm } from '@/components/BusinessForm/BusinessForm';
 import { SuccessNotification } from '@/components/SuccessNotification/SuccessNotification';
@@ -38,16 +37,14 @@ export const BusinessFormWithPopUp: FC<BusinessFormWithPopUpProps> = ({
         section={'contacts'}
         setPopUpType={setPopUpType}
       />
-      <Portal onModalClose={handleToggleModal} showModal={showModal}>
-        <ModalWindow onModalClose={handleToggleModal} showModal={showModal}>
-          {popUpType === 'success' ? (
-            <SuccessNotification staticData={success} />
-          ) : null}
-          {popUpType === 'error' ? (
-            <ErrorNotification staticData={error} />
-          ) : null}
-        </ModalWindow>
-      </Portal>
+      <ModalWindow onModalClose={handleToggleModal} showModal={showModal}>
+        {popUpType === 'success' ? (
+          <SuccessNotification staticData={success} />
+        ) : null}
+        {popUpType === 'error' ? (
+          <ErrorNotification staticData={error} />
+        ) : null}
+      </ModalWindow>
     </>
   );
 };

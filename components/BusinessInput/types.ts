@@ -1,9 +1,4 @@
-import {
-  UseFormRegister,
-  FieldErrors,
-  FieldValues,
-  // RegisterOptions,
-} from 'react-hook-form';
+import { UseFormRegister, FieldErrors, FieldValues } from 'react-hook-form';
 
 export interface IBusinessInput {
   name: string;
@@ -11,8 +6,7 @@ export interface IBusinessInput {
   placeholder: string;
   errorMessage: string;
   type: string;
-  // options: Record<string, RegisterOptions>;
-  options: any;
+  options: OptionsType;
 }
 
 export interface BusinessInputProps {
@@ -20,3 +14,10 @@ export interface BusinessInputProps {
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
 }
+
+type OptionsType = {
+  required: boolean | string;
+  pattern: string;
+  minLength: number;
+  maxLength: number;
+};

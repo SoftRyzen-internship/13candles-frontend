@@ -1,7 +1,6 @@
 'use client';
 
 import { FC, useState } from 'react';
-import { Portal } from '@/components/ui/Portal';
 import { ModalWindow } from '@/components/ui/ModalWindow';
 import { BusinessForm } from '@/components/BusinessForm/BusinessForm';
 import { SuccessNotification } from '@/components/SuccessNotification/SuccessNotification';
@@ -26,24 +25,22 @@ export const BtnWithBusinessFormModal: FC<BtnWithBusinessFormModalProps> = ({
     <div>
       <button onClick={handleToggleModal}>Консультація</button>
 
-      <Portal onModalClose={handleToggleModal} showModal={showModal}>
-        <ModalWindow onModalClose={handleToggleModal} showModal={showModal}>
-          {popUpType === 'default' ? (
-            <BusinessForm
-              staticData={staticData}
-              setPopUpType={setPopUpType}
-              section="hero"
-            />
-          ) : null}
+      <ModalWindow onModalClose={handleToggleModal} showModal={showModal}>
+        {popUpType === 'default' ? (
+          <BusinessForm
+            staticData={staticData}
+            setPopUpType={setPopUpType}
+            section="hero"
+          />
+        ) : null}
 
-          {popUpType === 'success' ? (
-            <SuccessNotification staticData={success} />
-          ) : null}
-          {popUpType === 'error' ? (
-            <ErrorNotification staticData={error} />
-          ) : null}
-        </ModalWindow>
-      </Portal>
+        {popUpType === 'success' ? (
+          <SuccessNotification staticData={success} />
+        ) : null}
+        {popUpType === 'error' ? (
+          <ErrorNotification staticData={error} />
+        ) : null}
+      </ModalWindow>
     </div>
   );
 };
