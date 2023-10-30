@@ -1,10 +1,8 @@
-import { ReactNode } from 'react';
-
 export type IStatus = 'entering' | 'entered' | 'exiting' | 'exited' | string;
 
-export interface IPortal {
-  children: ReactNode;
+export interface PortalProps {
+  children: React.ReactNode;
   onModalClose: () => void;
+  showModal: boolean;
   className?: string;
-  showModal?: boolean;
 }

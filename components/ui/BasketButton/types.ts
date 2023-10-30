@@ -1,5 +1,6 @@
-export type BasketButtonProps = {
-  className?: string;
-  isIcon?: boolean;
+export interface BasketButtonProps {
+  isIcon: boolean;
   text?: string;
-};
+  ariaLabel?: string;
+  className?: string;
+}

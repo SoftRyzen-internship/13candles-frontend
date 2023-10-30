@@ -1,9 +1,9 @@
 import { getDictionary } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
-// import { TranslationSwitcher } from '@/components/TranslationSwitcher';
-import { HeroSection } from '@/sections/home/HeroSection';
-import { CatalogSection } from '@/sections/home/CatalogSection';
+
 import { AboutSection } from '@/sections/home/AboutSection';
+import { CatalogSection } from '@/sections/home/CatalogSection';
+import { HeroSection } from '@/sections/home/HeroSection';
 
 export default async function Home({
   params: { lang },
@@ -11,17 +11,13 @@ export default async function Home({
   params: { lang: Locale };
 }) {
   const { homepage } = await getDictionary(lang);
-
-  // const { language } = header;
   const { hero, catalog, about } = homepage;
 
   return (
-    <main>
-      {/* <TranslationSwitcher lang={language} />
-      <BusinessLink isIcon={true} text={header.forBusinesBtnText} /> */}
-      <HeroSection {...hero} />
-      <CatalogSection {...catalog} />
+    <>
+      <HeroSection hero={hero} />
+      <CatalogSection catalog={catalog} />
       <AboutSection about={about} />
-    </main>
+    </>
   );
 }

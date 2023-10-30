@@ -4,24 +4,26 @@ import { useRef, MouseEvent, KeyboardEvent, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Transition } from 'react-transition-group';
 
-import { IPortal } from './types';
-
 import { defaultStyle, duration, transitionStyles } from './variants';
+import { PortalProps } from './types';
 
-export const Portal = ({ onModalClose, children, showModal }: IPortal) => {
+export const Portal: React.FC<PortalProps> = ({
+  onModalClose,
+  children,
+  showModal,
+}) => {
   const nodeRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const onClickEscape = (e: KeyboardEvent<Document>) => {
-      if (e.code === 'Escape') {
-        onModalClose();
-      }
-    };
-    document.addEventListener('keydown', onClickEscape as any);
-    return () => {
-      document.removeEventListener('keydown', onClickEscape as any);
-    };
-  }, [onModalClose]);
+    if (showModal) document.body.classList.add('overflow-hidden');
+    if (!showModal) document.body.classList.remove('overflow-hidden');
+  }, [showModal]);
+
+  const handleEsc = (event: KeyboardEvent) => {
+    if (event.code === 'Escape') {
+      onModalClose();
+    }
+  };
 
   const handleBackdrop = (event: MouseEvent) => {
     if (event.target === event.currentTarget) {
@@ -38,6 +40,7 @@ export const Portal = ({ onModalClose, children, showModal }: IPortal) => {
       unmountOnExit
     >
       {state => {
+        nodeRef.current?.focus();
         return createPortal(
           <div
             style={{
@@ -46,12 +49,12 @@ export const Portal = ({ onModalClose, children, showModal }: IPortal) => {
             }}
             ref={nodeRef}
             tabIndex={0}
+            onKeyDown={handleEsc}
             onClick={handleBackdrop}
-            className={` fixed left-0 top-0 z-20 h-[100%] w-[100%] overflow-auto bg-black-light/50 `}
+            className="fixed bottom-0 left-0 right-0 top-0 z-20 bg-black-light/50"
           >
             {children}
           </div>,
-
           document.getElementById('modal')!,
         );
       }}
