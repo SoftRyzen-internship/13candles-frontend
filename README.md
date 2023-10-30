@@ -312,6 +312,7 @@ a decorative icon in the component.
 | ----------- | ------- | ------------------------------------------------------- |
 | `text`      | —       | Required, any text content                              |
 | `isIcon`    | `false` | Optional, set true to use decor icon                    |
+| `onClick`   | —       | Optional, if you need onClick                           |
 | `className` | `''`    | Optional, add custom or additional css class you'd need |
 
 - ### MenuButton
@@ -333,5 +334,6 @@ a decorative icon in the component.
 | `btnAriaClose`       | —       | Required. Aria text when menu closed.                 |
 | `businessText`       | —       | Required. Business link text                          |
 | `languageButtonText` | -       | Required, the language applied by clicking the button |
+| `toHomePage`         | -       | Required, homepage nav link                           |
 
 ---
