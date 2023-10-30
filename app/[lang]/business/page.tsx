@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
+
 import { getDictionary, getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
-
 import { FOR_BUSINESS } from '@/data';
 
 import { SecondSection } from '@/sections/business/SecondSection';
