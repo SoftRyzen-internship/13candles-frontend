@@ -1,0 +1,70 @@
+{
+  "businessPage": {
+    "hero": {},
+    "secondSection": {
+      "image": {
+        "src": "/images/business_page/second/main-img@2x.webp",
+        "alt": "Aromatic products in glass jars on wooden shelves"
+      },
+      "staticData": [
+        {
+          "title": "Magic of aroma",
+          "regularDescription1": "Today, to create new perfume compositions, masters of fragrance use more than 6500 different components, most of which are of natural origin. For example, to produce 1 liter of Bulgarian rose oil, it is necessary to process more than 5 tons of rose petals. And",
+          "accentDescription": " people can recall odors with an accuracy of 65% after a year",
+          "regularDescription2": ", while they remember visual objects only by 50% after three months."
+        },
+        {
+          "title": "Scents form the first impression",
+          "regularDescription1": "The impact of fragrances on offline business, in our opinion, is very underestimated. You must admit that when you enter a room for the first time, whether it's a hotel lobby, restaurant, apartment, or even get into a car,",
+          "accentDescription": " the scent has a huge impact on your impression",
+          "regularDescription2": ". This is especially important when it is the first impression, because it can never be changed."
+        },
+        {
+          "title": "The aromatic secret of success",
+          "regularDescription1": "At \"13 Candle Bar\", we believe that it is as important for offline businesses to control the aroma as it is to control the cleanliness of the premises. That's why we help businesses interact with customers through scents by creating room fragrances, scented candles, aroma diffusers, and more.",
+          "accentDescription": " We will help you create your own unique scent",
+          "regularDescription2": ", that matches your brand style, or offer ready-made solutions from our production line."
+        }
+      ]
+    },
+    "usefulWhom": {
+      "title": "Our benefit",
+      "options": [
+        { "id": "01", "text": "Any offline business" },
+        { "id": "02", "text": "Hotels" },
+        { "id": "03", "text": "Restaurants" },
+        { "id": "04", "text": "Beauty salons" },
+        { "id": "05", "text": "Yoga studios" },
+        { "id": "06", "text": "Massage parlors" },
+        { "id": "07", "text": "Spas" },
+        { "id": "08", "text": "Offices" },
+        { "id": "09", "text": "Retail" },
+        { "id": "10", "text": "Gyms" }
+      ],
+      "info": "We are also considering cooperation with offline and online stores of themed goods."
+    },
+    "helpfulSection": {
+      "image": {
+        "src": "/images/business_page/helpful/main-img@2x.webp",
+        "alt": "The interior of a cozy restaurant"
+      },
+      "staticData": {
+        "title": "We can be helpful",
+        "description1": "We help you attract customers and create an incredible impression of you. We organize the flavoring of your business or home, create the right mood and atmosphere.",
+        "description2": "We can also make corporate orders, wholesale or for your brand. Scented candles, aroma diffusers, aroma sprays, and more. We can create products for your brand with incredible scents and packaging."
+      }
+    },
+    "ourManufactureSection": {
+      "image": {
+        "src": "/images/business_page/manufacture/main-img@2x.webp",
+        "alt": "Aromatic products in glass jars on metal trays"
+      },
+      "textBlock": {
+        "title": "Our manufacture",
+        "description1": "We are located in Ukraine, in the Kyiv region. We have our own small production facility and manufacture products from natural raw materials, giving preference to everything Ukrainian.",
+        "description2": "Our products have quality certificates and are of natural origin. For candles, we use only natural soy wax, cotton and wooden wicks. For flavoring, we use natural certified oils.",
+        "description3": "At \"13 Candle Bar\", everyone believes that you should do what you love and love what you do. We love what we do."
+      }
+    }
+  }
+}

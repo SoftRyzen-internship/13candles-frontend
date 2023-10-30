@@ -231,3 +231,10 @@ a:focus-visible .link::before,
 .header-underline::before {
   @apply absolute bottom-0 left-0 h-[1px] w-full bg-black-light;
 }
+
+/* === SECOND SECTION (BUSINESS PAGE) === */
+
+#second .container:hover img,
+#second .container:focus-within img {
+  filter: grayscale(0%);
+}

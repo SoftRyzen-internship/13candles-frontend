@@ -1,8 +1,13 @@
 import type { Metadata } from 'next';
 
-import { getMetadata } from '@/lib/dictionary';
+import { getDictionary, getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 import { FOR_BUSINESS } from '@/data';
+
+import { SecondSection } from '@/sections/business/SecondSection';
+import { HelpfulSection } from '@/sections/business/HelpfulSection';
+import { OurManufactureSection } from '@/sections/business/OurManufactureSection';
+import { UsefulWhomSection } from '@/sections/business/UsefulWhomSection';
 
 export async function generateMetadata({
   params: { lang },
@@ -33,10 +38,21 @@ export async function generateMetadata({
   };
 }
 
-export default function BusinessPage() {
+export default async function BusinessPage({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
+  const { businessPage } = await getDictionary(lang);
+  const { secondSection, helpfulSection, usefulWhom, ourManufactureSection } =
+    businessPage;
+
   return (
-    <div className="container smOnly:pt-[108px]">
-      <h1>This is a business page</h1>
-    </div>
+    <main>
+      <SecondSection {...secondSection} />
+      <HelpfulSection {...helpfulSection} />
+      <UsefulWhomSection {...usefulWhom} />
+      <OurManufactureSection {...ourManufactureSection} />
+    </main>
   );
 }
