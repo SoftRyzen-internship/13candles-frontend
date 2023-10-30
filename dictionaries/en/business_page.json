@@ -1,6 +1,28 @@
 {
   "businessPage": {
-    "hero": {},
+    "hero": {
+      "image": {
+        "alt": "Workshop",
+        "src": "/images/homepage/about/about@2x.webp"
+      },
+      "overtitle": "Increase the horizons of your business with 13 Candle Bar!",
+      "title": "Corporate orders and flavours for your business",
+      "services": [
+        {
+          "id": "01",
+          "text": "Personalized scented candles"
+        },
+        {
+          "id": "02",
+          "text": "Exclusive flavors"
+        },
+        {
+          "id": "03",
+          "text": "Special conditions for wholesale"
+        }
+      ],
+      "button": "Consultation"
+    },
     "secondSection": {
       "image": {
         "src": "/images/business_page/second/main-img@2x.webp",

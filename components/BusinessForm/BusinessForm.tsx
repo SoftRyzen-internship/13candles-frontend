@@ -5,9 +5,11 @@ import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import classnames from 'classnames';
 
+import { sendDataToTelegram } from '@/utils/api/sendDataToTelegram';
+
 import { ButtonLoader } from '@/components/ButtonLoader';
 import { BusinessInput } from '@/components/BusinessInput';
-import { BusinessFormProps } from './types';
+import { BusinessFormProps, IDataToSend } from './types';
 
 const FORM_DATA_KEY = 'form_data';
 
@@ -33,32 +35,13 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   useFormPersist(FORM_DATA_KEY, { watch, setValue });
 
   const onSubmit: SubmitHandler<FieldValues> = async data => {
-    const sendFormData = async (data: any) => {
-      try {
-        //  await sendDataToTelegram(data as IDataToSend);
-        // return true;
-
-        //delete!!!!!!!
-        console.log(data);
-        console.log(isLoading);
-        return new Promise<boolean>(resolve => {
-          setTimeout(() => {
-            resolve(true);
-          }, 3000);
-          //---------!!!!!!!!!!
-        });
-      } catch (error) {
-        return false;
-      }
-    };
-
     try {
       setIsLoading(true);
-      const isSuccess: boolean = await sendFormData(data);
+      const isSuccess: boolean = await sendDataToTelegram(data as IDataToSend);
 
       if (isSuccess) {
         reset();
-        localStorage.removeItem(FORM_DATA_KEY);
+        sessionStorage.removeItem(FORM_DATA_KEY);
         setPopUpType('success');
       }
     } catch (error) {

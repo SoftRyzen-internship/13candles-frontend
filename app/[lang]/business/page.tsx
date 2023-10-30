@@ -4,6 +4,7 @@ import { getDictionary, getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 import { FOR_BUSINESS } from '@/data';
 
+import { HeroSection } from '@/sections/business/HeroSection';
 import { SecondSection } from '@/sections/business/SecondSection';
 import { HelpfulSection } from '@/sections/business/HelpfulSection';
 import { OurManufactureSection } from '@/sections/business/OurManufactureSection';
@@ -20,8 +21,8 @@ export async function generateMetadata({
   const { twitter, openGraph, icons, languages, manifest } = meta;
   const { title, description, keywords } = metadataBusiness;
 
-  //TODO: delete localhost:3000 / create .env.local
-  const baseUrl = process.env.BASE_URL || 'http://localhost:3000/';
+  //TODO: delete localhost:3000
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000/';
 
   return {
     title,
@@ -46,6 +47,7 @@ export default async function BusinessPage({
 }) {
   const { businessPage } = await getDictionary(lang);
   const {
+    hero,
     secondSection,
     helpfulSection,
     usefulWhom,
@@ -56,6 +58,7 @@ export default async function BusinessPage({
 
   return (
     <main>
+      <HeroSection {...hero} form={form} />
       <SecondSection {...secondSection} />
       <HelpfulSection {...helpfulSection} />
       <UsefulWhomSection {...usefulWhom} />

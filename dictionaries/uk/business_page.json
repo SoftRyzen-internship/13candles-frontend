@@ -1,6 +1,28 @@
 {
   "businessPage": {
-    "hero": {},
+    "hero": {
+      "image": {
+        "alt": "Майстерня",
+        "src": "/images/homepage/about/about@2x.webp"
+      },
+      "overtitle": "Збільшуйте горизонти свого бізнесу разом з 13 Candle Bar!",
+      "title": "Корпоративні замовлення та ароматизація для вашого бізнесу",
+      "services": [
+        {
+          "id": "01",
+          "text": "Персоналізовані аромасвічки"
+        },
+        {
+          "id": "02",
+          "text": "Ексклюзивні аромати"
+        },
+        {
+          "id": "03",
+          "text": "Спеціальні умови для оптових замовлень"
+        }
+      ],
+      "button": "Консультація"
+    },
     "secondSection": {
       "image": {
         "src": "/images/business_page/second/main-img@2x.webp",
