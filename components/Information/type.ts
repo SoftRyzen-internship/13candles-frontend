@@ -1,4 +1,7 @@
-export interface IInfoProps {
-  info_text: string;
-  info: string[];
+export interface InformationProps {
+  information: {
+    title: string;
+    buttons: { text: string; data: string[] }[];
+    className?: string;
+  };
 }

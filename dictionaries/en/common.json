@@ -19,11 +19,17 @@
           "href": "about"
         }
       ],
+      "toHomePage": {
+        "name": "To Home Page",
+        "href": "/"
+      },
       "logoAriaLabelText": "Link with company logo",
       "forBusinesBtnText": "For Business",
-      "language": "Eng"
+      "languageButtonText": "Укр",
+      "basketAriaLabel": "Open basket button"
     },
     "footer": {
+      "logoAriaLabelText": "Link with company logo",
       "contacts": [
         {
           "href": "tel:380634293499",
@@ -49,13 +55,6 @@
       ],
       "basketText": "Basket",
       "forBusinesBtnText": "For Business",
-      "info_text": "Information",
-      "info": [
-        "Offer contract",
-        "Warranties and returns",
-        "Delivery and payment",
-        "Terms of use of the site"
-      ],
       "social_text": "Social networks",
       "social": [
         {
@@ -70,8 +69,9 @@
         }
       ],
       "soft_ryzen": {
-        "name": "Made by SoftRyzen",
-        "href": "https://internship.softryzen.com"
+        "made": "Made by",
+        "name": "SoftRyzen",
+        "href": "https://softryzen.com/"
       }
     }
   }

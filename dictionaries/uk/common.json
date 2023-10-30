@@ -19,11 +19,17 @@
           "href": "about"
         }
       ],
+      "toHomePage": {
+        "name": "На Головну",
+        "href": "/"
+      },
       "logoAriaLabelText": "Посилання із логотипом компанії",
       "forBusinesBtnText": "Для Бізнесу",
-      "language": "Укр"
+      "languageButtonText": "Eng",
+      "basketAriaLabel": "Кнопка відкриття корзини"
     },
     "footer": {
+      "logoAriaLabelText": "Посилання із логотипом компанії",
       "contacts": [
         {
           "href": "tel:380634293499",
@@ -49,13 +55,6 @@
       ],
       "basketText": "Кошик",
       "forBusinesBtnText": "Для Бізнесу",
-      "info_text": "Інформація",
-      "info": [
-        "Договір оферти",
-        "Гарантії та повернення",
-        "Доставка і оплата",
-        "Правила користування сайтом"
-      ],
       "social_text": "Соціальні мережі",
       "social": [
         {
@@ -70,8 +69,9 @@
         }
       ],
       "soft_ryzen": {
-        "name": "Made by SoftRyzen",
-        "href": "https://internship.softryzen.com"
+        "made": "Made by",
+        "name": "SoftRyzen",
+        "href": "https://softryzen.com/"
       }
     }
   }

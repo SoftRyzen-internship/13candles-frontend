@@ -1,6 +1,12 @@
-import { CateryCardProps } from '../ui/CategoryCard/types';
-
 export interface CateriesListProps {
-  categories: CateryCardProps[];
+  categories: {
+    href: string;
+    text: string;
+    className?: string;
+    image: {
+      src: string;
+      alt: string;
+    };
+  }[];
   className?: string;
 }

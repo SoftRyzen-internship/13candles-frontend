@@ -1,7 +1,11 @@
+import { BusinessItem } from '@/types/BusinessItem';
+
+export type ImageT = { alt: string; src: string };
+
 export interface HeroProps {
-  image: { alt: string; src: string };
+  image: ImageT;
   overtitle: string;
   title: string;
-  services: { id: string; text: string }[];
+  services: BusinessItem[];
   button: string;
 }

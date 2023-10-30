@@ -246,14 +246,14 @@ component `Heading`
 
 - ### ExternalLink
 
-A link componet that is created with tag "a" and has such attributes as
+A link component that is created with tag "a" and has such attributes as
 rel="noopener noreferrer nofollow" and target="\_blank". Additionally, there is
 a decorative icon in the component.
 
 | Prop        | Default | Description                                                                        |
 | ----------- | ------- | ---------------------------------------------------------------------------------- |
 | `href`      | —       | Required, href for a link                                                          |
-| `icon`      | —       | Required, css className which should be used in globals,css to create a decor icon |
+| `icon`      | —       | Optional, css className which should be used in globals,css to create a decor icon |
 | `text`      | —       | Required, any text content                                                         |
 | `className` | `''`    | Optional, add custom or additional css class you'd need                            |
 
@@ -288,7 +288,7 @@ a decorative icon in the component.
 |                         | isTablet: true,  | set to false to disable navigation on tablet                                     |
 |                         | isDesktop: true, | set to false to disable navigation on desktop                                    |
 |                         | }`               | (Is is required to provide options for all screens                               |
-|                         |                  | if you want to provide customised breakpoints)                                   |
+|                         |                  | if you want to provide customized breakpoints)                                   |
 
 - ### `SideMenu`
 
@@ -303,15 +303,16 @@ a decorative icon in the component.
 
 | Prop        | Default | Description                                               |
 | ----------- | ------- | --------------------------------------------------------- |
-| `links`     | `[]`    | Required. Array of navigations links.                     |
+| `links`     | `[]`    | Required. Array of navigation links.                      |
 | `className` | `''`    | Optional. Add a custom or additional CSS class if needed. |
 
-- ### BusinesslLink
+- ### BusinessLink
 
 | Prop        | Default | Description                                             |
 | ----------- | ------- | ------------------------------------------------------- |
 | `text`      | —       | Required, any text content                              |
 | `isIcon`    | `false` | Optional, set true to use decor icon                    |
+| `onClick`   | —       | Optional, if you need onClick                           |
 | `className` | `''`    | Optional, add custom or additional css class you'd need |
 
 - ### MenuButton
@@ -326,11 +327,13 @@ a decorative icon in the component.
 
 - ### `MobileMenu`
 
-| Prop           | Default | Description                           |
-| -------------- | ------- | ------------------------------------- |
-| `links`        | `[]`    | Required. Array of navigations links. |
-| `btnAriaOpen`  | —       | Required. Aria text when menu opened. |
-| `btnAriaClose` | —       | Required. Aria text when menu closed. |
-| `businessText` | —       | Required. Business link text          |
+| Prop                 | Default | Description                                           |
+| -------------------- | ------- | ----------------------------------------------------- |
+| `links`              | `[]`    | Required. Array of navigation links.                  |
+| `btnAriaOpen`        | —       | Required. Aria text when menu opened.                 |
+| `btnAriaClose`       | —       | Required. Aria text when menu closed.                 |
+| `businessText`       | —       | Required. Business link text                          |
+| `languageButtonText` | -       | Required, the language applied by clicking the button |
+| `toHomePage`         | -       | Required, homepage nav link                           |
 
 ---

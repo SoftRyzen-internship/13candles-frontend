@@ -1,4 +1,4 @@
-import { IDataToSend } from '@/types';
+import { IDataToSend } from '@/types/DataToSend';
 
 export const sendDataToTelegram = async (data: IDataToSend) => {
   let message = '<b>Заявка з сайту:</b>\n';

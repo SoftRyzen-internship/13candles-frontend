@@ -7,7 +7,7 @@ export const ContactList: React.FC<ContactListProps> = ({
   className = '',
 }) => {
   const contactListClasses = classNames(
-    'flex flex-col gap-3 smOnly:items-center ',
+    'flex flex-col items-center gap-2 md:items-start',
     className,
   );
 
@@ -15,7 +15,7 @@ export const ContactList: React.FC<ContactListProps> = ({
     <ul className={contactListClasses}>
       {contacts.map(contact => (
         <li key={contact.href}>
-          <ExternalLink {...contact} />
+          <ExternalLink className="h-[24px]" {...contact} />
         </li>
       ))}
     </ul>

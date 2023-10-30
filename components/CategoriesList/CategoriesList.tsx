@@ -15,7 +15,7 @@ export const CategoriesList: React.FC<CateriesListProps> = ({
           key={category.href}
           className="basis-[calc((100%-16px)/2)] md:basis-[calc((100%-(16px*2))/3)] xl:basis-[calc((100%-(8px*5))/6)]"
         >
-          <CategoryCard {...category} />
+          <CategoryCard category={category} />
         </li>
       ))}
     </ul>
