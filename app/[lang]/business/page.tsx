@@ -47,20 +47,22 @@ export default async function BusinessPage({
   params: { lang: Locale };
 }) {
   const { businessPage } = await getDictionary(lang);
-  const { secondSection, helpfulSection, usefulWhom, ourManufactureSection } =
-    businessPage;
-
-  const dataString = JSON.stringify(businessPage.form);
-  const staticFormData = JSON.parse(dataString);
+  const {
+    secondSection,
+    helpfulSection,
+    usefulWhom,
+    ourManufactureSection,
+    form,
+  } = businessPage;
 
   return (
     <main>
-      <BtnWithBusinessFormModal staticData={staticFormData} />
+      <BtnWithBusinessFormModal staticData={form} />
       <SecondSection {...secondSection} />
       <HelpfulSection {...helpfulSection} />
       <UsefulWhomSection {...usefulWhom} />
       <OurManufactureSection {...ourManufactureSection} />
-      <BusinessFormWithPopUp staticData={staticFormData} />
+      <BusinessFormWithPopUp staticData={form} />
     </main>
   );
 }

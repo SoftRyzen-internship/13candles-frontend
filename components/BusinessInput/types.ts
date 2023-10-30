@@ -2,7 +2,7 @@ import {
   UseFormRegister,
   FieldErrors,
   FieldValues,
-  RegisterOptions,
+  // RegisterOptions,
 } from 'react-hook-form';
 
 export interface IBusinessInput {
@@ -11,7 +11,8 @@ export interface IBusinessInput {
   placeholder: string;
   errorMessage: string;
   type: string;
-  options: Record<string, RegisterOptions>;
+  // options: Record<string, RegisterOptions>;
+  options: any;
 }
 
 export interface BusinessInputProps {
