@@ -20,8 +20,8 @@ export async function generateMetadata({
   const { twitter, openGraph, icons, languages, manifest } = meta;
   const { title, description, keywords } = metadataBusiness;
 
-  //TODO: delete localhost:3000 / create .env.local
-  const baseUrl = process.env.BASE_URL || 'http://localhost:3000/';
+  //TODO: delete localhost:3000
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000/';
 
   return {
     title,
