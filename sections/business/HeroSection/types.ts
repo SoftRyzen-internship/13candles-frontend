@@ -1,5 +1,5 @@
 import { BusinessItem } from '@/types/BusinessItem';
-import { BusinessFormModalData } from '@/components/BtnWithBusinessFormModal/types';
+import { BusinessFormModalData } from '@/types';
 
 export type ImageT = { alt: string; src: string };
 

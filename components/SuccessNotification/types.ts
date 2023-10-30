@@ -1,7 +1,4 @@
-export type SuccessT = {
-  title: string;
-  text: string;
-};
+import { SuccessT } from '@/types';
 
 export type SuccessNotificationProps = {
   staticData: SuccessT;

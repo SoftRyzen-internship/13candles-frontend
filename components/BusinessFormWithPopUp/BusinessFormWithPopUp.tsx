@@ -7,7 +7,7 @@ import { BusinessForm } from '@/components/BusinessForm/BusinessForm';
 import { SuccessNotification } from '@/components/SuccessNotification/SuccessNotification';
 import { ErrorNotification } from '@/components/ErrorNotification/ErrorNotification';
 
-import { PopUpType, BusinessFormWithPopUpProps } from './types';
+import { PopUpType, BusinessFormWithPopUpProps } from '@/types';
 
 export const BusinessFormWithPopUp: FC<BusinessFormWithPopUpProps> = ({
   staticData,
