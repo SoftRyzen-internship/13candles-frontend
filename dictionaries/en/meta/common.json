@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "manifest": "/meta/site.webmanifest",
+    "languages": {
+      "uk-UA": "/uk",
+      "en-US": "/en"
+    },
+    "twitter": {
+      "title": "13 Candle Bar ",
+      "card": "summary_large_image",
+      "description": "Family workshop of aromas and coziness",
+      "images": [
+        {
+          "url": "/meta/ogp-image.jpg",
+          "width": 1017,
+          "height": 509,
+          "alt": "13 Candle Bar. Family workshop of aromas and coziness"
+        }
+      ]
+    },
+    "openGraph": {
+      "title": "13 Candle Bar",
+      "description": "Family workshop of aromas and coziness",
+      "siteName": "13 Candle Bar",
+      "locale": "en_US",
+      "type": "website",
+      "images": [
+        {
+          "url": "/meta/ogp-image.jpg",
+          "width": 1017,
+          "height": 509,
+          "alt": "13 Candle Bar. Family workshop of aromas and coziness"
+        }
+      ]
+    },
+    "icons": {
+      "icon": [
+        {
+          "url": "/meta/favicon.ico"
+        },
+        {
+          "url": "/meta/favicon-16x16.png",
+          "sizes": "16x16",
+          "type": "image/png"
+        },
+        {
+          "url": "/meta/favicon-32x32.png",
+          "sizes": "32x32",
+          "type": "image/png"
+        },
+        {
+          "url": "/meta/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "url": "/meta/android-chrome-512x512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ],
+      "shortcut": "/meta/favicon.ico",
+      "apple": "/meta/apple-touch-icon.png",
+      "other": {
+        "rel": "/meta/apple-touch-icon.png",
+        "url": "/meta/apple-touch-icon.png"
+      }
+    }
+  }
+}
