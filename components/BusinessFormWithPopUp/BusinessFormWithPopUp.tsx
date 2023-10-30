@@ -37,7 +37,11 @@ export const BusinessFormWithPopUp: FC<BusinessFormWithPopUpProps> = ({
         section={'contacts'}
         setPopUpType={setPopUpType}
       />
-      <ModalWindow onModalClose={handleToggleModal} showModal={showModal}>
+      <ModalWindow
+        onModalClose={handleToggleModal}
+        showModal={showModal}
+        className="pb-[34px] pt-[76px] md:pt-[104px] xl:py-12"
+      >
         {popUpType === 'success' ? (
           <SuccessNotification staticData={success} />
         ) : null}

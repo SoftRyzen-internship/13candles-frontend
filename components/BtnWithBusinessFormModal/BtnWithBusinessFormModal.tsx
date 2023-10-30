@@ -25,7 +25,11 @@ export const BtnWithBusinessFormModal: FC<BtnWithBusinessFormModalProps> = ({
     <div>
       <button onClick={handleToggleModal}>Консультація</button>
 
-      <ModalWindow onModalClose={handleToggleModal} showModal={showModal}>
+      <ModalWindow
+        onModalClose={handleToggleModal}
+        showModal={showModal}
+        className="pb-[34px] pt-[76px] md:pt-[104px] xl:py-12"
+      >
         {popUpType === 'default' ? (
           <BusinessForm
             staticData={staticData}

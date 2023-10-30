@@ -57,11 +57,11 @@ export default async function BusinessPage({
 
   return (
     <main>
-      <BtnWithBusinessFormModal staticData={form} />
       <SecondSection {...secondSection} />
       <HelpfulSection {...helpfulSection} />
       <UsefulWhomSection {...usefulWhom} />
       <OurManufactureSection {...ourManufactureSection} />
+      <BtnWithBusinessFormModal staticData={form} />
       <BusinessFormWithPopUp staticData={form} />
     </main>
   );
