@@ -53,6 +53,18 @@
         "description1": "We help you attract customers and create an incredible impression of you. We organize the flavoring of your business or home, create the right mood and atmosphere.",
         "description2": "We can also make corporate orders, wholesale or for your brand. Scented candles, aroma diffusers, aroma sprays, and more. We can create products for your brand with incredible scents and packaging."
       }
+    },
+    "ourManufactureSection": {
+      "image": {
+        "src": "/images/business_page/manufacture/main-img@2x.webp",
+        "alt": "Aromatic products in glass jars on metal trays"
+      },
+      "textBlock": {
+        "title": "Our manufacture",
+        "description1": "We are located in Ukraine, in the Kyiv region. We have our own small production facility and manufacture products from natural raw materials, giving preference to everything Ukrainian.",
+        "description2": "Our products have quality certificates and are of natural origin. For candles, we use only natural soy wax, cotton and wooden wicks. For flavoring, we use natural certified oils.",
+        "description3": "At \"13 Candle Bar\", everyone believes that you should do what you love and love what you do. We love what we do."
+      }
     }
   }
 }
