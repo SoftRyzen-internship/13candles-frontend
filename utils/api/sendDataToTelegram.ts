@@ -4,16 +4,12 @@ export const sendDataToTelegram = async (data: IDataToSend) => {
   let message = '<b>Заявка з сайту:</b>\n';
 
   try {
-    // for (const [key, value] of Object.entries(data)) {
-    //   message += `${key}: ${value}\n`;
-    // }
-
     const dataToSend = Object.entries(data).reduce(
       (aggr, [key, value]) => (aggr += `${key}: ${value}\n`),
       message,
     );
 
-    fetch('/api/telegram', {
+    const res = await fetch('/api/telegram', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -22,6 +18,12 @@ export const sendDataToTelegram = async (data: IDataToSend) => {
         text: dataToSend,
       }),
     });
+
+    if (res.ok) {
+      return true;
+    }
+
+    throw new Error();
   } catch (error) {
     throw new Error();
   }

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { ButtonModalClient } from '@/components/ui/ButtonModalClient';
+import { BtnWithBusinessFormModal } from '@/components/BtnWithBusinessFormModal';
 import { HeroProps } from './types';
 
 export const HeroSection: React.FC<HeroProps> = ({
@@ -9,6 +9,7 @@ export const HeroSection: React.FC<HeroProps> = ({
   title,
   services,
   button,
+  form,
 }) => {
   return (
     <section className="pb-[16px] pt-[32px] text-base md:pb-[18px] md:pt-[36px] xl:pb-[50px] xl:pt-[40px] smOnly:mt-[84px]">
@@ -41,12 +42,10 @@ export const HeroSection: React.FC<HeroProps> = ({
                 ))}
             </ul>
 
-            <ButtonModalClient
+            <BtnWithBusinessFormModal
+              staticData={form}
               label={button.toUpperCase()}
-              className="mt-[16px] md:w-[211px] xl:mt-[48px]"
-            >
-              <div className="h-[400px]">Form</div>
-            </ButtonModalClient>
+            />
           </div>
         </div>
       </div>
