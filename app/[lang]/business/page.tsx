@@ -10,6 +10,7 @@ import { OurManufactureSection } from '@/sections/business/OurManufactureSection
 import { UsefulWhomSection } from '@/sections/business/UsefulWhomSection';
 
 import { BusinessFormWithPopUp } from '@/components/BusinessFormWithPopUp';
+import { BtnWithBusinessFormModal } from '@/components/BtnWithBusinessFormModal';
 
 export async function generateMetadata({
   params: { lang },
@@ -54,6 +55,7 @@ export default async function BusinessPage({
 
   return (
     <main>
+      <BtnWithBusinessFormModal staticData={staticFormData} />
       <SecondSection {...secondSection} />
       <HelpfulSection {...helpfulSection} />
       <UsefulWhomSection {...usefulWhom} />
