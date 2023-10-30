@@ -6,12 +6,11 @@ import { HelpfulSectionProps } from './types';
 export const HelpfulSection: FC<HelpfulSectionProps> = ({
   staticData,
   image,
-  className = '',
 }) => {
   const { src, alt } = image;
 
   return (
-    <section id="helpful" className={className}>
+    <section id="helpful" className="section xl:py-[50px]">
       <div className="container md:flex md:items-center md:justify-between">
         <div className="mb-6 flex h-[280px] w-full items-center overflow-hidden md:mb-0 md:h-[348px] md:w-[334px] xl:h-[604px] xl:w-[578px]">
           <Image

@@ -13,5 +13,4 @@ type TextBlockType = {
 export interface SecondSectionProps {
   image: ImageType;
   staticData: TextBlockType[];
-  className?: string;
 }
