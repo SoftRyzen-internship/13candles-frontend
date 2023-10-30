@@ -10,7 +10,7 @@ export const Logo: React.FC<LogoProps> = ({
 }) => {
   const logoSvgStyles = classNames('h-[48px] w-[87px]', {
     'xl:w-[116px] xl:h-[64px]': position === 'header',
-    'md:w-[116px] md:h-[64px]': position === 'footer',
+    'md:w-[116px] md:h-[64px]': position === 'footer' || 'contacts',
   });
   return (
     <a

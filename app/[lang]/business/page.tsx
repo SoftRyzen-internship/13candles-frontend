@@ -8,6 +8,7 @@ import { SecondSection } from '@/sections/business/SecondSection';
 import { HelpfulSection } from '@/sections/business/HelpfulSection';
 import { OurManufactureSection } from '@/sections/business/OurManufactureSection';
 import { UsefulWhomSection } from '@/sections/business/UsefulWhomSection';
+import { ContactsSection } from '@/sections/business/ContactsSection';
 
 export async function generateMetadata({
   params: { lang },
@@ -44,8 +45,13 @@ export default async function BusinessPage({
   params: { lang: Locale };
 }) {
   const { businessPage } = await getDictionary(lang);
-  const { secondSection, helpfulSection, usefulWhom, ourManufactureSection } =
-    businessPage;
+  const {
+    secondSection,
+    helpfulSection,
+    usefulWhom,
+    ourManufactureSection,
+    contactsSection,
+  } = businessPage;
 
   return (
     <main>
@@ -53,6 +59,7 @@ export default async function BusinessPage({
       <HelpfulSection {...helpfulSection} />
       <UsefulWhomSection {...usefulWhom} />
       <OurManufactureSection {...ourManufactureSection} />
+      <ContactsSection {...contactsSection} />
     </main>
   );
 }

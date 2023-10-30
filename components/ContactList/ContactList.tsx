@@ -4,10 +4,13 @@ import { ContactListProps } from './types';
 
 export const ContactList: React.FC<ContactListProps> = ({
   contacts,
+  variant = undefined,
   className = '',
 }) => {
   const contactListClasses = classNames(
-    'flex flex-col items-center gap-2 md:items-start',
+    { 'xl:flex-row xl:justify-between': variant === 'contacts' },
+    { 'md:items-start': variant !== 'contacts' },
+    'flex flex-col items-center gap-2',
     className,
   );
 

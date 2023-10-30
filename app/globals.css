@@ -57,7 +57,7 @@ body {
 }
 
 .link {
-  @apply relative font-medium no-underline before:content-[""];
+  @apply relative no-underline before:content-[""];
 }
 
 .link::before {
@@ -111,7 +111,7 @@ a:focus-visible .link::before,
 /* decor icons common */
 
 .decor {
-  @apply relative inline-block before:content-[""];
+  @apply relative flex items-center before:content-[""];
 }
 
 .decor::before {
