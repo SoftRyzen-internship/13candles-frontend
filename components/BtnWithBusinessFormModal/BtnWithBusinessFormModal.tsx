@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, useState } from 'react';
+import { Button } from '@/components/ui/Button';
 import { ModalWindow } from '@/components/ui/ModalWindow';
 import { BusinessForm } from '@/components/BusinessForm/BusinessForm';
 import { SuccessNotification } from '@/components/SuccessNotification/SuccessNotification';
@@ -9,6 +10,7 @@ import { BtnWithBusinessFormModalProps, PopUpType } from './types';
 
 export const BtnWithBusinessFormModal: FC<BtnWithBusinessFormModalProps> = ({
   staticData,
+  label,
 }) => {
   const [popUpType, setPopUpType] = useState<PopUpType>('default');
   const [showModal, setShowModal] = useState(false);
@@ -22,8 +24,14 @@ export const BtnWithBusinessFormModal: FC<BtnWithBusinessFormModalProps> = ({
     setPopUpType('default');
   };
   return (
-    <div>
-      <button onClick={handleToggleModal}>Консультація</button>
+    <div className="mt-[16px] md:w-[211px] xl:mt-[48px]">
+      <Button
+        tag="button"
+        label={label}
+        buttonType="button"
+        disabled={false}
+        onClick={handleToggleModal}
+      />
 
       <ModalWindow
         onModalClose={handleToggleModal}
