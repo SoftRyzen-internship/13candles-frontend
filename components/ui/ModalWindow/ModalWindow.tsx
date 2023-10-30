@@ -18,7 +18,8 @@ export const ModalWindow: React.FC<ModalWindowPrps> = ({
   const { closeIconAriaLabel } = data;
 
   const modalClasses = classNames(
-    'container relative z-40 my-10 h-[calc(100vh-80px)] bg-body pb-6 pt-[76px] md:py-8 xl:w-[1220px] xl:p-12',
+    'container relative z-40 my-10 bg-body px-[10px] pb-6 pt-[76px] ',
+    'md:px-4 md:py-8 xl:w-[1220px] xl:px-6 xl:py-12',
     className,
   );
 
@@ -37,7 +38,13 @@ export const ModalWindow: React.FC<ModalWindowPrps> = ({
             className="xl:h-12 xl:w-12 xl:opacity-25"
           />
         </button>
-        <div className="h-full overflow-auto">{children}</div>
+        <div
+          className="max-h-[calc(100vh-80px-24px-76px)] overflow-auto px-[10px] 
+                    md:max-h-[calc(100vh-80px-(32px*2))] md:px-4
+                    xl:max-h-[calc(100vh-80px-(48px*2))] xl:px-6"
+        >
+          {children}
+        </div>
       </div>
     </Portal>
   );
