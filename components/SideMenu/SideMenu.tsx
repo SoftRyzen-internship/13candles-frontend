@@ -35,7 +35,13 @@ export const SideMenu: React.FC<SideMenuProps> = ({
         classNames={'fade'}
       >
         <div ref={nodeRef}>
-          {homePage && <NavLinks links={links} className="ml-6" />}
+          {homePage && (
+            <NavLinks
+              links={links}
+              onClick={() => setOpen(false)}
+              className="ml-6"
+            />
+          )}
         </div>
       </CSSTransition>
     </div>
