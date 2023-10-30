@@ -1,3 +1,5 @@
+import { FormStaticDataT } from '@/components/BusinessFormWithPopUp/types';
+
 type ContactType = { href: string; icon: string; text: string };
 type SocialType = { href: string; icon: string; text: string };
 
@@ -9,4 +11,5 @@ export type ContactsProps = {
     social_text: string;
     social: SocialType[];
   };
+  form: FormStaticDataT;
 };

@@ -51,6 +51,7 @@ export default async function BusinessPage({
     usefulWhom,
     ourManufactureSection,
     contactsSection,
+    form,
   } = businessPage;
 
   return (
@@ -59,7 +60,7 @@ export default async function BusinessPage({
       <HelpfulSection {...helpfulSection} />
       <UsefulWhomSection {...usefulWhom} />
       <OurManufactureSection {...ourManufactureSection} />
-      <ContactsSection {...contactsSection} />
+      <ContactsSection {...contactsSection} form={form} />
     </main>
   );
 }
