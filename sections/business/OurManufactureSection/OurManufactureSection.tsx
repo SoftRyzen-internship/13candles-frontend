@@ -5,10 +5,12 @@ import classNames from 'classnames';
 import { OurManufactureSectionProps } from './types';
 
 export const OurManufactureSection: FC<OurManufactureSectionProps> = ({
-  staticData: { image, textBlock },
+  image,
+  textBlock,
   className,
 }) => {
   const { src, alt } = image;
+  const { title, description1, description2, description3 } = textBlock;
 
   const sectionClass = classNames('section xl:py-[50px]', className);
   return (
@@ -16,16 +18,16 @@ export const OurManufactureSection: FC<OurManufactureSectionProps> = ({
       <div className="container flex md:justify-between smOnly:flex-col-reverse">
         <div className="md:w-[334px] xl:mt-[15px] xl:w-[578px]">
           <h2 className="mb-4 text-lg font-bold leading-[1.17] md:text-xl xl:mb-10 xl:text-xxl">
-            {textBlock.title}
+            {title}
           </h2>
           <p className="mb-3 text-justify xl:mb-4 xl:text-lg xl:leading-[1.15]">
-            {textBlock.description1}
+            {description1}
           </p>
           <p className="mb-3 text-justify xl:mb-4 xl:text-lg xl:leading-[1.15]">
-            {textBlock.description2}
+            {description2}
           </p>
           <p className="text-justify xl:text-lg xl:leading-[1.15]">
-            {textBlock.description3}
+            {description3}
           </p>
         </div>
 

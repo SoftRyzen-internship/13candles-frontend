@@ -10,9 +10,7 @@ type ImageType = {
 };
 
 export interface OurManufactureSectionProps {
-  staticData: {
-    image: ImageType;
-    textBlock: TextBlockType;
-  };
+  image: ImageType;
+  textBlock: TextBlockType;
   className?: string;
 }

@@ -20,7 +20,7 @@ export default async function BusinessPage({
       <SecondSection {...secondSection} />
       <HelpfulSection {...helpfulSection} />
       <UsefulWhomSection {...usefulWhom} />
-      <OurManufactureSection staticData={ourManufactureSection} />
+      <OurManufactureSection {...ourManufactureSection} />
     </main>
   );
 }
