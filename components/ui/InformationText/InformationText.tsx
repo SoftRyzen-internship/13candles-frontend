@@ -1,7 +1,7 @@
 import { InformationTextProps, TextType } from './types';
 
 export const InformationText: React.FC<InformationTextProps> = ({ text }) => {
-  // examles of the text from dictionaries, that this fuctions gets as a prop:
+  // examples of the text from dictionaries, that this fuctions gets as a prop:
 
   // "mainTitle*_type_*Доставка і оплата"
   // "title*_type_*Способи доставки"
