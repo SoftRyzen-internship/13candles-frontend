@@ -87,6 +87,61 @@
         "description2": "Our products have quality certificates and are of natural origin. For candles, we use only natural soy wax, cotton and wooden wicks. For flavoring, we use natural certified oils.",
         "description3": "At \"13 Candle Bar\", everyone believes that you should do what you love and love what you do. We love what we do."
       }
+    },
+    "form": {
+      "title": {
+        "hero": "Fall in love with yourself with \"13 Candle Bar\" 🖤",
+        "contacts": "Send a request and we will contact you"
+      },
+      "inputs": [
+        {
+          "name": "name",
+          "label": "Your name *",
+          "placeholder": "Ivanov Ivan",
+          "errorMessage": "Incorrect name",
+          "type": "text",
+          "options": {
+            "required": "Required",
+            "pattern": "^(?![\\s-]*[\\s-])(?!.*--)(?!.*- )(?!.* -)(?!.*'-)(?=.*[A-Za-zА-Яа-яЇїІіЄєҐґ])[A-Za-zА-Яа-яЇїІіЄєҐґ' -]+$",
+            "minLength": 3,
+            "maxLength": 70
+          }
+        },
+        {
+          "name": "phone",
+          "label": "Your phone number *",
+          "placeholder": "+380981234567",
+          "errorMessage": "Wrong phone number",
+          "type": "text",
+          "options": {
+            "required": "Required",
+            "pattern": "^\\+[0-9]+$",
+            "minLength": 12,
+            "maxLength": 13
+          }
+        },
+        {
+          "name": "email",
+          "label": "Your E-mail",
+          "placeholder": "your@mail.com",
+          "errorMessage": "Incorrect email address",
+          "type": "email",
+          "options": {
+            "required": false,
+            "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?@[a-zA-Z0-9.-]+(?:.[a-zA-Z]{2,})+$",
+            "minLength": 6,
+            "maxLength": 63
+          }
+        }
+      ],
+      "button": "SEND",
+      "notifications": {
+        "success": {
+          "title": "Thanks, your request has been sent 🖤",
+          "text": "Our manager will contact you shortly"
+        },
+        "error": "An error occurred while sending a request"
+      }
     }
   }
 }
