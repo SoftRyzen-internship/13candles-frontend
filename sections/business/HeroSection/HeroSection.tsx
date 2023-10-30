@@ -12,15 +12,16 @@ export const HeroSection: React.FC<HeroProps> = ({
   form,
 }) => {
   return (
-    <section className="pb-[16px] pt-[32px] text-base md:pb-[18px] md:pt-[36px] xl:pb-[50px] xl:pt-[40px] smOnly:mt-[84px]">
+    <section className="pb-[16px] text-base md:pb-[18px] xl:pb-[50px] smOnly:mt-[116px]">
       <div className="container">
-        <div className="xl: flex flex-col gap-[24px] md:flex-row md:gap-[20px] xl:gap-[64px]">
+        <div className="flex flex-col gap-[24px] md:flex-row md:gap-[20px] xl:gap-[64px]">
           <Image
             src={image.src}
             alt={image.alt}
             width={572}
             height={578}
             priority
+            sizes="(max-width: 767px) 440px, (max-width: 1279px) 334px, 578px"
             className="aspect-[1/1] w-full object-cover object-center md:aspect-[1/1.01] md:w-[334px] xl:w-[572px]"
           />
 
