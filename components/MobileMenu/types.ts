@@ -6,4 +6,5 @@ export interface MobileMenuProps {
   links: NavLink[];
   btnAriaOpen: string;
   btnAriaClose: string;
+  toHomePage: NavLink;
 }
