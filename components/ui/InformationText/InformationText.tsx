@@ -1,6 +1,20 @@
 import { InformationTextProps, TextType } from './types';
 
 export const InformationText: React.FC<InformationTextProps> = ({ text }) => {
+  // examples of the text from dictionaries, that this fuctions gets as a prop:
+
+  // "mainTitle*_type_*Доставка і оплата"
+  // "title*_type_*Способи доставки"
+  // "subtitle*_type_*Доставка на відділення Нової Пошти"
+  // "text*_type_*1.1. Коли документи залишаються незмінними."
+
+  // each string consists of three parts:
+  // 1) textType ('mainTitle' | 'title' | 'subtitle' | 'text')
+  // 2) devider (*_type_*)
+  // 3) content
+
+  // the fuction below devides such strings using "*_type_*" divider
+
   const [textType, content] = text.split('*_type_*') as [TextType, string];
 
   return (
