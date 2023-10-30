@@ -1,2 +1,1 @@
-export * from './Product';
-export * from './Footer';
+export * from '../layout/Footer/types';

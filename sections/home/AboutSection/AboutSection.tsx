@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { AboutProps } from './types';
 import { Button } from '@/components/ui/Button';
-import { ABOUT, CATALOG } from '@/data/links';
+import { ABOUT, CATALOG } from '@/data';
 
 export const AboutSection: React.FC<AboutProps> = ({ about }) => {
   return (

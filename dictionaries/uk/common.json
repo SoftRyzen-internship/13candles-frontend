@@ -25,7 +25,8 @@
       },
       "logoAriaLabelText": "Посилання із логотипом компанії",
       "forBusinesBtnText": "Для Бізнесу",
-      "languageButtonText": "Eng"
+      "languageButtonText": "Eng",
+      "basketAriaLabel": "Кнопка відкриття корзини"
     },
     "footer": {
       "logoAriaLabelText": "Посилання із логотипом компанії",
@@ -54,13 +55,6 @@
       ],
       "basketText": "Кошик",
       "forBusinesBtnText": "Для Бізнесу",
-      "info_text": "Інформація",
-      "info": [
-        "Договір оферти",
-        "Гарантії та повернення",
-        "Доставка і оплата",
-        "Правила користування сайтом"
-      ],
       "social_text": "Соціальні мережі",
       "social": [
         {
