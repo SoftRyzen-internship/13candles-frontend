@@ -39,7 +39,7 @@ export const BusinessFormWithPopUp: FC<BusinessFormWithPopUpProps> = ({
         setPopUpType={setPopUpType}
       />
       <Portal onModalClose={handleToggleModal} showModal={showModal}>
-        <ModalWindow onModalClose={handleToggleModal}>
+        <ModalWindow onModalClose={handleToggleModal} showModal={showModal}>
           {popUpType === 'success' ? (
             <SuccessNotification staticData={success} />
           ) : null}

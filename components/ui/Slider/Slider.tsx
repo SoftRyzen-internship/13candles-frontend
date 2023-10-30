@@ -1,9 +1,10 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade, Navigation } from 'swiper/modules';
+import classNames from 'classnames';
 
-import { desktop, mobile, tablet } from '@/data';
 import { SliderProps } from './types';
 
 import 'swiper/css';
@@ -28,25 +29,31 @@ export const Slider: React.FC<SliderProps> = ({
     isDesktop: true,
   },
 }) => {
-  const breakpoints = {
-    [mobile]: {
-      navigation: {
-        enabled: navigationBreakpoints.isMobile,
-      },
-    },
-    [tablet]: {
-      navigation: {
-        enabled: navigationBreakpoints.isTablet,
-      },
-    },
-    [desktop]: {
-      navigation: {
-        enabled: navigationBreakpoints.isDesktop,
-      },
-    },
-  };
+  const [isFirstRender, setIsFirstRender] = useState<boolean>(true);
 
-  return (
+  // hide navigation buttons on certain breakpoints
+  useEffect(() => {
+    if (isFirstRender) setIsFirstRender(false);
+    if (!isFirstRender) {
+      const navButtonsClasses = classNames({
+        'smOnly:!hidden': !navigationBreakpoints.isMobile,
+        'mdOnly:!hidden': !navigationBreakpoints.isTablet,
+        'xl:!hidden': !navigationBreakpoints.isDesktop,
+      });
+
+      const buttonPrev = document.querySelector('.swiper-button-prev');
+      const buttonNext = document.querySelector('.swiper-button-next');
+
+      if (navButtonsClasses) {
+        const parsedClasses = navButtonsClasses.split(' ');
+
+        if (buttonPrev) buttonPrev.classList.add(...parsedClasses);
+        if (buttonNext) buttonNext.classList.add(...parsedClasses);
+      }
+    }
+  }, [isFirstRender, navigationBreakpoints]);
+
+  return isFirstRender ? null : (
     <Swiper
       id={id}
       modules={[Autoplay, Pagination, EffectFade, Navigation]}
@@ -56,7 +63,6 @@ export const Slider: React.FC<SliderProps> = ({
       autoplay={isAutoplay ? { disableOnInteraction: false } : false}
       loop={isLoop}
       navigation={isNavigation}
-      breakpoints={breakpoints}
       pagination={{
         enabled: isPagination,
         clickable: true,

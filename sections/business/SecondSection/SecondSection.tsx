@@ -6,12 +6,11 @@ import { SecondSectionProps } from './types';
 export const SecondSection: FC<SecondSectionProps> = ({
   staticData,
   image,
-  className = '',
 }) => {
   const { src, alt } = image;
 
   return (
-    <section id="second" className={className}>
+    <section id="second" className="section xl:py-[50px]">
       <div className="container">
         <div className="mb-6 flex h-[200px] w-full items-center overflow-hidden md:mb-9 md:h-[312px] xl:mb-12 xl:h-[545px]">
           <Image
