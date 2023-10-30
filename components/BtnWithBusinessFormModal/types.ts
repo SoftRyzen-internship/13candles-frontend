@@ -13,11 +13,14 @@ type NotificationsDataT = {
   error: string;
 };
 
+export type BusinessFormModalData = {
+  title: TitleDataT;
+  inputs: IBusinessInput[];
+  button: string;
+  notifications: NotificationsDataT;
+};
+
 export interface BtnWithBusinessFormModalProps {
-  staticData: {
-    title: TitleDataT;
-    inputs: IBusinessInput[];
-    button: string;
-    notifications: NotificationsDataT;
-  };
+  staticData: BusinessFormModalData;
+  label: string;
 }
