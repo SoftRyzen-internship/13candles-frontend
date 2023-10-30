@@ -7,7 +7,7 @@ export const ContactList: React.FC<ContactListProps> = ({
   className = '',
 }) => {
   const contactListClasses = classNames(
-    'flex flex-col gap-2 smOnly:items-center ',
+    'flex flex-col items-center gap-2 md:items-start',
     className,
   );
 

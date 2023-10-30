@@ -75,18 +75,27 @@ a:focus-visible .link::before,
 
 /* === SLIDER === */
 
+#homepage-hero .swiper-button-prev,
+#homepage-hero .swiper-button-next {
+  @apply common-transition h-12 w-12 bg-white/50 opacity-25 hover:opacity-100;
+}
+
+#homepage-hero .swiper-button-prev {
+  @apply left-12;
+}
+
+#homepage-hero .swiper-button-next {
+  @apply right-12;
+}
+
 #homepage-hero .swiper-button-prev::after,
 #homepage-hero .swiper-button-next::after {
   content: url('/icons/icon_arrow.svg') !important;
-  @apply common-transition absolute top-0 h-12 w-12 bg-white/50 opacity-25 hover:opacity-100;
+  @apply absolute top-0 h-full w-full;
 }
 
 #homepage-hero .swiper-button-prev::after {
-  @apply -right-16 rotate-180;
-}
-
-#homepage-hero .swiper-button-next::after {
-  @apply -left-16;
+  @apply rotate-180;
 }
 
 #homepage-hero .swiper-pagination-bullet {
@@ -210,6 +219,17 @@ a:focus-visible .link::before,
 }
 .mobile-exit-active {
   @apply translate-y-[100vh] opacity-0 transition duration-300 ease-in-out;
+}
+
+/* 
+ * Header underline
+ */
+.header-underline {
+  @apply before:content-[""];
+}
+
+.header-underline::before {
+  @apply absolute bottom-0 left-0 h-[1px] w-full bg-black-light;
 }
 
 /* === SECOND SECTION (BUSINESS PAGE) === */

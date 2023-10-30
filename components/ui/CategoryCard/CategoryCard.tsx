@@ -4,12 +4,9 @@ import classNames from 'classnames';
 import { CateryCardProps } from './types';
 
 export const CategoryCard: React.FC<CateryCardProps> = ({
-  href,
-  text,
-  className,
-  image,
+  category: { href, text, className, image },
 }) => {
-  const cardClasses = classNames('zoom', className);
+  const cardClasses = classNames('zoom block', className);
 
   return (
     <Link href={href} className={cardClasses}>
