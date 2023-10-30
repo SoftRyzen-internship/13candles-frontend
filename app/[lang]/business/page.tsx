@@ -14,8 +14,8 @@ export default async function BusinessPage({
 
   return (
     <main>
-      <SecondSection className="section xl:py-[50px]" {...secondSection} />
-      <HelpfulSection className="section xl:py-[50px]" {...helpfulSection} />
+      <SecondSection {...secondSection} />
+      <HelpfulSection {...helpfulSection} />
     </main>
   );
 }

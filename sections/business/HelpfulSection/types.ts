@@ -12,5 +12,4 @@ type TextBlockType = {
 export interface HelpfulSectionProps {
   image: ImageType;
   staticData: TextBlockType;
-  className?: string;
 }
