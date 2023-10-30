@@ -15,11 +15,26 @@ const dictionaries = {
   }),
 };
 
+const metatada = {
+  en: async () => ({
+    ...(await import(`@/dictionaries/en/meta/common.json`)).default,
+    ...(await import(`@/dictionaries/en/meta/home.json`)).default,
+    ...(await import(`@/dictionaries/en/meta/business.json`)).default,
+  }),
+
+  uk: async () => ({
+    ...(await import(`@/dictionaries/uk/meta/common.json`)).default,
+    ...(await import(`@/dictionaries/uk/meta/home.json`)).default,
+    ...(await import(`@/dictionaries/uk/meta/business.json`)).default,
+  }),
+};
+
 const commonDictionaries = {
   en: async () => (await import(`@/dictionaries/en/common.json`)).default,
   uk: async () => (await import(`@/dictionaries/uk/common.json`)).default,
 };
 
 export const getDictionary = async (locale: Locale) => dictionaries[locale]();
+export const getMetadata = async (locale: Locale) => metatada[locale]();
 export const getCommonDictionaries = async (locale: Locale) =>
   commonDictionaries[locale]();
