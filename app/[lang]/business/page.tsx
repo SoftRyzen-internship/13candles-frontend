@@ -9,6 +9,9 @@ import { HelpfulSection } from '@/sections/business/HelpfulSection';
 import { OurManufactureSection } from '@/sections/business/OurManufactureSection';
 import { UsefulWhomSection } from '@/sections/business/UsefulWhomSection';
 
+import { BusinessFormWithPopUp } from '@/components/BusinessFormWithPopUp';
+import { BtnWithBusinessFormModal } from '@/components/BtnWithBusinessFormModal';
+
 export async function generateMetadata({
   params: { lang },
 }: {
@@ -44,15 +47,22 @@ export default async function BusinessPage({
   params: { lang: Locale };
 }) {
   const { businessPage } = await getDictionary(lang);
-  const { secondSection, helpfulSection, usefulWhom, ourManufactureSection } =
-    businessPage;
+  const {
+    secondSection,
+    helpfulSection,
+    usefulWhom,
+    ourManufactureSection,
+    form,
+  } = businessPage;
 
   return (
     <main>
+      <BtnWithBusinessFormModal staticData={form} />
       <SecondSection {...secondSection} />
       <HelpfulSection {...helpfulSection} />
       <UsefulWhomSection {...usefulWhom} />
       <OurManufactureSection {...ourManufactureSection} />
+      <BusinessFormWithPopUp staticData={form} />
     </main>
   );
 }
