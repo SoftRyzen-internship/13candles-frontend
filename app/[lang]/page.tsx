@@ -17,8 +17,10 @@ export async function generateMetadata({
   const { twitter, openGraph, icons, languages, manifest } = meta;
   const { title, description, keywords } = metadataHome;
 
-  //TODO: delete localhost:3000 / create .env.local
-  const baseUrl = process.env.BASE_URL || 'http://localhost:3000/';
+  // TODO: delete path  when add .env.local
+  const baseUrl =
+    (process.env.NEXT_PUBLIC_BASE_URL as string) ||
+    'https://13candles-frontend.vercel.app';
 
   return {
     title,
@@ -26,12 +28,21 @@ export async function generateMetadata({
     metadataBase: new URL(baseUrl),
     manifest,
     alternates: {
-      canonical: `${baseUrl}${lang}`,
+      canonical: `${baseUrl}/${lang}`,
       languages,
     },
     keywords,
-    twitter,
-    openGraph: { ...openGraph, url: `${baseUrl}${lang}` },
+    twitter: {
+      ...twitter,
+      images: [{ ...twitter.images[0], url: `${baseUrl}/meta/ogp-image.jpg` }],
+    },
+    openGraph: {
+      ...openGraph,
+      url: `${baseUrl}/${lang}`,
+      images: [
+        { ...openGraph.images[0], url: `${baseUrl}/meta/ogp-image.jpg` },
+      ],
+    },
     icons,
   };
 }
