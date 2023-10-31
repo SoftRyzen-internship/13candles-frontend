@@ -21,8 +21,7 @@ export async function generateMetadata({
   const { twitter, openGraph, icons, languages, manifest } = meta;
   const { title, description, keywords } = metadataBusiness;
 
-  //TODO: delete localhost:3000
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000/';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
   return {
     title,
@@ -30,12 +29,12 @@ export async function generateMetadata({
     metadataBase: new URL(baseUrl),
     manifest,
     alternates: {
-      canonical: `${baseUrl}${lang}${FOR_BUSINESS}`,
+      canonical: `${baseUrl}/${lang}${FOR_BUSINESS}`,
       languages,
     },
     keywords,
     twitter,
-    openGraph: { ...openGraph, url: `${baseUrl}${lang}${FOR_BUSINESS}` },
+    openGraph: { ...openGraph, url: `${baseUrl}/${lang}${FOR_BUSINESS}` },
     icons,
   };
 }
