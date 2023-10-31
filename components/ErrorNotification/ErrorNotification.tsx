@@ -5,7 +5,7 @@ export const ErrorNotification: FC<ErrorNotificationProps> = ({
   staticData,
 }) => {
   return (
-    <div className="py-[97px] text-center md:py-[128px] xl:py-[205px]">
+    <div className="pb-[63px] pt-[21px] text-center md:pb-[92px] md:pt-6 xl:py-[157px]">
       <p className="text-xl font-bold md:text-xxl xl:text-xxxl">{staticData}</p>
     </div>
   );

@@ -7,7 +7,7 @@ import { BusinessForm } from '@/components/BusinessForm/BusinessForm';
 import { SuccessNotification } from '@/components/SuccessNotification/SuccessNotification';
 import { ErrorNotification } from '@/components/ErrorNotification/ErrorNotification';
 
-import { PopUpType, BusinessFormWithPopUpProps } from './types';
+import { PopUpType, BusinessFormWithPopUpProps } from '@/types';
 
 export const BusinessFormWithPopUp: FC<BusinessFormWithPopUpProps> = ({
   staticData,
@@ -37,7 +37,11 @@ export const BusinessFormWithPopUp: FC<BusinessFormWithPopUpProps> = ({
         section={'contacts'}
         setPopUpType={setPopUpType}
       />
-      <ModalWindow onModalClose={handleToggleModal} showModal={showModal}>
+      <ModalWindow
+        onModalClose={handleToggleModal}
+        showModal={showModal}
+        className="pb-[34px] pt-[76px] md:pt-[104px] xl:py-12"
+      >
         {popUpType === 'success' ? (
           <SuccessNotification staticData={success} />
         ) : null}

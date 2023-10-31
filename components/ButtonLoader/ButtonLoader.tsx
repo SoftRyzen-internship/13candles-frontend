@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ThreeDots } from 'react-loader-spinner';
-import { ButtonLoaderProps } from './types';
+import { ButtonLoaderProps } from '@/types';
 
 export const ButtonLoader: FC<ButtonLoaderProps> = ({ color, className }) => {
   return (

@@ -29,7 +29,7 @@ export const ModalWindow: React.FC<ModalWindowPrps> = ({
           type="button"
           aria-label={closeIconAriaLabel[lang]}
           onClick={onModalClose}
-          className="absolute right-[14px] top-[20px] z-20 h-fit w-fit md:right-[26px] xl:right-[40px]"
+          className="absolute right-[14px] top-[20px] z-20 h-fit w-fit md:right-[26px]"
         >
           <IconClose
             width={28}

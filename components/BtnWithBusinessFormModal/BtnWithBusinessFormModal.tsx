@@ -6,7 +6,7 @@ import { ModalWindow } from '@/components/ui/ModalWindow';
 import { BusinessForm } from '@/components/BusinessForm/BusinessForm';
 import { SuccessNotification } from '@/components/SuccessNotification/SuccessNotification';
 import { ErrorNotification } from '@/components/ErrorNotification/ErrorNotification';
-import { BtnWithBusinessFormModalProps, PopUpType } from './types';
+import { BtnWithBusinessFormModalProps, PopUpType } from '@/types';
 
 export const BtnWithBusinessFormModal: FC<BtnWithBusinessFormModalProps> = ({
   staticData,
@@ -33,7 +33,11 @@ export const BtnWithBusinessFormModal: FC<BtnWithBusinessFormModalProps> = ({
         onClick={handleToggleModal}
       />
 
-      <ModalWindow onModalClose={handleToggleModal} showModal={showModal}>
+      <ModalWindow
+        onModalClose={handleToggleModal}
+        showModal={showModal}
+        className="pb-[34px] pt-[76px] md:pt-[104px] xl:py-12"
+      >
         {popUpType === 'default' ? (
           <BusinessForm
             staticData={staticData}
