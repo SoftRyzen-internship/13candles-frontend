@@ -18,9 +18,7 @@ export async function generateMetadata({
   const { title, description, keywords } = metadataHome;
 
   // TODO: delete path  when add .env.local
-  const baseUrl =
-    (process.env.NEXT_PUBLIC_BASE_URL as string) ||
-    'https://13candles-frontend.vercel.app';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000/';
 
   return {
     title,
