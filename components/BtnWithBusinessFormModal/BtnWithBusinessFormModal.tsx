@@ -21,7 +21,9 @@ export const BtnWithBusinessFormModal: FC<BtnWithBusinessFormModalProps> = ({
 
   const handleToggleModal = () => {
     setShowModal(prev => !prev);
-    setPopUpType('default');
+    setTimeout(() => {
+      setPopUpType('default');
+    }, 1000);
   };
   return (
     <div className="mt-[16px] md:w-[211px] xl:mt-[48px]">
