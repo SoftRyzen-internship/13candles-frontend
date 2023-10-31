@@ -22,7 +22,10 @@ export const BusinessFormWithPopUp: FC<BusinessFormWithPopUpProps> = ({
 
   const handleToggleModal = () => {
     setShowModal(prev => !prev);
-    setPopUpType('default');
+
+    setTimeout(() => {
+      setPopUpType('default');
+    }, 1000);
   };
 
   useEffect(() => {
