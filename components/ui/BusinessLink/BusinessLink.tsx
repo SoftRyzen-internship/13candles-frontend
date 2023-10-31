@@ -4,7 +4,7 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import { BusinessLinkProps } from './types';
 import { FOR_BUSINESS } from '@/data';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 export const BusinessLink: React.FC<BusinessLinkProps> = ({
   text,
@@ -14,9 +14,6 @@ export const BusinessLink: React.FC<BusinessLinkProps> = ({
   className = '',
 }) => {
   const linkClasses = classNames({ 'decor case': isIcon }, className);
-
-  const router = useRouter();
-  console.log('routER', router);
 
   const params = useParams();
   return (
