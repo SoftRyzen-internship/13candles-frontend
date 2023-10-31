@@ -13,7 +13,10 @@ export const UsefulWhomSection: React.FC<UsefulWhomProps> = ({
         <ul className="mt-[16px] flex flex-wrap justify-center gap-[16px] font-semibold md:text-lg xl:mt-[40px] xl:gap-[24px] xl:text-xl">
           {options &&
             options.map(option => (
-              <li key={option.id} className="biz-item pl-[12px] xl:pl-[20px]">
+              <li
+                key={option.id}
+                className="biz-item relative pl-[12px] xl:pl-[20px]"
+              >
                 {option.text}
               </li>
             ))}
