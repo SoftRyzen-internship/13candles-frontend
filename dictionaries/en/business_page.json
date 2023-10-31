@@ -134,8 +134,11 @@
           "options": {
             "required": "Required",
             "pattern": "^(?![\\s-]*[\\s-])(?!.*--)(?!.*- )(?!.* -)(?!.*'-)(?=.*[A-Za-zА-Яа-яЇїІіЄєҐґ])[A-Za-zА-Яа-яЇїІіЄєҐґ' -]+$",
-            "minLength": 3,
-            "maxLength": 70
+            "minLength": { "value": 3, "message": "No less than 3 characters" },
+            "maxLength": {
+              "value": 70,
+              "message": "No more than 70 characters"
+            }
           }
         },
         {
@@ -147,8 +150,14 @@
           "options": {
             "required": "Required",
             "pattern": "^\\+[0-9]+$",
-            "minLength": 12,
-            "maxLength": 13
+            "minLength": {
+              "value": 12,
+              "message": "No less than 12 characters"
+            },
+            "maxLength": {
+              "value": 13,
+              "message": "No more than 13 characters"
+            }
           }
         },
         {
@@ -160,8 +169,11 @@
           "options": {
             "required": false,
             "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?@[a-zA-Z0-9.-]+(?:.[a-zA-Z]{2,})+$",
-            "minLength": 6,
-            "maxLength": 63
+            "minLength": { "value": 6, "message": "No less than 6 characters" },
+            "maxLength": {
+              "value": 63,
+              "message": "No more than 63 characters"
+            }
           }
         }
       ],
