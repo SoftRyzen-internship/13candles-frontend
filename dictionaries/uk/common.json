@@ -26,7 +26,8 @@
       "logoAriaLabelText": "Посилання із логотипом компанії",
       "forBusinesBtnText": "Для Бізнесу",
       "languageButtonText": "Eng",
-      "basketAriaLabel": "Кнопка відкриття корзини"
+      "basketAriaLabel": "Кнопка відкриття корзини",
+      "basketTitle": "Кошик"
     },
     "footer": {
       "logoAriaLabelText": "Посилання із логотипом компанії",

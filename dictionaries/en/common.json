@@ -26,7 +26,8 @@
       "logoAriaLabelText": "Link with company logo",
       "forBusinesBtnText": "For Business",
       "languageButtonText": "Укр",
-      "basketAriaLabel": "Open basket button"
+      "basketAriaLabel": "Open basket button",
+      "basketTitle": "Basket"
     },
     "footer": {
       "logoAriaLabelText": "Link with company logo",

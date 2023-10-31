@@ -28,14 +28,14 @@ export default async function RootLayout({
   params: { lang: Locale };
 }) {
   const { common, information } = await getDictionary(lang);
-  const { footer } = common;
+  const { footer, header } = common;
 
   return (
     <html lang={lang}>
       <body
         className={`${montserrat.variable} ${raleway.variable} grid min-h-screen grid-cols-1 grid-rows-[1fr_auto] md:grid-rows-[auto_1fr_auto]`}
       >
-        <Header data={common.header} />
+        <Header data={header} />
         <main className="">{children}</main>
         <Footer footer={footer} information={information} />
         <div id="modal" />

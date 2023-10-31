@@ -24,6 +24,8 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
     className,
   );
 
+  console.log(text);
+
   return (
     <>
       {isIcon ? (
@@ -46,7 +48,7 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
       )}
 
       <ModalWindow onModalClose={onToggleShowModal} showModal={showModal}>
-        <Basket basket={{ title: 'Кошик' }} />
+        <Basket basket={text || ariaLabel} />
       </ModalWindow>
     </>
   );

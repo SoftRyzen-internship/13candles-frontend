@@ -1,3 +1,3 @@
 export interface BasketProps {
-  basket: { title: string };
+  basket?: string;
 }

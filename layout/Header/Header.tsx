@@ -25,6 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
     logoAriaLabelText,
     forBusinesBtnText,
     basketAriaLabel,
+    basketTitle,
   } = data;
 
   const pathname = usePathname();
@@ -77,7 +78,11 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
               buttonText={languageButtonText}
               className="md:mr-7 xl:mr-9 smOnly:hidden"
             />
-            <BasketButton isIcon={true} ariaLabel={basketAriaLabel} />
+            <BasketButton
+              isIcon={true}
+              text={basketTitle}
+              ariaLabel={basketAriaLabel}
+            />
           </div>
         </nav>
       </div>
