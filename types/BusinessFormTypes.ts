@@ -53,13 +53,6 @@ export interface BusinessFormProps {
   setPopUpType: Dispatch<SetStateAction<PopUpType>>;
 }
 
-export type BusinessFormModalData = {
-  title: TitleDataT;
-  inputs: IBusinessInput[];
-  button: string;
-  notifications: NotificationsDataT;
-};
-
 export type FormStaticDataT = {
   title: TitleDataT;
   inputs: IBusinessInput[];
@@ -68,7 +61,7 @@ export type FormStaticDataT = {
 };
 
 export interface BtnWithBusinessFormModalProps {
-  staticData: BusinessFormModalData;
+  staticData: FormStaticDataT;
   label: string;
 }
 
