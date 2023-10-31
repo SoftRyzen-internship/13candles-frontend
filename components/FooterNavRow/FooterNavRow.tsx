@@ -2,13 +2,18 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { smoothScroll } from '@/utils';
+import { checkPageName, smoothScroll } from '@/utils';
 import { FooterNavRowProps } from '@/components/FooterNavRow/types';
 import { BasketButton } from '@/components/ui/BasketButton';
 import { BusinessLink } from '@/components/ui/BusinessLink';
+import { usePathname } from 'next/navigation';
+import { FOR_BUSINESS } from '@/data';
 
 export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
-  const { nav_text, nav, forBusinesBtnText, basketText } = data;
+  const { nav_text, nav, forBusinessBtnText, basketText } = data;
+
+  const pathname = usePathname();
+  const isBusinessPage = checkPageName(pathname, FOR_BUSINESS);
 
   return (
     nav?.length > 0 && (
@@ -34,7 +39,11 @@ export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
             />
           </li>
           <li>
-            <BusinessLink isIcon={false} text={forBusinesBtnText} />
+            <BusinessLink
+              isIcon={false}
+              text={forBusinessBtnText}
+              isAnchor={isBusinessPage ? true : false}
+            />
           </li>
         </ul>
       </div>

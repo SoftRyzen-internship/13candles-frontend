@@ -357,7 +357,7 @@ control which component should appear inside the header on each page.
 | `toHomePage`         | -       | Required. Link to Home page                                            |
 | `languageButtonText` | -       | Required. Text for button that switch website language                 |
 | `logoAriaLabelText`  | -       | Required. Aria label text used inside Logo component                   |
-| `forBusinesBtnText`  | -       | Required. Text for button used in BusinessLink component               |
+| `forBusinessBtnText` | -       | Required. Text for button used in BusinessLink component               |
 | `basketAriaLabel`    | -       | Required. Aria label text used inside BasketButton component           |
 
 ---

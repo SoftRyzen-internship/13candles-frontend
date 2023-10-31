@@ -24,8 +24,6 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
     className,
   );
 
-  console.log(text);
-
   return (
     <>
       {isIcon ? (
