@@ -9,8 +9,7 @@ import { SecondSection } from '@/sections/business/SecondSection';
 import { HelpfulSection } from '@/sections/business/HelpfulSection';
 import { OurManufactureSection } from '@/sections/business/OurManufactureSection';
 import { UsefulWhomSection } from '@/sections/business/UsefulWhomSection';
-
-import { BusinessFormWithPopUp } from '@/components/BusinessFormWithPopUp';
+import { ContactsSection } from '@/sections/business/ContactsSection';
 
 export async function generateMetadata({
   params: { lang },
@@ -53,6 +52,7 @@ export default async function BusinessPage({
     helpfulSection,
     usefulWhom,
     ourManufactureSection,
+    contactsSection,
     form,
   } = businessPage;
 
@@ -63,7 +63,7 @@ export default async function BusinessPage({
       <HelpfulSection {...helpfulSection} />
       <UsefulWhomSection {...usefulWhom} />
       <OurManufactureSection {...ourManufactureSection} />
-      <BusinessFormWithPopUp staticData={form} />
+      <ContactsSection {...contactsSection} form={form} />
     </main>
   );
 }

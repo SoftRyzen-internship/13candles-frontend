@@ -12,14 +12,14 @@ export const BusinessInput: FC<BusinessInputProps> = ({
   const inputError = errors[name];
 
   const inputClass = classnames(
-    'h-[35px] w-full xl:max-w-[376px] px-3 py-2 text-black-light border  outline-black-light border-black-light placeholder:text-gray common-transition',
+    'h-[35px] w-full xl:max-w-[376px] px-3 py-2 text-black-light border outline-black-light border-black-light placeholder:text-gray common-transition',
     {
       'border-red outline-red hover:outline-red focus:outline-red': inputError,
     },
   );
 
   return (
-    <label className="relative flex w-full flex-col gap-1 xl:flex-row xl:items-center xl:justify-between">
+    <label className="relative flex w-full flex-col gap-2 xl:flex-row xl:items-center xl:justify-between">
       <span> {label}</span>
       <input
         className={inputClass}
