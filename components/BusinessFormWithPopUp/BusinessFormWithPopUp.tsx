@@ -11,6 +11,7 @@ import { PopUpType, BusinessFormWithPopUpProps } from '@/types';
 
 export const BusinessFormWithPopUp: FC<BusinessFormWithPopUpProps> = ({
   staticData,
+  className = '',
 }) => {
   const [popUpType, setPopUpType] = useState<PopUpType>('default');
   const [showModal, setShowModal] = useState(false);
@@ -31,7 +32,7 @@ export const BusinessFormWithPopUp: FC<BusinessFormWithPopUpProps> = ({
   }, [popUpType]);
 
   return (
-    <>
+    <div className={className}>
       <BusinessForm
         staticData={staticData}
         section={'contacts'}
@@ -49,6 +50,6 @@ export const BusinessFormWithPopUp: FC<BusinessFormWithPopUpProps> = ({
           <ErrorNotification staticData={error} />
         ) : null}
       </ModalWindow>
-    </>
+    </div>
   );
 };

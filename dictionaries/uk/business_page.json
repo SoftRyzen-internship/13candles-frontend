@@ -88,10 +88,41 @@
         "description3": "В \"13 Candle Bar\" кожен впевнений в тому, що потрібно робити те, що любиш і любити те, що робиш. Ми любимо те, що робимо."
       }
     },
+    "contactsSection": {
+      "staticData": {
+        "logoAriaLabelText": "Посилання із логотипом компанії",
+        "contacts_text": "Контакти",
+        "contacts": [
+          {
+            "href": "tel:380634293499",
+            "icon": "phone",
+            "text": "38 (063) 429 34 99"
+          },
+          {
+            "href": "mailto:13candlebar@gmail.com",
+            "icon": "email",
+            "text": "13candlebar@gmail.com"
+          }
+        ],
+        "social_text": "Соціальні мережі",
+        "social": [
+          {
+            "href": "https://www.instagram.com/13.candle.bar/",
+            "icon": "instagram",
+            "text": "Instagram"
+          },
+          {
+            "href": "https://t.me/+380966802151",
+            "icon": "telegram",
+            "text": "Telegram"
+          }
+        ]
+      }
+    },
     "form": {
       "title": {
         "hero": "Закохуйте в себе разом з \"13 Candle Bar\" 🖤",
-        "contacts": "Залишай заявку і ми зв'яжемось з тобою"
+        "contacts": "Залишай заявку \nі ми зв'яжемось з тобою"
       },
       "inputs": [
         {

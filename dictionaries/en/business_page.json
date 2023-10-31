@@ -88,6 +88,37 @@
         "description3": "At \"13 Candle Bar\", everyone believes that you should do what you love and love what you do. We love what we do."
       }
     },
+    "contactsSection": {
+      "staticData": {
+        "logoAriaLabelText": "Link with company logo",
+        "contacts_text": "Contacts",
+        "contacts": [
+          {
+            "href": "tel:380634293499",
+            "icon": "phone",
+            "text": "38 (063) 429 34 99"
+          },
+          {
+            "href": "mailto:13candlebar@gmail.com",
+            "icon": "email",
+            "text": "13candlebar@gmail.com"
+          }
+        ],
+        "social_text": "Social networks",
+        "social": [
+          {
+            "href": "https://www.instagram.com/13.candle.bar/",
+            "icon": "instagram",
+            "text": "Instagram"
+          },
+          {
+            "href": "https://t.me/+380966802151",
+            "icon": "telegram",
+            "text": "Telegram"
+          }
+        ]
+      }
+    },
     "form": {
       "title": {
         "hero": "Fall in love with yourself with \"13 Candle Bar\" 🖤",

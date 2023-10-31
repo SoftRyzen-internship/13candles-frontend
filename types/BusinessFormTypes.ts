@@ -60,18 +60,21 @@ export type BusinessFormModalData = {
   notifications: NotificationsDataT;
 };
 
+export type FormStaticDataT = {
+  title: TitleDataT;
+  inputs: IBusinessInput[];
+  button: string;
+  notifications: NotificationsDataT;
+};
+
 export interface BtnWithBusinessFormModalProps {
   staticData: BusinessFormModalData;
   label: string;
 }
 
 export interface BusinessFormWithPopUpProps {
-  staticData: {
-    title: TitleDataT;
-    inputs: IBusinessInput[];
-    button: string;
-    notifications: NotificationsDataT;
-  };
+  staticData: FormStaticDataT;
+  className?: string;
 }
 
 export interface IDataToSend {

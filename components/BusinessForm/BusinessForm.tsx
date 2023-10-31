@@ -58,13 +58,13 @@ export const BusinessForm: FC<BusinessFormProps> = ({
         section === 'hero',
     },
     {
-      'section-title-secondary mb-6 xl:mb-10 smOnly:text-center w-full max-w-[480px]  md:max-w-[350px] xl:max-w-[500px]':
+      'section-title-secondary mb-6 xl:mb-10 smOnly:text-center w-full max-w-[480px] md:max-w-[350px] xl:max-w-[500px] whitespace-pre-wrap':
         section === 'contacts',
     },
   );
 
   const formClass = classnames(
-    'flex w-full max-w-[480px] flex-col gap-6 md:max-w-[350px] xl:max-w-[500px] xl:gap-10',
+    'flex w-full max-w-[480px] md:max-w-full flex-col gap-6 md:w-[350px] xl:w-[500px] xl:gap-10',
     {
       'mx-auto': section === 'hero',
     },

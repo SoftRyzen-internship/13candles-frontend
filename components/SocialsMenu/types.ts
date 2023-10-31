@@ -7,5 +7,6 @@ export type SocialItem = {
 export type SocialsProps = {
   socials: SocialItem[];
   title: string;
+  variant?: 'contacts' | undefined;
   className?: string;
 };
