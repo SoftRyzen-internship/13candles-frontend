@@ -20,7 +20,7 @@ export async function generateMetadata({
   // TODO: delete path  when add .env.local
   const baseUrl =
     (process.env.NEXT_PUBLIC_BASE_URL as string) ||
-    'https://13candles-frontend.vercel.app';
+    'https://13candles-frontend-git-fix-ogp-preview-softryzen.vercel.app';
 
   return {
     title,
