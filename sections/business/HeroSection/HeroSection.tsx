@@ -14,15 +14,17 @@ export const HeroSection: React.FC<HeroProps> = ({
   return (
     <section className="pb-[16px] text-base md:pb-[18px] xl:pb-[50px] smOnly:mt-[116px]">
       <div className="container flex flex-col gap-[24px] md:flex-row md:gap-[20px] xl:gap-[64px]">
-        <Image
-          src={image.src}
-          alt={image.alt}
-          width={572}
-          height={578}
-          priority
-          sizes="(max-width: 767px) 440px, (max-width: 1279px) 334px, 578px"
-          className="aspect-[1/1] w-full shrink-0 md:aspect-[1/1.01] md:w-[334px] xl:w-[572px]"
-        />
+        <div className="w-full shrink-0 md:w-[334px] xl:w-[572px]">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={572}
+            height={578}
+            priority
+            sizes="(max-width: 767px) 440px, (max-width: 1279px) 334px, 578px"
+            className="aspect-square object-cover object-center md:aspect-[1/1.01]"
+          />
+        </div>
 
         <div className="flex flex-col justify-center">
           <p className="text-center md:text-left">{overtitle}</p>
