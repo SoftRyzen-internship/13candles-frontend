@@ -1,4 +1,4 @@
-import { FormStaticDataT } from '@/components/BusinessFormWithPopUp/types';
+import { FormStaticDataT } from '@/types';
 
 type ContactType = { href: string; icon: string; text: string };
 type SocialType = { href: string; icon: string; text: string };

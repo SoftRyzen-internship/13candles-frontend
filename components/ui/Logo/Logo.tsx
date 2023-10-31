@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import classNames from 'classnames';
 import { Locale } from '@/i18n.config';
@@ -18,12 +19,12 @@ export const Logo: React.FC<LogoProps> = ({
     'md:w-[116px] md:h-[64px]': position === 'footer' || 'contacts',
   });
   return (
-    <a
+    <Link
       href={`/${lang}`}
       aria-label={aria}
       className={`common-transition block max-w-max text-black-light hover:text-black focus:text-black ${className}`}
     >
       <Logosvg width={116} height={64} className={logoSvgStyles} />
-    </a>
+    </Link>
   );
 };

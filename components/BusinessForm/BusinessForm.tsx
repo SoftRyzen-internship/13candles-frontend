@@ -9,7 +9,7 @@ import { sendDataToTelegram } from '@/utils/api/sendDataToTelegram';
 
 import { ButtonLoader } from '@/components/ButtonLoader';
 import { BusinessInput } from '@/components/BusinessInput';
-import { BusinessFormProps, IDataToSend } from './types';
+import { BusinessFormProps, IDataToSend } from '@/types';
 
 const FORM_DATA_KEY = 'form_data';
 

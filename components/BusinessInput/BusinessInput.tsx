@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import classnames from 'classnames';
-import { BusinessInputProps } from './types';
+import { BusinessInputProps } from '@/types';
 
 export const BusinessInput: FC<BusinessInputProps> = ({
   staticData,
