@@ -18,7 +18,7 @@ export const BusinessLink: React.FC<BusinessLinkProps> = ({
   const params = useParams();
   return (
     <Link
-      href={isAnchor ? '#' : `${params.lang}/${FOR_BUSINESS}`}
+      href={isAnchor ? '#' : `${params.lang}${FOR_BUSINESS}`}
       className={linkClasses}
       onClick={onClick}
     >
