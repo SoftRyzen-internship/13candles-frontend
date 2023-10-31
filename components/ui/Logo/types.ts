@@ -1,5 +1,5 @@
 export interface LogoProps {
-  position: 'header' | 'footer';
+  position: 'header' | 'footer' | 'contacts';
   aria: string;
   className?: string;
 }

@@ -57,7 +57,7 @@ body {
 }
 
 .link {
-  @apply relative font-medium no-underline before:content-[""];
+  @apply relative no-underline before:content-[""];
 }
 
 .link::before {
@@ -111,7 +111,7 @@ a:focus-visible .link::before,
 /* decor icons common */
 
 .decor {
-  @apply relative inline-block before:content-[""];
+  @apply relative flex items-center before:content-[""];
 }
 
 .decor::before {
@@ -220,7 +220,6 @@ a:focus-visible .link::before,
 .mobile-exit-active {
   @apply translate-y-[100vh] opacity-0 transition duration-300 ease-in-out;
 }
-
 /* 
  * Header underline
  */
@@ -237,4 +236,12 @@ a:focus-visible .link::before,
 #second .container:hover img,
 #second .container:focus-within img {
   filter: grayscale(0%);
+}
+
+/*
+ * Business hero list icon
+ */
+
+.biz-item::before {
+  @apply absolute left-0 top-[50%] h-[4px] w-[4px] -translate-y-[50%] bg-[url('/icons/icon_square.svg')] bg-cover bg-center bg-no-repeat content-[""] xl:h-[8px] xl:w-[8px];
 }
