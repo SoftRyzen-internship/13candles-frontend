@@ -53,6 +53,7 @@ const config: Config = {
         },
         white: '#ffffff',
         gray: '#c5c5c5',
+        red: '#ff4545',
       },
     },
   },
