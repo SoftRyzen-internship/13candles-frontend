@@ -10,6 +10,7 @@ export const BusinessLink: React.FC<BusinessLinkProps> = ({
   text,
   isIcon = false,
   onClick,
+  isAnchor = false,
   className = '',
 }) => {
   const linkClasses = classNames({ 'decor case': isIcon }, className);
@@ -17,7 +18,7 @@ export const BusinessLink: React.FC<BusinessLinkProps> = ({
   const params = useParams();
   return (
     <Link
-      href={`${params.lang}/${FOR_BUSINESS}`}
+      href={isAnchor ? '#' : `${params.lang}${FOR_BUSINESS}`}
       className={linkClasses}
       onClick={onClick}
     >
