@@ -23,8 +23,9 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
     toHomePage,
     languageButtonText,
     logoAriaLabelText,
-    forBusinesBtnText,
+    forBusinessBtnText,
     basketAriaLabel,
+    basketTitle,
   } = data;
 
   const pathname = usePathname();
@@ -52,7 +53,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
           )}
 
           <MobileMenu
-            businessText={forBusinesBtnText}
+            businessText={forBusinessBtnText}
             links={nav}
             languageButtonText={languageButtonText}
             btnAriaClose={mobileMenu.closeMenuBtnAriaText}
@@ -67,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
             {!isBusinessPage && (
               <BusinessLink
                 isIcon={true}
-                text={forBusinesBtnText}
+                text={forBusinessBtnText}
                 className="h-6 items-center sm:flex md:mr-6 xl:mr-[88px] smOnly:hidden"
               />
             )}
@@ -77,7 +78,11 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
               buttonText={languageButtonText}
               className="md:mr-7 xl:mr-9 smOnly:hidden"
             />
-            <BasketButton isIcon={true} ariaLabel={basketAriaLabel} />
+            <BasketButton
+              isIcon={true}
+              text={basketTitle}
+              ariaLabel={basketAriaLabel}
+            />
           </div>
         </nav>
       </div>

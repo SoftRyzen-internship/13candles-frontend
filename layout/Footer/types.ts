@@ -12,7 +12,7 @@ export type FooterProps = {
       href?: string;
     }[];
     basketText: string;
-    forBusinesBtnText: string;
+    forBusinessBtnText: string;
     social_text: string;
     social: {
       href: string;

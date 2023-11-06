@@ -5,7 +5,7 @@ export type FooterNavRowProps = {
       name: string;
       href?: string;
     }[];
-    forBusinesBtnText: string;
+    forBusinessBtnText: string;
     basketText: string;
   };
 };

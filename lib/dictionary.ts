@@ -17,7 +17,7 @@ const dictionaries = {
   }),
 };
 
-const metatada = {
+const metadata = {
   en: async () => ({
     ...(await import(`@/dictionaries/en/meta/common.json`)).default,
     ...(await import(`@/dictionaries/en/meta/home.json`)).default,
@@ -37,6 +37,6 @@ const commonDictionaries = {
 };
 
 export const getDictionary = async (locale: Locale) => dictionaries[locale]();
-export const getMetadata = async (locale: Locale) => metatada[locale]();
+export const getMetadata = async (locale: Locale) => metadata[locale]();
 export const getCommonDictionaries = async (locale: Locale) =>
   commonDictionaries[locale]();

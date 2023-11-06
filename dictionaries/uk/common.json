@@ -24,9 +24,10 @@
         "href": "/"
       },
       "logoAriaLabelText": "Посилання із логотипом компанії",
-      "forBusinesBtnText": "Для Бізнесу",
+      "forBusinessBtnText": "Для Бізнесу",
       "languageButtonText": "Eng",
-      "basketAriaLabel": "Кнопка відкриття корзини"
+      "basketAriaLabel": "Кнопка відкриття корзини",
+      "basketTitle": "Кошик"
     },
     "footer": {
       "logoAriaLabelText": "Посилання із логотипом компанії",
@@ -54,7 +55,7 @@
         }
       ],
       "basketText": "Кошик",
-      "forBusinesBtnText": "Для Бізнесу",
+      "forBusinessBtnText": "Для Бізнесу",
       "social_text": "Соціальні мережі",
       "social": [
         {

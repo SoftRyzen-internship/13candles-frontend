@@ -24,9 +24,10 @@
         "href": "/"
       },
       "logoAriaLabelText": "Link with company logo",
-      "forBusinesBtnText": "For Business",
+      "forBusinessBtnText": "For Business",
       "languageButtonText": "Укр",
-      "basketAriaLabel": "Open basket button"
+      "basketAriaLabel": "Open basket button",
+      "basketTitle": "Basket"
     },
     "footer": {
       "logoAriaLabelText": "Link with company logo",
@@ -54,7 +55,7 @@
         }
       ],
       "basketText": "Basket",
-      "forBusinesBtnText": "For Business",
+      "forBusinessBtnText": "For Business",
       "social_text": "Social networks",
       "social": [
         {
