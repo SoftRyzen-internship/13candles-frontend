@@ -239,9 +239,9 @@ a:focus-visible .link::before,
 }
 
 /*
- * Business hero list icon
+ * Business list bullet
  */
 
 .biz-item::before {
-  @apply absolute left-0 top-[50%] h-[4px] w-[4px] -translate-y-[50%] bg-[url('/icons/icon_square.svg')] bg-cover bg-center bg-no-repeat content-[""] xl:h-[8px] xl:w-[8px];
+  @apply absolute left-0 top-[50%] h-[4px] w-[4px] -translate-y-[50%] bg-black content-[""] xl:h-[8px] xl:w-[8px];
 }

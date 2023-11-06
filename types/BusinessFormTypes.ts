@@ -20,8 +20,8 @@ export interface BusinessInputProps {
 type OptionsType = {
   required: boolean | string;
   pattern: string;
-  minLength: number;
-  maxLength: number;
+  minLength: { value: number; message: string };
+  maxLength: { value: number; message: string };
 };
 
 //popUp
