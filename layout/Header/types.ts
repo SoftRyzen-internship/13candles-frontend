@@ -13,7 +13,7 @@ export interface HeaderProps {
     nav: NavLink[];
     toHomePage: NavLink;
     logoAriaLabelText: string;
-    forBusinesBtnText: string;
+    forBusinessBtnText: string;
     languageButtonText: string;
     basketAriaLabel: string;
     basketTitle: string;

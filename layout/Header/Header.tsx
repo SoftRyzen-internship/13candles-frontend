@@ -23,7 +23,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
     toHomePage,
     languageButtonText,
     logoAriaLabelText,
-    forBusinesBtnText,
+    forBusinessBtnText,
     basketAriaLabel,
     basketTitle,
   } = data;
@@ -53,7 +53,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
           )}
 
           <MobileMenu
-            businessText={forBusinesBtnText}
+            businessText={forBusinessBtnText}
             links={nav}
             languageButtonText={languageButtonText}
             btnAriaClose={mobileMenu.closeMenuBtnAriaText}
@@ -68,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
             {!isBusinessPage && (
               <BusinessLink
                 isIcon={true}
-                text={forBusinesBtnText}
+                text={forBusinessBtnText}
                 className="h-6 items-center sm:flex md:mr-6 xl:mr-[88px] smOnly:hidden"
               />
             )}

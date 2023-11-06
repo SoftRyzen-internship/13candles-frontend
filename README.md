@@ -308,12 +308,13 @@ a decorative icon in the component.
 
 - ### BusinessLink
 
-| Prop        | Default | Description                                             |
-| ----------- | ------- | ------------------------------------------------------- |
-| `text`      | —       | Required, any text content                              |
-| `isIcon`    | `false` | Optional, set true to use decor icon                    |
-| `onClick`   | —       | Optional, if you need onClick                           |
-| `className` | `''`    | Optional, add custom or additional css class you'd need |
+| Prop        | Default | Description                                              |
+| ----------- | ------- | -------------------------------------------------------- |
+| `text`      | —       | Required, any text content                               |
+| `isIcon`    | `false` | Optional, set true to use decor icon                     |
+| `onClick`   | —       | Optional, if you need onClick                            |
+| `isAnchor`  | `false` | Optional, if you need to make it anchor, not router link |
+| `className` | `''`    | Optional, add custom or additional css class you'd need  |
 
 - ### MenuButton
 
@@ -357,7 +358,7 @@ control which component should appear inside the header on each page.
 | `toHomePage`         | -       | Required. Link to Home page                                            |
 | `languageButtonText` | -       | Required. Text for button that switch website language                 |
 | `logoAriaLabelText`  | -       | Required. Aria label text used inside Logo component                   |
-| `forBusinesBtnText`  | -       | Required. Text for button used in BusinessLink component               |
+| `forBusinessBtnText` | -       | Required. Text for button used in BusinessLink component               |
 | `basketAriaLabel`    | -       | Required. Aria label text used inside BasketButton component           |
 
 ---
