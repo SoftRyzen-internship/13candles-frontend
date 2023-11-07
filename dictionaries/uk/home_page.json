@@ -4,16 +4,34 @@
       "hiddenTitle": "13 candle bar",
       "banners": [
         {
-          "src": "/images/homepage/hero/1.webp",
-          "alt": "запашний дим"
+          "image_description": "запашний дим",
+          "photo": {
+            "data": {
+              "attributes": {
+                "url": "/images/homepage/hero/1.webp"
+              }
+            }
+          }
         },
         {
-          "src": "/images/homepage/hero/2.webp",
-          "alt": "палаюча свічка"
+          "image_description": "палаюча свічка",
+          "photo": {
+            "data": {
+              "attributes": {
+                "url": "/images/homepage/hero/2.webp"
+              }
+            }
+          }
         },
         {
-          "src": "/images/homepage/hero/4.webp",
-          "alt": "ароматичні свічки"
+          "image_description": "ароматичні свічки",
+          "photo": {
+            "data": {
+              "attributes": {
+                "url": "/images/homepage/hero/4.webp"
+              }
+            }
+          }
         }
       ]
     },

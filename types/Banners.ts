@@ -1,20 +1,19 @@
+import { Locale } from '@/i18n.config';
+
 export type BannersData = BannersDataInfo[] | undefined;
 
 export interface BannersDataType {
-  data: {
-    banner: {
-      data: {
-        attributes: {
-          locale: string;
-          banners: BannersData;
-        };
+  banner: {
+    data: {
+      attributes: {
+        locale: Locale;
+        banners: BannersData;
       };
     };
   };
 }
 
 export type BannersDataInfo = {
-  id: number;
   image_description: string;
   photo: {
     data: {

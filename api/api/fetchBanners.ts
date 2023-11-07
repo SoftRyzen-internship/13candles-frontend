@@ -4,17 +4,19 @@ import { getBanners } from '@/api/requests/getBanners';
 
 import { BannersData, BannersDataType } from '@/types/Banners';
 
-export const fetchBanners = async (): Promise<BannersData> => {
+import { Locale } from '@/i18n.config';
+
+export const fetchBanners = async (locale: Locale): Promise<BannersData> => {
   try {
     const data: BannersDataType = await request(
       process.env.API_BASE_URL as string,
       getBanners,
+      { locale: locale },
     );
 
-    const result = data.data.banner.data.attributes.banners;
+    const result = data.banner.data.attributes.banners;
     return result;
   } catch (error) {
-    console.log(error);
     return [];
   }
 };

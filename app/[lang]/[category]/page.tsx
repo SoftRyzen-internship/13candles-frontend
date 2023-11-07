@@ -5,7 +5,6 @@ import { Locale } from '@/i18n.config';
 
 import { CatalogSection } from '@/sections/home/CatalogSection';
 import { fetchAromas } from '@/api/api/fetchAromas';
-import { fetchBanners } from '@/api/api/fetchBanners';
 
 export async function generateMetadata({
   params: { lang },
@@ -43,10 +42,7 @@ export default async function CategoryPage({
   const { homepage } = await getDictionary(lang);
 
   const aromas = await fetchAromas(lang);
-  const banners = await fetchBanners();
-
-  console.log('aromas', aromas);
-  console.log('banners', banners);
+  console.log(aromas);
 
   return (
     <>

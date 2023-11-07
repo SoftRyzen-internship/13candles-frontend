@@ -4,16 +4,34 @@
       "hiddenTitle": "13 candle bar",
       "banners": [
         {
-          "src": "/images/homepage/hero/1.webp",
-          "alt": "fragrant smoke"
+          "image_description": "fragrant smoke",
+          "photo": {
+            "data": {
+              "attributes": {
+                "url": "/images/homepage/hero/1.webp"
+              }
+            }
+          }
         },
         {
-          "src": "/images/homepage/hero/2.webp",
-          "alt": "burning candle"
+          "image_description": "burning candle",
+          "photo": {
+            "data": {
+              "attributes": {
+                "url": "/images/homepage/hero/2.webp"
+              }
+            }
+          }
         },
         {
-          "src": "/images/homepage/hero/4.webp",
-          "alt": "aromatic candles"
+          "image_description": "aromatic candles",
+          "photo": {
+            "data": {
+              "attributes": {
+                "url": "/images/homepage/hero/4.webp"
+              }
+            }
+          }
         }
       ]
     },

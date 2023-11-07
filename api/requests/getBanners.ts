@@ -1,13 +1,11 @@
 import { gql } from 'graphql-request';
 
 export const getBanners = gql`
-  query {
-    banner {
+  query ($locale: I18NLocaleCode) {
+    banner(locale: $locale) {
       data {
         attributes {
-          locale
           banners {
-            id
             image_description
             photo {
               data {
