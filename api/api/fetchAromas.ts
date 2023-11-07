@@ -4,10 +4,11 @@ import { getAromas } from '@/api/requests/getAromas';
 
 import { AromasData, AromasDataType } from '@/types/Aromas';
 
+
 export const fetchAromas = async (locale: 'en' | 'uk'): Promise<AromasData> => {
   try {
     const data: AromasDataType = await request(
-      process.env.NEXT_PUBLIC_API_BASE_URL as string,
+      process.env.API_BASE_URL as string,
       getAromas,
       { locale: locale },
     );

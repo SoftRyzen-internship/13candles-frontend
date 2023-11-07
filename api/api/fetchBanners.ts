@@ -7,7 +7,7 @@ import { BannersData, BannersDataType } from '@/types/Banners';
 export const fetchBanners = async (): Promise<BannersData> => {
   try {
     const data: BannersDataType = await request(
-      process.env.NEXT_PUBLIC_API_BASE_URL as string,
+      process.env.API_BASE_URL as string,
       getBanners,
     );
 
