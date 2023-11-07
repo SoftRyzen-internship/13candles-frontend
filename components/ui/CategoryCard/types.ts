@@ -1,11 +1,6 @@
-export interface CateryCardProps {
-  category: {
-    href: string;
-    text: string;
-    className?: string;
-    image: {
-      src: string;
-      alt: string;
-    };
-  };
+import { CategoryDataInfo } from '@/types/Categories';
+
+export interface CategoryCardProps {
+  category: CategoryDataInfo;
+  className?: string;
 }

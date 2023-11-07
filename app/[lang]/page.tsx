@@ -46,7 +46,7 @@ export default async function Home({
   return (
     <>
       <HeroSection hero={hero} lang={lang} />
-      <CatalogSection catalog={catalog} />
+      <CatalogSection catalog={catalog} lang={lang} />
       <AboutSection about={about} />
     </>
   );

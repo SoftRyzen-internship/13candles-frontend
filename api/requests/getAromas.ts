@@ -17,20 +17,3 @@ export const getAromas = gql`
     }
   }
 `;
-
-// export const getAromas = gql`
-//   query {
-//     aromas(locale: 'uk') {
-//       data {
-//         id
-//         attributes {
-//           Title
-//           Notes
-//           Sweetness
-//           Astringency
-//           Freshness
-//         }
-//       }
-//     }
-//   }
-// `;
