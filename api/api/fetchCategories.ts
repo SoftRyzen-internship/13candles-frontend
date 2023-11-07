@@ -18,7 +18,6 @@ export const fetchCategories = async (
     const result = data.categories.data;
     return result;
   } catch (error) {
-    console.log(error);
     return [];
   }
 };
