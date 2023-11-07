@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 
-import { getDictionary, getMetadata } from '@/lib/dictionary';
+import { getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
-import { AboutSection } from '@/sections/home/AboutSection';
-import { CatalogSection } from '@/sections/home/CatalogSection';
-import { HeroSection } from '@/sections/home/HeroSection';
+// import { CatalogSection } from '@/sections/home/CatalogSection';
+// import { fetchAromas } from '@/api/api/fetchAromas';
 
 export async function generateMetadata({
   params: { lang },
@@ -35,19 +34,19 @@ export async function generateMetadata({
   };
 }
 
-export default async function Home({
+export default async function CategoryPage({
   params: { lang },
 }: {
   params: { lang: Locale };
 }) {
-  const { homepage } = await getDictionary(lang);
-  const { hero, catalog, about } = homepage;
+  // const { homepage: catalog } = await getDictionary(lang);
+
+  // const aromas = await fetchAromas(lang);
+  // console.log(aromas);
 
   return (
     <>
-      <HeroSection hero={hero} lang={lang} />
-      <CatalogSection catalog={catalog} lang={lang} />
-      <AboutSection about={about} />
+      <p>Category page. Мова {lang}</p>
     </>
   );
 }

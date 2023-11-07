@@ -4,16 +4,34 @@
       "hiddenTitle": "13 candle bar",
       "banners": [
         {
-          "src": "/images/homepage/hero/1.webp",
-          "alt": "запашний дим"
+          "image_description": "запашний дим",
+          "photo": {
+            "data": {
+              "attributes": {
+                "url": "/images/homepage/hero/1.webp"
+              }
+            }
+          }
         },
         {
-          "src": "/images/homepage/hero/2.webp",
-          "alt": "палаюча свічка"
+          "image_description": "палаюча свічка",
+          "photo": {
+            "data": {
+              "attributes": {
+                "url": "/images/homepage/hero/2.webp"
+              }
+            }
+          }
         },
         {
-          "src": "/images/homepage/hero/4.webp",
-          "alt": "ароматичні свічки"
+          "image_description": "ароматичні свічки",
+          "photo": {
+            "data": {
+              "attributes": {
+                "url": "/images/homepage/hero/4.webp"
+              }
+            }
+          }
         }
       ]
     },
@@ -22,51 +40,111 @@
       "subtitle": "Оберіть категорію товарів, яка вас цікавить",
       "categories": [
         {
-          "href": "/1",
-          "text": "Аромасвічки",
-          "image": {
-            "src": "/images/homepage/catalog/aromacandle@2x.webp",
-            "alt": "Аромасвічки"
+          "id": "2",
+          "attributes": {
+            "title": " Набори",
+            "slug": "nabori",
+            "sequence_number": 5,
+            "image": {
+              "image_description": " квіти та маленька пляшечка",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698660923/sets_2x_c2e102dd5e.webp"
+                  }
+                }
+              }
+            }
           }
         },
         {
-          "href": "/2",
-          "text": "Аромадифузори",
-          "image": {
-            "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
-            "alt": "Аромадифузори"
+          "id": "4",
+          "attributes": {
+            "title": "Аромадифузори ",
+            "slug": "aromadifuzori",
+            "sequence_number": 2,
+            "image": {
+              "image_description": " невелика пляшечка та палички",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698258914/aromadiffuzor_2x_72dba9ce13.webp"
+                  }
+                }
+              }
+            }
           }
         },
         {
-          "href": "/3",
-          "text": "Пахощі (аромапалички)",
-          "image": {
-            "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
-            "alt": "Пахощі (аромапалички)"
+          "id": "6",
+          "attributes": {
+            "title": "Пахощі (аромапалички)",
+            "slug": "pahoshhi-aromapalichki",
+            "sequence_number": 3,
+            "image": {
+              "image_description": " дві аромапалички",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698258914/pakhoshchi_2x_e1db8e072e.webp"
+                  }
+                }
+              }
+            }
           }
         },
         {
-          "href": "/4",
-          "text": "Аксесуари",
-          "image": {
-            "src": "/images/homepage/catalog/accessories@2x.webp",
-            "alt": "Аксесуари"
+          "id": "8",
+          "attributes": {
+            "title": "Аромасвічки",
+            "slug": "aromasvichki",
+            "sequence_number": 1,
+            "image": {
+              "image_description": " дві свічки",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698411669/aromacandle_2x_8154222f73.webp"
+                  }
+                }
+              }
+            }
           }
         },
         {
-          "href": "/5",
-          "text": "Набори",
-          "image": {
-            "src": "/images/homepage/catalog/sets@2x.webp",
-            "alt": "Набори"
+          "id": "10",
+          "attributes": {
+            "title": "Аксесуари",
+            "slug": "aksesuari",
+            "sequence_number": 4,
+            "image": {
+              "image_description": " дві свічки",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698660923/accessories_2x_2b4fe9e4ff.webp"
+                  }
+                }
+              }
+            }
           }
         },
         {
-          "href": "/6",
-          "text": "Різне",
-          "image": {
-            "src": "/images/homepage/catalog/different@2x.webp",
-            "alt": "Інша продукція"
+          "id": "11",
+          "attributes": {
+            "title": "Різне",
+            "slug": "rizne",
+            "sequence_number": 6,
+            "image": {
+              "image_description": " запашне дерево",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698258914/different_2x_e44ca7a749.webp"
+                  }
+                }
+              }
+            }
           }
         }
       ]

@@ -4,16 +4,34 @@
       "hiddenTitle": "13 candle bar",
       "banners": [
         {
-          "src": "/images/homepage/hero/1.webp",
-          "alt": "fragrant smoke"
+          "image_description": "fragrant smoke",
+          "photo": {
+            "data": {
+              "attributes": {
+                "url": "/images/homepage/hero/1.webp"
+              }
+            }
+          }
         },
         {
-          "src": "/images/homepage/hero/2.webp",
-          "alt": "burning candle"
+          "image_description": "burning candle",
+          "photo": {
+            "data": {
+              "attributes": {
+                "url": "/images/homepage/hero/2.webp"
+              }
+            }
+          }
         },
         {
-          "src": "/images/homepage/hero/4.webp",
-          "alt": "aromatic candles"
+          "image_description": "aromatic candles",
+          "photo": {
+            "data": {
+              "attributes": {
+                "url": "/images/homepage/hero/4.webp"
+              }
+            }
+          }
         }
       ]
     },
@@ -22,51 +40,111 @@
       "subtitle": "Select the product category that interests you",
       "categories": [
         {
-          "href": "/1",
-          "text": "Scented candles",
-          "image": {
-            "src": "/images/homepage/catalog/aromacandle@2x.webp",
-            "alt": "Scented candles"
+          "id": "1",
+          "attributes": {
+            "title": "Sets",
+            "slug": "sets",
+            "sequence_number": 5,
+            "image": {
+              "image_description": " flowers and a small bottle",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698660923/sets_2x_c2e102dd5e.webp"
+                  }
+                }
+              }
+            }
           }
         },
         {
-          "href": "/2",
-          "text": "Aroma diffusers",
-          "image": {
-            "src": "/images/homepage/catalog/aromadiffuzor@2x.webp",
-            "alt": "Aroma diffusers"
+          "id": "3",
+          "attributes": {
+            "title": "Aroma diffusers ",
+            "slug": "aroma-diffusers",
+            "sequence_number": 2,
+            "image": {
+              "image_description": "  a small bottle and sticks",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698258914/aromadiffuzor_2x_72dba9ce13.webp"
+                  }
+                }
+              }
+            }
           }
         },
         {
-          "href": "/3",
-          "text": "Incense (aroma sticks)",
-          "image": {
-            "src": "/images/homepage/catalog/pakhoshchi@2x.webp",
-            "alt": "Incense (aroma sticks)"
+          "id": "5",
+          "attributes": {
+            "title": "Incense (aroma sticks)",
+            "slug": "incense-aroma-sticks",
+            "sequence_number": 3,
+            "image": {
+              "image_description": " two aroma sticks",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698258914/pakhoshchi_2x_e1db8e072e.webp"
+                  }
+                }
+              }
+            }
           }
         },
         {
-          "href": "/4",
-          "text": "Accessories",
-          "image": {
-            "src": "/images/homepage/catalog/accessories@2x.webp",
-            "alt": "Accessories"
+          "id": "7",
+          "attributes": {
+            "title": "Aroma Candles",
+            "slug": "aroma-candles",
+            "sequence_number": 1,
+            "image": {
+              "image_description": " two candles",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698411669/aromacandle_2x_8154222f73.webp"
+                  }
+                }
+              }
+            }
           }
         },
         {
-          "href": "/5",
-          "text": "Sets",
-          "image": {
-            "src": "/images/homepage/catalog/sets@2x.webp",
-            "alt": "Sets"
+          "id": "9",
+          "attributes": {
+            "title": "Accessories",
+            "slug": "accessories",
+            "sequence_number": 4,
+            "image": {
+              "image_description": " two candles",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698660923/accessories_2x_2b4fe9e4ff.webp"
+                  }
+                }
+              }
+            }
           }
         },
         {
-          "href": "/6",
-          "text": "Other",
-          "image": {
-            "src": "/images/homepage/catalog/different@2x.webp",
-            "alt": "Other products"
+          "id": "12",
+          "attributes": {
+            "title": "оther ",
+            "slug": "other",
+            "sequence_number": 6,
+            "image": {
+              "image_description": " fragrant tree",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698258914/different_2x_e44ca7a749.webp"
+                  }
+                }
+              }
+            }
           }
         }
       ]

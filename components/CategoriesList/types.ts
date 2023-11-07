@@ -1,12 +1,6 @@
-export interface CateriesListProps {
-  categories: {
-    href: string;
-    text: string;
-    className?: string;
-    image: {
-      src: string;
-      alt: string;
-    };
-  }[];
+import { CategoryDataInfo } from '@/types/Categories';
+
+export interface CategoriesListProps {
+  categories: CategoryDataInfo[];
   className?: string;
 }

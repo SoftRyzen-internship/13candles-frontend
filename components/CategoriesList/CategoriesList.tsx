@@ -1,8 +1,9 @@
 import classNames from 'classnames';
-import { CategoryCard } from '../ui/CategoryCard';
-import { CateriesListProps } from './types';
 
-export const CategoriesList: React.FC<CateriesListProps> = ({
+import { CategoryCard } from '../ui/CategoryCard';
+import { CategoriesListProps } from './types';
+
+export const CategoriesList: React.FC<CategoriesListProps> = ({
   categories,
   className,
 }) => {
@@ -10,14 +11,18 @@ export const CategoriesList: React.FC<CateriesListProps> = ({
 
   return (
     <ul className={listClasses}>
-      {categories.map(category => (
-        <li
-          key={category.href}
-          className="basis-[calc((100%-16px)/2)] md:basis-[calc((100%-(16px*2))/3)] xl:basis-[calc((100%-(8px*5))/6)]"
-        >
-          <CategoryCard category={category} />
-        </li>
-      ))}
+      {categories
+        .sort(
+          (a, b) => a.attributes.sequence_number - b.attributes.sequence_number,
+        )
+        .map(category => (
+          <li
+            key={category.id}
+            className="basis-[calc((100%-16px)/2)] md:basis-[calc((100%-(16px*2))/3)] xl:basis-[calc((100%-(8px*5))/6)]"
+          >
+            <CategoryCard category={category} />
+          </li>
+        ))}
     </ul>
   );
 };
