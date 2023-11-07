@@ -1,4 +1,4 @@
 export interface BannerProps {
-  src: string;
-  alt: string;
+  photo: { data: { attributes: { url: string } } };
+  image_description: string;
 }

@@ -1,3 +1,4 @@
+import { Locale } from '@/i18n.config';
 import { BannerProps } from '@/components/ui/Banner/types';
 
 export interface HeroSectionProps {
@@ -5,4 +6,5 @@ export interface HeroSectionProps {
     hiddenTitle: string;
     banners: BannerProps[];
   };
+  lang: Locale;
 }
