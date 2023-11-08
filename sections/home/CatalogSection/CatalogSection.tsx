@@ -13,8 +13,6 @@ export const CatalogSection: React.FC<CatalogSectionProps> = async ({
   const categories = await fetchCategories(lang);
   const categoriesDataForSlugs = await fetchSlugs();
 
-  console.log(categoriesDataForSlugs);
-
   const slugs = categoriesDataForSlugs?.map(({ slug, sequence_number }) => {
     return {
       sequence_number: sequence_number,
