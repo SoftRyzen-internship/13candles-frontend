@@ -1,3 +1,5 @@
+import { CategorySlug } from '@/components/CategoriesList/types';
+
 export type CategoriesData = CategoryDataInfo[] | undefined;
 
 export interface CategoriesDataType {
@@ -10,7 +12,6 @@ export type CategoryDataInfo = {
   id: string;
   attributes: {
     title: string;
-    slug: string;
     sequence_number: number;
     image: {
       image_description: string;
@@ -23,4 +24,14 @@ export type CategoryDataInfo = {
       };
     };
   };
+};
+
+export interface SlugsDataType {
+  categories: {
+    data: SlugsData[];
+  };
+}
+
+export type SlugsData = {
+  attributes: CategorySlug;
 };
