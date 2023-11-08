@@ -3,8 +3,12 @@ import type { Metadata } from 'next';
 import { getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
+import { fetchSlugs } from '@/api/api/fetchSlugs';
+
 // import { CatalogSection } from '@/sections/home/CatalogSection';
 // import { fetchAromas } from '@/api/api/fetchAromas';
+
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params: { lang },
@@ -32,6 +36,20 @@ export async function generateMetadata({
     openGraph: { ...openGraph, url: `${baseUrl}/${lang}` },
     icons,
   };
+}
+
+export async function generateStaticParams({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
+  const categoriesData = await fetchSlugs();
+
+  const staticParams = categoriesData?.map(category => {
+    return { lang: lang, category: category.slug };
+  });
+
+  return staticParams;
 }
 
 export default async function CategoryPage({
