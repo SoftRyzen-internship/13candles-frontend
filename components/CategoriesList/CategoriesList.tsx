@@ -12,7 +12,7 @@ export const CategoriesList: React.FC<CategoriesListProps> = ({
 
   return (
     <ul className={listClasses}>
-      {categories
+      {[...categories]
         .sort(
           (a, b) => a.attributes.sequence_number - b.attributes.sequence_number,
         )
