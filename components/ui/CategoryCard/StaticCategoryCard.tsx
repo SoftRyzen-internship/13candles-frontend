@@ -1,14 +1,12 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import classNames from 'classnames';
 
-import { CategoryCardProps } from './types';
+import { StaticCategoryCardProps } from './types';
 
-export const CategoryCard: React.FC<CategoryCardProps> = ({
+export const StaticCategoryCard: React.FC<StaticCategoryCardProps> = ({
   category: {
     attributes: {
       title,
-      slug,
       image: {
         image_description,
         photo: {
@@ -19,14 +17,14 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
       },
     },
   },
-  lang,
   className = '',
 }) => {
   const cardClasses = classNames('zoom block', className);
 
+  // TODO завершити логіку відкриття модалки з повідомленням
   return (
     <>
-      <Link href={`/${lang}/${slug}`} className={cardClasses}>
+      <button type="button" className={cardClasses}>
         <div className="relative mb-3 h-[calc((100vw-(20px*2)-16px)/2)] overflow-hidden sm:h-[212px] md:h-[256px] xl:mb-5 xl:h-[224px]">
           <Image
             className="zoom-image h-full w-full object-cover object-center"
@@ -39,7 +37,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
         </div>
 
         <p className="text-center font-medium">{title}</p>
-      </Link>
+      </button>
     </>
   );
 };

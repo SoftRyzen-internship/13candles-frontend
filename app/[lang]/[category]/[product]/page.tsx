@@ -4,8 +4,6 @@ import { getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
 import { fetchSlugs } from '@/api/api/fetchSlugs';
-import { fetchProducts } from '@/api/api/fetchProducts';
-// import { fetchCategories } from '@/api/api/fetchCategories';
 
 // import { CatalogSection } from '@/sections/home/CatalogSection';
 // import { fetchAromas } from '@/api/api/fetchAromas';
@@ -54,31 +52,16 @@ export async function generateStaticParams({
   return staticParams;
 }
 
-export default async function CategoryPage({
-  params: { lang, category },
+export default async function ProductPage({
+  params: { lang },
 }: {
-  params: { lang: Locale; category: string };
+  params: { lang: Locale };
 }) {
   // const { homepage: catalog } = await getDictionary(lang);
 
-  const products = await fetchProducts(lang, category);
-
   return (
     <>
-      <p>
-        Product page. Мова {lang}. Категорія {category}
-      </p>
-
-      <p>Products: </p>
-      <ul>
-        {products?.map(({ id, attributes: { title, price } }) => {
-          return (
-            <li key={id}>
-              {title}. Price: {price}
-            </li>
-          );
-        })}
-      </ul>
+      <p>Category page. Мова {lang}</p>
     </>
   );
 }

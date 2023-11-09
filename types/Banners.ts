@@ -1,4 +1,5 @@
 import { Locale } from '@/i18n.config';
+import { Image } from './commons';
 
 export type BannersData = BannersDataInfo[] | undefined;
 
@@ -13,13 +14,4 @@ export interface BannersDataType {
   };
 }
 
-export type BannersDataInfo = {
-  image_description: string;
-  photo: {
-    data: {
-      attributes: {
-        url: string;
-      };
-    };
-  };
-};
+export type BannersDataInfo = Image;

@@ -1,8 +1,8 @@
 import { gql } from 'graphql-request';
 
 export const getSlugs = gql`
-  query {
-    categories(locale: "en") {
+  query ($locale: I18NLocaleCode) {
+    categories(locale: $locale) {
       data {
         attributes {
           slug
