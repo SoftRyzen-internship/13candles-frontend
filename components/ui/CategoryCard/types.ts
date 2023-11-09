@@ -1,11 +1,14 @@
-import { CategorySlug } from '@/components/CategoriesList/types';
 import { Locale } from '@/i18n.config';
+import { Image } from '@/types/commons';
 
 export interface CategoryCardProps {
-  category: CategoryStaticDataInfo;
-  dynamicSlug?: CategorySlug;
-  isStatic?: boolean;
+  category: CategoryDynamicDataInfo;
   lang?: Locale;
+  className?: string;
+}
+
+export interface StaticCategoryCardProps {
+  category: CategoryStaticDataInfo;
   className?: string;
 }
 
@@ -14,15 +17,16 @@ type CategoryStaticDataInfo = {
   attributes: {
     title: string;
     sequence_number: number;
-    image: {
-      image_description: string;
-      photo: {
-        data: {
-          attributes: {
-            url: string;
-          };
-        };
-      };
-    };
+    image: Image;
+  };
+};
+
+type CategoryDynamicDataInfo = {
+  id: string;
+  attributes: {
+    title: string;
+    slug: string;
+    sequence_number: number;
+    image: Image;
   };
 };

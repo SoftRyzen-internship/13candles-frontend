@@ -1,11 +1,11 @@
 import { Locale } from '@/i18n.config';
-import { CategoryDataInfo } from '@/types/Categories';
+import { StaticCategoryDataInfo } from '@/types/Categories';
 
 export interface CatalogSectionProps {
   catalog: {
     title: string;
     subtitle: string;
-    categories: CategoryDataInfo[];
+    categories: StaticCategoryDataInfo[];
   };
   lang: Locale;
 }
