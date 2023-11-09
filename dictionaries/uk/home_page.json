@@ -42,11 +42,10 @@
         {
           "id": "2",
           "attributes": {
-            "title": " Набори",
-            "slug": "nabori",
+            "title": "Набори",
             "sequence_number": 5,
             "image": {
-              "image_description": " квіти та маленька пляшечка",
+              "image_description": "квіти та маленька пляшечка",
               "photo": {
                 "data": {
                   "attributes": {
@@ -60,11 +59,10 @@
         {
           "id": "4",
           "attributes": {
-            "title": "Аромадифузори ",
-            "slug": "aromadifuzori",
+            "title": "Аромадифузори",
             "sequence_number": 2,
             "image": {
-              "image_description": " невелика пляшечка та палички",
+              "image_description": "невелика пляшечка та палички",
               "photo": {
                 "data": {
                   "attributes": {
@@ -79,10 +77,9 @@
           "id": "6",
           "attributes": {
             "title": "Пахощі (аромапалички)",
-            "slug": "pahoshhi-aromapalichki",
             "sequence_number": 3,
             "image": {
-              "image_description": " дві аромапалички",
+              "image_description": "дві аромапалички",
               "photo": {
                 "data": {
                   "attributes": {
@@ -97,10 +94,9 @@
           "id": "8",
           "attributes": {
             "title": "Аромасвічки",
-            "slug": "aromasvichki",
             "sequence_number": 1,
             "image": {
-              "image_description": " дві свічки",
+              "image_description": "дві свічки",
               "photo": {
                 "data": {
                   "attributes": {
@@ -115,10 +111,9 @@
           "id": "10",
           "attributes": {
             "title": "Аксесуари",
-            "slug": "aksesuari",
             "sequence_number": 4,
             "image": {
-              "image_description": " дві свічки",
+              "image_description": "дві свічки",
               "photo": {
                 "data": {
                   "attributes": {
@@ -133,7 +128,6 @@
           "id": "11",
           "attributes": {
             "title": "Різне",
-            "slug": "rizne",
             "sequence_number": 6,
             "image": {
               "image_description": " запашне дерево",

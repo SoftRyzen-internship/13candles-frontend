@@ -1,3 +1,6 @@
+import { CategorySlug } from '@/components/CategoriesList/types';
+import { Image } from './commons';
+
 export type CategoriesData = CategoryDataInfo[] | undefined;
 
 export interface CategoriesDataType {
@@ -12,15 +15,25 @@ export type CategoryDataInfo = {
     title: string;
     slug: string;
     sequence_number: number;
-    image: {
-      image_description: string;
-      photo: {
-        data: {
-          attributes: {
-            url: string;
-          };
-        };
-      };
-    };
+    image: Image;
   };
+};
+
+export type StaticCategoryDataInfo = {
+  id: string;
+  attributes: {
+    title: string;
+    sequence_number: number;
+    image: Image;
+  };
+};
+
+export interface SlugsDataType {
+  categories: {
+    data: SlugsData[];
+  };
+}
+
+export type SlugsData = {
+  attributes: CategorySlug;
 };

@@ -7,8 +7,8 @@ export const getCategories = gql`
         id
         attributes {
           title
-          slug
           sequence_number
+          slug
           image {
             image_description
             photo {
