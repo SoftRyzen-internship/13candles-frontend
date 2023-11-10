@@ -1,4 +1,4 @@
-export interface ModalWindowPrps {
+export interface ModalWindowProps {
   onModalClose: () => void;
   showModal: boolean;
   children: React.ReactNode;
