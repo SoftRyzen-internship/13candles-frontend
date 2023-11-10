@@ -1,21 +1,23 @@
+'use client';
+
 import classNames from 'classnames';
 import { useParams } from 'next/navigation';
 
 import { Portal } from '../Portal';
 import { Locale } from '@/i18n.config';
-import { ModalWindowPrps } from './types';
+import { ModalWindowProps } from './types';
 
-import data from '@/data/modalWindow.json';
+// import data from '@/data/modalWindow.json';
 import IconClose from '/public/icons/icon_close.svg';
 
-export const ModalWindow: React.FC<ModalWindowPrps> = ({
+export const ModalWindow: React.FC<ModalWindowProps> = ({
   onModalClose,
   showModal,
   children,
   className = '',
 }) => {
-  const { lang }: { lang: Locale } = useParams();
-  const { closeIconAriaLabel } = data;
+  const { lang }: { lang?: Locale } = useParams();
+  // const { closeIconAriaLabel } = data;
 
   const modalClasses = classNames(
     'container relative z-40 my-10 bg-body px-[10px] pb-8 pt-[60px] md:px-4 xl:w-[1220px] xl:px-6',
@@ -27,7 +29,11 @@ export const ModalWindow: React.FC<ModalWindowPrps> = ({
       <div className={modalClasses}>
         <button
           type="button"
-          aria-label={closeIconAriaLabel[lang]}
+          aria-label={
+            lang === 'en'
+              ? 'Modal close button'
+              : 'Кнопка закриття модального вікна'
+          }
           onClick={onModalClose}
           className="absolute right-[14px] top-[20px] z-20 h-fit w-fit md:right-[26px]"
         >

@@ -21,7 +21,7 @@
     "encoding": "^0.1.13",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
-    "next": "13.5.6",
+    "next": "13.4.12",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.47.0",
@@ -53,7 +53,7 @@
     "typescript": "^5"
   },
   "engines": {
-    "node": "18.12.0",
+    "node": ">=18.12.0",
     "npm": ">=6.0.0"
   }
 }
