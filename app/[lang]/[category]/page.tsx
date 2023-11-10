@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
-import { fetchSlugs } from '@/api/api/fetchSlugs';
-import { fetchProducts } from '@/api/api/fetchProducts';
+import { fetchSlugs } from '@/api/fetchSlugs';
+import { fetchProducts } from '@/api/fetchProducts';
 // import { fetchCategories } from '@/api/api/fetchCategories';
 
 // import { CatalogSection } from '@/sections/home/CatalogSection';

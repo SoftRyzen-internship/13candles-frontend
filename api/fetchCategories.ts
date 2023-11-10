@@ -2,7 +2,7 @@ import { request } from 'graphql-request';
 
 import { Locale } from '@/i18n.config';
 
-import { getCategories } from '../requests/getCategories';
+import { getCategories } from './requests/getCategories';
 import { CategoriesData, CategoriesDataType } from '@/types/Categories';
 
 export const fetchCategories = async (

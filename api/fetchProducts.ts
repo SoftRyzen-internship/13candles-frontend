@@ -2,7 +2,7 @@ import { request } from 'graphql-request';
 
 import { Locale } from '@/i18n.config';
 
-import { getProducts } from '../requests/getProducts';
+import { getProducts } from './requests/getProducts';
 import { ProductsData, ProductsDataType } from '@/types/Products';
 
 export const fetchProducts = async (
