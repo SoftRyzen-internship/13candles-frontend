@@ -1,6 +1,6 @@
 import { request } from 'graphql-request';
 
-import { getInfo } from '../requests/getInfo';
+import { getInfo } from './requests/getInfo';
 
 import { Locale } from '@/i18n.config';
 import { InfoData, InfoDataType } from '@/types/Info';

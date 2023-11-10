@@ -1,7 +1,7 @@
 import { CategoriesList } from '@/components/CategoriesList';
 import { CATALOG } from '@/data';
 
-import { fetchCategories } from '@/api/api/fetchCategories';
+import { fetchCategories } from '@/api/fetchCategories';
 
 import { CatalogSectionProps } from './types';
 import { StaticCategoriesList } from '@/components/CategoriesList/StaticCategoriesList';

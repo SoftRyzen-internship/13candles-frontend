@@ -1,6 +1,6 @@
 import { request } from 'graphql-request';
 
-import { getSlugs } from '../requests/getSlugs';
+import { getSlugs } from './requests/getSlugs';
 
 import { SlugsDataType } from '@/types/Categories';
 import { CategorySlug } from '@/components/CategoriesList/types';

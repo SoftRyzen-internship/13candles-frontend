@@ -1,6 +1,6 @@
 import { BannerSlider } from '@/components/BannerSlider';
 import { HeroSectionProps } from './types';
-import { fetchBanners } from '@/api/api/fetchBanners';
+import { fetchBanners } from '@/api/fetchBanners';
 
 export const HeroSection: React.FC<HeroSectionProps> = async ({
   hero: { hiddenTitle, banners: staticBanners },

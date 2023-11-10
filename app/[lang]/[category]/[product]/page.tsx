@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
-import { fetchSlugs } from '@/api/api/fetchSlugs';
+import { fetchSlugs } from '@/api/fetchSlugs';
 
 // import { CatalogSection } from '@/sections/home/CatalogSection';
 // import { fetchAromas } from '@/api/api/fetchAromas';
