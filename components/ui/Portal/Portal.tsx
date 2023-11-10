@@ -41,6 +41,7 @@ export const Portal: React.FC<PortalProps> = ({
     >
       {state => {
         nodeRef.current?.focus();
+
         return createPortal(
           <div
             style={{
