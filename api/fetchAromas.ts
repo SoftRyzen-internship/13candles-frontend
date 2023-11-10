@@ -13,8 +13,6 @@ export const fetchAromas = async (locale: Locale): Promise<AromasData> => {
       { locale: locale },
     );
 
-    console.log(request);
-
     const result = data.aromas.data;
     return result;
   } catch (error) {

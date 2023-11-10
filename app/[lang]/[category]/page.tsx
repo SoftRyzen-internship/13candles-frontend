@@ -47,11 +47,13 @@ export async function generateStaticParams({
 }) {
   const categoriesData = await fetchSlugs(lang);
 
+  console.log('lang at generateStaticParams: >>>', lang);
+
   const staticParams = categoriesData?.map(category => {
     return { lang: lang, category: category.slug };
   });
 
-  console.log(staticParams);
+  console.log('staticParams: >>>', staticParams);
 
   return staticParams;
 }

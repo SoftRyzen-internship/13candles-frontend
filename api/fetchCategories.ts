@@ -15,9 +15,14 @@ export const fetchCategories = async (
       { locale: locale },
     );
 
-    console.log(process.env.API_BASE_URL, locale);
+    console.log(
+      'process.env.API_BASE_URL: >>>',
+      process.env.API_BASE_URL,
+      'locale: >>>',
+      locale,
+    );
 
-    console.log(data);
+    console.log('data form fetchCategories: >>>', data);
 
     const result = data.categories.data;
     return result;
