@@ -40,16 +40,16 @@
       "subtitle": "Оберіть категорію товарів, яка вас цікавить",
       "categories": [
         {
-          "id": "2",
+          "id": "8",
           "attributes": {
-            "title": "Набори",
-            "sequence_number": 5,
+            "title": "Аромасвічки",
+            "sequence_number": 1,
             "image": {
-              "image_description": "квіти та маленька пляшечка",
+              "image_description": "дві свічки",
               "photo": {
                 "data": {
                   "attributes": {
-                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698660923/sets_2x_c2e102dd5e.webp"
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698411669/aromacandle_2x_8154222f73.webp"
                   }
                 }
               }
@@ -90,23 +90,7 @@
             }
           }
         },
-        {
-          "id": "8",
-          "attributes": {
-            "title": "Аромасвічки",
-            "sequence_number": 1,
-            "image": {
-              "image_description": "дві свічки",
-              "photo": {
-                "data": {
-                  "attributes": {
-                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698411669/aromacandle_2x_8154222f73.webp"
-                  }
-                }
-              }
-            }
-          }
-        },
+
         {
           "id": "10",
           "attributes": {
@@ -118,6 +102,23 @@
                 "data": {
                   "attributes": {
                     "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698660923/accessories_2x_2b4fe9e4ff.webp"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "2",
+          "attributes": {
+            "title": "Набори",
+            "sequence_number": 5,
+            "image": {
+              "image_description": "квіти та маленька пляшечка",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698660923/sets_2x_c2e102dd5e.webp"
                   }
                 }
               }
