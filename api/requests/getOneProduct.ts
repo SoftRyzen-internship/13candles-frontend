@@ -1,10 +1,10 @@
 import { gql } from 'graphql-request';
 
-export const getProducts = gql`
-  query ($locale: I18NLocaleCode, $category: String) {
+export const getOneProduct = gql`
+  query ($locale: I18NLocaleCode, $category: String, $product: String) {
     products(
       locale: $locale
-      filters: { category: { slug: { eq: $category } } }
+      filters: { slug: { eq: $product }, category: { slug: { eq: $category } } }
     ) {
       data {
         id

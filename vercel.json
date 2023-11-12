@@ -1,0 +1,8 @@
+{
+  "builds": [
+    { "src": "next.config.js", "use": "@vercel/node" },
+    { "src": "app/**/**/**/**/*.{js,ts,jsx,tsx}", "use": "@vercel/node" },
+    { "src": "components/**/**/*.{js,ts,jsx,tsx}", "use": "@vercel/node" },
+    { "src": "public/**/*", "use": "@vercel/static" }
+  ]
+}

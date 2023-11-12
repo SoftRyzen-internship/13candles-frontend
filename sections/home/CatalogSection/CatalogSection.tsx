@@ -12,8 +12,6 @@ export const CatalogSection: React.FC<CatalogSectionProps> = async ({
 }) => {
   const categories = await fetchCategories(lang);
 
-  console.log(categories && categories.length > 0);
-
   return (
     <section id={CATALOG} className="section xl:pb-[50px] xl:pt-[15px]">
       <div className="container">
