@@ -2,7 +2,7 @@ import { gql } from 'graphql-request';
 
 export const getCategories = gql`
   query ($locale: I18NLocaleCode) {
-    categories(locale: $locale) {
+    categories(locale: $locale, sort: "sequence_number:asc") {
       data {
         id
         attributes {
