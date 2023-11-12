@@ -16,8 +16,6 @@ export const fetchSlugs = async (locale: Locale): Promise<CategorySlug[]> => {
 
     const result = data.categories.data.map(el => el.attributes);
 
-    console.log('data form fetchSlugs', data);
-
     return result;
   } catch (error) {
     return [];

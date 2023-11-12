@@ -5,6 +5,7 @@ import { Locale } from '@/i18n.config';
 
 import { fetchSlugs } from '@/api/fetchSlugs';
 import { fetchProducts } from '@/api/fetchProducts';
+import Link from 'next/link';
 // import { fetchCategories } from '@/api/api/fetchCategories';
 
 // import { CatalogSection } from '@/sections/home/CatalogSection';
@@ -47,13 +48,9 @@ export async function generateStaticParams({
 }) {
   const categoriesData = await fetchSlugs(lang);
 
-  console.log('lang at generateStaticParams: >>>', lang);
-
   const staticParams = categoriesData?.map(category => {
     return { lang: lang, category: category.slug };
   });
-
-  console.log('staticParams: >>>', staticParams);
 
   return staticParams;
 }
@@ -63,22 +60,20 @@ export default async function CategoryPage({
 }: {
   params: { lang: Locale; category: string };
 }) {
-  // const { homepage: catalog } = await getDictionary(lang);
-
   const products = await fetchProducts(lang, category);
 
   return (
     <>
-      <p>
+      <p className="mb-6">
         Product page. Мова {lang}. Категорія {category}
       </p>
 
-      <p>Products: </p>
+      <p className="mb-4">Products: </p>
       <ul>
-        {products?.map(({ id, attributes: { title, price } }) => {
+        {products?.map(({ id, attributes: { title, slug } }) => {
           return (
             <li key={id}>
-              {title}. Price: {price}
+              <Link href={`${lang}/${category}/${slug}`}>{title}</Link>
             </li>
           );
         })}

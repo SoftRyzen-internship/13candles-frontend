@@ -12,6 +12,7 @@ export type ProductDataInfo = {
   id: string;
   attributes: {
     title: string;
+    slug: string;
     price: number;
     description: string;
     aromas: boolean;
