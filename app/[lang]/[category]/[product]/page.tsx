@@ -3,10 +3,9 @@ import type { Metadata } from 'next';
 import { getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
-import { fetchSlugs } from '@/api/fetchSlugs';
-
-// import { CatalogSection } from '@/sections/home/CatalogSection';
-// import { fetchAromas } from '@/api/api/fetchAromas';
+import { fetchOneProduct } from '@/api/fetchOneProduct';
+import { fetchProducts } from '@/api/fetchProducts';
+import Image from 'next/image';
 
 export const dynamicParams = false;
 
@@ -39,29 +38,63 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams({
-  params: { lang },
+  params: { lang, category },
 }: {
-  params: { lang: Locale };
-}) {
-  const categoriesData = await fetchSlugs(lang);
+  params: { lang: Locale; category: string; product: string };
+}): Promise<Array<{ lang: Locale; category: string; product: string }>> {
+  const productsData = await fetchProducts(lang, category);
 
-  const staticParams = categoriesData?.map(category => {
-    return { lang: lang, category: category.slug };
-  });
+  const staticParams =
+    productsData?.map(product => {
+      return {
+        lang: lang,
+        category: category,
+        product: product.attributes.slug,
+      };
+    }) || [];
 
   return staticParams;
 }
 
 export default async function ProductPage({
-  params: { lang },
+  params: { lang, category, product },
 }: {
-  params: { lang: Locale };
+  params: { lang: Locale; category: string; product: string };
 }) {
-  // const { homepage: catalog } = await getDictionary(lang);
+  const productData = await fetchOneProduct(lang, category, product);
 
   return (
     <>
-      <p>Category page. Мова {lang}</p>
+      <p>
+        Product page. Мова {lang}. Категорія {category}.
+      </p>
+
+      {productData && productData.length > 0 ? (
+        <>
+          {productData.map(
+            ({
+              attributes: { title, price, description, capacity, main_image },
+            }) => (
+              <div key={title}>
+                <p>{title}</p>
+                <p>{description}</p>
+                <p>{capacity}</p>
+
+                <Image
+                  src={main_image?.photo?.data?.attributes?.url || ''}
+                  width={500}
+                  height={500}
+                  alt={main_image?.image_description || ''}
+                />
+
+                <p>Price: {price}</p>
+              </div>
+            ),
+          )}
+        </>
+      ) : (
+        <p>Something went wrong...</p>
+      )}
     </>
   );
 }
