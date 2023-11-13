@@ -36,7 +36,7 @@ const commonDictionaries = {
   uk: async () => (await import(`@/dictionaries/uk/common.json`)).default,
 };
 
-export const getDictionary = async (lang: Locale) => await dictionaries[lang]();
-export const getMetadata = async (lang: Locale) => await metadata[lang]();
+export const getDictionary = async (lang: Locale) => dictionaries[lang]();
+export const getMetadata = async (lang: Locale) => metadata[lang]();
 export const getCommonDictionaries = async (lang: Locale) =>
-  await commonDictionaries[lang]();
+  commonDictionaries[lang]();
