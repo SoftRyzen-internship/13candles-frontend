@@ -55,6 +55,9 @@ const config: Config = {
         gray: '#c5c5c5',
         red: '#ff4545',
       },
+      boxShadow: {
+        dropdown: '0 0 12px 0 rgba(0, 0, 0, 0.25)',
+      },
     },
   },
   plugins: [],

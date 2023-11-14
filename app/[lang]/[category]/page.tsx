@@ -11,6 +11,9 @@ import Link from 'next/link';
 // import { CatalogSection } from '@/sections/home/CatalogSection';
 // import { fetchAromas } from '@/api/api/fetchAromas';
 
+import { CategoriesDropdown } from '@/components/CategoriesDropdown';
+import { fetchCategories } from '@/api/fetchCategories';
+
 export const dynamicParams = false;
 
 export async function generateMetadata({
@@ -62,22 +65,36 @@ export default async function CategoryPage({
 }) {
   const products = await fetchProducts(lang, category);
 
+  const categories = await fetchCategories(lang);
+
   return (
     <>
-      <p className="mb-6">
-        Product page. Мова {lang}. Категорія {category}
-      </p>
+      <section className="section smOnly:pt-[120px]">
+        <div className="container">
+          <p className="mb-6">
+            Category page. Мова {lang}. Категорія {category}
+          </p>
 
-      <p className="mb-4">Products: </p>
-      <ul>
-        {products?.map(({ id, attributes: { title, slug } }) => {
-          return (
-            <li key={id}>
-              <Link href={`${lang}/${category}/${slug}`}>{title}</Link>
-            </li>
-          );
-        })}
-      </ul>
+          <CategoriesDropdown
+            lang={lang}
+            categories={categories}
+            currentCategory={category}
+          />
+
+          <div className="py-[16px] md:py-[32px]">
+            <p className="mb-4">Products: </p>
+            <ul>
+              {products?.map(({ id, attributes: { title, slug } }) => {
+                return (
+                  <li key={id}>
+                    <Link href={`${lang}/${category}/${slug}`}>{title}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
