@@ -19,6 +19,6 @@ export type ProductDataInfo = {
     information: string;
     capacity: string;
     main_image: Image;
-    images: Image;
+    images: Image[];
   };
 };
