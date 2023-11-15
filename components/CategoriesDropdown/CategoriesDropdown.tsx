@@ -4,12 +4,15 @@ import { CategoriesDropdownProps } from './types';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import classNames from 'classnames';
+
 import Link from 'next/link';
 
 import IconArrowDown from '/public/icons/icon_arrow-down.svg';
 
 export const CategoriesDropdown: React.FC<CategoriesDropdownProps> = ({
   lang,
+  label,
   categories,
   currentCategory,
 }) => {
@@ -41,8 +44,6 @@ export const CategoriesDropdown: React.FC<CategoriesDropdownProps> = ({
     return title.includes('(') ? title.slice(0, title.indexOf('(')) : title;
   };
 
-  const label = lang === 'en' ? 'Categories' : 'Категорії';
-
   return (
     <div
       ref={dropdownRef}
@@ -57,24 +58,29 @@ export const CategoriesDropdown: React.FC<CategoriesDropdownProps> = ({
         <IconArrowDown
           width={24}
           height={24}
-          //   className={isOpen ? 'rotate-180' : ''}
+          className={isOpen ? 'rotate-180' : ''}
         />
       </button>
       {isOpen && (
         <ul className="absolute left-0 top-[40px] z-10 flex flex-col bg-white shadow-dropdown smOnly:w-full">
-          {categories?.map(({ id, attributes: { title, slug } }) => (
-            <li key={id}>
-              <Link
-                href={`/${lang}/${slug}`}
-                className={`block px-[16px] py-[12px] text-center hover:bg-[#EBEBEB] focus:bg-[#EBEBEB] md:text-left ${
-                  currentCategory === slug && 'pointer-events-none bg-[#EBEBEB]'
-                }`}
-                aria-disabled={currentCategory === slug}
-              >
-                {cutBrackets(title)}
-              </Link>
-            </li>
-          ))}
+          {categories?.map(({ id, attributes: { title, slug } }) => {
+            const linkClassName = classNames(
+              'block truncate px-[16px] py-[12px] text-center hover:bg-gray-light focus:bg-gray-light md:text-left',
+              { 'pointer-events-none bg-gray-light': currentCategory === slug },
+            );
+
+            return (
+              <li key={id}>
+                <Link
+                  href={`/${lang}/${slug}`}
+                  className={linkClassName}
+                  aria-disabled={currentCategory === slug}
+                >
+                  {cutBrackets(title)}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>

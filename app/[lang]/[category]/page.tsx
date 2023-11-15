@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { getMetadata } from '@/lib/dictionary';
+import { getDictionary, getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
 import { fetchSlugs } from '@/api/fetchSlugs';
@@ -63,6 +63,8 @@ export default async function CategoryPage({
 }: {
   params: { lang: Locale; category: string };
 }) {
+  const staticDictionary = await getDictionary(lang);
+
   const products = await fetchProducts(lang, category);
 
   const categories = await fetchCategories(lang);
@@ -77,6 +79,7 @@ export default async function CategoryPage({
 
           <CategoriesDropdown
             lang={lang}
+            label={staticDictionary.category.dropdown.label}
             categories={categories}
             currentCategory={category}
           />
