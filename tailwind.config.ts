@@ -53,7 +53,11 @@ const config: Config = {
         },
         white: '#ffffff',
         gray: '#c5c5c5',
+        'gray-light': '#ebebeb',
         red: '#ff4545',
+      },
+      boxShadow: {
+        dropdown: '0 0 12px 0 rgba(0, 0, 0, 0.25)',
       },
     },
   },
