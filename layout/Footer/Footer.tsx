@@ -1,13 +1,16 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
+
 import { Logo } from '@/components/ui/Logo';
 import { FooterNavRow } from '@/components/FooterNavRow';
 import { Information } from '@/components/Information';
 import { ContactList } from '@/components/ContactList';
 import { SocialsMenu } from '@/components/SocialsMenu';
 import { SoftRyzen } from '@/components/SoftRyzen';
+
 import { FooterProps } from '@/types';
+
 import { checkPageName } from '@/utils';
 import { HOME } from '@/data/routes';
 
