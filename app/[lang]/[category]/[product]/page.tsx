@@ -6,6 +6,7 @@ import { Locale } from '@/i18n.config';
 import { fetchOneProduct } from '@/api/fetchOneProduct';
 import { fetchProducts } from '@/api/fetchProducts';
 import Image from 'next/image';
+import { Counter } from '@/components/ui/Counter';
 
 export const dynamicParams = false;
 
@@ -88,6 +89,9 @@ export default async function ProductPage({
                 />
 
                 <p>Price: {price}</p>
+
+                <Counter />
+                <Counter caption="К-ть:" size="sm" />
               </div>
             ),
           )}
