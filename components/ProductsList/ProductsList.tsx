@@ -1,7 +1,9 @@
 import React from 'react';
-import { ProductsListProps } from './types';
 import classNames from 'classnames';
+
 import ProductCard from '../ProductCard/ProductCard';
+
+import { ProductsListProps } from './types';
 
 const ProductsList: React.FC<ProductsListProps> = ({
   products,

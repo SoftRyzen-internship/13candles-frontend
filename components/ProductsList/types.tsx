@@ -3,7 +3,7 @@ import { ProductDataInfo } from '@/types/Products';
 
 export interface ProductsListProps {
   products: ProductDataInfo[];
-  lang?: Locale;
   category: string;
+  lang?: Locale;
   className?: string;
 }
