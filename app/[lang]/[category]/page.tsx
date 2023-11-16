@@ -5,7 +5,8 @@ import { Locale } from '@/i18n.config';
 
 import { fetchSlugs } from '@/api/fetchSlugs';
 import { fetchProducts } from '@/api/fetchProducts';
-import Link from 'next/link';
+// import Link from 'next/link';
+import ProductsList from '@/components/ProductsList/ProductsList';
 // import { fetchCategories } from '@/api/api/fetchCategories';
 
 // import { CatalogSection } from '@/sections/home/CatalogSection';
@@ -69,7 +70,7 @@ export default async function CategoryPage({
       </p>
 
       <p className="mb-4">Products: </p>
-      <ul>
+      {/* <ul>
         {products?.map(({ id, attributes: { title, slug } }) => {
           return (
             <li key={id}>
@@ -77,7 +78,13 @@ export default async function CategoryPage({
             </li>
           );
         })}
-      </ul>
+      </ul> */}
+
+      <div className="ml-auto mr-auto sm:w-[440px] md:w-[704px] xl:w-[1220px]">
+        {products && (
+          <ProductsList products={products} lang={lang} category={category} />
+        )}
+      </div>
     </>
   );
 }
