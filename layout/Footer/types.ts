@@ -1,3 +1,5 @@
+import { Locale } from '@/i18n.config';
+
 export type FooterProps = {
   footer: {
     logoAriaLabelText: string;
@@ -26,4 +28,5 @@ export type FooterProps = {
     buttons: { text: string; data: string[] }[];
     className?: string;
   };
+  lang: Locale;
 };

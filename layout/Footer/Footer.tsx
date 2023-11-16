@@ -4,18 +4,13 @@ import { Information } from '@/components/Information';
 import { ContactList } from '@/components/ContactList';
 import { SocialsMenu } from '@/components/SocialsMenu';
 import { SoftRyzen } from '@/components/SoftRyzen';
+
 import { FooterProps } from '@/types';
 
 export const Footer: React.FC<FooterProps> = ({
   information,
-  footer: {
-    logoAriaLabelText,
-    contacts,
-    social_text,
-    social,
-    soft_ryzen,
-    ...restProps
-  },
+  footer: { logoAriaLabelText, social_text, social, soft_ryzen, ...restProps },
+  lang,
 }) => (
   <footer className="pb-[24px] md:pb-[36px] xl:pb-[40px]">
     <div className="container">
@@ -26,10 +21,7 @@ export const Footer: React.FC<FooterProps> = ({
             position="footer"
             aria={logoAriaLabelText}
           />
-          <ContactList
-            className="mx-auto font-montserrat"
-            contacts={contacts}
-          />
+          <ContactList className="mx-auto font-montserrat" lang={lang} />
         </div>
         <FooterNavRow data={restProps} />
         <Information information={information} />
