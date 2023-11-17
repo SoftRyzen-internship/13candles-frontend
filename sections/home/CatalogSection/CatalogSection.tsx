@@ -13,7 +13,10 @@ export const CatalogSection: React.FC<CatalogSectionProps> = async ({
   const categories = await fetchCategories(lang);
 
   return (
-    <section id={CATALOG} className="section xl:pb-[50px] xl:pt-[15px]">
+    <section
+      id={CATALOG}
+      className="section md:pt-[76px] xl:pb-[50px] xl:pt-[15px]"
+    >
       <div className="container">
         <h2 className="section-title-primary mb-2">{title}</h2>
 
