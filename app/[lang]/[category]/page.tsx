@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { getMetadata } from '@/lib/dictionary';
+import { getDictionary, getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
 import { fetchSlugs } from '@/api/fetchSlugs';
@@ -11,6 +11,9 @@ import ProductsList from '@/components/ProductsList/ProductsList';
 
 // import { CatalogSection } from '@/sections/home/CatalogSection';
 // import { fetchAromas } from '@/api/api/fetchAromas';
+
+import { CategoriesDropdown } from '@/components/CategoriesDropdown';
+import { fetchCategories } from '@/api/fetchCategories';
 
 export const dynamicParams = false;
 
@@ -61,30 +64,52 @@ export default async function CategoryPage({
 }: {
   params: { lang: Locale; category: string };
 }) {
+  const staticDictionary = await getDictionary(lang);
+
   const products = await fetchProducts(lang, category);
+
+  const categories = await fetchCategories(lang);
 
   return (
     <>
-      <p className="mb-6">
-        Product page. Мова {lang}. Категорія {category}
-      </p>
+      <section className="section smOnly:pt-[120px]">
+        <div className="container">
+          <p className="mb-6">
+            Category page. Мова {lang}. Категорія {category}
+          </p>
 
-      <p className="mb-4">Products: </p>
-      {/* <ul>
-        {products?.map(({ id, attributes: { title, slug } }) => {
-          return (
-            <li key={id}>
-              <Link href={`${lang}/${category}/${slug}`}>{title}</Link>
-            </li>
-          );
-        })}
-      </ul> */}
+          <CategoriesDropdown
+            lang={lang}
+            label={staticDictionary.category.dropdown.label}
+            categories={categories}
+            currentCategory={category}
+          />
 
-      <div className="ml-auto mr-auto sm:w-[440px] md:w-[704px] xl:w-[1220px]">
-        {products && (
-          <ProductsList products={products} lang={lang} category={category} />
-        )}
-      </div>
+          <div className="my-[16px]  md:my-[32px]">
+            <p className="mb-4">Products: </p>
+            {products && (
+              <ProductsList
+                products={products}
+                lang={lang}
+                category={category}
+              />
+            )}
+          </div>
+
+          {/* <div className="py-[16px] md:py-[32px]">
+            <p className="mb-4">Products: </p>
+            <ul>
+              {products?.map(({ id, attributes: { title, slug } }) => {
+                return (
+                  <li key={id}>
+                    <Link href={`${lang}/${category}/${slug}`}>{title}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div> */}
+        </div>
+      </section>
     </>
   );
 }
