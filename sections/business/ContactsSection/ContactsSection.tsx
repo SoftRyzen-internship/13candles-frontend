@@ -7,9 +7,12 @@ import { BusinessFormWithPopUp } from '@/components/BusinessFormWithPopUp';
 
 import { ContactsProps } from './types';
 
-export const ContactsSection: FC<ContactsProps> = ({ staticData, form }) => {
-  const { logoAriaLabelText, contacts_text, contacts, social_text, social } =
-    staticData;
+export const ContactsSection: FC<ContactsProps> = ({
+  staticData,
+  form,
+  lang,
+}) => {
+  const { logoAriaLabelText, contacts_text, social_text, social } = staticData;
 
   return (
     <section
@@ -29,7 +32,7 @@ export const ContactsSection: FC<ContactsProps> = ({ staticData, form }) => {
             </span>
             <ContactList
               className="mx-auto font-montserrat"
-              contacts={contacts}
+              lang={lang}
               variant="contacts"
             />
           </div>
