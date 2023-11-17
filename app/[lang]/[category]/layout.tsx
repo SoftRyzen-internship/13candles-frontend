@@ -2,6 +2,8 @@ import { fetchSlugs } from '@/api/fetchSlugs';
 
 import { Locale } from '@/i18n.config';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams({
   params: { lang },
 }: {
