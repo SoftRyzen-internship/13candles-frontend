@@ -23,7 +23,7 @@ export const Counter: FC<ICounterProps> = ({
   const counterClass = classnames(
     'border border-light flex items-center justify-between',
     { 'w-[93px] h-[36px] p-1': !size },
-    { 'w-[63px] h-[24px]': size == 'sm' },
+    { 'min-w-[63px] w-[max-content] h-[24px]': size == 'sm' },
   );
   const textClass = classnames(
     'text-light',
@@ -45,7 +45,7 @@ export const Counter: FC<ICounterProps> = ({
           onClick={decrement}
         >
           {size == 'sm' ? (
-            <MinusSmIcon width={20} height={20} />
+            <MinusSmIcon width={24} height={24} />
           ) : (
             <MinusIcon width={24} height={24} />
           )}
