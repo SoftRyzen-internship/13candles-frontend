@@ -1,11 +1,8 @@
+import { Locale } from '@/i18n.config';
+
 export type FooterProps = {
   footer: {
     logoAriaLabelText: string;
-    contacts: {
-      href: string;
-      icon: string;
-      text: string;
-    }[];
     nav_text: string;
     nav: {
       name: string;
@@ -26,4 +23,5 @@ export type FooterProps = {
     buttons: { text: string; data: string[] }[];
     className?: string;
   };
+  lang: Locale;
 };

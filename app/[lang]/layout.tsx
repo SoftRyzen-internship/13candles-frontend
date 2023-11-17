@@ -39,7 +39,7 @@ export default async function RootLayout({
       >
         <Header data={header} />
         <main className="">{children}</main>
-        <Footer footer={footer} information={information} />
+        <Footer footer={footer} information={information} lang={lang} />
         <div id="modal" />
       </body>
     </html>
