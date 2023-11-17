@@ -16,6 +16,8 @@ const raleway = Raleway({
   variable: '--font-raleway',
 });
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return i18n.locales.map(locale => ({ lang: locale }));
 }
@@ -37,7 +39,7 @@ export default async function RootLayout({
       >
         <Header data={header} />
         <main className="">{children}</main>
-        <Footer footer={footer} information={information} />
+        <Footer footer={footer} information={information} lang={lang} />
         <div id="modal" />
       </body>
     </html>

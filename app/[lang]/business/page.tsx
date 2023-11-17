@@ -62,7 +62,7 @@ export default async function BusinessPage({
       <HelpfulSection {...helpfulSection} />
       <UsefulWhomSection {...usefulWhom} />
       <OurManufactureSection {...ourManufactureSection} />
-      <ContactsSection {...contactsSection} form={form} />
+      <ContactsSection {...contactsSection} form={form} lang={lang} />
     </main>
   );
 }

@@ -92,18 +92,6 @@
       "staticData": {
         "logoAriaLabelText": "Посилання із логотипом компанії",
         "contacts_text": "Контакти",
-        "contacts": [
-          {
-            "href": "tel:380634293499",
-            "icon": "phone",
-            "text": "38 (063) 429 34 99"
-          },
-          {
-            "href": "mailto:13candlebar@gmail.com",
-            "icon": "email",
-            "text": "13candlebar@gmail.com"
-          }
-        ],
         "social_text": "Соціальні мережі",
         "social": [
           {
