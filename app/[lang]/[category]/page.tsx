@@ -95,19 +95,6 @@ export default async function CategoryPage({
               />
             )}
           </div>
-
-          {/* <div className="py-[16px] md:py-[32px]">
-            <p className="mb-4">Products: </p>
-            <ul>
-              {products?.map(({ id, attributes: { title, slug } }) => {
-                return (
-                  <li key={id}>
-                    <Link href={`${lang}/${category}/${slug}`}>{title}</Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div> */}
         </div>
       </section>
     </>

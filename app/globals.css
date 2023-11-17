@@ -16,7 +16,8 @@ body {
   @apply common-transition;
 }
 
-.zoom:hover .zoom-image {
+.zoom:hover,
+.zoom:focus .zoom-image {
   @apply scale-[1.15];
 }
 
