@@ -5,7 +5,8 @@ import { Locale } from '@/i18n.config';
 
 import { fetchSlugs } from '@/api/fetchSlugs';
 import { fetchProducts } from '@/api/fetchProducts';
-import Link from 'next/link';
+// import Link from 'next/link';
+import ProductsList from '@/components/ProductsList/ProductsList';
 // import { fetchCategories } from '@/api/api/fetchCategories';
 
 // import { CatalogSection } from '@/sections/home/CatalogSection';
@@ -84,17 +85,15 @@ export default async function CategoryPage({
             currentCategory={category}
           />
 
-          <div className="py-[16px] md:py-[32px]">
+          <div className="my-[16px]  md:my-[32px]">
             <p className="mb-4">Products: </p>
-            <ul>
-              {products?.map(({ id, attributes: { title, slug } }) => {
-                return (
-                  <li key={id}>
-                    <Link href={`${lang}/${category}/${slug}`}>{title}</Link>
-                  </li>
-                );
-              })}
-            </ul>
+            {products && (
+              <ProductsList
+                products={products}
+                lang={lang}
+                category={category}
+              />
+            )}
           </div>
         </div>
       </section>
