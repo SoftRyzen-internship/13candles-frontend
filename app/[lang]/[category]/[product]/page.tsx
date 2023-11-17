@@ -6,6 +6,8 @@ import { Locale } from '@/i18n.config';
 import { fetchOneProduct } from '@/api/fetchOneProduct';
 import { fetchProducts } from '@/api/fetchProducts';
 import Image from 'next/image';
+// import { AddToCartBtn } from '@/components/ui/AddToCartBtn';
+import { FakeProductCard } from '@/components/ui/AddToCartBtn/FakeProductCard';
 
 export const dynamicParams = false;
 
@@ -63,38 +65,44 @@ export default async function ProductPage({
 }) {
   const productData = await fetchOneProduct(lang, category, product);
 
+  // const staticDictionary = await getDictionary(lang);
+
   return (
     <>
-      <p>
-        Product page. Мова {lang}. Категорія {category}.
-      </p>
+      <div className="container">
+        <p className="smOnly:pt-[120px]">
+          Product page. Мова {lang}. Категорія {category}.
+        </p>
 
-      {productData && productData.length > 0 ? (
-        <>
-          {productData.map(
-            ({
-              attributes: { title, price, description, capacity, main_image },
-            }) => (
-              <div key={title}>
-                <p>{title}</p>
-                <p>{description}</p>
-                <p>{capacity}</p>
+        {productData && productData.length > 0 ? (
+          <>
+            {productData.map(
+              ({
+                attributes: { title, price, description, capacity, main_image },
+              }) => (
+                <div key={title}>
+                  <FakeProductCard lang={lang} data={productData[0]} />
 
-                <Image
-                  src={main_image?.photo?.data?.attributes?.url || ''}
-                  width={500}
-                  height={500}
-                  alt={main_image?.image_description || ''}
-                />
+                  <p>{title}</p>
+                  <p>{description}</p>
+                  <p>{capacity}</p>
 
-                <p>Price: {price}</p>
-              </div>
-            ),
-          )}
-        </>
-      ) : (
-        <p>Something went wrong...</p>
-      )}
+                  <Image
+                    src={main_image?.photo?.data?.attributes?.url || ''}
+                    width={500}
+                    height={500}
+                    alt={main_image?.image_description || ''}
+                  />
+
+                  <p>Price: {price}</p>
+                </div>
+              ),
+            )}
+          </>
+        ) : (
+          <p>Something went wrong...</p>
+        )}
+      </div>
     </>
   );
 }
