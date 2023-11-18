@@ -16,14 +16,8 @@ import { HOME } from '@/data/routes';
 
 export const Footer: React.FC<FooterProps> = ({
   information,
-  footer: {
-    logoAriaLabelText,
-    contacts,
-    social_text,
-    social,
-    soft_ryzen,
-    ...restProps
-  },
+  footer: { logoAriaLabelText, social_text, social, soft_ryzen, ...restProps },
+  lang,
 }) => {
   const path = usePathname();
   const isHomePage = checkPageName(path, HOME);
@@ -38,10 +32,7 @@ export const Footer: React.FC<FooterProps> = ({
               position="footer"
               aria={logoAriaLabelText}
             />
-            <ContactList
-              className="mx-auto font-montserrat"
-              contacts={contacts}
-            />
+            <ContactList className="mx-auto font-montserrat" lang={lang} />
           </div>
           {isHomePage && <FooterNavRow data={restProps} />}
           <Information information={information} />

@@ -9,6 +9,8 @@ import Image from 'next/image';
 // import { AddToCartBtn } from '@/components/ui/AddToCartBtn';
 import { FakeProductCard } from '@/components/ui/AddToCartBtn/FakeProductCard';
 
+import { ProductSlider } from '@/components/ProductSlider';
+
 export const dynamicParams = false;
 
 export async function generateMetadata({
@@ -70,7 +72,7 @@ export default async function ProductPage({
   return (
     <>
       <div className="container">
-        <p className="smOnly:pt-[120px]">
+        <p className="smOnly:pt-[200px]">
           Product page. Мова {lang}. Категорія {category}.
         </p>
 
@@ -78,10 +80,18 @@ export default async function ProductPage({
           <>
             {productData.map(
               ({
-                attributes: { title, price, description, capacity, main_image },
+                attributes: {
+                  title,
+                  price,
+                  description,
+                  capacity,
+                  main_image,
+                  images,
+                },
               }) => (
                 <div key={title}>
                   <FakeProductCard lang={lang} data={productData[0]} />
+                  <ProductSlider images={images} />
 
                   <p>{title}</p>
                   <p>{description}</p>
