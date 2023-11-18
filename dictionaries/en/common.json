@@ -74,6 +74,13 @@
         "name": "SoftRyzen",
         "href": "https://softryzen.com/"
       }
+    },
+    "orderModal": {
+      "title": "Placing an order",
+      "emptyBasketText": {
+        "subtitle": "There are no products added to the cart.",
+        "tip": "Return to the catalog to add the item you wish to purchase."
+      }
     }
   }
 }
