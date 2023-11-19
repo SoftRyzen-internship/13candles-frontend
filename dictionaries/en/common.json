@@ -26,8 +26,8 @@
       "logoAriaLabelText": "Link with company logo",
       "forBusinessBtnText": "For Business",
       "languageButtonText": "Укр",
-      "basketAriaLabel": "Open basket button",
-      "basketTitle": "Basket"
+      "basketAriaLabel": "Open cart button",
+      "basketTitle": "Cart"
     },
     "footer": {
       "logoAriaLabelText": "Link with company logo",
@@ -75,11 +75,38 @@
         "href": "https://softryzen.com/"
       }
     },
+
     "orderModal": {
+      "buttons": {
+        "cartBtnText": "Cart",
+        "cartBtnAriaLabel": "Open cart button",
+        "addToCartBtn": "Add to cart",
+        "addToCartSuccessText": "The product has been added to the cart",
+        "makeOrderBtn": "Make a purchase"
+      },
       "title": "Placing an order",
+      "titleCart": "Cart",
       "emptyBasketText": {
         "subtitle": "There are no products added to the cart.",
         "tip": "Return to the catalog to add the item you wish to purchase."
+      },
+      "orderCard": {
+        "cardTitle": "Your order",
+        "productTitle": "Product name",
+        "qty": "Quantity",
+        "aromaText": "Aroma",
+        "capacityText": "Capacity",
+        "amountText": "Amount",
+        "totalPriceText": "To be paid together",
+        "deleteProductBtn": "Remove product",
+        "increaseQtyBtn": "Increase quantity",
+        "decreaseQtyBtn": "Decrease quantity"
+      },
+      "orderForm": {
+        "title": "Fill in the details",
+        "nameLabel": "Your name",
+        "phoneLabel": "Your phone",
+        "submitOrderBtn": "Make an order"
       }
     }
   }

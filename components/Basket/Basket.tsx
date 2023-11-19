@@ -1,49 +1,84 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useCartStore } from '@/store';
+import { useRehydrate } from '@/utils';
 
-import { getDictionary } from '@/lib/dictionary';
+import { BasketProps } from './types';
 
-import { Locale } from '@/i18n.config';
-import { BasketProps, BasketStaticDictionary } from './types';
+export const Basket: React.FC<BasketProps> = ({ title, data }) => {
+  const { emptyBasketText, orderCard } = data;
 
-export const Basket: React.FC<BasketProps> = ({ title }) => {
-  const selectedProducts = []; // value from zustand global state in the future
+  useRehydrate();
+  const selectedProducts = useCartStore(store => store.items);
+  const totalPrice = useCartStore(store => store.totalPrice);
+  const deleteProduct = useCartStore(store => store.deleteProduct);
 
-  const [staticDictionary, setStaticDictionary] =
-    useState<BasketStaticDictionary | null>(null);
-
-  const lang = useParams().lang as Locale;
-
-  useEffect(() => {
-    const getStaticDictionary = async () => {
-      const res = await getDictionary(lang);
-      setStaticDictionary(res.common.orderModal);
-    };
-
-    getStaticDictionary();
-  }, [lang]);
-
-  return staticDictionary ? (
+  return (
     <div>
       <h3 className="title-lg mb-4 border-b border-gray pb-4 md:mb-8 xl:mb-6 xl:pb-6">
-        {title || staticDictionary.title}
+        {title}
       </h3>
 
       {selectedProducts.length > 0 ? (
-        <div>
-          <p>List of selected products and ordering form...</p>
+        // Placeholder for future order-list & order-form elements:
+        <div className="flex items-end justify-between">
+          <ul className="flex flex-col gap-2">
+            {selectedProducts.map(
+              ({ quantity, product: { title, aroma, capacity, price } }) => (
+                <li key={aroma ? title + aroma : title}>
+                  <p className="font-bold">{title}</p>
+                  {aroma && (
+                    <p>
+                      {orderCard.aromaText} {aroma}{' '}
+                    </p>
+                  )}
+                  <p>
+                    {orderCard.capacityText}: {capacity}
+                  </p>
+
+                  <div className="flex gap-[32px]">
+                    <div>
+                      <button
+                        type="button"
+                        aria-label={orderCard.increaseQtyBtn}
+                      >
+                        +
+                      </button>
+                      <span>{quantity}</span>
+                      <button
+                        type="button"
+                        aria-label={orderCard.decreaseQtyBtn}
+                      >
+                        -
+                      </button>
+                    </div>
+
+                    <p>{price}</p>
+
+                    <button
+                      onClick={() => deleteProduct(title, aroma)}
+                      type="button"
+                      aria-label={orderCard.deleteProductBtn}
+                    >
+                      [delete icon]
+                    </button>
+                  </div>
+                </li>
+              ),
+            )}
+          </ul>
+          <p>
+            {orderCard.totalPriceText} {totalPrice}
+          </p>
         </div>
       ) : (
+        // If users cart is empty:
         <p className="pb-11 pt-2 text-center text-lg font-medium md:pb-[104px] md:pt-4 xl:text-xl">
-          <span>{staticDictionary.emptyBasketText.subtitle}</span>
+          <span>{emptyBasketText.subtitle}</span>
           <br />
-          <span>{staticDictionary.emptyBasketText.tip}</span>
+          <span>{emptyBasketText.tip}</span>
         </p>
       )}
     </div>
-  ) : (
-    <></>
   );
 };

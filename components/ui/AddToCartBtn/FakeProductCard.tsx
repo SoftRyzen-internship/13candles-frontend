@@ -1,32 +1,36 @@
 'use client';
 
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { AddToCartBtn } from './AddToCartBtn';
 
 import { useCartStore } from '@/store';
 
-import { Locale } from '@/i18n.config';
 import { ProductDataInfo } from '@/types/Products';
+import { IOrderModalStatic } from '@/types/OrderModalStatic';
+import { BasketButton } from '../BasketButton';
 
 type Props = {
-  lang: Locale;
-  data: ProductDataInfo;
+  product: ProductDataInfo;
+  dataOrder: IOrderModalStatic;
 };
 
-export const FakeProductCard: React.FC<Props> = ({ lang, data }) => {
-  const addToCartBtnLabel = lang === 'en' ? 'Add to cart' : 'Додати у кошик';
-
-  // console.log('product: ', data);
+export const FakeProductCard: React.FC<Props> = ({ product, dataOrder }) => {
   const {
-    attributes: { title, price, capacity, main_image, aromas },
-  } = data;
+    buttons: { addToCartBtn, addToCartSuccessText },
+  } = dataOrder;
+
+  const {
+    attributes: { title, price, capacity, main_image, aromas, description },
+  } = product;
 
   const [quantity, setQuantity] = useState(1);
 
   const addProduct = useCartStore(store => store.addProduct);
 
-  const aromaTitle = aromas ? 'Some aroma...' : undefined;
+  const aromaTitle = aromas ? 'Some aroma...' : undefined; //the value from aroma-dropdown/checkbox
 
   const addToCart = () => {
     if (quantity < 1) return;
@@ -42,41 +46,49 @@ export const FakeProductCard: React.FC<Props> = ({ lang, data }) => {
       quantity,
     );
 
-    alert('the product has been added to the cart');
+    toast.success(addToCartSuccessText);
 
     setQuantity(1);
   };
 
   return (
-    <div className="my-4 outline-dashed outline-cyan-600 md:w-[332px] xl:w-[532px]">
-      <div className="flex items-start gap-[32px]">
-        <div>
-          <p>Title: {title}</p>
-          <p>Capacity: {capacity}</p>
-          <p>Price: {price}</p>
+    <>
+      <div className="outline-dashed outline-cyan-600 md:w-[332px] xl:w-[532px]">
+        <div className="flex items-end gap-[32px]">
+          <div>
+            <p className="text-xl font-bold">{title}</p>
+            <p>{description}</p>
+            <p>Capacity: {capacity}</p>
+            <p>Price: {price}</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              className="h4 w-4 outline-dashed"
+              onClick={() => {
+                setQuantity(prev => prev - 1);
+              }}
+            >
+              -
+            </button>
+            <span className="text-[20px] font-bold">{quantity}</span>
+            <button
+              className="h4 w-4 outline-dashed"
+              onClick={() => {
+                setQuantity(prev => prev + 1);
+              }}
+            >
+              +
+            </button>
+          </div>
         </div>
-        <div className="mb-4 flex items-center gap-2">
-          <button
-            className="h4 w-4 outline-dashed"
-            onClick={() => {
-              setQuantity(prev => prev - 1);
-            }}
-          >
-            -
-          </button>
-          <span className="text-[20px] font-bold">{quantity}</span>
-          <button
-            className="h4 w-4 outline-dashed"
-            onClick={() => {
-              setQuantity(prev => prev + 1);
-            }}
-          >
-            +
-          </button>
+
+        <div className="flex flex-col gap-2 xl:flex-row xl:gap-6">
+          <AddToCartBtn label={addToCartBtn} onClick={addToCart} />
+          <BasketButton isIcon={false} data={dataOrder} />
         </div>
       </div>
 
-      <AddToCartBtn label={addToCartBtnLabel} onClick={addToCart} />
-    </div>
+      <ToastContainer position="top-center" />
+    </>
   );
 };

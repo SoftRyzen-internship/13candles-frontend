@@ -2,7 +2,6 @@ import { Image } from '@/types/commons';
 
 export type StoredProduct = {
   title: string;
-  // slug: string;
   capacity: string;
   price: number;
   image: Image;
@@ -13,6 +12,7 @@ export interface ICartState {
   items: {
     quantity: number;
     product: StoredProduct;
+    totalPrice: number;
   }[];
   totalItems: number;
   totalPrice: number;

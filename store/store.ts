@@ -20,12 +20,16 @@ export const useCartStore = createWithEqualityFn<ICartState>()(
                   product.title === title && product.aroma === aroma,
               );
 
-              index === -1
-                ? store.items.push({
-                    product,
-                    quantity,
-                  })
-                : (store.items[index].quantity += quantity);
+              if (index === -1) {
+                store.items.push({
+                  product,
+                  quantity,
+                  totalPrice: product.price * quantity,
+                });
+              } else {
+                store.items[index].quantity += quantity;
+                store.items[index].totalPrice += product.price * quantity;
+              }
 
               store.totalItems += quantity;
               store.totalPrice += product.price * quantity;
@@ -42,7 +46,8 @@ export const useCartStore = createWithEqualityFn<ICartState>()(
             );
 
             store.totalItems -= store.items[index].quantity;
-            store.totalPrice -= store.items[index].product.price;
+            store.totalPrice -=
+              store.items[index].product.price * store.items[index].quantity;
 
             store.items.splice(index, 1);
           }),
@@ -51,7 +56,7 @@ export const useCartStore = createWithEqualityFn<ICartState>()(
     {
       name: '13-candles',
       storage: createJSONStorage(() => sessionStorage),
-      // skipHydration: true, // we can implement manual hidration because of possible error on server rendering app (Next.js)
+      skipHydration: true, // we need to implement manual hidration because of possible hidration error on server rendering app (Next.js)
     },
   ),
 );
