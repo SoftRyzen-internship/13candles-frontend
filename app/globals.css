@@ -33,10 +33,11 @@ body {
   overflow: hidden;
 }
 
-.section {
-  @apply smOnly:py-4 mdOnly:py-[18px];
+@layer components {
+  .section {
+    @apply smOnly:py-4 mdOnly:py-[18px];
+  }
 }
-
 .section-title-primary {
   @apply text-xxl font-bold;
 }

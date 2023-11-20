@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { getMetadata } from '@/lib/dictionary';
+import { getDictionary, getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
 import { fetchOneProduct } from '@/api/fetchOneProduct';
@@ -8,6 +8,7 @@ import { fetchProducts } from '@/api/fetchProducts';
 import Image from 'next/image';
 
 import { ProductSlider } from '@/components/ProductSlider';
+import { CatalogSection } from '@/sections/home/CatalogSection';
 
 export const dynamicParams = false;
 
@@ -65,51 +66,54 @@ export default async function ProductPage({
 }) {
   const productData = await fetchOneProduct(lang, category, product);
 
+  const { productpage } = await getDictionary(lang);
+  const { catalog } = productpage;
+
   return (
     <>
-      <div className="container">
-        <p className="smOnly:pt-[200px]">
-          Product page. Мова {lang}. Категорія {category}.
-        </p>
+      <p className="smOnly:pt-[200px]">
+        Product page. Мова {lang}. Категорія {category}.
+      </p>
 
-        {productData && productData.length > 0 ? (
-          <>
-            {productData.map(
-              ({
-                attributes: {
-                  title,
-                  price,
-                  description,
-                  capacity,
-                  main_image,
-                  images,
-                },
-              }) => (
-                <>
-                  <ProductSlider images={images} />
+      {productData && productData.length > 0 ? (
+        <>
+          {productData.map(
+            ({
+              attributes: {
+                title,
+                price,
+                description,
+                capacity,
+                main_image,
+                images,
+              },
+            }) => (
+              <>
+                <ProductSlider images={images} />
 
-                  <div key={title}>
-                    <p>{title}</p>
-                    <p>{description}</p>
-                    <p>{capacity}</p>
+                <div key={title}>
+                  <p>{title}</p>
+                  <p>{description}</p>
+                  <p>{capacity}</p>
 
-                    <Image
-                      src={main_image?.photo?.data?.attributes?.url || ''}
-                      width={500}
-                      height={500}
-                      alt={main_image?.image_description || ''}
-                    />
+                  <Image
+                    src={main_image?.photo?.data?.attributes?.url || ''}
+                    width={500}
+                    height={500}
+                    alt={main_image?.image_description || ''}
+                  />
 
-                    <p>Price: {price}</p>
-                  </div>
-                </>
-              ),
-            )}
-          </>
-        ) : (
-          <p>Something went wrong...</p>
-        )}
-      </div>
+                  <p>Price: {price}</p>
+                </div>
+              </>
+            ),
+          )}
+
+          <CatalogSection catalog={catalog} lang={lang} hideSubtitle />
+        </>
+      ) : (
+        <p>Something went wrong...</p>
+      )}
     </>
   );
 }

@@ -7,5 +7,6 @@ export interface CatalogSectionProps {
     subtitle: string;
     categories: StaticCategoryDataInfo[];
   };
+  hideSubtitle?: boolean;
   lang: Locale;
 }
