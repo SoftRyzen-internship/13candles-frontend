@@ -121,7 +121,7 @@
           "type": "text",
           "options": {
             "required": "Required",
-            "pattern": "^(?![\\s-]*[\\s-])(?!.*--)(?!.*- )(?!.* -)(?!.*'-)(?=.*[A-Za-zА-Яа-яЇїІіЄєҐґ])[A-Za-zА-Яа-яЇїІіЄєҐґ' -]+$",
+            "pattern": "^(?!.*(\\s-|-\\s|--|\\s\\s))[a-zA-Zа-яА-ЯЇїІіЄєҐґ']+[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s-]*[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s]$",
             "minLength": { "value": 3, "message": "No less than 3 characters" },
             "maxLength": {
               "value": 70,
@@ -137,7 +137,7 @@
           "type": "text",
           "options": {
             "required": "Required",
-            "pattern": "^\\+[0-9]+$",
+            "pattern": "^\\+[\\d]{11,12}$",
             "minLength": {
               "value": 12,
               "message": "No less than 12 characters"
@@ -156,7 +156,7 @@
           "type": "email",
           "options": {
             "required": false,
-            "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?@[a-zA-Z0-9.-]+(?:.[a-zA-Z]{2,})+$",
+            "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9\\._-]*[A-Za-z0-9])?@(?!.*(\\.\\.))[a-zA-Z]+(?:\\.[a-zA-Z]{2,})+$",
             "minLength": { "value": 6, "message": "No less than 6 characters" },
             "maxLength": {
               "value": 63,
