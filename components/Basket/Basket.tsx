@@ -27,11 +27,13 @@ export const Basket: React.FC<BasketProps> = ({ title, data }) => {
               ({ quantity, product: { title, aroma, capacity, price } }) => (
                 <li key={aroma ? title + aroma : title}>
                   <p className="font-bold">{title}</p>
+
                   {aroma && (
                     <p>
-                      {orderCard.aromaText} {aroma}{' '}
+                      {orderCard.aromaText} {aroma}
                     </p>
                   )}
+
                   <p>
                     {orderCard.capacityText}: {capacity}
                   </p>
@@ -44,7 +46,9 @@ export const Basket: React.FC<BasketProps> = ({ title, data }) => {
                       >
                         +
                       </button>
+
                       <span>{quantity}</span>
+
                       <button
                         type="button"
                         aria-label={orderCard.decreaseQtyBtn}
@@ -67,6 +71,7 @@ export const Basket: React.FC<BasketProps> = ({ title, data }) => {
               ),
             )}
           </ul>
+
           <p>
             {orderCard.totalPriceText} {totalPrice}
           </p>

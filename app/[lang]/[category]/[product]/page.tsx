@@ -78,42 +78,18 @@ export default async function ProductPage({
 
         {productData && productData.length > 0 ? (
           <>
-            {productData.map(
-              ({
-                attributes: {
-                  title,
-                  // price,
-                  // description,
-                  // capacity,
-                  // main_image,
-                  images,
-                },
-              }) => (
-                <div key={title} className="pb-4">
-                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-3">
-                    <ProductSlider images={images} />
+            {productData.map(({ attributes: { title, images } }) => (
+              <div key={title} className="pb-4">
+                <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-3">
+                  <ProductSlider images={images} />
 
-                    <FakeProductCard
-                      dataOrder={orderModal}
-                      product={productData[0]}
-                    />
-                  </div>
-                  {/* 
-                  <p>{title}</p>
-                  <p>{description}</p>
-                  <p>{capacity}</p>
-
-                  <Image
-                    src={main_image?.photo?.data?.attributes?.url || ''}
-                    width={500}
-                    height={500}
-                    alt={main_image?.image_description || ''}
-                  /> */}
-
-                  {/* <p>Price: {price}</p> */}
+                  <FakeProductCard
+                    dataOrder={orderModal}
+                    product={productData[0]}
+                  />
                 </div>
-              ),
-            )}
+              </div>
+            ))}
           </>
         ) : (
           <p>Something went wrong...</p>

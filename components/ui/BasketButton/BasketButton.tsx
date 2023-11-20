@@ -20,6 +20,7 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
   className = '',
 }) => {
   useRehydrate();
+
   const [showModal, setShowModal] = useState(false);
   const onToggleShowModal = () => setShowModal(prev => !prev);
 
@@ -48,7 +49,7 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
 
   return (
     <>
-      {isIcon ? (
+      {isIcon && (
         <button
           className={buttonClasses}
           onClick={onToggleShowModal}
@@ -58,7 +59,9 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
           <BasketIcon width={28} height={28} />
           {storedTotal > 0 && <span className={tagClasses}>{storedTotal}</span>}
         </button>
-      ) : text ? (
+      )}
+
+      {!isIcon && text && (
         <button
           className={buttonClasses}
           onClick={onToggleShowModal}
@@ -66,7 +69,9 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
         >
           {text}
         </button>
-      ) : (
+      )}
+
+      {!isIcon && !text && (
         <button
           className="common-transition w-full border-[1px] border-transparent bg-black-light py-3 text-center text-lg font-medium uppercase text-white hover:border-black-light hover:bg-white hover:text-black-light focus:border-black-light focus:bg-white focus:text-black-light"
           onClick={onToggleShowModal}
