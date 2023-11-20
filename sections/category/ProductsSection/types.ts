@@ -11,5 +11,10 @@ export interface ProductsSectionProps {
     dropdown: {
       label: string;
     };
+    loadMoreBtn: string;
+    noContentText: {
+      subtitle: string;
+      tip: string;
+    };
   };
 }

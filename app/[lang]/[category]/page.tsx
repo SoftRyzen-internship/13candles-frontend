@@ -1,19 +1,13 @@
 import type { Metadata } from 'next';
 
-import { getDictionary, getMetadata } from '@/lib/dictionary';
-import { Locale } from '@/i18n.config';
+import { ProductsSection } from '@/sections/category/ProductsSection';
 
+import { getDictionary, getMetadata } from '@/lib/dictionary';
 import { fetchSlugs } from '@/api/fetchSlugs';
 import { fetchProducts } from '@/api/fetchProducts';
-// import Link from 'next/link';
-// import ProductsList from '@/components/ProductsList/ProductsList';
-// import { fetchCategories } from '@/api/api/fetchCategories';
-
-// import { CatalogSection } from '@/sections/home/CatalogSection';
-// import { fetchAromas } from '@/api/api/fetchAromas';
-
 import { fetchCategories } from '@/api/fetchCategories';
-import { ProductsSection } from '@/sections/category/ProductsSection';
+
+import { Locale } from '@/i18n.config';
 
 export const dynamicParams = false;
 

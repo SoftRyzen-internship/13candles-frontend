@@ -45,7 +45,7 @@ export const CategoriesDropdown: React.FC<CategoriesDropdownProps> = ({
   return (
     <div
       ref={dropdownRef}
-      className="relative flex flex-col items-center text-lg font-medium uppercase smOnly:w-full"
+      className="relative flex flex-col items-center text-lg font-medium uppercase smOnly:w-full smOnly:gap-4"
     >
       <button
         type="button"
@@ -60,7 +60,7 @@ export const CategoriesDropdown: React.FC<CategoriesDropdownProps> = ({
         />
       </button>
       {isOpen && (
-        <ul className="absolute left-0 top-[40px] z-10 flex flex-col bg-white shadow-dropdown smOnly:w-full">
+        <ul className="absolute left-0 top-[40px] z-10 flex flex-col bg-white shadow-dropdown smOnly:static smOnly:w-full">
           {categories?.map(({ id, attributes: { title, slug } }) => {
             const linkClassName = classNames(
               'block truncate px-[16px] py-[12px] text-center hover:bg-gray-light focus:bg-gray-light md:text-left',
