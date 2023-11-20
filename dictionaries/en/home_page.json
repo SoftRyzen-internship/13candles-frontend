@@ -141,7 +141,11 @@
             }
           }
         }
-      ]
+      ],
+      "serviceError": {
+        "subtitle": "The service is temporarily unavailable",
+        "tip": "Please try again later"
+      }
     },
     "about": {
       "title": "About Us",
