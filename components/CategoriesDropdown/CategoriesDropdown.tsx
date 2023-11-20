@@ -1,12 +1,10 @@
 'use client';
 
-import { CategoriesDropdownProps } from './types';
-
 import { useCallback, useEffect, useRef, useState } from 'react';
-
+import Link from 'next/link';
 import classNames from 'classnames';
 
-import Link from 'next/link';
+import { CategoriesDropdownProps } from './types';
 
 import IconArrowDown from '/public/icons/icon_arrow-down.svg';
 
@@ -47,7 +45,7 @@ export const CategoriesDropdown: React.FC<CategoriesDropdownProps> = ({
   return (
     <div
       ref={dropdownRef}
-      className="relative flex flex-col items-center text-lg font-medium uppercase text-[#171717] smOnly:w-full"
+      className="relative flex flex-col items-center text-lg font-medium uppercase smOnly:w-full"
     >
       <button
         type="button"

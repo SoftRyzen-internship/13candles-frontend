@@ -1,7 +1,7 @@
-import { ExternalLinkProps } from '../ui/ExternalLink/types';
+import { Locale } from '@/i18n.config';
 
 export interface ContactListProps {
-  contacts: ExternalLinkProps[];
+  lang: Locale;
   variant?: 'contacts' | undefined;
   className?: string;
 }

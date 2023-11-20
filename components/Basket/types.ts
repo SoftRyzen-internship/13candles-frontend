@@ -1,3 +1,11 @@
 export interface BasketProps {
-  basket?: string;
+  title?: string;
+}
+
+export interface BasketStaticDictionary {
+  title: string;
+  emptyBasketText: {
+    subtitle: string;
+    tip: string;
+  };
 }

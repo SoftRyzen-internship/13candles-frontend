@@ -16,7 +16,8 @@ body {
   @apply common-transition;
 }
 
-.zoom:hover .zoom-image {
+.zoom:hover .zoom-image,
+.zoom:focus .zoom-image {
   @apply scale-[1.15];
 }
 
@@ -75,6 +76,8 @@ a:focus-visible .link::before,
 
 /* === SLIDER === */
 
+/* slider hero */
+
 #homepage-hero .swiper-button-prev,
 #homepage-hero .swiper-button-next {
   @apply common-transition h-12 w-12 bg-white/50 opacity-25 hover:opacity-100;
@@ -104,6 +107,31 @@ a:focus-visible .link::before,
 
 #homepage-hero .swiper-pagination {
   @apply !static mt-[20px] md:mt-[50px] xl:mt-[16px];
+}
+
+/* slider product */
+
+#product-page .swiper-button-prev,
+#product-page .swiper-button-next {
+  @apply common-transition h-12 w-12 bg-white/50 hover:bg-white/60;
+}
+
+#product-page .swiper-button-prev {
+  @apply left-[8px] xl:left-[12px];
+}
+
+#product-page .swiper-button-next {
+  @apply right-[8px] xl:right-[12px];
+}
+
+#product-page .swiper-button-prev::after,
+#product-page .swiper-button-next::after {
+  content: url('/icons/icon_arrow.svg') !important;
+  @apply absolute top-0 h-full w-full;
+}
+
+#product-page .swiper-button-prev::after {
+  @apply rotate-180;
 }
 
 /* === DECOR ICONS === */

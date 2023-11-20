@@ -68,6 +68,7 @@ export const Slider: React.FC<SliderProps> = ({
         clickable: true,
         type: 'bullets',
       }}
+      lazyPreloadPrevNext={1}
     >
       {data.map((props, index) => (
         <SwiperSlide key={index}>
