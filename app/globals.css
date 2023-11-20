@@ -37,240 +37,241 @@ body {
   .section {
     @apply smOnly:py-4 mdOnly:py-[18px];
   }
-}
-.section-title-primary {
-  @apply text-xxl font-bold;
-}
 
-.section-title-secondary {
-  @apply text-lg font-bold md:text-xl xl:text-xxl;
-}
+  .section-title-primary {
+    @apply text-xxl font-bold;
+  }
 
-.title-lg {
-  @apply text-xxl font-bold xl:text-xxxl;
-}
+  .section-title-secondary {
+    @apply text-lg font-bold md:text-xl xl:text-xxl;
+  }
 
-.title-md {
-  @apply text-lg font-bold;
-}
+  .title-lg {
+    @apply text-xxl font-bold xl:text-xxxl;
+  }
 
-.title-sm {
-  @apply font-bold;
-}
+  .title-md {
+    @apply text-lg font-bold;
+  }
 
-.link {
-  @apply relative no-underline before:content-[""];
-}
+  .title-sm {
+    @apply font-bold;
+  }
 
-.link::before {
-  @apply common-transition absolute bottom-[-3px] left-0 block h-[1.2px] w-full scale-x-0 bg-black-light;
-}
+  .link {
+    @apply relative no-underline before:content-[""];
+  }
 
-a:hover .link::before,
-a:active .link:before,
-a:focus-visible .link::before,
-.link:hover::before,
-.link:active:before,
-.link:focus-visible::before {
-  @apply scale-x-100;
-}
+  .link::before {
+    @apply common-transition absolute bottom-[-3px] left-0 block h-[1.2px] w-full scale-x-0 bg-black-light;
+  }
 
-/* === SLIDER === */
+  a:hover .link::before,
+  a:active .link:before,
+  a:focus-visible .link::before,
+  .link:hover::before,
+  .link:active:before,
+  .link:focus-visible::before {
+    @apply scale-x-100;
+  }
 
-/* slider hero */
+  /* === SLIDER === */
 
-#homepage-hero .swiper-button-prev,
-#homepage-hero .swiper-button-next {
-  @apply common-transition h-12 w-12 bg-white/50 opacity-25 hover:opacity-100;
-}
+  /* slider hero */
 
-#homepage-hero .swiper-button-prev {
-  @apply left-12;
-}
+  #homepage-hero .swiper-button-prev,
+  #homepage-hero .swiper-button-next {
+    @apply common-transition h-12 w-12 bg-white/50 opacity-25 hover:opacity-100;
+  }
 
-#homepage-hero .swiper-button-next {
-  @apply right-12;
-}
+  #homepage-hero .swiper-button-prev {
+    @apply left-12;
+  }
 
-#homepage-hero .swiper-button-prev::after,
-#homepage-hero .swiper-button-next::after {
-  content: url('/icons/icon_arrow.svg') !important;
-  @apply absolute top-0 h-full w-full;
-}
+  #homepage-hero .swiper-button-next {
+    @apply right-12;
+  }
 
-#homepage-hero .swiper-button-prev::after {
-  @apply rotate-180;
-}
+  #homepage-hero .swiper-button-prev::after,
+  #homepage-hero .swiper-button-next::after {
+    content: url('/icons/icon_arrow.svg') !important;
+    @apply absolute top-0 h-full w-full;
+  }
 
-#homepage-hero .swiper-pagination-bullet {
-  @apply !bg-black-light;
-}
+  #homepage-hero .swiper-button-prev::after {
+    @apply rotate-180;
+  }
 
-#homepage-hero .swiper-pagination {
-  @apply !static mt-[20px] md:mt-[50px] xl:mt-[16px];
-}
+  #homepage-hero .swiper-pagination-bullet {
+    @apply !bg-black-light;
+  }
 
-/* slider product */
+  #homepage-hero .swiper-pagination {
+    @apply !static mt-[20px] md:mt-[50px] xl:mt-[16px];
+  }
 
-#product-page .swiper-button-prev,
-#product-page .swiper-button-next {
-  @apply common-transition h-12 w-12 bg-white/50 hover:bg-white/60;
-}
+  /* slider product */
 
-#product-page .swiper-button-prev {
-  @apply left-[8px] xl:left-[12px];
-}
+  #product-page .swiper-button-prev,
+  #product-page .swiper-button-next {
+    @apply common-transition h-12 w-12 bg-white/50 hover:bg-white/60;
+  }
 
-#product-page .swiper-button-next {
-  @apply right-[8px] xl:right-[12px];
-}
+  #product-page .swiper-button-prev {
+    @apply left-[8px] xl:left-[12px];
+  }
 
-#product-page .swiper-button-prev::after,
-#product-page .swiper-button-next::after {
-  content: url('/icons/icon_arrow.svg') !important;
-  @apply absolute top-0 h-full w-full;
-}
+  #product-page .swiper-button-next {
+    @apply right-[8px] xl:right-[12px];
+  }
 
-#product-page .swiper-button-prev::after {
-  @apply rotate-180;
-}
+  #product-page .swiper-button-prev::after,
+  #product-page .swiper-button-next::after {
+    content: url('/icons/icon_arrow.svg') !important;
+    @apply absolute top-0 h-full w-full;
+  }
 
-/* === DECOR ICONS === */
+  #product-page .swiper-button-prev::after {
+    @apply rotate-180;
+  }
 
-/* decor icons common */
+  /* === DECOR ICONS === */
 
-.decor {
-  @apply relative flex items-center before:content-[""];
-}
+  /* decor icons common */
 
-.decor::before {
-  @apply absolute left-0 top-1/2 -translate-y-1/2 bg-cover bg-center bg-no-repeat;
-}
+  .decor {
+    @apply relative flex items-center before:content-[""];
+  }
 
-/* decor icons sizes */
+  .decor::before {
+    @apply absolute left-0 top-1/2 -translate-y-1/2 bg-cover bg-center bg-no-repeat;
+  }
 
-.case {
-  @apply pl-9 md:pl-8;
-}
+  /* decor icons sizes */
 
-.case::before {
-  @apply h-7 w-7 md:h-6 md:w-6;
-}
+  .case {
+    @apply pl-9 md:pl-8;
+  }
 
-.phone,
-.email,
-.instagram,
-.telegram {
-  @apply pl-8;
-}
+  .case::before {
+    @apply h-7 w-7 md:h-6 md:w-6;
+  }
 
-.phone::before,
-.email::before,
-.instagram::before,
-.telegram::before {
-  @apply h-6 w-6;
-}
+  .phone,
+  .email,
+  .instagram,
+  .telegram {
+    @apply pl-8;
+  }
 
-/* decor icons bg */
+  .phone::before,
+  .email::before,
+  .instagram::before,
+  .telegram::before {
+    @apply h-6 w-6;
+  }
 
-.case::before {
-  @apply bg-[url('/icons/icon_businesscase.svg')];
-}
+  /* decor icons bg */
 
-.email::before {
-  @apply bg-[url('/icons/icon_email.svg')];
-}
+  .case::before {
+    @apply bg-[url('/icons/icon_businesscase.svg')];
+  }
 
-.phone::before {
-  @apply bg-[url('/icons/icon_phone.svg')];
-}
+  .email::before {
+    @apply bg-[url('/icons/icon_email.svg')];
+  }
 
-.instagram::before {
-  @apply bg-[url('/icons/icon_instagram.svg')];
-}
+  .phone::before {
+    @apply bg-[url('/icons/icon_phone.svg')];
+  }
 
-.telegram::before {
-  @apply bg-[url('/icons/icon_telegram.svg')];
-}
+  .instagram::before {
+    @apply bg-[url('/icons/icon_instagram.svg')];
+  }
 
-.viber::before {
-  @apply bg-[url('/icons/icon_viber.svg')];
-}
+  .telegram::before {
+    @apply bg-[url('/icons/icon_telegram.svg')];
+  }
 
-/*
+  .viber::before {
+    @apply bg-[url('/icons/icon_viber.svg')];
+  }
+
+  /*
  * Humburger styles
  */
-.hamburger {
-  @apply relative -ml-[14px] h-12 w-12 bg-transparent px-[14px] py-[17px];
-}
+  .hamburger {
+    @apply relative -ml-[14px] h-12 w-12 bg-transparent px-[14px] py-[17px];
+  }
 
-.hamburger span {
-  @apply absolute left-[14px] block h-[2px] w-5 cursor-pointer rounded bg-black-light transition-all duration-300 ease-in-out;
-  @apply before:absolute before:top-[-6px] before:block before:h-[2px] before:w-5 before:cursor-pointer before:rounded;
-  @apply before:bg-black-light before:transition-all before:duration-300 before:ease-in-out before:content-[''];
-  @apply after:absolute after:top-[6px] after:block after:h-[2px] after:w-5 after:cursor-pointer after:rounded;
-  @apply after:bg-black-light after:transition-all after:duration-300 after:ease-in-out after:content-[''];
-}
+  .hamburger span {
+    @apply absolute left-[14px] block h-[2px] w-5 cursor-pointer rounded bg-black-light transition-all duration-300 ease-in-out;
+    @apply before:absolute before:top-[-6px] before:block before:h-[2px] before:w-5 before:cursor-pointer before:rounded;
+    @apply before:bg-black-light before:transition-all before:duration-300 before:ease-in-out before:content-[''];
+    @apply after:absolute after:top-[6px] after:block after:h-[2px] after:w-5 after:cursor-pointer after:rounded;
+    @apply after:bg-black-light after:transition-all after:duration-300 after:ease-in-out after:content-[''];
+  }
 
-.hamburger.is-active span {
-  @apply bg-transparent;
-  @apply before:top-0 before:rotate-[135deg];
-  @apply after:top-0 after:rotate-[-135deg];
-}
+  .hamburger.is-active span {
+    @apply bg-transparent;
+    @apply before:top-0 before:rotate-[135deg];
+    @apply after:top-0 after:rotate-[-135deg];
+  }
 
-/*
+  /*
  * Side panel animation
  */
-.fade-enter {
-  @apply opacity-0;
-}
-.fade-enter-active {
-  @apply opacity-100 transition duration-300 ease-in-out;
-}
-.fade-exit {
-  @apply opacity-100;
-}
-.fade-exit-active {
-  @apply opacity-0 transition duration-300 ease-in-out;
-}
+  .fade-enter {
+    @apply opacity-0;
+  }
+  .fade-enter-active {
+    @apply opacity-100 transition duration-300 ease-in-out;
+  }
+  .fade-exit {
+    @apply opacity-100;
+  }
+  .fade-exit-active {
+    @apply opacity-0 transition duration-300 ease-in-out;
+  }
 
-/*
+  /*
  * Mobile menu animation
  */
-.mobile-enter {
-  @apply translate-y-[100vh] opacity-0;
-}
-.mobile-enter-active {
-  @apply translate-y-0 opacity-100 transition duration-300 ease-in-out;
-}
-.mobile-exit {
-  @apply translate-y-0 opacity-100;
-}
-.mobile-exit-active {
-  @apply translate-y-[100vh] opacity-0 transition duration-300 ease-in-out;
-}
-/* 
+  .mobile-enter {
+    @apply translate-y-[100vh] opacity-0;
+  }
+  .mobile-enter-active {
+    @apply translate-y-0 opacity-100 transition duration-300 ease-in-out;
+  }
+  .mobile-exit {
+    @apply translate-y-0 opacity-100;
+  }
+  .mobile-exit-active {
+    @apply translate-y-[100vh] opacity-0 transition duration-300 ease-in-out;
+  }
+  /* 
  * Header underline
  */
-.header-underline {
-  @apply before:content-[""];
-}
+  .header-underline {
+    @apply before:content-[""];
+  }
 
-.header-underline::before {
-  @apply absolute bottom-0 left-0 h-[1px] w-full bg-black-light;
-}
+  .header-underline::before {
+    @apply absolute bottom-0 left-0 h-[1px] w-full bg-black-light;
+  }
 
-/* === SECOND SECTION (BUSINESS PAGE) === */
+  /* === SECOND SECTION (BUSINESS PAGE) === */
 
-#second .container:hover img,
-#second .container:focus-within img {
-  filter: grayscale(0%);
-}
+  #second .container:hover img,
+  #second .container:focus-within img {
+    filter: grayscale(0%);
+  }
 
-/*
+  /*
  * Business list bullet
  */
 
-.biz-item::before {
-  @apply absolute left-0 top-[50%] h-[4px] w-[4px] -translate-y-[50%] bg-black content-[""] xl:h-[8px] xl:w-[8px];
+  .biz-item::before {
+    @apply absolute left-0 top-[50%] h-[4px] w-[4px] -translate-y-[50%] bg-black content-[""] xl:h-[8px] xl:w-[8px];
+  }
 }

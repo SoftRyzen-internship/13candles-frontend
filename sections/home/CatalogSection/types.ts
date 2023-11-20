@@ -3,10 +3,11 @@ import { StaticCategoryDataInfo } from '@/types/Categories';
 
 export interface CatalogSectionProps {
   catalog: {
-    title: string;
+    home_title: string;
+    product_title: string;
     subtitle: string;
     categories: StaticCategoryDataInfo[];
   };
-  hideSubtitle?: boolean;
+  thisPage: 'home' | 'product';
   lang: Locale;
 }

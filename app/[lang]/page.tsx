@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 
-import { getDictionary, getMetadata } from '@/lib/dictionary';
+import {
+  getCommonDictionaries,
+  getDictionary,
+  getMetadata,
+} from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
 import { AboutSection } from '@/sections/home/AboutSection';
@@ -40,13 +44,16 @@ export default async function Home({
 }: {
   params: { lang: Locale };
 }) {
+  const {
+    common: { catalog },
+  } = await getCommonDictionaries(lang);
   const { homepage } = await getDictionary(lang);
-  const { hero, catalog, about } = homepage;
+  const { hero, about } = homepage;
 
   return (
     <>
       <HeroSection hero={hero} lang={lang} />
-      <CatalogSection catalog={catalog} lang={lang} />
+      <CatalogSection catalog={catalog} lang={lang} thisPage="home" />
       <AboutSection about={about} />
     </>
   );

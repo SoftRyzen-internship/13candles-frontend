@@ -81,6 +81,115 @@
         "subtitle": "There are no products added to the cart.",
         "tip": "Return to the catalog to add the item you wish to purchase."
       }
+    },
+    "catalog": {
+      "home_title": "Catalog",
+      "product_title": "View the catalog",
+      "subtitle": "Select the product category that interests you",
+      "categories": [
+        {
+          "id": "7",
+          "attributes": {
+            "title": "Aroma Candles",
+            "sequence_number": 1,
+            "image": {
+              "image_description": " two candles",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698411669/aromacandle_2x_8154222f73.webp"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "3",
+          "attributes": {
+            "title": "Aroma diffusers ",
+            "sequence_number": 2,
+            "image": {
+              "image_description": "  a small bottle and sticks",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698258914/aromadiffuzor_2x_72dba9ce13.webp"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "5",
+          "attributes": {
+            "title": "Incense (aroma sticks)",
+            "sequence_number": 3,
+            "image": {
+              "image_description": " two aroma sticks",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698258914/pakhoshchi_2x_e1db8e072e.webp"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "9",
+          "attributes": {
+            "title": "Accessories",
+            "sequence_number": 4,
+            "image": {
+              "image_description": " two candles",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698660923/accessories_2x_2b4fe9e4ff.webp"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "1",
+          "attributes": {
+            "title": "Sets",
+            "sequence_number": 5,
+            "image": {
+              "image_description": " flowers and a small bottle",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698660923/sets_2x_c2e102dd5e.webp"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "12",
+          "attributes": {
+            "title": "оther",
+            "sequence_number": 6,
+            "image": {
+              "image_description": "fragrant tree",
+              "photo": {
+                "data": {
+                  "attributes": {
+                    "url": "https://res.cloudinary.com/dmt2zcdrl/image/upload/v1698258914/different_2x_e44ca7a749.webp"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }
