@@ -1,13 +1,15 @@
 import type { Metadata } from 'next';
 
-import { getMetadata } from '@/lib/dictionary';
+import { getDictionary, getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
 import { fetchOneProduct } from '@/api/fetchOneProduct';
 import { fetchProducts } from '@/api/fetchProducts';
+import { fetchAromas } from '@/api/fetchAromas';
 import Image from 'next/image';
 
 import { ProductSlider } from '@/components/ProductSlider';
+import { Aromas } from '@/components/Aromas';
 
 export const dynamicParams = false;
 
@@ -64,6 +66,10 @@ export default async function ProductPage({
   params: { lang: Locale; category: string; product: string };
 }) {
   const productData = await fetchOneProduct(lang, category, product);
+  const aromas = await fetchAromas(lang);
+
+  const { productpage } = await getDictionary(lang);
+  const { product_description } = productpage;
 
   return (
     <>
@@ -101,6 +107,12 @@ export default async function ProductPage({
                     />
 
                     <p>Price: {price}</p>
+
+                    {/* For test component */}
+                    <Aromas
+                      aromas={aromas}
+                      prodDescription={product_description}
+                    />
                   </div>
                 </>
               ),

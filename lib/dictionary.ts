@@ -8,6 +8,7 @@ const dictionaries = {
     ...(await import(`@/dictionaries/en/home_page.json`)).default,
     ...(await import(`@/dictionaries/en/business_page.json`)).default,
     ...(await import(`@/dictionaries/en/category_page.json`)).default,
+    ...(await import(`@/dictionaries/en/product_page.json`)).default,
   }),
 
   uk: async () => ({
@@ -16,6 +17,7 @@ const dictionaries = {
     ...(await import(`@/dictionaries/uk/home_page.json`)).default,
     ...(await import(`@/dictionaries/uk/business_page.json`)).default,
     ...(await import(`@/dictionaries/uk/category_page.json`)).default,
+    ...(await import(`@/dictionaries/uk/product_page.json`)).default,
   }),
 };
 
