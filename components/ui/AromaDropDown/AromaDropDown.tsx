@@ -7,7 +7,7 @@ import { IDropDown } from './types';
 
 import IconArrowDown from '/public/icons/icon_arrow-down.svg';
 
-export const DropDown: React.FC<IDropDown> = ({
+export const AromaDropDown: React.FC<IDropDown> = ({
   setShownItem,
   shownItem,
   aromas,
@@ -37,10 +37,6 @@ export const DropDown: React.FC<IDropDown> = ({
     document.addEventListener('mousedown', closeAnOpenDropdown);
   }, [closeAnOpenDropdown]);
 
-  const cutBrackets = (title: string) => {
-    return title.includes('(') ? title.slice(0, title.indexOf('(')) : title;
-  };
-
   const handleClick = (idx: number) => {
     setShownItem(idx);
     setIsOpen(false);
@@ -53,22 +49,24 @@ export const DropDown: React.FC<IDropDown> = ({
   return (
     <div
       ref={dropdownRef}
-      className={`${className} border-light relative flex flex-col items-center border px-[16px] py-[4px] text-lg font-medium uppercase smOnly:w-full`}
+      className={`${className} border-light relative flex w-[max-content] min-w-[179px] flex-col border smOnly:w-full`}
     >
       <button
         type="button"
         onClick={toggleVisible}
-        className="flex min-w-[147px] items-center justify-between gap-[4px] text-base font-normal md:self-start"
+        className="flex w-full items-center justify-between gap-[4px] px-[16px] py-[4px] text-base font-normal md:self-start"
       >
         <span>{aromas[shownItem].attributes.Title}</span>
+
         <IconArrowDown
           width={24}
           height={24}
           className={isOpen ? 'rotate-180' : ''}
         />
       </button>
+
       {isOpen && (
-        <ul className="absolute left-0 top-[40px] z-10 flex flex-col bg-white shadow-dropdown smOnly:w-full">
+        <ul className="absolute left-0 top-[40px] z-10 flex w-full flex-col bg-white shadow-dropdown">
           {aromas?.map(({ id, attributes: { Title } }, idx) => {
             const linkClassName = classNames(
               'w-full block truncate px-[16px] py-[12px] text-center hover:bg-gray-light focus:bg-gray-light md:text-left text-base font-normal',
@@ -83,7 +81,7 @@ export const DropDown: React.FC<IDropDown> = ({
                   onClick={() => handleClick(idx)}
                   aria-disabled={idx === shownItem}
                 >
-                  {cutBrackets(Title)}
+                  {Title}
                 </button>
               </li>
             );

@@ -16,7 +16,7 @@ export const Stars: React.FC<IStar> = ({
     <div className={`flex items-center ${className}`}>
       {starItems.map((_, idx) => (
         <IconStar
-          key={idx}
+          key={caption + idx}
           className={idx < active ? 'fill-gold' : 'fill-gray'}
           width="24"
           height="24"

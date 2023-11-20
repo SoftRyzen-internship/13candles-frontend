@@ -4,8 +4,8 @@ import { useState } from 'react';
 
 import { IProps } from './types';
 
-import { DropDown } from './DropDown';
-import { Stars } from './Stars';
+import { AromaDropDown } from '../ui/AromaDropDown';
+import { Stars } from '../ui/Stars';
 
 export const Aromas: React.FC<IProps> = ({
   aromas,
@@ -28,7 +28,8 @@ export const Aromas: React.FC<IProps> = ({
     <div className={className}>
       <div className="mb-[12px] flex items-center">
         <p className="text-light text-base font-semibold xl:text-lg">{aroma}</p>
-        <DropDown
+
+        <AromaDropDown
           aromas={aromas}
           setShownItem={setShownItem}
           shownItem={shownItem}
@@ -37,7 +38,8 @@ export const Aromas: React.FC<IProps> = ({
       </div>
 
       <p className="text-light mb-[12px] text-base xl:text-lg">
-        <span className="font-semibold">{notes} </span>
+        <span className="font-semibold">{notes}: </span>
+
         {Notes}
       </p>
 
@@ -47,12 +49,14 @@ export const Aromas: React.FC<IProps> = ({
         caption={sweetness}
         className="mb-[4px]"
       />
+
       <Stars
         count={3}
         active={getStars(Astringency)}
         caption={astringency}
         className="mb-[4px]"
       />
+
       <Stars count={3} active={getStars(Freshness)} caption={freshness} />
     </div>
   );

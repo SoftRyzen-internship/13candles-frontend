@@ -7,7 +7,7 @@ import { CatalogSectionProps } from './types';
 import { StaticCategoriesList } from '@/components/CategoriesList/StaticCategoriesList';
 
 export const CatalogSection: React.FC<CatalogSectionProps> = async ({
-  catalog: { title, subtitle, categories: staticCategories },
+  catalog: { home_title, subtitle, categories: staticCategories },
   lang,
 }) => {
   const categories = await fetchCategories(lang);
@@ -18,7 +18,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = async ({
       className="section md:pt-[76px] xl:pb-[50px] xl:pt-[15px]"
     >
       <div className="container">
-        <h2 className="section-title-primary mb-2">{title}</h2>
+        <h2 className="section-title-primary mb-2">{home_title}</h2>
 
         <p className="mb-6 text-md font-medium text-black-light/25">
           {subtitle}
