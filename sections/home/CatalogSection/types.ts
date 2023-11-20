@@ -6,6 +6,10 @@ export interface CatalogSectionProps {
     title: string;
     subtitle: string;
     categories: StaticCategoryDataInfo[];
+    serviceError: {
+      subtitle: string;
+      tip: string;
+    };
   };
   lang: Locale;
 }
