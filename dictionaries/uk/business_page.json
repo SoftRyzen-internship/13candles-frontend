@@ -121,8 +121,8 @@
           "type": "text",
           "options": {
             "required": "Поле обов'язкове",
-            "pattern": "^(?![\\s-]*[\\s-])(?!.*--)(?!.*- )(?!.* -)(?!.*'-)(?=.*[A-Za-zА-Яа-яЇїІіЄєҐґ])[A-Za-zА-Яа-яЇїІіЄєҐґ' -]+$",
-            "minLength": { "value": 3, "message": "Не менше 3 символів" },
+            "pattern": "^(?!.*(\\s-|-\\s|--|\\s\\s))[a-zA-Zа-яА-ЯЇїІіЄєҐґ']+[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s-]*[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s]$",
+            "minLength": { "value": 2, "message": "Не менше 2 символів" },
             "maxLength": { "value": 70, "message": "Не більше 70 символів" }
           }
         },
@@ -134,7 +134,7 @@
           "type": "text",
           "options": {
             "required": "Поле обов'язкове",
-            "pattern": "^\\+[0-9]+$",
+            "pattern": "^\\+[\\d]{11,12}$",
             "minLength": { "value": 12, "message": "Не менше 12 символів" },
             "maxLength": { "value": 13, "message": "Не більше 13 символів" }
           }
@@ -147,7 +147,7 @@
           "type": "text",
           "options": {
             "required": false,
-            "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?@[a-zA-Z0-9.-]+(?:.[a-zA-Z]{2,})+$",
+            "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9\\._-]*[A-Za-z0-9])?@(?!.*(\\.\\.))[a-zA-Z]+(?:\\.[a-zA-Z]{2,})+$",
             "minLength": { "value": 6, "message": "Не менше 6 символів" },
             "maxLength": { "value": 63, "message": "Не більше 63 символів" }
           }
