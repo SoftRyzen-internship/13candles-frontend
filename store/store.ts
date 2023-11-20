@@ -55,7 +55,7 @@ export const useCartStore = createWithEqualityFn<ICartState>()(
     ),
     {
       name: '13-candles',
-      storage: createJSONStorage(() => sessionStorage),
+      storage: createJSONStorage(() => localStorage),
       skipHydration: true, // we need to implement manual hidration because of possible hidration error on server rendering app (Next.js)
     },
   ),
