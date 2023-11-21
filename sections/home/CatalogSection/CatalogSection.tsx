@@ -7,7 +7,7 @@ import { CatalogSectionProps } from './types';
 import { StaticCategoriesList } from '@/components/CategoriesList/StaticCategoriesList';
 
 export const CatalogSection: React.FC<CatalogSectionProps> = async ({
-  catalog: { title, subtitle, categories: staticCategories },
+  catalog: { title, subtitle, categories: staticCategories, serviceError },
   lang,
 }) => {
   const categories = await fetchCategories(lang);
@@ -27,7 +27,10 @@ export const CatalogSection: React.FC<CatalogSectionProps> = async ({
         {categories && categories.length > 0 ? (
           <CategoriesList categories={categories} lang={lang} />
         ) : (
-          <StaticCategoriesList staticCategories={staticCategories} />
+          <StaticCategoriesList
+            staticCategories={staticCategories}
+            errorText={serviceError}
+          />
         )}
       </div>
     </section>
