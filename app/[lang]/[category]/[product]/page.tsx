@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { getCommonDictionaries, getMetadata } from '@/lib/dictionary';
+import { getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
 import { fetchOneProduct } from '@/api/fetchOneProduct';
@@ -66,10 +66,6 @@ export default async function ProductPage({
 }) {
   const productData = await fetchOneProduct(lang, category, product);
 
-  const {
-    common: { catalog },
-  } = await getCommonDictionaries(lang);
-
   return (
     <>
       <p className="smOnly:pt-[200px]">
@@ -110,7 +106,7 @@ export default async function ProductPage({
             ),
           )}
 
-          <CatalogSection catalog={catalog} lang={lang} thisPage="product" />
+          <CatalogSection lang={lang} />
         </>
       ) : (
         <p>Something went wrong...</p>
