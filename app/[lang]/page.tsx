@@ -41,12 +41,12 @@ export default async function Home({
   params: { lang: Locale };
 }) {
   const { homepage } = await getDictionary(lang);
-  const { hero, catalog, about } = homepage;
+  const { hero, about } = homepage;
 
   return (
     <>
       <HeroSection hero={hero} lang={lang} />
-      <CatalogSection catalog={catalog} lang={lang} />
+      <CatalogSection lang={lang} isHomePage />
       <AboutSection about={about} />
     </>
   );

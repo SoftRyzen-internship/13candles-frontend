@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 
 import { FakeProductCard } from '@/components/ui/AddToCartBtn/FakeProductCard';
 import { ProductSlider } from '@/components/ProductSlider';
+import { CatalogSection } from '@/sections/home/CatalogSection';
 
 import { getDictionary, getMetadata } from '@/lib/dictionary';
 import { fetchProducts } from '@/api/fetchProducts';
@@ -71,7 +72,7 @@ export default async function ProductPage({
 
   return (
     <>
-      <div className="container">
+      <div>
         <p className="smOnly:pt-[200px]">
           Product page. Мова {lang}. Категорія {category}.
         </p>
@@ -90,6 +91,7 @@ export default async function ProductPage({
                 </div>
               </div>
             ))}
+            <CatalogSection lang={lang} />
           </>
         ) : (
           <p>Something went wrong...</p>
