@@ -6,3 +6,4 @@ export * from './checkPageName';
 export * from './useWindowDimension';
 export * from './filterProducts';
 export * from './useRehydrate';
+export * from './createMetadata';
