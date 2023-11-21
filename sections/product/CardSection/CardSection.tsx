@@ -1,14 +1,13 @@
-//import { CategoriesList } from '@/components/CategoriesList';
-//import { CATALOG } from '@/data';
-
-//import { fetchCategories } from '@/api/fetchCategories';
+import Link from 'next/link';
 
 import { ProdCardSectionProps } from './types';
-//import { StaticCategoriesList } from '@/components/CategoriesList/StaticCategoriesList';
+
+import { getDictionary } from '@/lib/dictionary';
 import { fetchOneProduct } from '@/api/fetchOneProduct';
 import { ProductSlider } from '@/components/ProductSlider';
 import { ProductInfo } from '@/components/ProductInfo';
-import { getDictionary } from '@/lib/dictionary';
+
+import IconArrowDown from '/public/icons/icon_arrow-down.svg';
 
 export const CardSection: React.FC<ProdCardSectionProps> = async ({
   /*className,*/
@@ -31,12 +30,26 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
 
   return (
     <section className="section md:pt-[76px] xl:pb-[50px] xl:pt-[15px]">
-      <div className="container flex flex-col justify-between md:flex-row">
-        <ProductSlider images={images} />
-        <ProductInfo
-          product={productData[0]}
-          prodDescription={product_description}
-        />
+      <div className="container">
+        <div className="mb-8 border-b border-black-light/25 md:mb-9 xl:mb-10">
+          <Link
+            href={`./${lang}/${category}`}
+            className="link inline-flex items-center font-medium"
+          >
+            <IconArrowDown width={24} height={24} className="rotate-90" />
+
+            <span className="pl-3">Назад!!!!</span>
+          </Link>
+        </div>
+
+        <div className="flex flex-col justify-between md:flex-row">
+          <ProductSlider images={images} />
+
+          <ProductInfo
+            product={productData[0]}
+            prodDescription={product_description}
+          />
+        </div>
       </div>
     </section>
   );
