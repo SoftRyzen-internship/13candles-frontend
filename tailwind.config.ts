@@ -56,6 +56,7 @@ const config: Config = {
         'gray-light': '#ebebeb',
         red: '#ff4545',
         'red-light': '#FF5353',
+        gold: '#FFC253',
       },
       boxShadow: {
         dropdown: '0 0 12px 0 rgba(0, 0, 0, 0.25)',
