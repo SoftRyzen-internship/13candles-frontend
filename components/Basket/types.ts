@@ -1,5 +1,8 @@
+import { IOrderModalStatic } from '@/types/OrderModalStatic';
+
 export interface BasketProps {
-  title?: string;
+  title: string;
+  data: IOrderModalStatic;
 }
 
 export interface BasketStaticDictionary {
