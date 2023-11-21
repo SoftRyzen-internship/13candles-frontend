@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
-import { /*getDictionary,*/ getMetadata } from '@/lib/dictionary';
+import { getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
 import { fetchProducts } from '@/api/fetchProducts';
-//import { CardSection } from '@/sections/product/CardSection';
+import { CardSection } from '@/sections/product/CardSection';
 
 export const dynamicParams = false;
 
@@ -55,10 +55,10 @@ export async function generateStaticParams({
   return staticParams;
 }
 
-export default async function ProductPage(/* {
+export default async function ProductPage({
   params: { lang, category, product },
 }: {
   params: { lang: Locale; category: string; product: string };
-} */) {
-  return <>CardSection</>;
+}) {
+  return <CardSection lang={lang} category={category} product={product} />;
 }
