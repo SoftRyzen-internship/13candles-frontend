@@ -1,14 +1,17 @@
 import type { Metadata } from 'next';
-// import Image from 'next/image';
 
 import { FakeProductCard } from '@/components/ui/AddToCartBtn/FakeProductCard';
 import { ProductSlider } from '@/components/ProductSlider';
+import { CatalogSection } from '@/sections/home/CatalogSection';
 
 import { getDictionary, getMetadata } from '@/lib/dictionary';
-import { fetchProducts } from '@/api/fetchProducts';
-import { fetchOneProduct } from '@/api/fetchOneProduct';
-
 import { Locale } from '@/i18n.config';
+
+import { fetchOneProduct } from '@/api/fetchOneProduct';
+import { fetchProducts } from '@/api/fetchProducts';
+import { fetchAromas } from '@/api/fetchAromas';
+
+import { Aromas } from '@/components/Aromas';
 
 export const dynamicParams = false;
 
@@ -68,10 +71,14 @@ export default async function ProductPage({
   const {
     common: { orderModal },
   } = await getDictionary(lang);
+  const aromas = await fetchAromas(lang);
+
+  const { productpage } = await getDictionary(lang);
+  const { product_description } = productpage;
 
   return (
     <>
-      <div className="container">
+      <div>
         <p className="smOnly:pt-[200px]">
           Product page. Мова {lang}. Категорія {category}.
         </p>
@@ -90,6 +97,9 @@ export default async function ProductPage({
                 </div>
               </div>
             ))}
+            <CatalogSection lang={lang} />
+
+            <Aromas aromas={aromas} prodDescription={product_description} />
           </>
         ) : (
           <p>Something went wrong...</p>

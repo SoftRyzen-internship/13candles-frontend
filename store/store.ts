@@ -2,7 +2,7 @@ import { createWithEqualityFn } from 'zustand/traditional';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 
-import { ICartState } from './types';
+import { ICartState, StoredProduct } from './types';
 
 export const useCartStore = createWithEqualityFn<ICartState>()(
   persist(
@@ -12,7 +12,7 @@ export const useCartStore = createWithEqualityFn<ICartState>()(
         totalItems: 0,
         totalPrice: 0,
 
-        addProduct: (product, quantity) =>
+        addProduct: (product: StoredProduct, quantity: number) =>
           set(
             store => {
               const index = store.items.findIndex(
@@ -38,7 +38,7 @@ export const useCartStore = createWithEqualityFn<ICartState>()(
             'addProduct',
           ),
 
-        deleteProduct: (title, aroma) =>
+        deleteProduct: (title: string, aroma?: string) =>
           set(store => {
             const index = store.items.findIndex(
               ({ product }) =>
