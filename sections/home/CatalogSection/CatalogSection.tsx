@@ -21,6 +21,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = async ({
         product_title,
         subtitle,
         categories: staticCategories,
+        serviceError,
       },
     },
   } = await getCommonDictionaries(lang);
@@ -50,7 +51,10 @@ export const CatalogSection: React.FC<CatalogSectionProps> = async ({
         {categories && categories.length > 0 ? (
           <CategoriesList categories={categories} lang={lang} />
         ) : (
-          <StaticCategoriesList staticCategories={staticCategories} />
+          <StaticCategoriesList
+            staticCategories={staticCategories}
+            errorText={serviceError}
+          />
         )}
       </div>
     </section>

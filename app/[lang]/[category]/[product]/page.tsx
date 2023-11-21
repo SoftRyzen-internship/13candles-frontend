@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
+// import Image from 'next/image';
 
-import { getMetadata } from '@/lib/dictionary';
-import { Locale } from '@/i18n.config';
-
-import { fetchOneProduct } from '@/api/fetchOneProduct';
-import { fetchProducts } from '@/api/fetchProducts';
-import Image from 'next/image';
-
+import { FakeProductCard } from '@/components/ui/AddToCartBtn/FakeProductCard';
 import { ProductSlider } from '@/components/ProductSlider';
 import { CatalogSection } from '@/sections/home/CatalogSection';
+
+import { getDictionary, getMetadata } from '@/lib/dictionary';
+import { fetchProducts } from '@/api/fetchProducts';
+import { fetchOneProduct } from '@/api/fetchOneProduct';
+
+import { Locale } from '@/i18n.config';
 
 export const dynamicParams = false;
 
@@ -65,52 +66,37 @@ export default async function ProductPage({
   params: { lang: Locale; category: string; product: string };
 }) {
   const productData = await fetchOneProduct(lang, category, product);
+  const {
+    common: { orderModal },
+  } = await getDictionary(lang);
 
   return (
     <>
-      <p className="smOnly:pt-[200px]">
-        Product page. Мова {lang}. Категорія {category}.
-      </p>
+      <div>
+        <p className="smOnly:pt-[200px]">
+          Product page. Мова {lang}. Категорія {category}.
+        </p>
 
-      {productData && productData.length > 0 ? (
-        <>
-          {productData.map(
-            ({
-              attributes: {
-                title,
-                price,
-                description,
-                capacity,
-                main_image,
-                images,
-              },
-            }) => (
-              <>
-                <ProductSlider images={images} />
+        {productData && productData.length > 0 ? (
+          <>
+            {productData.map(({ attributes: { title, images } }) => (
+              <div key={title} className="pb-4">
+                <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-3">
+                  <ProductSlider images={images} />
 
-                <div key={title}>
-                  <p>{title}</p>
-                  <p>{description}</p>
-                  <p>{capacity}</p>
-
-                  <Image
-                    src={main_image?.photo?.data?.attributes?.url || ''}
-                    width={500}
-                    height={500}
-                    alt={main_image?.image_description || ''}
+                  <FakeProductCard
+                    dataOrder={orderModal}
+                    product={productData[0]}
                   />
-
-                  <p>Price: {price}</p>
                 </div>
-              </>
-            ),
-          )}
-
-          <CatalogSection lang={lang} />
-        </>
-      ) : (
-        <p>Something went wrong...</p>
-      )}
+              </div>
+            ))}
+            <CatalogSection lang={lang} />
+          </>
+        ) : (
+          <p>Something went wrong...</p>
+        )}
+      </div>
     </>
   );
 }

@@ -76,10 +76,36 @@
       }
     },
     "orderModal": {
+      "buttons": {
+        "cartBtnText": "Кошик",
+        "cartBtnAriaLabel": "Відкрити кошик",
+        "addToCartBtn": "Додати у кошик",
+        "addToCartSuccessText": "Додано в кошик",
+        "makeOrderBtn": "Оформити покупку"
+      },
       "title": "Оформлення замовлення",
+      "titleCart": "Кошик",
       "emptyBasketText": {
         "subtitle": "У кошику немає доданих товарів.",
         "tip": "Поверніться до каталогу, щоб додати товар, який ви хочете придбати."
+      },
+      "orderCard": {
+        "cardTitle": "Ваше замовлення",
+        "productTitle": "Назва товару",
+        "qty": "Кількість",
+        "aromaText": "Аромат",
+        "capacityText": "Обʼєм",
+        "amountText": "Кількість",
+        "totalPriceText": "Разом до сплати",
+        "deleteProductBtn": "Видалити продукт",
+        "increaseQtyBtn": "Збільшити кількість",
+        "decreaseQtyBtn": "Зменшити кількість"
+      },
+      "orderForm": {
+        "title": "Заповніть реквізити",
+        "nameLabel": "Ваше імʼя",
+        "phoneLabel": "Ваш телефон",
+        "submitOrderBtn": "Оформити замовлення"
       }
     },
     "catalog": {
@@ -189,7 +215,11 @@
             }
           }
         }
-      ]
+      ],
+      "serviceError": {
+        "subtitle": "Сервіс тимчасово недоступний",
+        "tip": "Спробуйте, будь ласка, пізніше"
+      }
     }
   }
 }

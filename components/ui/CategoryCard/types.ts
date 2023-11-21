@@ -9,6 +9,10 @@ export interface CategoryCardProps {
 
 export interface StaticCategoryCardProps {
   category: CategoryStaticDataInfo;
+  errorText: {
+    subtitle: string;
+    tip: string;
+  };
   className?: string;
 }
 

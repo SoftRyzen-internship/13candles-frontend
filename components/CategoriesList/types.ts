@@ -9,6 +9,10 @@ export interface CategoriesListProps {
 
 export interface StaticCategoriesListProps {
   staticCategories: StaticCategoryDataInfo[];
+  errorText: {
+    subtitle: string;
+    tip: string;
+  };
   className?: string;
 }
 
