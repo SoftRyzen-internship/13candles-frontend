@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 
-import ProductsList from '@/components/ProductsList/ProductsList';
 import { CategoriesDropdown } from '@/components/CategoriesDropdown';
+import { ProductsList } from '@/components/ProductsList';
+import { ShowMoreButton } from '@/components/ui/ShowMoreButton';
 
 import { filterProducts, useWindowDimensions } from '@/utils';
 
@@ -17,13 +18,17 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
   staticData: { dropdown, loadMoreBtn, noContentText },
 }) => {
   const [page, setPage] = useState(1);
-  const perPage = 12;
 
   const { width } = useWindowDimensions();
 
   const initQty = width && width >= 768 && width < 1280 ? 9 : 8;
 
-  const filteredProducts = filterProducts({ products, initQty, page, perPage });
+  const filteredProducts = filterProducts({
+    products,
+    initQty,
+    page,
+    perPage: initQty,
+  });
 
   const handleShowMore = () => {
     setPage(prev => prev + 1);
@@ -41,7 +46,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
           />
 
           {filteredProducts.length > 0 ? (
-            <div className="flex flex-col gap-8 md:border-t-[1px] md:border-t-black-light/25  md:pt-9 xl:gap-12 xl:pt-[97px]">
+            <div className="flex flex-col gap-8 border-t-[1px] border-t-black-light/25 pt-5  md:pt-9 xl:gap-12 xl:pt-[97px]">
               <ProductsList
                 products={filteredProducts}
                 lang={lang}
@@ -49,16 +54,11 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
               />
 
               {products && products?.length > filteredProducts.length && (
-                <button
-                  onClick={handleShowMore}
-                  className="common-transition w-full border-[1px] border-transparent bg-black-light py-3 text-center text-lg font-medium text-white hover:border-black-light hover:bg-white hover:text-black-light focus:border-black-light focus:bg-white focus:text-black-light md:w-[218px] md:self-center"
-                >
-                  {loadMoreBtn}
-                </button>
+                <ShowMoreButton label={loadMoreBtn} onClick={handleShowMore} />
               )}
             </div>
           ) : (
-            <div className="pt-4 text-center md:pt-9">
+            <div className="border-t-[1px] border-t-black-light/25 pt-5 text-center md:pt-9 xl:pt-[97px]">
               <p className="title-lg mb-6 smOnly:text-xl">
                 {noContentText.subtitle}
               </p>

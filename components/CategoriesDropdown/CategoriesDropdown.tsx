@@ -59,8 +59,9 @@ export const CategoriesDropdown: React.FC<CategoriesDropdownProps> = ({
           className={isOpen ? 'rotate-180' : ''}
         />
       </button>
+
       {isOpen && (
-        <ul className="absolute left-0 top-[40px] z-10 flex flex-col bg-white shadow-dropdown smOnly:static smOnly:w-full">
+        <ul className="absolute left-0 top-[40px] z-10 flex flex-col bg-white shadow-dropdown smOnly:w-full">
           {categories?.map(({ id, attributes: { title, slug } }) => {
             const linkClassName = classNames(
               'block truncate px-[16px] py-[12px] text-center hover:bg-gray-light focus:bg-gray-light md:text-left',
