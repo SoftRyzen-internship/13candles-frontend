@@ -55,6 +55,7 @@ const config: Config = {
         gray: '#c5c5c5',
         'gray-light': '#ebebeb',
         red: '#ff4545',
+        'red-light': '#FF5353',
         gold: '#FFC253',
       },
       boxShadow: {

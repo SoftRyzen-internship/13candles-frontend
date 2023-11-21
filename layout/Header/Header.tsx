@@ -15,7 +15,7 @@ import { TranslationSwitcher } from '@/components/TranslationSwitcher';
 import { Locale } from '@/i18n.config';
 import { HeaderProps } from './types';
 
-export const Header: React.FC<HeaderProps> = ({ data }) => {
+export const Header: React.FC<HeaderProps> = ({ data, dataOrder }) => {
   const {
     sidePanelMenu,
     nav,
@@ -24,8 +24,6 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
     languageButtonText,
     logoAriaLabelText,
     forBusinessBtnText,
-    basketAriaLabel,
-    basketTitle,
   } = data;
 
   const pathname = usePathname();
@@ -78,11 +76,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
               buttonText={languageButtonText}
               className="md:mr-7 xl:mr-9 smOnly:hidden"
             />
-            <BasketButton
-              isIcon={true}
-              text={basketTitle}
-              ariaLabel={basketAriaLabel}
-            />
+            <BasketButton isIcon={true} data={dataOrder} />
           </div>
         </nav>
       </div>
