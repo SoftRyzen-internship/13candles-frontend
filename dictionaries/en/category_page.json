@@ -2,6 +2,11 @@
   "category": {
     "dropdown": {
       "label": "Categories"
+    },
+    "loadMoreBtn": "Show more",
+    "noContentText": {
+      "subtitle": "There aren't available products within this category yet",
+      "tip": "Please select a different category or try again later"
     }
   }
 }

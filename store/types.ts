@@ -17,6 +17,9 @@ export interface ICartState {
   totalItems: number;
   totalPrice: number;
 
+  // eslint-disable-next-line no-unused-vars
   addProduct: (product: StoredProduct, quantity: number) => void;
+
+  // eslint-disable-next-line no-unused-vars
   deleteProduct: (title: string, aroma?: string) => void;
 }
