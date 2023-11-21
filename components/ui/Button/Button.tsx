@@ -27,10 +27,10 @@ export const Button: React.FC<ButtonProps> = ({
     'xl:active:bg-black-light xl:active:text-white',
   );
   const btnWhite = classNames(
-    'mb-[8px] xl:mb-0 text-black-light uppercase bg-body hover:bg-black-light focus:bg-black-light hover:text-white focus:text-white active:bg-black-light active:text-white',
+    'mb-[8px] xl:mb-0 text-black-light uppercase bg-body hover:bg-black-light hover:text-white active:bg-black-light active:text-white',
   );
   const btnDark = classNames(
-    'bg-black-light text-white uppercase hover:bg-body focus:bg-body hover:text-black-light focus:text-black-light active:bg-body active:text-black-light',
+    'bg-black-light text-white uppercase hover:bg-body hover:text-black-light active:bg-body active:text-black-light',
   );
 
   const btnStyles = classNames(

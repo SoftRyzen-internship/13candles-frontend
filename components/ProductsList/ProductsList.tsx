@@ -5,7 +5,7 @@ import ProductCard from '../ProductCard/ProductCard';
 
 import { ProductsListProps } from './types';
 
-const ProductsList: React.FC<ProductsListProps> = ({
+export const ProductsList: React.FC<ProductsListProps> = ({
   products,
   lang,
   category,
@@ -29,5 +29,3 @@ const ProductsList: React.FC<ProductsListProps> = ({
     </ul>
   );
 };
-
-export default ProductsList;

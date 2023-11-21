@@ -2,7 +2,7 @@
 
 import { ICounterProps } from './types';
 
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import classnames from 'classnames';
 
@@ -15,8 +15,9 @@ export const Counter: FC<ICounterProps> = ({
   className = '',
   caption,
   size,
+  count,
+  setCount,
 }) => {
-  const [count, setCount] = useState(1);
   const increment = () => setCount(count + 1);
   const decrement = () => setCount(count - 1);
 

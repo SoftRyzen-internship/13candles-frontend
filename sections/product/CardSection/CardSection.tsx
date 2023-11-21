@@ -8,28 +8,35 @@ import { ProductSlider } from '@/components/ProductSlider';
 import { ProductInfo } from '@/components/ProductInfo';
 
 import IconArrowDown from '/public/icons/icon_arrow-down.svg';
+import { fetchAromas } from '@/api/fetchAromas';
 
 export const CardSection: React.FC<ProdCardSectionProps> = async ({
-  /*className,*/
+  className,
   lang,
   category,
   product,
 }) => {
-  //  const categories = await fetchCategories(lang);
   const productData = await fetchOneProduct(lang, category, product);
+
+  const aromasData = await fetchAromas(lang);
+
   if (productData?.length != 1) {
     return;
   }
 
   const {
-    productpage: { product_description },
+    common: { orderModal },
+    productpage: { back, product_description },
   } = await getDictionary(lang);
+
   const {
     attributes: { images },
   } = productData[0];
 
   return (
-    <section className="section md:pt-[76px] xl:pb-[50px] xl:pt-[15px]">
+    <section
+      className={`section pb-[32px] md:pb-[36px] xl:pb-[148px] ${className}`}
+    >
       <div className="container">
         <div className="mb-8 border-b border-black-light/25 md:mb-9 xl:mb-10">
           <Link
@@ -38,16 +45,18 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
           >
             <IconArrowDown width={24} height={24} className="rotate-90" />
 
-            <span className="pl-3">Назад!!!!</span>
+            <span className="pl-3 uppercase">{back}</span>
           </Link>
         </div>
 
-        <div className="flex flex-col justify-between md:flex-row">
+        <div className="flex flex-col justify-between gap-[12px] md:flex-row md:gap-0">
           <ProductSlider images={images} />
 
           <ProductInfo
             product={productData[0]}
             prodDescription={product_description}
+            orderDescription={orderModal}
+            aromasData={aromasData}
           />
         </div>
       </div>

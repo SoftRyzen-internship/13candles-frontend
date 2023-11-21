@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 
+import { CatalogSection } from '@/sections/home/CatalogSection';
+
 import { getMetadata } from '@/lib/dictionary';
 import { Locale } from '@/i18n.config';
 
-import { fetchProducts } from '@/api/fetchProducts';
 import { CardSection } from '@/sections/product/CardSection';
 
 export const dynamicParams = false;
@@ -36,29 +37,15 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams({
-  params: { lang, category },
-}: {
-  params: { lang: Locale; category: string; product: string };
-}): Promise<Array<{ lang: Locale; category: string; product: string }>> {
-  const productsData = await fetchProducts(lang, category);
-
-  const staticParams =
-    productsData?.map(product => {
-      return {
-        lang: lang,
-        category: category,
-        product: product.attributes.slug,
-      };
-    }) || [];
-
-  return staticParams;
-}
-
 export default async function ProductPage({
   params: { lang, category, product },
 }: {
   params: { lang: Locale; category: string; product: string };
 }) {
-  return <CardSection lang={lang} category={category} product={product} />;
+  return (
+    <>
+      <CardSection lang={lang} category={category} product={product} />
+      <CatalogSection lang={lang} />
+    </>
+  );
 }
