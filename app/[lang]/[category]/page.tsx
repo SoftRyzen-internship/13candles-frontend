@@ -1,19 +1,13 @@
 import type { Metadata } from 'next';
 
-import { getDictionary, getMetadata } from '@/lib/dictionary';
-import { Locale } from '@/i18n.config';
+import { ProductsSection } from '@/sections/category/ProductsSection';
 
+import { getDictionary, getMetadata } from '@/lib/dictionary';
 import { fetchSlugs } from '@/api/fetchSlugs';
 import { fetchProducts } from '@/api/fetchProducts';
-// import Link from 'next/link';
-import ProductsList from '@/components/ProductsList/ProductsList';
-// import { fetchCategories } from '@/api/api/fetchCategories';
-
-// import { CatalogSection } from '@/sections/home/CatalogSection';
-// import { fetchAromas } from '@/api/api/fetchAromas';
-
-import { CategoriesDropdown } from '@/components/CategoriesDropdown';
 import { fetchCategories } from '@/api/fetchCategories';
+
+import { Locale } from '@/i18n.config';
 
 export const dynamicParams = false;
 
@@ -74,31 +68,13 @@ export default async function CategoryPage({
 
   return (
     <>
-      <section className="section smOnly:pt-[120px]">
-        <div className="container">
-          <p className="mb-6">
-            Category page. Мова {lang}. Категорія {category}
-          </p>
-
-          <CategoriesDropdown
-            lang={lang}
-            label={staticDictionary.category.dropdown.label}
-            categories={categories}
-            currentCategory={category}
-          />
-
-          <div className="my-[16px]  md:my-[32px]">
-            <p className="mb-4">Products: </p>
-            {products && (
-              <ProductsList
-                products={products}
-                lang={lang}
-                category={category}
-              />
-            )}
-          </div>
-        </div>
-      </section>
+      <ProductsSection
+        lang={lang}
+        category={category}
+        categories={categories}
+        staticData={staticDictionary.category}
+        products={products}
+      />
     </>
   );
 }
