@@ -12,7 +12,7 @@ export const HeroSection: React.FC<HeroProps> = ({
   form,
 }) => {
   return (
-    <section className="pb-[16px] text-base md:pb-[18px] xl:pb-[50px] smOnly:mt-[116px]">
+    <section className="pb-[16px] text-base md:pb-[18px] xl:pb-[50px] ">
       <div className="container flex flex-col gap-[24px] md:flex-row md:gap-[20px] xl:gap-[64px]">
         <div className="w-full shrink-0 md:w-[334px] xl:w-[572px]">
           <Image

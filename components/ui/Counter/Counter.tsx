@@ -1,10 +1,10 @@
 'use client';
 
-import { ICounterProps } from './types';
-
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import classnames from 'classnames';
+
+import { ICounterProps } from './types';
 
 import PlusIcon from '/public/icons/plus.svg';
 import PlusSmIcon from '/public/icons/plus-sm.svg';
@@ -15,8 +15,9 @@ export const Counter: FC<ICounterProps> = ({
   className = '',
   caption,
   size,
+  count,
+  setCount,
 }) => {
-  const [count, setCount] = useState(1);
   const increment = () => setCount(count + 1);
   const decrement = () => setCount(count - 1);
 
@@ -55,7 +56,7 @@ export const Counter: FC<ICounterProps> = ({
 
         <button type="button" onClick={increment}>
           {size == 'sm' ? (
-            <PlusSmIcon width={20} height={20} />
+            <PlusSmIcon width={24} height={24} />
           ) : (
             <PlusIcon width={24} height={24} />
           )}
