@@ -35,7 +35,7 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <body
-        className={`${montserrat.variable} ${raleway.variable} grid min-h-screen grid-cols-1 grid-rows-[1fr_auto] md:grid-rows-[auto_1fr_auto]`}
+        className={`${montserrat.variable} ${raleway.variable} grid min-h-screen grid-cols-1 grid-rows-[1fr_auto] md:grid-rows-[auto_1fr_auto] smOnly:pt-[119px]`}
       >
         <Header data={header} dataOrder={orderModal} />
         <main className="">{children}</main>

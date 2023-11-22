@@ -1,10 +1,10 @@
 'use client';
 
-import { ICounterProps } from './types';
-
 import { FC } from 'react';
 
 import classnames from 'classnames';
+
+import { ICounterProps } from './types';
 
 import PlusIcon from '/public/icons/plus.svg';
 import PlusSmIcon from '/public/icons/plus-sm.svg';

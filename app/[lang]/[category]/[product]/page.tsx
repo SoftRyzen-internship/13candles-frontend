@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 
+import { CardSection } from '@/sections/product/CardSection';
 import { CatalogSection } from '@/sections/home/CatalogSection';
 
-import { getMetadata } from '@/lib/dictionary';
-import { Locale } from '@/i18n.config';
+import { fetchProducts } from '@/api/fetchProducts';
 
-import { CardSection } from '@/sections/product/CardSection';
+import { getMetadata } from '@/lib/dictionary';
+
+import { Locale } from '@/i18n.config';
 
 export const dynamicParams = false;
 
@@ -35,6 +37,25 @@ export async function generateMetadata({
     openGraph: { ...openGraph, url: `${baseUrl}/${lang}` },
     icons,
   };
+}
+
+export async function generateStaticParams({
+  params: { lang, category },
+}: {
+  params: { lang: Locale; category: string; product: string };
+}): Promise<Array<{ lang: Locale; category: string; product: string }>> {
+  const productsData = await fetchProducts(lang, category);
+
+  const staticParams =
+    productsData?.map(product => {
+      return {
+        lang: lang,
+        category: category,
+        product: product.attributes.slug,
+      };
+    }) || [];
+
+  return staticParams;
 }
 
 export default async function ProductPage({

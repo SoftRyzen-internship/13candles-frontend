@@ -1,14 +1,16 @@
 import Link from 'next/link';
 
-import { ProdCardSectionProps } from './types';
-
-import { getDictionary } from '@/lib/dictionary';
-import { fetchOneProduct } from '@/api/fetchOneProduct';
 import { ProductSlider } from '@/components/ProductSlider';
 import { ProductInfo } from '@/components/ProductInfo';
 
-import IconArrowDown from '/public/icons/icon_arrow-down.svg';
+import { fetchOneProduct } from '@/api/fetchOneProduct';
 import { fetchAromas } from '@/api/fetchAromas';
+
+import { getDictionary } from '@/lib/dictionary';
+
+import { ProdCardSectionProps } from './types';
+
+import IconArrowDown from '/public/icons/icon_arrow-down.svg';
 
 export const CardSection: React.FC<ProdCardSectionProps> = async ({
   className,
@@ -35,7 +37,7 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
 
   return (
     <section
-      className={`section pb-[32px] md:pb-[36px] xl:pb-[148px] ${className}`}
+      className={`section pb-[32px] md:pb-[36px] xl:pb-[148px] smOnly:pt-0 ${className}`}
     >
       <div className="container">
         <div className="mb-8 border-b border-black-light/25 pb-[21px] md:mb-9 xl:mb-10 ">

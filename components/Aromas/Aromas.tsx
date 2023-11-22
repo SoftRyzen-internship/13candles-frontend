@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 
-import { IProps } from './types';
-
 import { AromaDropDown } from '../ui/AromaDropDown';
 import { Stars } from '../ui/Stars';
+
+import { IProps } from './types';
 
 export const Aromas: React.FC<IProps> = ({
   aromas,
