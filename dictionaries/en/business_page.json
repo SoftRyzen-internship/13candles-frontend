@@ -110,7 +110,8 @@
     "form": {
       "title": {
         "hero": "Fall in love with yourself with \"13 Candle Bar\" 🖤",
-        "contacts": "Send a request and we will contact you"
+        "contacts": "Send a request and we will contact you",
+        "cart": "Fill data please"
       },
       "inputs": [
         {
@@ -165,13 +166,25 @@
           }
         }
       ],
-      "button": "SEND",
+      "button": {
+        "business": "SEND",
+        "cart": "Make an order"
+      },
       "notifications": {
-        "success": {
-          "title": "Thanks, your request has been sent 🖤",
-          "text": "Our manager will contact you shortly"
+        "business": {
+          "success": {
+            "title": "Thanks, your request has been sent 🖤",
+            "text": "Our manager will contact you shortly"
+          },
+          "error": "An error occurred while sending a request"
         },
-        "error": "An error occurred while sending a request"
+        "cart": {
+          "success": {
+            "title": "Thanks, your order has been sent 🖤",
+            "text": "Our manager will contact you shortly"
+          },
+          "error": "An error occurred while sending an order"
+        }
       }
     }
   }

@@ -6,10 +6,21 @@ export const BusinessInput: FC<BusinessInputProps> = ({
   staticData,
   register,
   errors,
+  section,
 }) => {
-  const { name, label, placeholder, errorMessage, type, options } = staticData;
+  const { name, label, placeholder, errorMessage, type } = staticData;
 
   const inputError = errors[name];
+
+  const labelClass = classnames(
+    'relative flex w-full flex-col gap-2 xl:justify-between',
+    {
+      'xl:flex-row xl:items-center': section !== 'cart',
+    },
+    {
+      'xl:flex-col xl:items-start': section === 'cart',
+    },
+  );
 
   const inputClass = classnames(
     'h-[35px] w-full xl:max-w-[376px] px-3 py-2 text-black-light border outline-black-light border-black-light placeholder:text-gray common-transition',
@@ -19,16 +30,13 @@ export const BusinessInput: FC<BusinessInputProps> = ({
   );
 
   return (
-    <label className="relative flex w-full flex-col gap-2 xl:flex-row xl:items-center xl:justify-between">
+    <label className={labelClass}>
       <span> {label}</span>
       <input
         className={inputClass}
         type={type}
         placeholder={placeholder}
-        {...register(name, {
-          ...options,
-          pattern: new RegExp(options.pattern as string),
-        })}
+        {...register(name)}
       />
 
       {inputError ? (

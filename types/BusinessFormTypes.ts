@@ -15,6 +15,7 @@ export interface BusinessInputProps {
   staticData: IBusinessInput;
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
+  section: 'hero' | 'contacts' | 'cart';
 }
 
 type OptionsType = {
@@ -37,27 +38,39 @@ type NotificationsDataT = {
   error: string;
 };
 
+type NotificationsTargetT = {
+  business: NotificationsDataT;
+  cart: NotificationsDataT;
+};
+
 //form
 type TitleDataT = {
   hero: string;
   contacts: string;
+  cart: string;
 };
 
 export interface BusinessFormProps {
   staticData: {
     title: TitleDataT;
     inputs: IBusinessInput[];
-    button: string;
+    button: {
+      business: string;
+      cart: string;
+    };
   };
-  section: 'hero' | 'contacts';
+  section: 'hero' | 'contacts' | 'cart';
   setPopUpType: Dispatch<SetStateAction<PopUpType>>;
 }
 
 export type FormStaticDataT = {
   title: TitleDataT;
   inputs: IBusinessInput[];
-  button: string;
-  notifications: NotificationsDataT;
+  button: {
+    business: string;
+    cart: string;
+  };
+  notifications: NotificationsTargetT;
 };
 
 export interface BtnWithBusinessFormModalProps {

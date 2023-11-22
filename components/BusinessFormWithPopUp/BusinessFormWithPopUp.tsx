@@ -17,7 +17,9 @@ export const BusinessFormWithPopUp: FC<BusinessFormWithPopUpProps> = ({
   const [showModal, setShowModal] = useState(false);
 
   const {
-    notifications: { error, success },
+    notifications: {
+      business: { error, success },
+    },
   } = staticData;
 
   const handleToggleModal = () => {
