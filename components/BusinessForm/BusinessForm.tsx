@@ -27,7 +27,7 @@ const formSchema: any = object({
     .min(2, 'мінімум 2 символи')
     .matches(
       /^(?!.*(\s-|-\s|--)).*$/,
-      'не повинно бути поруч символів "тире" та "пробіл"',
+      'не повинно бути поруч "тире" та "пробіл"',
     )
     .max(70, 'максимум 70 символів'),
   phone: string()
@@ -47,7 +47,8 @@ export const BusinessForm: FC<BusinessFormProps> = ({
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { title, inputs, button } = staticData;
-  const store = useCartStore(store => store);
+  const getOrder = useCartStore(store => store.getOrder);
+  const resetOrder = useCartStore(store => store.reset);
 
   const {
     register,
@@ -64,12 +65,20 @@ export const BusinessForm: FC<BusinessFormProps> = ({
 
   useFormPersist(FORM_DATA_KEY, { watch, setValue });
 
-  const onSubmit: SubmitHandler<FieldValues> = async data => {
+  const onSubmit: SubmitHandler<FieldValues> = async formData => {
     try {
       setIsLoading(true);
-      const isSuccess: boolean = await sendDataToTelegram(data as IDataToSend);
+
+      let dataToSend = { ...formData };
+      if (section === 'cart') {
+        dataToSend = { ...formData, order: { ...getOrder() } };
+      }
+      const isSuccess: boolean = await sendDataToTelegram(
+        dataToSend as IDataToSend,
+      );
       // const isSuccess = true;
-      console.log(store);
+      // console.log(dataToSend);
+      resetOrder();
 
       if (isSuccess) {
         reset();
@@ -115,11 +124,8 @@ export const BusinessForm: FC<BusinessFormProps> = ({
 
   const btnStyles = classnames(
     'common-transition bg-black-light text-white mx-auto block',
-    'w-full cursor-pointer px-12 text-center text-[20px] h-[47px] font-medium leading-6 xl:border ',
+    'w-full cursor-pointer px-0 text-center text-[20px] h-[47px] font-medium leading-6 xl:border ',
     'xl:hover:bg-white xl:hover:text-black-light xl:active:bg-white xl:active:text-black-light',
-    {
-      'px-0': section === 'cart',
-    },
   );
 
   return (

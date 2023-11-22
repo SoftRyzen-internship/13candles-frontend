@@ -46,7 +46,7 @@ export const BtnWithBusinessFormModal: FC<BtnWithBusinessFormModalProps> = ({
           <BusinessForm
             staticData={staticData}
             setPopUpType={setPopUpType}
-            section="hero"
+            section="cart"
           />
         ) : null}
 
