@@ -1,17 +1,13 @@
 import type { Metadata } from 'next';
 
-import { FakeProductCard } from '@/components/ui/AddToCartBtn/FakeProductCard';
-import { ProductSlider } from '@/components/ProductSlider';
+import { CardSection } from '@/sections/product/CardSection';
 import { CatalogSection } from '@/sections/home/CatalogSection';
 
-import { getDictionary, getMetadata } from '@/lib/dictionary';
-import { Locale } from '@/i18n.config';
-
-import { fetchOneProduct } from '@/api/fetchOneProduct';
 import { fetchProducts } from '@/api/fetchProducts';
-import { fetchAromas } from '@/api/fetchAromas';
 
-import { Aromas } from '@/components/Aromas';
+import { getMetadata } from '@/lib/dictionary';
+
+import { Locale } from '@/i18n.config';
 
 export const dynamicParams = false;
 
@@ -67,44 +63,10 @@ export default async function ProductPage({
 }: {
   params: { lang: Locale; category: string; product: string };
 }) {
-  const productData = await fetchOneProduct(lang, category, product);
-  const {
-    common: { orderModal },
-  } = await getDictionary(lang);
-  const aromas = await fetchAromas(lang);
-
-  const { productpage } = await getDictionary(lang);
-  const { product_description } = productpage;
-
   return (
     <>
-      <div>
-        <p className="smOnly:pt-[200px]">
-          Product page. Мова {lang}. Категорія {category}.
-        </p>
-
-        {productData && productData.length > 0 ? (
-          <>
-            {productData.map(({ attributes: { title, images } }) => (
-              <div key={title} className="pb-4">
-                <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-3">
-                  <ProductSlider images={images} />
-
-                  <FakeProductCard
-                    dataOrder={orderModal}
-                    product={productData[0]}
-                  />
-                </div>
-              </div>
-            ))}
-            <CatalogSection lang={lang} />
-
-            <Aromas aromas={aromas} prodDescription={product_description} />
-          </>
-        ) : (
-          <p>Something went wrong...</p>
-        )}
-      </div>
+      <CardSection lang={lang} category={category} product={product} />
+      <CatalogSection lang={lang} />
     </>
   );
 }
