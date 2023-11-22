@@ -8,16 +8,32 @@ import { OurManufactureSection } from '@/sections/business/OurManufactureSection
 import { UsefulWhomSection } from '@/sections/business/UsefulWhomSection';
 import { ContactsSection } from '@/sections/business/ContactsSection';
 
-import { getDictionary } from '@/lib/dictionary';
-import { createMetadata } from '@/utils';
+import { getDictionary, getMetadata } from '@/lib/dictionary';
+
+import { BASE_URL } from '../layout';
+import { FOR_BUSINESS } from '@/data';
 
 export async function generateMetadata({
   params: { lang },
 }: {
   params: { lang: Locale };
 }): Promise<Metadata> {
-  const metadata = await createMetadata({ lang, page: 'business' });
-  return metadata;
+  const { meta, metadataBusiness } = await getMetadata(lang);
+
+  const { openGraph, icons, languages } = meta;
+  const { title, description, keywords } = metadataBusiness;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${BASE_URL}/${lang}${FOR_BUSINESS}`,
+      languages,
+    },
+    keywords,
+    openGraph: { ...openGraph, url: `${BASE_URL}/${lang}${FOR_BUSINESS}` },
+    icons,
+  };
 }
 
 export default async function BusinessPage({

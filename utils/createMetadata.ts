@@ -4,13 +4,11 @@ import { fetchCategories } from '@/api/fetchCategories';
 import { fetchProducts } from '@/api/fetchProducts';
 import { getMetadata } from '@/lib/dictionary';
 
-import { FOR_BUSINESS } from '@/data';
-
 type Args = {
   lang: Locale;
-  category?: string;
+  category: string;
   product?: string;
-  page: 'home' | 'business' | 'category' | 'product';
+  page: 'category' | 'product';
 };
 
 export const createMetadata = async ({
@@ -19,18 +17,15 @@ export const createMetadata = async ({
   product,
   page,
 }: Args) => {
-  const categories = category ? await fetchCategories(lang) : [];
+  const categories = (await fetchCategories(lang)) ?? [];
   const products = category ? await fetchProducts(lang, category) : [];
 
   const {
-    meta,
+    meta: { openGraph, languages },
     metadataHome,
-    metadataBusiness,
     metadataCategory,
     metadataProduct,
   } = await getMetadata(lang);
-
-  const { twitter, openGraph, icons, languages, manifest } = meta;
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
@@ -54,8 +49,6 @@ export const createMetadata = async ({
 
   const getTitle = () => {
     switch (page) {
-      case 'business':
-        return metadataBusiness.title;
       case 'category':
         return `${metadataHome.title}. ${categoryTitle}`;
       case 'product':
@@ -67,8 +60,6 @@ export const createMetadata = async ({
 
   const getUrl = () => {
     switch (page) {
-      case 'business':
-        return `${baseUrl}/${lang}${FOR_BUSINESS}`;
       case 'category':
         return `${baseUrl}/${lang}/${category}`;
       case 'product':
@@ -80,8 +71,6 @@ export const createMetadata = async ({
 
   const getDesc = () => {
     switch (page) {
-      case 'business':
-        return metadataBusiness.description;
       case 'product':
         return productDesc;
       default:
@@ -89,27 +78,14 @@ export const createMetadata = async ({
     }
   };
 
-  const getKeys = () => {
-    switch (page) {
-      case 'business':
-        return metadataBusiness.keywords;
-      default:
-        return metadataHome.keywords;
-    }
-  };
-
   return {
     title: getTitle(),
     description: getDesc(), // TODO
-    metadataBase: new URL(baseUrl),
-    manifest,
+    // keywords:  // TODO
     alternates: {
       canonical: getUrl(),
       languages,
     },
-    keywords: getKeys(), // TODO
-    twitter,
     openGraph: { ...openGraph, url: getUrl() },
-    icons,
   };
 };

@@ -13,6 +13,8 @@ import { fetchProducts } from '@/api/fetchProducts';
 import { fetchAromas } from '@/api/fetchAromas';
 
 export const dynamicParams = false;
+export const dynamic = 'error';
+export const revalidate = false;
 
 export async function generateMetadata({
   params: { lang, category, product },

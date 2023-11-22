@@ -7,7 +7,7 @@ import { ModalWindow } from '@/components/ui/ModalWindow';
 import { Basket } from '@/components/Basket';
 
 import { useCartStore } from '@/store';
-import { useRehydrate } from '@/utils';
+import { useRehydrate } from '@/utils/useRehydrate';
 
 import { BasketButtonProps } from './types';
 

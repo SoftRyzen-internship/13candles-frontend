@@ -6,7 +6,8 @@ import { CategoriesDropdown } from '@/components/CategoriesDropdown';
 import { ProductsList } from '@/components/ProductsList';
 import { ShowMoreButton } from '@/components/ui/ShowMoreButton';
 
-import { filterProducts, useWindowDimensions } from '@/utils';
+import { filterProducts } from '@/utils';
+import { useWindowDimensions } from '@/utils/useWindowDimension';
 
 import { ProductsSectionProps } from './types';
 
