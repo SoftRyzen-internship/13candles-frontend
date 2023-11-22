@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
 import { Montserrat, Raleway } from 'next/font/google';
-import { Locale, i18n } from '@/i18n.config';
 
 import { Header } from '@/layout/Header';
 import { Footer } from '@/layout/Footer';
 
 import { getDictionary, getMetadata } from '@/lib/dictionary';
+
+import { Locale, i18n } from '@/i18n.config';
 
 import '../globals.css';
 

@@ -6,9 +6,9 @@ import { getMetadata } from '@/lib/dictionary';
 
 type Args = {
   lang: Locale;
+  page: 'category' | 'product';
   category: string;
   product?: string;
-  page: 'category' | 'product';
 };
 
 export const createMetadata = async ({

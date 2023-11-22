@@ -1,10 +1,10 @@
-import type { Locale } from '@/i18n.config';
-
-import { getDictionary } from '@/lib/dictionary';
-
 import { AboutSection } from '@/sections/home/AboutSection';
 import { CatalogSection } from '@/sections/home/CatalogSection';
 import { HeroSection } from '@/sections/home/HeroSection';
+
+import { getDictionary } from '@/lib/dictionary';
+
+import type { Locale } from '@/i18n.config';
 
 export default async function Home({
   params: { lang },

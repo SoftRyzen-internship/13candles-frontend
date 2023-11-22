@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import type { Locale } from '@/i18n.config';
 
 import { HeroSection } from '@/sections/business/HeroSection';
 import { SecondSection } from '@/sections/business/SecondSection';
@@ -12,6 +11,8 @@ import { getDictionary, getMetadata } from '@/lib/dictionary';
 
 import { BASE_URL } from '../layout';
 import { FOR_BUSINESS } from '@/data';
+
+import type { Locale } from '@/i18n.config';
 
 export async function generateMetadata({
   params: { lang },

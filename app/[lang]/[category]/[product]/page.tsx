@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import type { Locale } from '@/i18n.config';
 
 import { FakeProductCard } from '@/components/ui/AddToCartBtn/FakeProductCard';
 import { ProductSlider } from '@/components/ProductSlider';
@@ -11,6 +10,8 @@ import { createMetadata } from '@/utils';
 import { fetchOneProduct } from '@/api/fetchOneProduct';
 import { fetchProducts } from '@/api/fetchProducts';
 import { fetchAromas } from '@/api/fetchAromas';
+
+import type { Locale } from '@/i18n.config';
 
 export const dynamicParams = false;
 export const dynamic = 'error';

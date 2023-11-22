@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import type { Locale } from '@/i18n.config';
 
 import { ProductsSection } from '@/sections/category/ProductsSection';
 
@@ -8,6 +7,8 @@ import { getDictionary } from '@/lib/dictionary';
 import { fetchSlugs } from '@/api/fetchSlugs';
 import { fetchProducts } from '@/api/fetchProducts';
 import { fetchCategories } from '@/api/fetchCategories';
+
+import type { Locale } from '@/i18n.config';
 
 export const dynamicParams = false;
 export const dynamic = 'error';
