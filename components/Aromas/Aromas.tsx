@@ -1,22 +1,29 @@
 'use client';
 
-import { useState } from 'react';
-
-import { IProps } from './types';
+import { useEffect, useState } from 'react';
 
 import { AromaDropDown } from '../ui/AromaDropDown';
 import { Stars } from '../ui/Stars';
 
+import { IProps } from './types';
+
 export const Aromas: React.FC<IProps> = ({
   aromas,
   prodDescription,
+  setAromaName,
   className,
 }) => {
   const [shownItem, setShownItem] = useState(0);
 
-  if (!aromas) {
-    return;
-  }
+  useEffect(() => {
+    if (!aromas) return;
+
+    const aroma = aromas[shownItem].attributes.Title;
+
+    setAromaName(aroma);
+  }, [shownItem, aromas, setAromaName]);
+
+  if (!aromas) return;
 
   const { aroma, notes, sweetness, astringency, freshness } = prodDescription;
   const { Notes, Sweetness, Astringency, Freshness } =

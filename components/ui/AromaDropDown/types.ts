@@ -1,8 +1,9 @@
 import { Dispatch, SetStateAction } from 'react';
-import { IAroma } from '../../Aromas/types';
+import { AromasData } from '@/types/Aromas';
 
-export interface IDropDown extends IAroma {
+export interface IDropDown {
   setShownItem: Dispatch<SetStateAction<number>>;
+  aromas: AromasData;
   shownItem: number;
   className?: string;
 }
