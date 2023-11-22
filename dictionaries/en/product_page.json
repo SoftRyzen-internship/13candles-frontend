@@ -1,0 +1,14 @@
+{
+  "productpage": {
+    "product_description": {
+      "amount": "Amount",
+      "aroma": "Aroma",
+      "notes": "Notes",
+      "sweetness": "Sweetness",
+      "astringency": "Astringency",
+      "freshness": "Freshness",
+      "add": "Add to cart",
+      "purchase": "Make a purchase"
+    }
+  }
+}

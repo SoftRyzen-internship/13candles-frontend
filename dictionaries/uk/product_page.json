@@ -1,0 +1,14 @@
+{
+  "productpage": {
+    "product_description": {
+      "amount": "Об'єм",
+      "aroma": "Аромат",
+      "notes": "Ноти",
+      "sweetness": "Солодкість",
+      "astringency": "Терпкість",
+      "freshness": "Свіжість",
+      "add": "Додати у кошик",
+      "purchase": "Оформити покупку"
+    }
+  }
+}

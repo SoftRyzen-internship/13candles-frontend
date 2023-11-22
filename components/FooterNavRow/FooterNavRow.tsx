@@ -9,7 +9,10 @@ import { BusinessLink } from '@/components/ui/BusinessLink';
 import { usePathname } from 'next/navigation';
 import { FOR_BUSINESS } from '@/data';
 
-export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
+export const FooterNavRow: React.FC<FooterNavRowProps> = ({
+  data,
+  dataOrder,
+}: FooterNavRowProps) => {
   const { nav_text, nav, forBusinessBtnText, basketText } = data;
 
   const pathname = usePathname();
@@ -36,6 +39,7 @@ export const FooterNavRow: React.FC<FooterNavRowProps> = ({ data }) => {
               className="xl:text-base xl:font-medium"
               text={basketText}
               isIcon={false}
+              data={dataOrder}
             />
           </li>
           <li>

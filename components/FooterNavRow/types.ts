@@ -1,3 +1,5 @@
+import { IOrderModalStatic } from '@/types/OrderModalStatic';
+
 export type FooterNavRowProps = {
   data: {
     nav_text: string;
@@ -8,4 +10,5 @@ export type FooterNavRowProps = {
     forBusinessBtnText: string;
     basketText: string;
   };
+  dataOrder: IOrderModalStatic;
 };

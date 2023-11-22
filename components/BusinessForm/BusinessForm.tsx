@@ -12,6 +12,7 @@ import { sendDataToTelegram } from '@/utils/api/sendDataToTelegram';
 import { ButtonLoader } from '@/components/ButtonLoader';
 import { BusinessInput } from '@/components/BusinessInput';
 import { BusinessFormProps, IDataToSend } from '@/types';
+import { useCartStore } from '@/store';
 
 const FORM_DATA_KEY = 'form_data';
 
@@ -46,6 +47,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { title, inputs, button } = staticData;
+  const store = useCartStore(store => store);
 
   const {
     register,
@@ -66,6 +68,8 @@ export const BusinessForm: FC<BusinessFormProps> = ({
     try {
       setIsLoading(true);
       const isSuccess: boolean = await sendDataToTelegram(data as IDataToSend);
+      // const isSuccess = true;
+      console.log(store);
 
       if (isSuccess) {
         reset();
