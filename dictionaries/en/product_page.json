@@ -9,7 +9,9 @@
       "astringency": "Astringency",
       "freshness": "Freshness",
       "add": "Add to cart",
-      "purchase": "Make a purchase"
+      "purchase": "Make a purchase",
+      "quantity": "Qty",
+      "pieces": "pcs"
     }
   }
 }

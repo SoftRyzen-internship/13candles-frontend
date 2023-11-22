@@ -1,16 +1,6 @@
 import { AromasData } from '@/types/Aromas';
+import { IProdDescription } from '@/types/Products';
 import { Dispatch, SetStateAction } from 'react';
-
-export interface IProdDescription {
-  amount: string;
-  aroma: string;
-  notes: string;
-  sweetness: string;
-  astringency: string;
-  freshness: string;
-  add: string;
-  purchase: string;
-}
 
 export interface IProps {
   prodDescription: IProdDescription;

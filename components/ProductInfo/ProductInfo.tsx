@@ -36,7 +36,7 @@ export const ProductInfo: React.FC<IProductInfo> = ({
     },
   } = product;
 
-  const { amount, add } = prodDescription;
+  const { amount, add, quantity, pieces } = prodDescription;
   const addToCart = () => {
     if (count < 1) return;
 
@@ -84,11 +84,11 @@ export const ProductInfo: React.FC<IProductInfo> = ({
 
       <div className="mb-4 flex justify-between md:justify-normal xl:mb-6">
         <p className="font-montserrat text-[20px] font-medium">
-          {`${price} ₴ / шт`}
+          {`${price} ₴ / ${pieces}`}
         </p>
 
         <Counter
-          caption="К-сть:"
+          caption={quantity}
           size="sm"
           count={count}
           setCount={setCount}
@@ -117,7 +117,7 @@ export const ProductInfo: React.FC<IProductInfo> = ({
 
       <p>{information}</p>
 
-      <ToastContainer autoClose={2000} />
+      <ToastContainer position="top-center" autoClose={2000} />
     </div>
   );
 };

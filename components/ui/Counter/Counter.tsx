@@ -56,7 +56,7 @@ export const Counter: FC<ICounterProps> = ({
 
         <button type="button" onClick={increment}>
           {size == 'sm' ? (
-            <PlusSmIcon width={20} height={20} />
+            <PlusSmIcon width={24} height={24} />
           ) : (
             <PlusIcon width={24} height={24} />
           )}

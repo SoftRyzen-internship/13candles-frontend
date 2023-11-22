@@ -38,14 +38,14 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
       className={`section pb-[32px] md:pb-[36px] xl:pb-[148px] ${className}`}
     >
       <div className="container">
-        <div className="mb-8 border-b border-black-light/25 md:mb-9 xl:mb-10">
+        <div className="mb-8 border-b border-black-light/25 pb-[21px] md:mb-9 xl:mb-10 ">
           <Link
             href={`./${lang}/${category}`}
             className="link inline-flex items-center font-medium"
           >
             <IconArrowDown width={24} height={24} className="rotate-90" />
 
-            <span className="pl-3 uppercase">{back}</span>
+            <span className="ml-3 uppercase">{back}</span>
           </Link>
         </div>
 
