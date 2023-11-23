@@ -32,7 +32,7 @@ export const Header: React.FC<HeaderProps> = ({ data, dataOrder }) => {
   const isBusinessPage = checkPageName(pathname, FOR_BUSINESS);
 
   return (
-    <header className="z-10 w-full bg-body pb-6 pt-9 md:pb-8 xl:pb-10 smOnly:fixed">
+    <header className="z-10 w-full bg-body pb-8 pt-9 xl:pb-10 smOnly:fixed smOnly:top-0">
       <div className="smOnly:header-underline container relative">
         <nav className="grid grid-cols-3 items-center justify-items-stretch">
           {isHomePage ? (

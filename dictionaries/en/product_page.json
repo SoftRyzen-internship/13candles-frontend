@@ -1,5 +1,6 @@
 {
   "productpage": {
+    "back": "Back",
     "product_description": {
       "amount": "Amount",
       "aroma": "Aroma",
@@ -8,7 +9,9 @@
       "astringency": "Astringency",
       "freshness": "Freshness",
       "add": "Add to cart",
-      "purchase": "Make a purchase"
+      "purchase": "Make a purchase",
+      "quantity": "Qty",
+      "pieces": "pcs"
     }
   }
 }

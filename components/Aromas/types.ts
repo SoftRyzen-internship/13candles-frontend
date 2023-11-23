@@ -1,24 +1,10 @@
-import { AromaInfo } from '@/types/Aromas';
+import { AromasData } from '@/types/Aromas';
+import { IProdDescription } from '@/types/Products';
+import { Dispatch, SetStateAction } from 'react';
 
-export interface IAroma {
-  aromas?: {
-    id: number;
-    attributes: AromaInfo;
-  }[];
-}
-
-export interface IProdDescription {
-  amount: string;
-  aroma: string;
-  notes: string;
-  sweetness: string;
-  astringency: string;
-  freshness: string;
-  add: string;
-  purchase: string;
-}
-
-export interface IProps extends IAroma {
+export interface IProps {
   prodDescription: IProdDescription;
+  aromas: AromasData;
+  setAromaName: Dispatch<SetStateAction<string>>;
   className?: string;
 }

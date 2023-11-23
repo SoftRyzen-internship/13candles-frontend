@@ -73,7 +73,7 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
 
       {!isIcon && !text && (
         <button
-          className="common-transition w-full border-[1px] border-transparent bg-black-light py-3 text-center text-lg font-medium uppercase text-white hover:border-black-light hover:bg-white hover:text-black-light focus:border-black-light focus:bg-white focus:text-black-light"
+          className={`common-transition w-full border-[1px] border-transparent bg-black-light py-3 text-center text-lg font-medium uppercase text-white hover:border-black-light hover:bg-white hover:text-black-light focus:border-black-light focus:bg-white focus:text-black-light ${className}`}
           onClick={onToggleShowModal}
           type="button"
         >

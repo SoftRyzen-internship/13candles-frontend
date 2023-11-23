@@ -22,3 +22,16 @@ export type ProductDataInfo = {
     images: Image[];
   };
 };
+
+export interface IProdDescription {
+  amount: string;
+  aroma: string;
+  notes: string;
+  sweetness: string;
+  astringency: string;
+  freshness: string;
+  add: string;
+  purchase: string;
+  quantity: string;
+  pieces: string;
+}

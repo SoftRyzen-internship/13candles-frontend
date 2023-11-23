@@ -36,7 +36,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
   };
 
   return (
-    <section className="pb-12 pt-[120px] md:pb-9 md:pt-1 xl:pb-[100px] xl:pt-8">
+    <section className="pb-12 pt-0 md:pb-9 md:pt-1 xl:pb-[100px] xl:pt-8">
       <div className="container">
         <div className="flex flex-col gap-4 md:gap-5">
           <CategoriesDropdown

@@ -6,4 +6,5 @@ export interface ButtonProps {
   onClick?: () => void;
   disabled?: boolean;
   className?: string;
+  theme?: 'dark' | 'white';
 }

@@ -13,13 +13,31 @@ export const Button: React.FC<ButtonProps> = ({
   className,
   buttonType,
   disabled,
+  theme,
   onClick,
 }) => {
-  const btnStyles = classNames(
-    'common-transition notXl:bg-black-light xl:border-black-light xl:text-black-light xl:bg-body notXl:text-white mx-auto block',
-    'w-full cursor-pointer py-3 text-center text-[20px] font-medium leading-6 xl:border xl:py-[11px]',
+  const btn = classNames(
+    'w-full py-3 px-5 text-center text-[20px] leading-6 font-medium border border-black-light cursor-pointer common-transition shrink-0',
+  );
+
+  const btnDefault = classNames(
+    'notXl:bg-black-light xl:border-black-light xl:text-black-light xl:bg-body notXl:text-white mx-auto block',
+    'xl:border xl:py-[11px]',
     'xl:hover:bg-black-light xl:focus:bg-black-light xl:hover:text-white xl:focus:text-white',
     'xl:active:bg-black-light xl:active:text-white',
+  );
+  const btnWhite = classNames(
+    'mb-[8px] xl:mb-0 text-black-light uppercase bg-body hover:bg-black-light hover:text-white active:bg-black-light active:text-white',
+  );
+  const btnDark = classNames(
+    'bg-black-light text-white uppercase hover:bg-body hover:text-black-light active:bg-body active:text-black-light',
+  );
+
+  const btnStyles = classNames(
+    btn,
+    { [btnDefault]: !theme },
+    { [btnWhite]: theme === 'white' },
+    { [btnDark]: theme === 'dark' },
     className,
   );
 

@@ -10,6 +10,7 @@ import { StaticCategoriesList } from '@/components/CategoriesList/StaticCategori
 import { getCommonDictionaries } from '@/lib/dictionary';
 
 export const CatalogSection: React.FC<CatalogSectionProps> = async ({
+  className,
   isHomePage = false,
   lang,
 }) => {
@@ -29,9 +30,11 @@ export const CatalogSection: React.FC<CatalogSectionProps> = async ({
   return (
     <section
       id={CATALOG}
-      className={`section md:pt-[76px] xl:pt-[15px] ${
-        !isHomePage ? 'pb-[48px] xl:pb-[100px]' : 'xl:pb-[50px]'
-      }`}
+      className={`section  ${
+        !isHomePage
+          ? 'pb-[48px] pt-0 xl:pb-[100px]'
+          : 'md:pt-[76px] xl:pb-[50px] xl:pt-[15px]'
+      } ${className}`}
     >
       <div className="container">
         <h2
