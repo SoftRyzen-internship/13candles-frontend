@@ -1,39 +1,10 @@
-import type { Metadata } from 'next';
-
-import { getDictionary, getMetadata } from '@/lib/dictionary';
-import { Locale } from '@/i18n.config';
-
 import { AboutSection } from '@/sections/home/AboutSection';
 import { CatalogSection } from '@/sections/home/CatalogSection';
 import { HeroSection } from '@/sections/home/HeroSection';
 
-export async function generateMetadata({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}): Promise<Metadata> {
-  const { meta, metadataHome } = await getMetadata(lang);
+import { getDictionary } from '@/lib/dictionary';
 
-  const { twitter, openGraph, icons, languages, manifest } = meta;
-  const { title, description, keywords } = metadataHome;
-
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
-
-  return {
-    title,
-    description,
-    metadataBase: new URL(baseUrl),
-    manifest,
-    alternates: {
-      canonical: `${baseUrl}/${lang}`,
-      languages,
-    },
-    keywords,
-    twitter,
-    openGraph: { ...openGraph, url: `${baseUrl}/${lang}` },
-    icons,
-  };
-}
+import type { Locale } from '@/i18n.config';
 
 export default async function Home({
   params: { lang },
