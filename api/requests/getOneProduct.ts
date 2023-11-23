@@ -5,6 +5,7 @@ export const getOneProduct = gql`
     products(
       locale: $locale
       filters: { slug: { eq: $product }, category: { slug: { eq: $category } } }
+      pagination: { limit: 100 }
     ) {
       data {
         id
