@@ -123,27 +123,27 @@
             {
               "propName": "minLength",
               "propValue": "2",
-              "propMessage": "uu"
+              "propMessage": "min 2 characters"
             },
             {
               "propName": "maxLength",
               "propValue": "70",
-              "propMessage": "uu"
+              "propMessage": "max 70 characters"
             },
             {
               "propName": "required",
               "propValue": "0",
-              "propMessage": "uu"
+              "propMessage": "required field"
             },
             {
               "propName": "allowedCharacters",
               "propValue": "^[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s-]*$",
-              "propMessage": "uu"
+              "propMessage": "digits and cpecial symbols are not allowed"
             },
             {
               "propName": "notAllowedCombinations",
               "propValue": "^(?!.*(\\s-|-\\s|--)).*$",
-              "propMessage": "uu"
+              "propMessage": "combination with dash and space is not allowed"
             }
           ]
         },
@@ -156,27 +156,27 @@
             {
               "propName": "minLength",
               "propValue": "12",
-              "propMessage": "uu"
+              "propMessage": "min 11 digits"
             },
             {
               "propName": "maxLength",
               "propValue": "13",
-              "propMessage": "uu"
+              "propMessage": "max 12 digits"
             },
             {
               "propName": "required",
               "propValue": "0",
-              "propMessage": "uu"
+              "propMessage": "required field"
             },
             {
               "propName": "beginWithPlus",
               "propValue": "^\\+.*$",
-              "propMessage": "uu"
+              "propMessage": "must to start with +.."
             },
             {
               "propName": "consistsOfNumbers",
               "propValue": "^\\+\\d*$",
-              "propMessage": "uu"
+              "propMessage": "consists of digits only"
             }
           ]
         },
@@ -189,7 +189,7 @@
             {
               "propName": "yupDefaultEmailRules",
               "propValue": "0",
-              "propMessage": "uu"
+              "propMessage": "email must be valid"
             }
           ]
         }

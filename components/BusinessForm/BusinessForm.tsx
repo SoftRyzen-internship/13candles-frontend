@@ -3,11 +3,11 @@
 import { FC, useState } from 'react';
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
-import { object, string } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import classnames from 'classnames';
 
 import { sendDataToTelegram } from '@/utils/api/sendDataToTelegram';
+import { makeSchema } from './schema';
 
 import { ButtonLoader } from '@/components/ButtonLoader';
 import { BusinessInput } from '@/components/BusinessInput';
@@ -27,48 +27,6 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   const getOrder = useCartStore(store => store.getOrder);
   const resetOrder = useCartStore(store => store.reset);
 
-  const formSchema: any = object({
-    name: string()
-      .trim()
-      .required(inputs[0].validationData[2].propMessage)
-      .matches(
-        RegExp(inputs[0].validationData[3].propValue),
-        inputs[0].validationData[3].propMessage,
-      )
-      .min(
-        Number(inputs[0].validationData[0].propValue),
-        inputs[0].validationData[0].propMessage,
-      )
-      .matches(
-        RegExp(inputs[0].validationData[4].propValue),
-        inputs[0].validationData[4].propMessage,
-      )
-      .max(
-        Number(inputs[0].validationData[1].propValue),
-        inputs[0].validationData[1].propMessage,
-      ),
-    phone: string()
-      .trim()
-      .required(inputs[1].validationData[2].propMessage)
-      .matches(
-        RegExp(inputs[1].validationData[3].propValue),
-        inputs[1].validationData[3].propMessage,
-      )
-      .min(
-        Number(inputs[1].validationData[0].propValue),
-        inputs[1].validationData[0].propMessage,
-      )
-      .matches(
-        RegExp(inputs[1].validationData[4].propValue),
-        inputs[1].validationData[4].propMessage,
-      )
-      .max(
-        Number(inputs[1].validationData[1].propValue),
-        inputs[1].validationData[1].propMessage,
-      ),
-    email: string().trim().email(inputs[2].validationData[0].propMessage),
-  });
-
   const {
     register,
     formState: { errors },
@@ -79,7 +37,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   } = useForm<FieldValues>({
     shouldFocusError: false,
     mode: 'onChange',
-    resolver: yupResolver(formSchema),
+    resolver: yupResolver(makeSchema(inputs)),
   });
 
   useFormPersist(FORM_DATA_KEY, { watch, setValue });
