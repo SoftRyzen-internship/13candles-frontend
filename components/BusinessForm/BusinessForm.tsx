@@ -13,7 +13,7 @@ import { ButtonLoader } from '@/components/ButtonLoader';
 import { BusinessInput } from '@/components/BusinessInput';
 
 import { useCartStore } from '@/store';
-import { BusinessFormProps, IDataToSend } from '@/types';
+import { BusinessFormProps } from '@/types';
 
 const FORM_DATA_KEY = 'form_data';
 
@@ -46,13 +46,18 @@ export const BusinessForm: FC<BusinessFormProps> = ({
     try {
       setIsLoading(true);
 
-      let dataToSend = { ...formData };
-      if (section === 'hero') {
-        dataToSend = { ...formData, order: { ...getOrder() } };
+      const client = JSON.stringify(formData);
+
+      let dataToSend = { client, order: 'consultation' };
+      if (section === 'cart') {
+        const order = JSON.stringify({ ...getOrder() });
+        dataToSend = {
+          ...dataToSend,
+          order,
+        };
       }
-      const isSuccess: boolean = await sendDataToTelegram(
-        dataToSend as IDataToSend,
-      );
+
+      const isSuccess: boolean = await sendDataToTelegram(dataToSend);
 
       if (isSuccess) {
         reset();
