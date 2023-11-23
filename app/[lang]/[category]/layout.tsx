@@ -3,6 +3,8 @@ import { fetchSlugs } from '@/api/fetchSlugs';
 import { Locale } from '@/i18n.config';
 
 export const dynamicParams = false;
+export const dynamic = 'error';
+export const revalidate = false;
 
 export async function generateStaticParams({
   params: { lang },

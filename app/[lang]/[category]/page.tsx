@@ -2,41 +2,25 @@ import type { Metadata } from 'next';
 
 import { ProductsSection } from '@/sections/category/ProductsSection';
 
-import { getDictionary, getMetadata } from '@/lib/dictionary';
+import { createMetadata } from '@/utils';
+import { getDictionary } from '@/lib/dictionary';
 import { fetchSlugs } from '@/api/fetchSlugs';
 import { fetchProducts } from '@/api/fetchProducts';
 import { fetchCategories } from '@/api/fetchCategories';
 
-import { Locale } from '@/i18n.config';
+import type { Locale } from '@/i18n.config';
 
 export const dynamicParams = false;
+export const dynamic = 'error';
+export const revalidate = false;
 
 export async function generateMetadata({
-  params: { lang },
+  params: { lang, category },
 }: {
-  params: { lang: Locale };
+  params: { lang: Locale; category: string };
 }): Promise<Metadata> {
-  const { meta, metadataHome } = await getMetadata(lang);
-
-  const { twitter, openGraph, icons, languages, manifest } = meta;
-  const { title, description, keywords } = metadataHome;
-
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
-
-  return {
-    title,
-    description,
-    metadataBase: new URL(baseUrl),
-    manifest,
-    alternates: {
-      canonical: `${baseUrl}/${lang}`,
-      languages,
-    },
-    keywords,
-    twitter,
-    openGraph: { ...openGraph, url: `${baseUrl}/${lang}` },
-    icons,
-  };
+  const metadata = await createMetadata({ lang, category, page: 'category' });
+  return metadata;
 }
 
 export async function generateStaticParams({

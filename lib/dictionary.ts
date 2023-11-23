@@ -26,12 +26,16 @@ const metadata = {
     ...(await import(`@/dictionaries/en/meta/common.json`)).default,
     ...(await import(`@/dictionaries/en/meta/home.json`)).default,
     ...(await import(`@/dictionaries/en/meta/business.json`)).default,
+    ...(await import(`@/dictionaries/en/meta/category.json`)).default,
+    ...(await import(`@/dictionaries/en/meta/product.json`)).default,
   }),
 
   uk: async () => ({
     ...(await import(`@/dictionaries/uk/meta/common.json`)).default,
     ...(await import(`@/dictionaries/uk/meta/home.json`)).default,
     ...(await import(`@/dictionaries/uk/meta/business.json`)).default,
+    ...(await import(`@/dictionaries/uk/meta/category.json`)).default,
+    ...(await import(`@/dictionaries/uk/meta/product.json`)).default,
   }),
 };
 
