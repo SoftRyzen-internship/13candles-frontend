@@ -3,7 +3,7 @@
 import { FC, useState } from 'react';
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
-import { string, object } from 'yup';
+import { object, string } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import classnames from 'classnames';
 
@@ -11,34 +11,11 @@ import { sendDataToTelegram } from '@/utils/api/sendDataToTelegram';
 
 import { ButtonLoader } from '@/components/ButtonLoader';
 import { BusinessInput } from '@/components/BusinessInput';
-import { BusinessFormProps, IDataToSend } from '@/types';
+
 import { useCartStore } from '@/store';
+import { BusinessFormProps, IDataToSend } from '@/types';
 
 const FORM_DATA_KEY = 'form_data';
-
-const formSchema: any = object({
-  name: string()
-    .trim()
-    .required("обов'язкове поле")
-    .matches(
-      /^[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\s-]*$/,
-      'не передбачає числа та спецсимволи',
-    )
-    .min(2, 'мінімум 2 символи')
-    .matches(
-      /^(?!.*(\s-|-\s|--)).*$/,
-      'не повинно бути поруч "тире" та "пробіл"',
-    )
-    .max(70, 'максимум 70 символів'),
-  phone: string()
-    .trim()
-    .required("обов'язкове поле")
-    .matches(/^\+.*$/, 'має починатися з +')
-    .min(12, 'мінімум 11 цифр')
-    .matches(/^\+\d*$/, 'передбачає лише цифри')
-    .max(13, 'максимум 12 цифр'),
-  email: string().trim().email('поле має бути валідним'),
-});
 
 export const BusinessForm: FC<BusinessFormProps> = ({
   staticData,
@@ -49,6 +26,48 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   const { title, inputs, button } = staticData;
   const getOrder = useCartStore(store => store.getOrder);
   const resetOrder = useCartStore(store => store.reset);
+
+  const formSchema: any = object({
+    name: string()
+      .trim()
+      .required(inputs[0].validationData[2].propMessage)
+      .matches(
+        RegExp(inputs[0].validationData[3].propValue),
+        inputs[0].validationData[3].propMessage,
+      )
+      .min(
+        Number(inputs[0].validationData[0].propValue),
+        inputs[0].validationData[0].propMessage,
+      )
+      .matches(
+        RegExp(inputs[0].validationData[4].propValue),
+        inputs[0].validationData[4].propMessage,
+      )
+      .max(
+        Number(inputs[0].validationData[1].propValue),
+        inputs[0].validationData[1].propMessage,
+      ),
+    phone: string()
+      .trim()
+      .required(inputs[1].validationData[2].propMessage)
+      .matches(
+        RegExp(inputs[1].validationData[3].propValue),
+        inputs[1].validationData[3].propMessage,
+      )
+      .min(
+        Number(inputs[1].validationData[0].propValue),
+        inputs[1].validationData[0].propMessage,
+      )
+      .matches(
+        RegExp(inputs[1].validationData[4].propValue),
+        inputs[1].validationData[4].propMessage,
+      )
+      .max(
+        Number(inputs[1].validationData[1].propValue),
+        inputs[1].validationData[1].propMessage,
+      ),
+    email: string().trim().email(inputs[2].validationData[0].propMessage),
+  });
 
   const {
     register,
@@ -70,18 +89,16 @@ export const BusinessForm: FC<BusinessFormProps> = ({
       setIsLoading(true);
 
       let dataToSend = { ...formData };
-      if (section === 'cart') {
+      if (section === 'hero') {
         dataToSend = { ...formData, order: { ...getOrder() } };
       }
       const isSuccess: boolean = await sendDataToTelegram(
         dataToSend as IDataToSend,
       );
-      // const isSuccess = true;
-      // console.log(dataToSend);
-      resetOrder();
 
       if (isSuccess) {
         reset();
+        resetOrder();
         sessionStorage.removeItem(FORM_DATA_KEY);
         setPopUpType('success');
       }

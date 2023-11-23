@@ -8,7 +8,7 @@ export const BusinessInput: FC<BusinessInputProps> = ({
   errors,
   section,
 }) => {
-  const { name, label, placeholder, errorMessage, type } = staticData;
+  const { name, label, placeholder, type } = staticData;
 
   const inputError = errors[name];
 
@@ -41,7 +41,7 @@ export const BusinessInput: FC<BusinessInputProps> = ({
 
       {inputError ? (
         <span className="absolute -bottom-1 right-0 translate-y-[100%] text-[12px] leading-[14px] text-red">
-          {(inputError?.message as string) || errorMessage}
+          {inputError?.message as string}
         </span>
       ) : null}
     </label>

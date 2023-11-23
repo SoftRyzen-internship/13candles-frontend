@@ -118,52 +118,80 @@
           "name": "name",
           "label": "Your name *",
           "placeholder": "Ivanov Ivan",
-          "errorMessage": "Incorrect name",
           "type": "text",
-          "options": {
-            "required": "Required",
-            "pattern": "^(?!.*(\\s-|-\\s|--|\\s\\s))[a-zA-Zа-яА-ЯЇїІіЄєҐґ']+[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s-]*[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s]$",
-            "minLength": { "value": 2, "message": "No less than 2 characters" },
-            "maxLength": {
-              "value": 70,
-              "message": "No more than 70 characters"
+          "validationData": [
+            {
+              "propName": "minLength",
+              "propValue": "2",
+              "propMessage": "uu"
+            },
+            {
+              "propName": "maxLength",
+              "propValue": "70",
+              "propMessage": "uu"
+            },
+            {
+              "propName": "required",
+              "propValue": "0",
+              "propMessage": "uu"
+            },
+            {
+              "propName": "allowedCharacters",
+              "propValue": "^[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s-]*$",
+              "propMessage": "uu"
+            },
+            {
+              "propName": "notAllowedCombinations",
+              "propValue": "^(?!.*(\\s-|-\\s|--)).*$",
+              "propMessage": "uu"
             }
-          }
+          ]
         },
         {
           "name": "phone",
           "label": "Your phone number *",
           "placeholder": "+380981234567",
-          "errorMessage": "Wrong phone number",
           "type": "text",
-          "options": {
-            "required": "Required",
-            "pattern": "^\\+[\\d]{11,12}$",
-            "minLength": {
-              "value": 12,
-              "message": "No less than 12 characters"
+          "validationData": [
+            {
+              "propName": "minLength",
+              "propValue": "12",
+              "propMessage": "uu"
             },
-            "maxLength": {
-              "value": 13,
-              "message": "No more than 13 characters"
+            {
+              "propName": "maxLength",
+              "propValue": "13",
+              "propMessage": "uu"
+            },
+            {
+              "propName": "required",
+              "propValue": "0",
+              "propMessage": "uu"
+            },
+            {
+              "propName": "beginWithPlus",
+              "propValue": "^\\+.*$",
+              "propMessage": "uu"
+            },
+            {
+              "propName": "consistsOfNumbers",
+              "propValue": "^\\+\\d*$",
+              "propMessage": "uu"
             }
-          }
+          ]
         },
         {
           "name": "email",
           "label": "Your E-mail",
           "placeholder": "your@mail.com",
-          "errorMessage": "Incorrect email address",
           "type": "email",
-          "options": {
-            "required": false,
-            "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9\\._-]*[A-Za-z0-9])?@(?!.*(\\.\\.))[a-zA-Z]+(?:\\.[a-zA-Z]{2,})+$",
-            "minLength": { "value": 6, "message": "No less than 6 characters" },
-            "maxLength": {
-              "value": 63,
-              "message": "No more than 63 characters"
+          "validationData": [
+            {
+              "propName": "yupDefaultEmailRules",
+              "propValue": "0",
+              "propMessage": "uu"
             }
-          }
+          ]
         }
       ],
       "button": {

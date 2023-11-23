@@ -118,40 +118,80 @@
           "name": "name",
           "label": "Ваше імʼя *",
           "placeholder": "Іванов Іван",
-          "errorMessage": "Невірне імʼя",
           "type": "text",
-          "options": {
-            "required": "Поле обов'язкове",
-            "pattern": "^(?!.*(\\s-|-\\s|--|\\s\\s))[a-zA-Zа-яА-ЯЇїІіЄєҐґ']+[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s-]*[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s]$",
-            "minLength": { "value": 2, "message": "Не менше 2 символів" },
-            "maxLength": { "value": 70, "message": "Не більше 70 символів" }
-          }
+          "validationData": [
+            {
+              "propName": "minLength",
+              "propValue": "2",
+              "propMessage": "мінімум 2 символи"
+            },
+            {
+              "propName": "maxLength",
+              "propValue": "70",
+              "propMessage": "максимум 70 символів"
+            },
+            {
+              "propName": "required",
+              "propValue": "0",
+              "propMessage": "обов'язкове поле"
+            },
+            {
+              "propName": "allowedCharacters",
+              "propValue": "^[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s-]*$",
+              "propMessage": "не передбачає числа та спецсимволи"
+            },
+            {
+              "propName": "notAllowedCombinations",
+              "propValue": "^(?!.*(\\s-|-\\s|--)).*$",
+              "propMessage": "не має бути поруч тире та пробіл"
+            }
+          ]
         },
         {
           "name": "phone",
           "label": "Ваш телефон *",
           "placeholder": "+380981234567",
-          "errorMessage": "Невірний телефон",
           "type": "text",
-          "options": {
-            "required": "Поле обов'язкове",
-            "pattern": "^\\+[\\d]{11,12}$",
-            "minLength": { "value": 12, "message": "Не менше 12 символів" },
-            "maxLength": { "value": 13, "message": "Не більше 13 символів" }
-          }
+          "validationData": [
+            {
+              "propName": "minLength",
+              "propValue": "12",
+              "propMessage": "мінімум 12 цифр"
+            },
+            {
+              "propName": "maxLength",
+              "propValue": "13",
+              "propMessage": "максимум 70 цифр"
+            },
+            {
+              "propName": "required",
+              "propValue": "0",
+              "propMessage": "обов'язкове поле"
+            },
+            {
+              "propName": "beginWithPlus",
+              "propValue": "^\\+.*$",
+              "propMessage": "має починатися з +"
+            },
+            {
+              "propName": "consistsOfNumbers",
+              "propValue": "^\\+\\d*$",
+              "propMessage": "приймає лише цифри"
+            }
+          ]
         },
         {
           "name": "email",
           "label": "Ваш e-mail",
           "placeholder": "your@mail.com",
-          "errorMessage": "Невірний e-mail",
           "type": "text",
-          "options": {
-            "required": false,
-            "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9\\._-]*[A-Za-z0-9])?@(?!.*(\\.\\.))[a-zA-Z]+(?:\\.[a-zA-Z]{2,})+$",
-            "minLength": { "value": 6, "message": "Не менше 6 символів" },
-            "maxLength": { "value": 63, "message": "Не більше 63 символів" }
-          }
+          "validationData": [
+            {
+              "propName": "yupDefaultEmailRules",
+              "propValue": "0",
+              "propMessage": "невалідна адреса"
+            }
+          ]
         }
       ],
       "button": {

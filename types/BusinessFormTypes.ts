@@ -3,13 +3,19 @@ import { Dispatch, SetStateAction } from 'react';
 import { StoredOrder } from '@/store/types';
 
 //input
+
+type validationDataItemType = {
+  propName: string;
+  propValue: string;
+  propMessage: string;
+};
+
 export interface IBusinessInput {
   name: string;
   label: string;
   placeholder: string;
-  errorMessage: string;
   type: string;
-  options: OptionsType;
+  validationData: validationDataItemType[];
 }
 
 export interface BusinessInputProps {
@@ -18,13 +24,6 @@ export interface BusinessInputProps {
   errors: FieldErrors;
   section: 'hero' | 'contacts' | 'cart';
 }
-
-type OptionsType = {
-  required: boolean | string;
-  pattern: string;
-  minLength: { value: number; message: string };
-  maxLength: { value: number; message: string };
-};
 
 //popUp
 export type PopUpType = 'default' | 'success' | 'error';
