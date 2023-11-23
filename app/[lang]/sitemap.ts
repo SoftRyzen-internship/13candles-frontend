@@ -1,11 +1,13 @@
 import { fetchAllSlugs } from '@/api/fetchAllSlugs';
 
+import { i18n } from '@/i18n.config';
+
 export default async function sitemap() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
-  const locales = ['en', 'uk'];
+  const { locales, defaultLocale } = i18n;
 
-  const categories = await fetchAllSlugs('en');
+  const categories = await fetchAllSlugs(defaultLocale);
 
   const homeUrls = locales.map(lang => {
     return {
