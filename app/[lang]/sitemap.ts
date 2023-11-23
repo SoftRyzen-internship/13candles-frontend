@@ -1,9 +1,11 @@
-import { fetchCategories } from '@/api/fetchCategories';
+import { fetchAllSlugs } from '@/api/fetchAllSlugs';
 
 export default async function sitemap() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
   const locales = ['en', 'uk'];
+
+  const categories = await fetchAllSlugs('en');
 
   const homeUrls = locales.map(lang => {
     return {
@@ -19,30 +21,29 @@ export default async function sitemap() {
     };
   });
 
-  const enCategories = await fetchCategories('en');
-  const enCategoriesSlugs =
-    enCategories?.map(({ attributes: { slug } }) => slug) ?? [];
-  const enCategoriesUrls = enCategoriesSlugs?.map(slug => {
-    return {
-      url: `${baseUrl}/en/${slug}`,
-      lastModified: new Date(),
-    };
+  const categoriesUrls = categories.flatMap(({ slug }) => {
+    const urls = locales.map(lang => {
+      return {
+        url: `${baseUrl}/${lang}/${slug}`,
+        lastModified: new Date(),
+      };
+    });
+
+    return urls;
   });
 
-  const ukCategories = await fetchCategories('uk');
-  const ukCategoriesSlugs =
-    ukCategories?.map(({ attributes: { slug } }) => slug) ?? [];
-  const ukCategoriesUrls = ukCategoriesSlugs?.map(slug => {
-    return {
-      url: `${baseUrl}/uk/${slug}`,
-      lastModified: new Date(),
-    };
+  const productsUrls = categories.flatMap(({ slug: category, products }) => {
+    const urls = products.flatMap(product => {
+      return locales.map(lang => {
+        return {
+          url: `${baseUrl}/${lang}/${category}/${product}`,
+          lastModified: new Date(),
+        };
+      });
+    });
+
+    return urls;
   });
 
-  return [
-    ...homeUrls,
-    ...businessUrls,
-    ...enCategoriesUrls,
-    ...ukCategoriesUrls,
-  ];
+  return [...homeUrls, ...businessUrls, ...categoriesUrls, ...productsUrls];
 }
