@@ -11,6 +11,8 @@
     style="background-color: teal; color: white; padding: 4px; border-radius: 4px; display: inline-block; width: 100px; text-align: center">Live page 🚀</a>
 </div>
 
+---
+
 ![Site image](./public/images/img-hero.jpg)
 
 ## 📝 Project description

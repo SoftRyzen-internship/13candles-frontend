@@ -7,6 +7,8 @@
     style="background-color: teal; color: white; padding: 4px; border-radius: 4px; display: inline-block; width: 140px; text-align: center">Жива сторінка 🚀</a>
 </div>
 
+---
+
 ![Титульне зображення сайту](./public/images/img-hero.jpg)
 
 ## 📝 Опис проєкту
