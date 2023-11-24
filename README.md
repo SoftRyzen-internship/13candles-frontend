@@ -1,364 +1,164 @@
-# 13 Candle Bar
+# 13 CANDLE BAR 🕯️
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with
+<div align="right">
+<a href="./README.uk.md" style="background-color: teal; color: white; padding: 4px; border-radius: 4px; display: inline-block; margin-bottom: 4px; width: 100px; text-align: center"">To read on 🇺🇦</a>
+</div>
+
+<div align="right" >
+<a href="https://13candles-frontend.vercel.app/" 
+    target="_blank"
+    rel="nofollow noopener noreferrer" 
+    style="background-color: teal; color: white; padding: 4px; border-radius: 4px; display: inline-block; width: 100px; text-align: center">Live page 🚀</a>
+</div>
+
+---
+
+![Site image](./public/images/img-hero.jpg)
+
+## 📝 Project description
+
+E-commerce website for the **13 Candle Bar** online store.
+
+- **Project name**: 13 Candle Bar
+- **Project goals**:
+  - Creating a positive personal brand image
+  - Attracting new customers / partners
+  - Selling goods through the online store
+  - Informing consumers
+- **Target audience**:
+  - **Age**: 20-45+
+  - **Gender**: Female
+- **Product scope**: Development of a multi-page e-commerce website for the 13
+  Candle Bar, whose main field of activity is the sale of flavored products
+  online.
+
+## 🛠️ Creating the project
+
+**13 Candle Bar** is a [Next.js](https://nextjs.org/) project bootstrapped with
 [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Technologies used:
+### Features
 
-- Next.js (app router)
-- TypeScript
-- Tailwind CSS
-- Strapi CMS
-
-## Vision
-
-E-commerce website for the 13 Candle Bar online store
-
-## Project Name
-
-13 Candle Bar
-
-## Project Goal
-
-Attracting new customers and selling goods through the online store
-
-## Target Audience
-
-- Age: 20-45+
-- Gender: Female
-
-## Product Scope
-
-Development of a multi-page e-commerce website for the 13 Candle Bar, whose main
-field of activity is the sale of flavored products online
+- **Optimization**: The website is optimized for fast loading, providing users
+  with quick access to information.
+- **Modularity and reusability**: The product is built using a component
+  approach, which makes the code modular and allows components to be used on
+  different pages and in different sections of the project. This simplifies the
+  maintenance of the site and the expansion of its functionality.
+- **Linters and formatting**: Using tools like Prettier and ESLint helps
+  maintain code standards, ensures a consistent style, and identifies potential
+  problems in the code.
+- **Adaptability**: The website is responsive, allowing you to create dynamic
+  and interactive user interfaces without reloading pages. This increases user
+  engagement and interaction.
+- **Convenient content management**: The content management system has an
+  intuitive interface that simplifies the process of updating and editing
+  content. You can easily make changes to texts, images and other content
+  without special knowledge in web development.
 
 ### Accessibility
 
-- Intuitive design.
-- Mobile-friendly.
-
-### Performance
-
-- Web resource available for any internet connection.
+- Intuitive design
+- Semantic HTML
+- Mobile-friendly interface
+- Web resource available for any internet connection
 
 ### Supported Languages
 
 - Ukrainian
 - English
 
+### Product structure
+
+```mermaid
+graph LR
+
+  Z{Enter} --> A((Home page))
+  A --> B[Header]
+  B --> S((For Business page))
+  S --> SA[Section 1. Hero]
+  SA --> SAA[Modal window. Consultation application]
+  S --> SB[Section 2. Peculiarities]
+  S --> SC[Section 3. Helpful]
+  S --> SD[Section 4. Potential customers]
+  S --> SE[Section 5. Our Manufacture]
+  S --> SF[Section 6. Contacts]
+  A --> C[Section 1. Hero]
+  A --> D[Section 2. Catalog]
+  D --> K((Category page))
+  K --> KA[Section 1. Products]
+  KA --> P((Product page))
+  P --> PA[Section 1. Product]
+  P --> PB[Section 2. Catalog]
+  PB --> D
+  PA --> MC[Modal window. Cart]
+  B --> MC
+  A --> E[Section 3. About]
+  A --> F[Footer]
+  F --> FA[Modal window. Offer contract]
+  F --> FB[Modal window. Warranties]
+  F --> FC[Modal window. Delivery and payment]
+  F --> FD[Modal window. Site terms]
+  F --> FE[Modal window. Cart]
+  FE --> MC
+
+
+
+```
+
 ### Design
 
-[Design Layout on Figma](https://www.figma.com/file/8TJ2ei6yVHA8S8vciTGkmm/13-Candles?node-id=246%3A3772&mode=dev)
+[Design layout on Figma](https://www.figma.com/file/8TJ2ei6yVHA8S8vciTGkmm/13-Candles?node-id=246%3A3772&mode=dev)
+
+### Technology stack
+
+- **Main technologies**:
+  - Next.js (app router)
+  - TypeScript
+  - Tailwind CSS
+  - Strapi CMS (backend)
+- **Additional dependencies**:
+
+  - GraphQL
+  - Zustand
+  - Immer
+  - Swiper
+  - React Hook Form
+  - React Toastify
+  - React Transition
+  - Classnames
+
+  ...full list of dependencies is available in `package.json` file.
+
+## 📂 Deployment
+
+To deploy this project, you need to perform the following steps:
+
+1. **Clone the repository**: Use the `git clone` command to clone this
+   repository to your computer.
+2. **Install the dependencies**: Open a terminal in the root of the project and
+   run `npm install` or `yarn install` to install all required dependencies.
+3. **Setting environment variables**: Create a `.env` file in the root folder
+   and add the necessary environment variables that you need for the project
+   according to the `.env.local.example` file.
+4. **Run the application**: Run the `npm run dev` or `yarn dev` command to run
+   the project on the local server.
+5. **Deploy**: To deploy this project to a production server, use hosting
+   platforms such as Vercel, Netlify, or others.
+
+## ☎️ Contacts
+
+**SoftRyzen** is ready to answer your questions and provide additional
+information:
+
+- **Website**: [softryzen.com](https://softryzen.com/)
+- **Phone**: <a href="tel:+380979769625">+380979769625</a>
+- **Email**: [services@softryzen.com](mailto:services@softryzen.com)
+- **YouTube channel**:
+  [https://www.youtube.com](https://www.youtube.com/watch?v=_X7NLwgdfgI)
 
 ---
 
-## 🥁 Getting Started
-
-1. **Clone the repo**
-
-```bash
-git@github.com:SoftRyzen-internship/13candles-frontend.git
-
-```
-
-2. **Install dependencies** It's recommended to use npm:
-
-```
-npm install
-```
-
-3. **Run the project**
-
-```
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-## Project structure
-
-> Attention! The project structure is not final and can be changed at any time.
-
-**💁‍♀️ Create a components folder for each module**
-
-<details>
-
-<summary><b>💡 Example:</b></summary>
-
-<br/>
-
-```
-# ✅ Good
-
-├── layout
-    ├── Header
-        ├── index.ts
-        ├── Header.tsx
-    ├── Footer
-        ├── index.ts
-        ├── Footer.tsx
-```
-
-</details>
-
----
-
-**💁‍♀️ Reusable css classes should be placed in the `app` folder .**
-
-<details>
-
-<summary><b>💡 Example:</b></summary>
-
-<br/>
-
-```css
-/*globals.css */
-
-@layer components {
-  .your-class {
-    @apply ...;
-  }
-}
-```
-
-</details>
-
----
-
-**💁‍♀️ Description of object structure**
-
-<details>
-
-<summary><b>💡 Structure: </b></summary>
-
-<br/>
-
-```
-
-|-- components -> folder with components
-  |-- NameComponent -> folder for a component
-    |-- NameComponent.tsx -> main component
-    |-- NameComponent.module.css -> css styles for the component
-    |-- types.ts -> file for the component types
-    |-- index.ts -> file for re-export
-
-|-- components/ui -> folder with reusable components
-  |-- NameComponent -> folder for a component
-    |-- NameComponent.tsx -> main component
-    |-- NameComponent.module.css -> css styles for the component
-    |-- types.ts -> file for the component types
-    |-- index.ts -> file for re-export
-
-|-- sections -> folder with pages
-  |--NamePage -> folder with certain page sections
-    |-- NameSectionComponent -> folders for each section component
-      |-- NameSectionComponent.tsx -> main section component
-      |-- NameSectionComponent.module.css -> css styles for the section component
-      |-- index.ts -> file for re-export
-
-|-- layout -> components that are used as a main template
-|-- app -> pages and routing
-|-- public -> static files
-
-<!-- You can create these folders already in work -->
-|-- data -> data for the project ( from graphql, json, etc.)
-|-- hooks -> custom users hooks
-|-- types -> types for data
-|-- utils -> helpers, functions, etc.
-```
-
-</details>
-
----
-
-## Internationalization
-
-If you want to add new text data and use it, create json files with same names
-inside 'messages' directory in every folder with locale name
-
-```
-├── app
-  ├── dictionaries
-    ├── en
-      ├── home.json
-    ├── uk
-      ├── home.json
-```
-
-❗️Then spread file to messages object inside lib/dictionary.ts file to merge
-your separate file into one json.
-
-If you need to get access to translation file, get lang as a param into
-component and pass it through async function getDictionary. This function return
-a key from json as an object and you can use it as a simple object and put it as
-a props in children component.
-
-```
-const { about } = await getDictionary(lang);
-```
-
-```
-<h1>{about.title}</h1>
-```
-
-## 📚 Components API
-
-Each component has its own API. You can find it in the component's folder. This
-is a list of more common components and their API. This is example of API for
-component `Heading`
-
-- ### Heading (example)
-
-| Prop          | Default   | Description                                     |
-| ------------- | --------- | ----------------------------------------------- |
-| `tag`         | `h2`      | choose the tag of title you'd need: `h1` - `h3` |
-| `variant`     | `primary` | `main`, `primary`, `secondary`, `tertiary`      |
-| `className`   | `''`      | add custom or additional css class you'd need   |
-| `children`    | —         | required, any content                           |
-| `data-shadow` | —         | add text as a shadow decoration of the element  |
-
-- ### Logo
-
-| Prop        | Default  | Description                                   |
-| ----------- | -------- | --------------------------------------------- |
-| `position`  | `header` | place, where logo used                        |
-| `aria`      | `''`     | logo aria-label                               |
-| `className` | `''`     | add custom or additional css class you'd need |
-
-- ### ContactLink
-
-| Prop        | Default     | Description                                                 |
-| ----------- | ----------- | ----------------------------------------------------------- |
-| `href`      | —           | required, href for a link                                   |
-| `icon`      | —           | required, css className which should be used in globals.css |
-|             |             | to create a decor icon                                      |
-| `text`      | —           | required, any text content                                  |
-| `className` | `undefined` | add custom or additional css class you'd need               |
-
-- ### CategoryCard
-
-| Prop        | Default     | Description                                    |
-| ----------- | ----------- | ---------------------------------------------- |
-| `href`      | —           | required, href for a link                      |
-| `text`      | —           | required, any text content                     |
-| `image`     | —           | required, object with src and alt for an image |
-| `className` | `undefined` | add custom or additional css class you'd need  |
-
-- ### ExternalLink
-
-A link component that is created with tag "a" and has such attributes as
-rel="noopener noreferrer nofollow" and target="\_blank". Additionally, there is
-a decorative icon in the component.
-
-| Prop        | Default | Description                                                                        |
-| ----------- | ------- | ---------------------------------------------------------------------------------- |
-| `href`      | —       | Required, href for a link                                                          |
-| `icon`      | —       | Optional, css className which should be used in globals,css to create a decor icon |
-| `text`      | —       | Required, any text content                                                         |
-| `className` | `''`    | Optional, add custom or additional css class you'd need                            |
-
-- ### `Button`
-
-| Prop         | Default | Description                                                                                          |
-| ------------ | ------- | ---------------------------------------------------------------------------------------------------- |
-| `tag`        | `a`     | Choose the tag for your button: `a`, `button`. By default, it's a hyperlink (`a`).                   |
-| `label`      | —       | Required. The text of the button.                                                                    |
-| `href`       | —       | Optional. If provided, the button will perform a smooth scroll to the specified section on the page. |
-| `className`  | —       | Optional. Add a custom or additional CSS class if needed.                                            |
-| `buttonType` | —       | Optional. Define the type of the button (`button`, `submit`). Can be used with `button` .            |
-| `disabled`   | —       | Optional. Determine if the button is disabled. Can be used with `button`.                            |
-| `onClick`    | —       | Optional. A callback to be triggered when the button is clicked. Can used with both `a` and `button` |
-
-- ### Slider
-
-| Prop                    | Default          | Description                                                                      |
-| ----------------------- | ---------------- | -------------------------------------------------------------------------------- |
-| `className`             | `''`             | Optional, add custom or additional css class you'd need                          |
-| `id`                    | —                | Required, id for the slider                                                      |
-| `element`               | —                | Required, Functional Component that is rendered inside each slide                |
-| `data`                  | `[]`             | Required, data that is used inside the Component you provided via "element" prop |
-| `isLoop`                | `false`          | Optional, set to true to enable continuous loop mode                             |
-| `isAutoplay`            | `false`          | Optional, set to true to enable autoplay                                         |
-| `isPagination`          | `false`          | Optional, set to true to enable pagination                                       |
-| `isInteractive`         | `false`          | Optional, set to true to enable swipe on touch and grabcursor                    |
-| `isFadeEffect`          | `false`          | Optional, set to true to enable fade effect                                      |
-| `isNavigation`          | `false`          | Optional, set to true to enable navigation                                       |
-| `navigationBreakpoints` | `{               |                                                                                  |
-|                         | isMobile: true,  | set to false to disable navigation on mobile                                     |
-|                         | isTablet: true,  | set to false to disable navigation on tablet                                     |
-|                         | isDesktop: true, | set to false to disable navigation on desktop                                    |
-|                         | }`               | (Is is required to provide options for all screens                               |
-|                         |                  | if you want to provide customized breakpoints)                                   |
-
-- ### `SideMenu`
-
-| Prop           | Default | Description                                               |
-| -------------- | ------- | --------------------------------------------------------- |
-| `links`        | `[]`    | Required. Array of navigations links.                     |
-| `btnAriaOpen`  | —       | Required. Aria text when menu opened.                     |
-| `btnAriaClose` | —       | Required. Aria text when menu closed.                     |
-| `className`    | `''`    | Optional. Add a custom or additional CSS class if needed. |
-
-- ### `NavLinks`
-
-| Prop        | Default | Description                                               |
-| ----------- | ------- | --------------------------------------------------------- |
-| `links`     | `[]`    | Required. Array of navigation links.                      |
-| `className` | `''`    | Optional. Add a custom or additional CSS class if needed. |
-
-- ### BusinessLink
-
-| Prop        | Default | Description                                              |
-| ----------- | ------- | -------------------------------------------------------- |
-| `text`      | —       | Required, any text content                               |
-| `isIcon`    | `false` | Optional, set true to use decor icon                     |
-| `onClick`   | —       | Optional, if you need onClick                            |
-| `isAnchor`  | `false` | Optional, if you need to make it anchor, not router link |
-| `className` | `''`    | Optional, add custom or additional css class you'd need  |
-
-- ### MenuButton
-
-| Prop           | Default | Description                                             |
-| -------------- | ------- | ------------------------------------------------------- |
-| `isOpen`       | `-`     | Required, is menu open                                  |
-| `onClick`      | —       | Required, toggle menu                                   |
-| `btnAriaOpen`  | —       | Required. Aria text when menu opened.                   |
-| `btnAriaClose` | —       | Required. Aria text when menu closed.                   |
-| `className`    | `''`    | Optional, add custom or additional css class you'd need |
-
-- ### `MobileMenu`
-
-| Prop                 | Default | Description                                           |
-| -------------------- | ------- | ----------------------------------------------------- |
-| `links`              | `[]`    | Required. Array of navigation links.                  |
-| `btnAriaOpen`        | —       | Required. Aria text when menu opened.                 |
-| `btnAriaClose`       | —       | Required. Aria text when menu closed.                 |
-| `businessText`       | —       | Required. Business link text                          |
-| `languageButtonText` | -       | Required, the language applied by clicking the button |
-| `toHomePage`         | -       | Required, homepage nav link                           |
-
-- ### TranslationSwitcher
-
-| Prop         | Default | Description                                             |
-| ------------ | ------- | ------------------------------------------------------- |
-| `lang`       | -       | Required. Current locale 'uk' or 'en'                   |
-| `buttonText` | -       | Required. Text for button that switch website language  |
-| `className`  | `''`    | Optional, add custom or additional css class you'd need |
-
-- ### Header
-
-Header is a common component for all pages and located at Layout. You can
-control which component should appear inside the header on each page.
-
-| Prop                 | Default | Description                                                            |
-| -------------------- | ------- | ---------------------------------------------------------------------- |
-| `sidePanelMenu`      | -       | Required. Object of buttons aria text used inside SideMenu component   |
-| `nav`                | -       | Required. Array of links used inside SideMenu component                |
-| `mobileMenu`         | -       | Required. Object of buttons aria text used inside MobileMenu component |
-| `toHomePage`         | -       | Required. Link to Home page                                            |
-| `languageButtonText` | -       | Required. Text for button that switch website language                 |
-| `logoAriaLabelText`  | -       | Required. Aria label text used inside Logo component                   |
-| `forBusinessBtnText` | -       | Required. Text for button used in BusinessLink component               |
-| `basketAriaLabel`    | -       | Required. Aria label text used inside BasketButton component           |
-
----
+<div align="center">
+<img src="./public/icons/ukraine-map.svg" alt="Ukraine" width="60">
+</div>
