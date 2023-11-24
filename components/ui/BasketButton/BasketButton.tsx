@@ -18,6 +18,7 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
   data,
   text,
   className = '',
+  form,
 }) => {
   useRehydrate();
 
@@ -82,7 +83,7 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
       )}
 
       <ModalWindow onModalClose={onToggleShowModal} showModal={showModal}>
-        <Basket title={modalTitle} data={data} />
+        <Basket title={modalTitle} data={data} form={form} />
       </ModalWindow>
     </>
   );

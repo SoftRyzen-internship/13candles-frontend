@@ -19,6 +19,7 @@ export const Footer: React.FC<FooterProps> = ({
   footer: { logoAriaLabelText, social_text, social, soft_ryzen, ...restProps },
   lang,
   dataOrder,
+  form,
 }) => {
   const path = usePathname();
   const isHomePage = checkPageName(path, HOME);
@@ -36,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({
             <ContactList className="mx-auto font-montserrat" lang={lang} />
           </div>
           {isHomePage && (
-            <FooterNavRow data={restProps} dataOrder={dataOrder} />
+            <FooterNavRow data={restProps} dataOrder={dataOrder} form={form} />
           )}
           <Information information={information} />
           <div>

@@ -16,8 +16,6 @@ export const BusinessInput: FC<BusinessInputProps> = ({
     'relative flex w-full flex-col gap-2 xl:justify-between',
     {
       'xl:flex-row xl:items-center': section !== 'cart',
-    },
-    {
       'xl:flex-col xl:items-start': section === 'cart',
     },
   );

@@ -1,3 +1,4 @@
+import { FormStaticDataT } from '@/types';
 import { IOrderModalStatic } from '@/types/OrderModalStatic';
 
 export type FooterNavRowProps = {
@@ -11,4 +12,5 @@ export type FooterNavRowProps = {
     basketText: string;
   };
   dataOrder: IOrderModalStatic;
+  form: FormStaticDataT;
 };

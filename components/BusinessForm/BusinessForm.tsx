@@ -6,11 +6,11 @@ import useFormPersist from 'react-hook-form-persist';
 import { yupResolver } from '@hookform/resolvers/yup';
 import classnames from 'classnames';
 
-import { sendDataToTelegram } from '@/utils/api/sendDataToTelegram';
-import { makeSchema } from './schema';
-
 import { ButtonLoader } from '@/components/ButtonLoader';
 import { BusinessInput } from '@/components/BusinessInput';
+
+import { sendDataToTelegram } from '@/utils/api/sendDataToTelegram';
+import { makeSchema } from '../../utils/schema';
 
 import { useCartStore } from '@/store';
 import { BusinessFormProps } from '@/types';
@@ -78,34 +78,20 @@ export const BusinessForm: FC<BusinessFormProps> = ({
       section === 'cart',
   });
 
-  const titleClass = classnames(
-    {
-      'title-lg smOnly:text-xl mb-4 text-center md:mb-9 xl:mb-12':
-        section === 'hero',
-    },
-    {
-      'section-title-secondary mb-6 xl:mb-10 smOnly:text-center w-full max-w-[480px] md:max-w-[350px] xl:max-w-[500px] whitespace-pre-wrap':
-        section === 'contacts',
-    },
-    {
-      'text-[20px] font-medium smOnly:text-center': section === 'cart',
-    },
-  );
+  const titleClass = classnames({
+    'title-lg smOnly:text-xl mb-4 text-center md:mb-9 xl:mb-12':
+      section === 'hero',
+    'section-title-secondary mb-6 xl:mb-10 smOnly:text-center w-full max-w-[480px] md:max-w-[350px] xl:max-w-[500px] whitespace-pre-wrap':
+      section === 'contacts',
+    'text-[20px] font-medium smOnly:text-center': section === 'cart',
+  });
 
   const formClass = classnames(
     'flex w-full max-w-[480px] md:max-w-full flex-col gap-6 md:w-[350px] xl:w-[500px] xl:gap-10',
     {
       'mx-auto': section === 'hero',
-    },
-    {
       'md:w-[250px] xl:w-[284px] gap-8 xl:gap-12': section === 'cart',
     },
-  );
-
-  const btnStyles = classnames(
-    'common-transition bg-black-light text-white mx-auto block',
-    'w-full cursor-pointer px-0 text-center text-[20px] h-[47px] font-medium leading-6 xl:border ',
-    'xl:hover:bg-white xl:hover:text-black-light xl:active:bg-white xl:active:text-black-light',
   );
 
   return (
@@ -131,7 +117,13 @@ export const BusinessForm: FC<BusinessFormProps> = ({
               />
             ))}
         </div>
-        <button type="submit" disabled={isLoading} className={btnStyles}>
+        <button
+          type="submit"
+          disabled={isLoading}
+          className={
+            'common-transition mx-auto block h-[47px] w-full cursor-pointer bg-black-light px-0 text-center text-[20px] font-medium leading-6 text-white xl:border xl:hover:bg-white xl:hover:text-black-light xl:active:bg-white xl:active:text-black-light'
+          }
+        >
           {isLoading && (
             <ButtonLoader color="grey" className="justify-center" />
           )}

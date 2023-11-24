@@ -50,19 +50,6 @@ type TitleDataT = {
   cart: string;
 };
 
-export interface BusinessFormProps {
-  staticData: {
-    title: TitleDataT;
-    inputs: IBusinessInput[];
-    button: {
-      business: string;
-      cart: string;
-    };
-  };
-  section: 'hero' | 'contacts' | 'cart';
-  setPopUpType: Dispatch<SetStateAction<PopUpType>>;
-}
-
 export type FormStaticDataT = {
   title: TitleDataT;
   inputs: IBusinessInput[];
@@ -72,6 +59,12 @@ export type FormStaticDataT = {
   };
   notifications: NotificationsTargetT;
 };
+
+export interface BusinessFormProps {
+  staticData: FormStaticDataT;
+  section: 'hero' | 'contacts' | 'cart';
+  setPopUpType: Dispatch<SetStateAction<PopUpType>>;
+}
 
 export interface BtnWithBusinessFormModalProps {
   staticData: FormStaticDataT;
