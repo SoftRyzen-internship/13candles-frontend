@@ -54,13 +54,13 @@ export default async function BusinessPage({
   } = businessPage;
 
   return (
-    <main>
+    <>
       <HeroSection {...hero} form={form} />
       <SecondSection {...secondSection} />
       <HelpfulSection {...helpfulSection} />
       <UsefulWhomSection {...usefulWhom} />
       <OurManufactureSection {...ourManufactureSection} />
       <ContactsSection {...contactsSection} form={form} lang={lang} />
-    </main>
+    </>
   );
 }
