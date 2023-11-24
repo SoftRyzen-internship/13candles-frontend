@@ -4,6 +4,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
 
+import { cutBrackets } from '@/utils';
+
 import { CategoriesDropdownProps } from './types';
 
 import IconArrowDown from '/public/icons/icon_arrow-down.svg';
@@ -38,10 +40,6 @@ export const CategoriesDropdown: React.FC<CategoriesDropdownProps> = ({
     document.addEventListener('mousedown', closeAnOpenDropdown);
   }, [closeAnOpenDropdown]);
 
-  const cutBrackets = (title: string) => {
-    return title.includes('(') ? title.slice(0, title.indexOf('(')) : title;
-  };
-
   return (
     <div
       ref={dropdownRef}
@@ -50,7 +48,7 @@ export const CategoriesDropdown: React.FC<CategoriesDropdownProps> = ({
       <button
         type="button"
         onClick={toggleVisible}
-        className="flex items-center  justify-center gap-[12px] md:self-start"
+        className="flex items-center justify-center gap-[12px] md:self-start"
       >
         <span className="uppercase">{label}</span>
         <IconArrowDown
