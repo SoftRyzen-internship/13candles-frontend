@@ -23,7 +23,7 @@ export const Counter: FC<ICounterProps> = ({
 
   const counterClass = classnames(
     'border border-light flex items-center justify-between',
-    { 'w-[93px] h-[36px] p-1': !size },
+    { 'min-w-[91px] h-[36px] p-1': !size },
     { 'min-w-[63px] w-[max-content] h-[24px]': size == 'sm' },
   );
   const textClass = classnames(

@@ -1,0 +1,52 @@
+'use client';
+
+import { useCartStore } from '@/store';
+
+import { IBasketOrderProps } from './types';
+
+import { BasketItem } from '../BasketItem';
+
+export const BasketOrder: React.FC<IBasketOrderProps> = ({
+  products,
+  description,
+}) => {
+  const totalPrice = useCartStore(store => store.totalPrice);
+  const { cardTitle, totalPriceText, productTitle, qty, sum } = description;
+
+  return (
+    <div className="w-full shrink-0 bg-stone-50 px-4 py-4 md:w-[422px] md:py-6 xl:w-[740px] xl:px-6 xl:py-9">
+      <h3 className="mb-4 border-b border-gray pb-3 text-lg font-medium">
+        {cardTitle}
+      </h3>
+
+      <ul className="mb-6 flex flex-col gap-4 xl:mb-12 xl:gap-3">
+        <li className="flex notXl:hidden">
+          <p className="w-[320px] shrink-0">{productTitle}</p>
+
+          <p className="w-[236px]">{qty}</p>
+
+          <p className="w-[135px]">{sum}</p>
+        </li>
+        {products.map(productData => {
+          const { product } = productData;
+          return (
+            <BasketItem
+              key={
+                product.aroma
+                  ? product.en_title + product.aroma
+                  : product.en_title
+              }
+              productData={productData}
+              description={description}
+            />
+          );
+        })}
+      </ul>
+
+      <div className="flex justify-between text-lg">
+        <p className="font-medium">{totalPriceText}:</p>
+        <p className="font-montserrat font-bold xl:w-[135px]">{totalPrice} ₴</p>
+      </div>
+    </div>
+  );
+};

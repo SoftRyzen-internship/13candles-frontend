@@ -18,11 +18,17 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
   category,
   product,
 }) => {
-  const productData = await fetchOneProduct(lang, category, product);
+  const uk_productData = await fetchOneProduct('uk', category, product);
+  const en_productData = await fetchOneProduct('en', category, product);
+
+  const productData: { uk: any; en: any } = {
+    uk: uk_productData,
+    en: en_productData,
+  };
 
   const aromasData = await fetchAromas(lang);
 
-  if (productData?.length != 1) {
+  if (productData[lang]?.length != 1) {
     return;
   }
 
@@ -33,7 +39,7 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
 
   const {
     attributes: { images },
-  } = productData[0];
+  } = productData[lang][0];
 
   return (
     <section
@@ -43,11 +49,11 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
         <div className="mb-8 border-b border-black-light/25 pb-[21px] md:mb-9 xl:mb-10 ">
           <Link
             href={`./${lang}/${category}`}
-            className="link inline-flex items-center font-medium"
+            className="inline-flex items-center font-medium"
           >
             <IconArrowDown width={24} height={24} className="rotate-90" />
 
-            <span className="ml-3 uppercase">{back}</span>
+            <span className="link ml-3 uppercase">{back}</span>
           </Link>
         </div>
 
@@ -55,10 +61,11 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
           <ProductSlider images={images} />
 
           <ProductInfo
-            product={productData[0]}
+            product={productData}
             prodDescription={product_description}
             orderDescription={orderModal}
             aromasData={aromasData}
+            lang={lang}
           />
         </div>
       </div>

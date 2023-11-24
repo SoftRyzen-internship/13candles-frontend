@@ -1,19 +1,24 @@
 import { Image } from '@/types/commons';
 
 export type StoredProduct = {
-  title: string;
-  capacity: string;
+  uk_title: string;
+  uk_capacity: string;
+  uk_image: Image;
+  en_title: string;
+  en_capacity: string;
+  en_image: Image;
   price: number;
-  image: Image;
   aroma?: string;
 };
 
+export interface IItemsCartState {
+  quantity: number;
+  product: StoredProduct;
+  totalPrice: number;
+}
+
 export interface ICartState {
-  items: {
-    quantity: number;
-    product: StoredProduct;
-    totalPrice: number;
-  }[];
+  items: IItemsCartState[];
   totalItems: number;
   totalPrice: number;
 
@@ -22,4 +27,10 @@ export interface ICartState {
 
   // eslint-disable-next-line no-unused-vars
   deleteProduct: (title: string, aroma?: string) => void;
+
+  // eslint-disable-next-line no-unused-vars
+  addOneProduct: (title: string, aroma?: string) => void;
+
+  // eslint-disable-next-line no-unused-vars
+  deleteOneProduct: (title: string, aroma?: string) => void;
 }
