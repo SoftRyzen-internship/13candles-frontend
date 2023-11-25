@@ -53,8 +53,8 @@ export const BusinessForm: FC<BusinessFormProps> = ({
 
         dataToSend = {
           ...dataToSend,
-          '\n<b>Замовлення:</b>': '\n' + writeProductsList(items),
-          '<b>Сума:</b>': `${totalPrice} ₴`,
+          '\n<b>Замовлення</b>': '\n' + writeProductsList(items),
+          '<b>Сума</b>': `${totalPrice} ₴`,
         };
       }
 
