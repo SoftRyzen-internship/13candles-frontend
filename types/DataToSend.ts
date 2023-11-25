@@ -1,4 +1,1 @@
-export interface IDataToSend {
-  client: string;
-  order: string;
-}
+export type dataToSendT = Record<string, string>;

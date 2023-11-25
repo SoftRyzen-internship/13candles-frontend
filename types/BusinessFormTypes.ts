@@ -1,6 +1,5 @@
 import { UseFormRegister, FieldErrors, FieldValues } from 'react-hook-form';
 import { Dispatch, SetStateAction } from 'react';
-import { StoredOrder } from '@/store/types';
 
 //input
 
@@ -74,13 +73,6 @@ export interface BtnWithBusinessFormModalProps {
 export interface BusinessFormWithPopUpProps {
   staticData: FormStaticDataT;
   className?: string;
-}
-
-export interface IDataToSend {
-  name: string;
-  phone: string;
-  email: string;
-  order?: StoredOrder;
 }
 
 //button loader

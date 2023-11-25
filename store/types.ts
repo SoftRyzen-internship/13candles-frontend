@@ -8,7 +8,7 @@ export type StoredProduct = {
   aroma?: string;
 };
 
-type StoredItem = {
+export type StoredItem = {
   quantity: number;
   product: StoredProduct;
   totalPrice: number;

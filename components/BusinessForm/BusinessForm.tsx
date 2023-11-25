@@ -10,6 +10,7 @@ import { ButtonLoader } from '@/components/ButtonLoader';
 import { BusinessInput } from '@/components/BusinessInput';
 
 import { sendDataToTelegram } from '@/utils/api/sendDataToTelegram';
+import { writeProductsList } from '@/utils/writeProductsList';
 import { makeSchema } from '../../utils/schema';
 
 import { useCartStore } from '@/store';
@@ -46,14 +47,14 @@ export const BusinessForm: FC<BusinessFormProps> = ({
     try {
       setIsLoading(true);
 
-      const client = JSON.stringify(formData);
-
-      let dataToSend = { client, order: 'consultation' };
+      let dataToSend = { ...formData };
       if (section === 'cart') {
-        const order = JSON.stringify({ ...getOrder() });
+        const { items, totalPrice } = getOrder();
+
         dataToSend = {
           ...dataToSend,
-          order,
+          '\n<b>Замовлення:</b>': '\n' + writeProductsList(items),
+          '<b>Сума:</b>': `${totalPrice} ₴`,
         };
       }
 
