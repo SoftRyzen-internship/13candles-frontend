@@ -12,19 +12,23 @@ import { ProdCardSectionProps } from './types';
 
 import IconArrowDown from '/public/icons/icon_arrow-down.svg';
 
+import { i18n } from '@/i18n.config';
+
 export const CardSection: React.FC<ProdCardSectionProps> = async ({
   className,
   lang,
   category,
   product,
 }) => {
-  const uk_productData = await fetchOneProduct('uk', category, product);
-  const en_productData = await fetchOneProduct('en', category, product);
+  const localeProduct = await Promise.all(
+    i18n.locales.map(async curr => {
+      return {
+        [curr]: await fetchOneProduct(curr, category, product),
+      };
+    }),
+  );
 
-  const productData: { uk: any; en: any } = {
-    uk: uk_productData,
-    en: en_productData,
-  };
+  const productData = Object.assign({}, ...localeProduct);
 
   const aromasData = await fetchAromas(lang);
 

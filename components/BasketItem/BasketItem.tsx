@@ -4,11 +4,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 
-import { IBasketItemProps } from './types';
+import { Counter } from '../ui/Counter';
 
 import { useCartStore } from '@/store';
 
-import { Counter } from '../ui/Counter';
+import { IBasketItemProps } from './types';
 
 import { Locale } from '@/i18n.config';
 
@@ -22,8 +22,8 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
   const [count, setCount] = useState(quantity);
 
   const deleteProduct = useCartStore(store => store.deleteProduct);
-  const addOneProduct = useCartStore(store => store.addOneProduct);
-  const deleteOneProduct = useCartStore(store => store.deleteOneProduct);
+  const increment = useCartStore(store => store.addOneProduct);
+  const decrement = useCartStore(store => store.deleteOneProduct);
 
   const {
     uk_image,
@@ -38,9 +38,9 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
 
   const handleClick = (num: number) => {
     if (num > count) {
-      addOneProduct(en_title, aroma);
+      increment(en_title, aroma);
     } else {
-      deleteOneProduct(en_title, aroma);
+      decrement(en_title, aroma);
     }
 
     setCount(num);
@@ -48,7 +48,7 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
 
   return (
     <li className="justify-between border-b border-gray-light pb-4 xl:flex xl:pb-3">
-      <div className="mb-4 flex xl:w-[320px] xl:shrink-0">
+      <div className="mb-4 flex xl:mb-0 xl:w-[320px] xl:shrink-0">
         <Image
           src={en_image.photo.data.attributes.url}
           alt={isUk ? uk_image.image_description : en_image.image_description}

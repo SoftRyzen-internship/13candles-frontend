@@ -1,10 +1,11 @@
 'use client';
 
+import { BasketOrder } from '../BasketOrder';
+
 import { useCartStore } from '@/store';
 import { useRehydrate } from '@/utils/useRehydrate';
 
 import { BasketProps } from './types';
-import { BasketOrder } from '../BasketOrder';
 
 export const Basket: React.FC<BasketProps> = ({ title, data }) => {
   const { emptyBasketText, orderCard } = data;
@@ -14,7 +15,7 @@ export const Basket: React.FC<BasketProps> = ({ title, data }) => {
 
   return (
     <div>
-      <h3 className="title-lg mb-4 border-b border-gray pb-4 md:mb-8 xl:mb-6 xl:pb-6">
+      <h3 className="title-lg relative mb-8 after:absolute after:bottom-[-16px] after:block after:h-[1px] after:w-full after:bg-gray md:mb-12 xl:mb-12 xl:after:bottom-[-24px]">
         {title}
       </h3>
 

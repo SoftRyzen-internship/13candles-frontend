@@ -12,6 +12,7 @@ import { Aromas } from '../Aromas';
 import { Counter } from '../ui/Counter';
 import { Button } from '../ui/Button';
 import { BasketButton } from '../ui/BasketButton';
+import { Locale, i18n } from '@/i18n.config';
 
 export const ProductInfo: React.FC<IProductInfo> = ({
   product,
@@ -29,16 +30,21 @@ export const ProductInfo: React.FC<IProductInfo> = ({
     attributes: { title, price, description, aromas, information, capacity },
   } = product[lang][0];
 
-  const dataForStore = {
-    uk_title: product['uk'][0].attributes.title,
-    uk_capacity: product['uk'][0].attributes.capacity,
-    uk_image: product['uk'][0].attributes.main_image,
-    en_title: product['en'][0].attributes.title,
-    en_capacity: product['en'][0].attributes.capacity,
-    en_image: product['en'][0].attributes.main_image,
-    price,
-    aroma: aromaName,
-  };
+  const arrData = i18n.locales.map((item: Locale) => {
+    return {
+      [item + '_title']: product[item][0].attributes.title,
+      [item + '_capacity']: product[item][0].attributes.capacity,
+      [item + '_image']: product[item][0].attributes.main_image,
+    };
+  });
+
+  const dataForStore = Object.assign(
+    {
+      price,
+      aroma: aromaName,
+    },
+    ...arrData,
+  );
 
   const { amount, add, quantity, pieces } = prodDescription;
 
