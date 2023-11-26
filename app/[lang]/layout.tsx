@@ -1,8 +1,13 @@
+import { Metadata } from 'next';
 import { Montserrat, Raleway } from 'next/font/google';
-import { Locale, i18n } from '@/i18n.config';
-import { getDictionary } from '@/lib/dictionary';
+
 import { Header } from '@/layout/Header';
 import { Footer } from '@/layout/Footer';
+
+import { getDictionary, getMetadata } from '@/lib/dictionary';
+
+import { Locale, i18n } from '@/i18n.config';
+
 import '../globals.css';
 
 const montserrat = Montserrat({
@@ -16,7 +21,36 @@ const raleway = Raleway({
   variable: '--font-raleway',
 });
 
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL as string;
+
 export const dynamicParams = false;
+export const dynamic = 'error';
+
+export async function generateMetadata({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}): Promise<Metadata> {
+  const { meta, metadataHome } = await getMetadata(lang);
+
+  const { twitter, openGraph, icons, languages, manifest } = meta;
+  const { title, description, keywords } = metadataHome;
+
+  return {
+    title,
+    description,
+    metadataBase: new URL(BASE_URL),
+    manifest,
+    alternates: {
+      canonical: `${BASE_URL}/${lang}`,
+      languages,
+    },
+    keywords,
+    twitter,
+    openGraph: { ...openGraph, url: `${BASE_URL}/${lang}` },
+    icons,
+  };
+}
 
 export async function generateStaticParams() {
   return i18n.locales.map(locale => ({ lang: locale }));

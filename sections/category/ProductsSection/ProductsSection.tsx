@@ -6,7 +6,8 @@ import { CategoriesDropdown } from '@/components/CategoriesDropdown';
 import { ProductsList } from '@/components/ProductsList';
 import { ShowMoreButton } from '@/components/ui/ShowMoreButton';
 
-import { filterProducts, useWindowDimensions } from '@/utils';
+import { cutBrackets, filterProducts } from '@/utils';
+import { useWindowDimensions } from '@/utils/useWindowDimension';
 
 import { ProductsSectionProps } from './types';
 
@@ -34,13 +35,19 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({
     setPage(prev => prev + 1);
   };
 
+  const title =
+    categories?.find(({ attributes: { slug } }) => slug === category)
+      ?.attributes.title ?? dropdown.label;
+
   return (
     <section className="pb-12 pt-0 md:pb-9 md:pt-1 xl:pb-[100px] xl:pt-8">
       <div className="container">
+        <h1 className="sr-only">{cutBrackets(title)}</h1>
+
         <div className="flex flex-col gap-4 md:gap-5">
           <CategoriesDropdown
             lang={lang}
-            label={dropdown.label}
+            label={cutBrackets(title)}
             categories={categories}
             currentCategory={category}
           />

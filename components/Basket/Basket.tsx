@@ -1,7 +1,7 @@
 'use client';
 
 import { useCartStore } from '@/store';
-import { useRehydrate } from '@/utils';
+import { useRehydrate } from '@/utils/useRehydrate';
 
 import { BasketProps } from './types';
 import { BasketOrder } from '../BasketOrder';
