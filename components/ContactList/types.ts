@@ -1,7 +1,9 @@
-import { Locale } from '@/i18n.config';
-
 export interface ContactListProps {
-  lang: Locale;
+  contacts: {
+    href: string;
+    icon: string;
+    text: string;
+  }[];
   variant?: 'contacts' | undefined;
   className?: string;
 }
