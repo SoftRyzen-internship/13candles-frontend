@@ -16,7 +16,9 @@ export const BtnWithBusinessFormModal: FC<BtnWithBusinessFormModalProps> = ({
   const [showModal, setShowModal] = useState(false);
 
   const {
-    notifications: { error, success },
+    notifications: {
+      business: { success, error },
+    },
   } = staticData;
 
   const handleToggleModal = () => {

@@ -63,7 +63,11 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: Locale };
 }) {
-  const { common, information } = await getDictionary(lang);
+  const {
+    common,
+    information,
+    businessPage: { form },
+  } = await getDictionary(lang);
   const { footer, header, orderModal } = common;
 
   return (
@@ -71,13 +75,14 @@ export default async function RootLayout({
       <body
         className={`${montserrat.variable} ${raleway.variable} grid min-h-screen grid-cols-1 grid-rows-[1fr_auto] md:grid-rows-[auto_1fr_auto] smOnly:pt-[119px]`}
       >
-        <Header data={header} dataOrder={orderModal} />
+        <Header data={header} dataOrder={orderModal} form={form} />
         <main className="">{children}</main>
         <Footer
           footer={footer}
           dataOrder={orderModal}
           information={information}
           lang={lang}
+          form={form}
         />
         <div id="modal" />
       </body>

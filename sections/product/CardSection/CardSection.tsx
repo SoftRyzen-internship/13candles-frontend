@@ -32,6 +32,10 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
 
   const aromasData = await fetchAromas(lang);
 
+  const {
+    businessPage: { form },
+  } = await getDictionary(lang);
+
   if (productData[lang]?.length != 1) {
     return;
   }
@@ -70,6 +74,7 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
             orderDescription={orderModal}
             aromasData={aromasData}
             lang={lang}
+            form={form}
           />
         </div>
       </div>

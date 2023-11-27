@@ -4,13 +4,17 @@ import { immer } from 'zustand/middleware/immer';
 
 import { ICartState, StoredProduct } from './types';
 
+const initialState = {
+  items: [],
+  totalItems: 0,
+  totalPrice: 0,
+};
+
 export const useCartStore = createWithEqualityFn<ICartState>()(
   persist(
     devtools(
-      immer(set => ({
-        items: [],
-        totalItems: 0,
-        totalPrice: 0,
+      immer((set, get) => ({
+        ...initialState,
 
         addProduct: (product: StoredProduct, quantity: number) =>
           set(
@@ -83,6 +87,14 @@ export const useCartStore = createWithEqualityFn<ICartState>()(
             store.items[idx].quantity -= 1;
             store.items[idx].totalPrice -= price;
           }),
+        getOrder: () => {
+          const { items, totalItems, totalPrice } = get();
+          return { items, totalItems, totalPrice };
+        },
+
+        reset: () => {
+          set(initialState);
+        },
       })),
     ),
     {

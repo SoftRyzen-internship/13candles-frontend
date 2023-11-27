@@ -21,6 +21,7 @@ export const ProductInfo: React.FC<IProductInfo> = ({
   orderDescription,
   aromasData,
   lang,
+  form,
 }) => {
   const [count, setCount] = useState(1);
   const [aromaName, setAromaName] = useState('');
@@ -111,6 +112,7 @@ export const ProductInfo: React.FC<IProductInfo> = ({
         <BasketButton
           isIcon={false}
           data={orderDescription}
+          form={form}
           className="xl:w-[266px]"
         />
       </div>

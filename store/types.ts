@@ -11,11 +11,23 @@ export type StoredProduct = {
   aroma?: string;
 };
 
+export type StoredItem = {
+  quantity: number;
+  product: StoredProduct;
+  totalPrice: number;
+};
+
 export interface IItemsCartState {
   quantity: number;
   product: StoredProduct;
   totalPrice: number;
 }
+
+export type StoredOrder = {
+  items: IItemsCartState[];
+  totalItems: number;
+  totalPrice: number;
+};
 
 export interface ICartState {
   items: IItemsCartState[];
@@ -33,4 +45,7 @@ export interface ICartState {
 
   // eslint-disable-next-line no-unused-vars
   deleteOneProduct: (title: string, aroma?: string) => void;
+  getOrder: () => StoredOrder;
+
+  reset: () => void;
 }
