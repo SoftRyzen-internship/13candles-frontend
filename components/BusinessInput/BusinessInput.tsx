@@ -27,9 +27,15 @@ export const BusinessInput: FC<BusinessInputProps> = ({
     },
   );
 
+  const isRequired = name == 'phone' || name == 'name';
+
   return (
     <label className={labelClass}>
-      <span> {label}</span>
+      <span>
+        {' '}
+        {label}
+        {isRequired && <span className="text-lg">*</span>}
+      </span>
       <input
         className={inputClass}
         type={type}

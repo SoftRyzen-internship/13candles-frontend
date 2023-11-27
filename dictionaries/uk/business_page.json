@@ -146,7 +146,7 @@
       "inputs": [
         {
           "name": "name",
-          "label": "Ваше імʼя *",
+          "label": "Ваше імʼя",
           "placeholder": "Іванов Іван",
           "type": "text",
           "validationData": [
@@ -179,7 +179,7 @@
         },
         {
           "name": "phone",
-          "label": "Ваш телефон *",
+          "label": "Ваш телефон",
           "placeholder": "+380981234567",
           "type": "text",
           "validationData": [
