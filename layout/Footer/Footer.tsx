@@ -16,8 +16,14 @@ import { HOME } from '@/data/routes';
 
 export const Footer: React.FC<FooterProps> = ({
   information,
-  footer: { logoAriaLabelText, social_text, social, soft_ryzen, ...restProps },
-  lang,
+  footer: {
+    logoAriaLabelText,
+    contacts,
+    social_text,
+    social,
+    soft_ryzen,
+    ...restProps
+  },
   dataOrder,
   form,
 }) => {
@@ -34,7 +40,10 @@ export const Footer: React.FC<FooterProps> = ({
               position="footer"
               aria={logoAriaLabelText}
             />
-            <ContactList className="mx-auto font-montserrat" lang={lang} />
+            <ContactList
+              className="mx-auto font-montserrat"
+              contacts={contacts}
+            />
           </div>
           {isHomePage && (
             <FooterNavRow data={restProps} dataOrder={dataOrder} form={form} />
