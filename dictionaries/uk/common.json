@@ -99,7 +99,8 @@
         "totalPriceText": "Разом до сплати",
         "deleteProductBtn": "Видалити продукт",
         "increaseQtyBtn": "Збільшити кількість",
-        "decreaseQtyBtn": "Зменшити кількість"
+        "decreaseQtyBtn": "Зменшити кількість",
+        "sum": "Сума"
       },
       "orderForm": {
         "title": "Заповніть реквізити",

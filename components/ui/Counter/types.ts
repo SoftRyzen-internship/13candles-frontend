@@ -5,5 +5,7 @@ export interface ICounterProps {
   caption?: string;
   className?: string;
   count: number;
-  setCount: Dispatch<SetStateAction<number>>;
+
+  // eslint-disable-next-line no-unused-vars
+  setCount: (num: number) => void | Dispatch<SetStateAction<number>>;
 }

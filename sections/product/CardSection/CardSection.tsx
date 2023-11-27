@@ -12,13 +12,23 @@ import { ProdCardSectionProps } from './types';
 
 import IconArrowDown from '/public/icons/icon_arrow-down.svg';
 
+import { i18n } from '@/i18n.config';
+
 export const CardSection: React.FC<ProdCardSectionProps> = async ({
   className,
   lang,
   category,
   product,
 }) => {
-  const productData = await fetchOneProduct(lang, category, product);
+  const localeProduct = await Promise.all(
+    i18n.locales.map(async curr => {
+      return {
+        [curr]: await fetchOneProduct(curr, category, product),
+      };
+    }),
+  );
+
+  const productData = Object.assign({}, ...localeProduct);
 
   const aromasData = await fetchAromas(lang);
 
@@ -26,7 +36,7 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
     businessPage: { form },
   } = await getDictionary(lang);
 
-  if (productData?.length != 1) {
+  if (productData[lang]?.length != 1) {
     return;
   }
 
@@ -37,7 +47,7 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
 
   const {
     attributes: { images },
-  } = productData[0];
+  } = productData[lang][0];
 
   return (
     <section
@@ -47,11 +57,11 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
         <div className="mb-8 border-b border-black-light/25 pb-[21px] md:mb-9 xl:mb-10 ">
           <Link
             href={`./${lang}/${category}`}
-            className="link inline-flex items-center font-medium"
+            className="inline-flex items-center font-medium"
           >
             <IconArrowDown width={24} height={24} className="rotate-90" />
 
-            <span className="ml-3 uppercase">{back}</span>
+            <span className="link ml-3 uppercase">{back}</span>
           </Link>
         </div>
 
@@ -59,10 +69,11 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
           <ProductSlider images={images} />
 
           <ProductInfo
-            product={productData[0]}
+            product={productData}
             prodDescription={product_description}
             orderDescription={orderModal}
             aromasData={aromasData}
+            lang={lang}
             form={form}
           />
         </div>
