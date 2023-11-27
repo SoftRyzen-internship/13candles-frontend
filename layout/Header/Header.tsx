@@ -15,7 +15,7 @@ import { TranslationSwitcher } from '@/components/TranslationSwitcher';
 import { Locale } from '@/i18n.config';
 import { HeaderProps } from './types';
 
-export const Header: React.FC<HeaderProps> = ({ data, dataOrder }) => {
+export const Header: React.FC<HeaderProps> = ({ data, dataOrder, form }) => {
   const {
     sidePanelMenu,
     nav,
@@ -76,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({ data, dataOrder }) => {
               buttonText={languageButtonText}
               className="md:mr-7 xl:mr-9 smOnly:hidden"
             />
-            <BasketButton isIcon={true} data={dataOrder} />
+            <BasketButton isIcon={true} data={dataOrder} form={form} />
           </div>
         </nav>
       </div>

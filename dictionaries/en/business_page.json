@@ -110,68 +110,109 @@
     "form": {
       "title": {
         "hero": "Fall in love with yourself with \"13 Candle Bar\" 🖤",
-        "contacts": "Send a request and we will contact you"
+        "contacts": "Send a request and we will contact you",
+        "cart": "Fill data please"
       },
       "inputs": [
         {
           "name": "name",
           "label": "Your name *",
           "placeholder": "Ivanov Ivan",
-          "errorMessage": "Incorrect name",
           "type": "text",
-          "options": {
-            "required": "Required",
-            "pattern": "^(?!.*(\\s-|-\\s|--|\\s\\s))[a-zA-Zа-яА-ЯЇїІіЄєҐґ']+[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s-]*[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s]$",
-            "minLength": { "value": 2, "message": "No less than 2 characters" },
-            "maxLength": {
-              "value": 70,
-              "message": "No more than 70 characters"
+          "validationData": [
+            {
+              "propName": "minLength",
+              "propValue": "2",
+              "propMessage": "min 2 characters"
+            },
+            {
+              "propName": "maxLength",
+              "propValue": "70",
+              "propMessage": "max 70 characters"
+            },
+            {
+              "propName": "required",
+              "propValue": "0",
+              "propMessage": "required field"
+            },
+            {
+              "propName": "allowedCharacters",
+              "propValue": "^[a-zA-Zа-яА-ЯЇїІіЄєҐґ'\\s-]*$",
+              "propMessage": "digits and cpecial symbols are not allowed"
+            },
+            {
+              "propName": "notAllowedCombinations",
+              "propValue": "^(?!.*(\\s-|-\\s|--)).*$",
+              "propMessage": "combination with dash and space is not allowed"
             }
-          }
+          ]
         },
         {
           "name": "phone",
           "label": "Your phone number *",
           "placeholder": "+380981234567",
-          "errorMessage": "Wrong phone number",
           "type": "text",
-          "options": {
-            "required": "Required",
-            "pattern": "^\\+[\\d]{11,12}$",
-            "minLength": {
-              "value": 12,
-              "message": "No less than 12 characters"
+          "validationData": [
+            {
+              "propName": "minLength",
+              "propValue": "12",
+              "propMessage": "min 11 digits"
             },
-            "maxLength": {
-              "value": 13,
-              "message": "No more than 13 characters"
+            {
+              "propName": "maxLength",
+              "propValue": "13",
+              "propMessage": "max 12 digits"
+            },
+            {
+              "propName": "required",
+              "propValue": "0",
+              "propMessage": "required field"
+            },
+            {
+              "propName": "beginWithPlus",
+              "propValue": "^\\+.*$",
+              "propMessage": "must to start with +.."
+            },
+            {
+              "propName": "consistsOfNumbers",
+              "propValue": "^\\+\\d*$",
+              "propMessage": "consists of digits only"
             }
-          }
+          ]
         },
         {
           "name": "email",
           "label": "Your E-mail",
           "placeholder": "your@mail.com",
-          "errorMessage": "Incorrect email address",
           "type": "email",
-          "options": {
-            "required": false,
-            "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9\\._-]*[A-Za-z0-9])?@(?!.*(\\.\\.))[a-zA-Z]+(?:\\.[a-zA-Z]{2,})+$",
-            "minLength": { "value": 6, "message": "No less than 6 characters" },
-            "maxLength": {
-              "value": 63,
-              "message": "No more than 63 characters"
+          "validationData": [
+            {
+              "propName": "yupDefaultEmailRules",
+              "propValue": "0",
+              "propMessage": "email must be valid"
             }
-          }
+          ]
         }
       ],
-      "button": "SEND",
+      "button": {
+        "business": "SEND",
+        "cart": "Make an order"
+      },
       "notifications": {
-        "success": {
-          "title": "Thanks, your request has been sent 🖤",
-          "text": "Our manager will contact you shortly"
+        "business": {
+          "success": {
+            "title": "Thanks, your request has been sent 🖤",
+            "text": "Our manager will contact you shortly"
+          },
+          "error": "An error occurred while sending a request"
         },
-        "error": "An error occurred while sending a request"
+        "cart": {
+          "success": {
+            "title": "Thanks, your order has been sent 🖤",
+            "text": "Our manager will contact you shortly"
+          },
+          "error": "An error occurred while sending an order"
+        }
       }
     }
   }

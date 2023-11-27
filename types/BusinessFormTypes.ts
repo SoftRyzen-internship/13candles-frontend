@@ -2,27 +2,27 @@ import { UseFormRegister, FieldErrors, FieldValues } from 'react-hook-form';
 import { Dispatch, SetStateAction } from 'react';
 
 //input
+
+type validationDataItemType = {
+  propName: string;
+  propValue: string;
+  propMessage: string;
+};
+
 export interface IBusinessInput {
   name: string;
   label: string;
   placeholder: string;
-  errorMessage: string;
   type: string;
-  options: OptionsType;
+  validationData: validationDataItemType[];
 }
 
 export interface BusinessInputProps {
   staticData: IBusinessInput;
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
+  section: 'hero' | 'contacts' | 'cart';
 }
-
-type OptionsType = {
-  required: boolean | string;
-  pattern: string;
-  minLength: { value: number; message: string };
-  maxLength: { value: number; message: string };
-};
 
 //popUp
 export type PopUpType = 'default' | 'success' | 'error';
@@ -37,28 +37,33 @@ type NotificationsDataT = {
   error: string;
 };
 
+type NotificationsTargetT = {
+  business: NotificationsDataT;
+  cart: NotificationsDataT;
+};
+
 //form
 type TitleDataT = {
   hero: string;
   contacts: string;
+  cart: string;
 };
-
-export interface BusinessFormProps {
-  staticData: {
-    title: TitleDataT;
-    inputs: IBusinessInput[];
-    button: string;
-  };
-  section: 'hero' | 'contacts';
-  setPopUpType: Dispatch<SetStateAction<PopUpType>>;
-}
 
 export type FormStaticDataT = {
   title: TitleDataT;
   inputs: IBusinessInput[];
-  button: string;
-  notifications: NotificationsDataT;
+  button: {
+    business: string;
+    cart: string;
+  };
+  notifications: NotificationsTargetT;
 };
+
+export interface BusinessFormProps {
+  staticData: FormStaticDataT;
+  section: 'hero' | 'contacts' | 'cart';
+  setPopUpType: Dispatch<SetStateAction<PopUpType>>;
+}
 
 export interface BtnWithBusinessFormModalProps {
   staticData: FormStaticDataT;
@@ -68,12 +73,6 @@ export interface BtnWithBusinessFormModalProps {
 export interface BusinessFormWithPopUpProps {
   staticData: FormStaticDataT;
   className?: string;
-}
-
-export interface IDataToSend {
-  name: string;
-  phone: string;
-  email: string;
 }
 
 //button loader

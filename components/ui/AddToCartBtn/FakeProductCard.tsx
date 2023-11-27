@@ -10,7 +10,7 @@ import { useCartStore } from '@/store';
 
 import { ProductDataInfo } from '@/types/Products';
 import { IOrderModalStatic } from '@/types/OrderModalStatic';
-import { BasketButton } from '../BasketButton';
+// import { BasketButton } from '../BasketButton';
 
 type Props = {
   product: ProductDataInfo;
@@ -84,7 +84,7 @@ export const FakeProductCard: React.FC<Props> = ({ product, dataOrder }) => {
 
         <div className="flex flex-col gap-2 xl:flex-row xl:gap-6">
           <AddToCartBtn label={addToCartBtn} onClick={addToCart} />
-          <BasketButton isIcon={false} data={dataOrder} />
+          {/* <BasketButton isIcon={false} data={dataOrder} /> */}
         </div>
       </div>
 

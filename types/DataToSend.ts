@@ -1,5 +1,1 @@
-export interface IDataToSend {
-  name: string;
-  phone: string;
-  email: string;
-}
+export type dataToSendT = Record<string, string>;
