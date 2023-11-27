@@ -42,7 +42,10 @@ export default async function BusinessPage({
 }: {
   params: { lang: Locale };
 }) {
-  const { businessPage } = await getDictionary(lang);
+  const {
+    businessPage,
+    common: { footer },
+  } = await getDictionary(lang);
   const {
     hero,
     secondSection,
@@ -52,6 +55,7 @@ export default async function BusinessPage({
     contactsSection,
     form,
   } = businessPage;
+  const { contacts } = footer;
 
   return (
     <>
@@ -60,7 +64,7 @@ export default async function BusinessPage({
       <HelpfulSection {...helpfulSection} />
       <UsefulWhomSection {...usefulWhom} />
       <OurManufactureSection {...ourManufactureSection} />
-      <ContactsSection {...contactsSection} form={form} lang={lang} />
+      <ContactsSection {...contactsSection} form={form} contacts={contacts} />
     </>
   );
 }

@@ -1,10 +1,14 @@
-import { Locale } from '@/i18n.config';
 import { FormStaticDataT } from '@/types';
 import { IOrderModalStatic } from '@/types/OrderModalStatic';
 
 export type FooterProps = {
   footer: {
     logoAriaLabelText: string;
+    contacts: {
+      href: string;
+      icon: string;
+      text: string;
+    }[];
     nav_text: string;
     nav: {
       name: string;
@@ -25,7 +29,6 @@ export type FooterProps = {
     buttons: { text: string; data: string[] }[];
     className?: string;
   };
-  lang: Locale;
   dataOrder: IOrderModalStatic;
   form: FormStaticDataT;
 };

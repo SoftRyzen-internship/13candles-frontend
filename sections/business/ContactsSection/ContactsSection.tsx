@@ -10,7 +10,7 @@ import { ContactsProps } from './types';
 export const ContactsSection: FC<ContactsProps> = ({
   staticData,
   form,
-  lang,
+  contacts,
 }) => {
   const { logoAriaLabelText, contacts_text, social_text, social } = staticData;
 
@@ -32,8 +32,8 @@ export const ContactsSection: FC<ContactsProps> = ({
             </span>
             <ContactList
               className="mx-auto font-montserrat"
-              lang={lang}
               variant="contacts"
+              contacts={contacts}
             />
           </div>
           <SocialsMenu
