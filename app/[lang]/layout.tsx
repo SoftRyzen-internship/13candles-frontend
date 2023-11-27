@@ -81,7 +81,6 @@ export default async function RootLayout({
           footer={footer}
           dataOrder={orderModal}
           information={information}
-          lang={lang}
           form={form}
         />
         <div id="modal" />

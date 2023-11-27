@@ -1,4 +1,3 @@
-import { Locale } from '@/i18n.config';
 import { FormStaticDataT } from '@/types';
 
 type SocialType = { href: string; icon: string; text: string };
@@ -10,6 +9,10 @@ export type ContactsProps = {
     social_text: string;
     social: SocialType[];
   };
+  contacts: {
+    href: string;
+    icon: string;
+    text: string;
+  }[];
   form: FormStaticDataT;
-  lang: Locale;
 };
