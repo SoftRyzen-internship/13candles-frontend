@@ -1,4 +1,5 @@
 import { NavLink } from '@/components/ui/NavLinks/types';
+import { FormStaticDataT } from '@/types';
 import { IOrderModalStatic } from '@/types/OrderModalStatic';
 
 export interface HeaderProps {
@@ -20,4 +21,5 @@ export interface HeaderProps {
     basketTitle: string;
   };
   dataOrder: IOrderModalStatic;
+  form: FormStaticDataT;
 }

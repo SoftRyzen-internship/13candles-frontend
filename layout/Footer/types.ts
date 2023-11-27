@@ -1,4 +1,5 @@
 import { Locale } from '@/i18n.config';
+import { FormStaticDataT } from '@/types';
 import { IOrderModalStatic } from '@/types/OrderModalStatic';
 
 export type FooterProps = {
@@ -26,4 +27,5 @@ export type FooterProps = {
   };
   lang: Locale;
   dataOrder: IOrderModalStatic;
+  form: FormStaticDataT;
 };

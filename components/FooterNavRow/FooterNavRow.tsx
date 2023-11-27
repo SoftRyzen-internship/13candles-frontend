@@ -12,6 +12,7 @@ import { FOR_BUSINESS } from '@/data';
 export const FooterNavRow: React.FC<FooterNavRowProps> = ({
   data,
   dataOrder,
+  form,
 }: FooterNavRowProps) => {
   const { nav_text, nav, forBusinessBtnText, basketText } = data;
 
@@ -40,6 +41,7 @@ export const FooterNavRow: React.FC<FooterNavRowProps> = ({
               text={basketText}
               isIcon={false}
               data={dataOrder}
+              form={form}
             />
           </li>
           <li>
