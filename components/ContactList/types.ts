@@ -4,6 +4,7 @@ export interface ContactListProps {
     icon: string;
     text: string;
   }[];
+
   variant?: 'contacts' | undefined;
   className?: string;
 }
