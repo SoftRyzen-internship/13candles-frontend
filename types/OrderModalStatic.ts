@@ -1,3 +1,17 @@
+export interface IOrderCardStatic {
+  cardTitle: string;
+  productTitle: string;
+  qty: string;
+  aromaText: string;
+  capacityText: string;
+  amountText: string;
+  totalPriceText: string;
+  deleteProductBtn: string;
+  increaseQtyBtn: string;
+  decreaseQtyBtn: string;
+  sum: string;
+}
+
 export interface IOrderModalStatic {
   buttons: {
     cartBtnText: string;
@@ -12,18 +26,7 @@ export interface IOrderModalStatic {
     subtitle: string;
     tip: string;
   };
-  orderCard: {
-    cardTitle: string;
-    productTitle: string;
-    qty: string;
-    aromaText: string;
-    capacityText: string;
-    amountText: string;
-    totalPriceText: string;
-    deleteProductBtn: string;
-    increaseQtyBtn: string;
-    decreaseQtyBtn: string;
-  };
+  orderCard: IOrderCardStatic;
   orderForm: {
     title: string;
     nameLabel: string;

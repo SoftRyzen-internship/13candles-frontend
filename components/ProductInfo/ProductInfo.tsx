@@ -12,6 +12,7 @@ import { Aromas } from '../Aromas';
 import { Counter } from '../ui/Counter';
 import { Button } from '../ui/Button';
 import { BasketButton } from '../ui/BasketButton';
+import { Locale, i18n } from '@/i18n.config';
 
 export const ProductInfo: React.FC<IProductInfo> = ({
   product,
@@ -19,6 +20,7 @@ export const ProductInfo: React.FC<IProductInfo> = ({
   prodDescription,
   orderDescription,
   aromasData,
+  lang,
   form,
 }) => {
   const [count, setCount] = useState(1);
@@ -26,31 +28,31 @@ export const ProductInfo: React.FC<IProductInfo> = ({
   const addProduct = useCartStore(store => store.addProduct);
 
   const {
-    attributes: {
-      title,
+    attributes: { title, price, description, aromas, information, capacity },
+  } = product[lang][0];
+
+  const arrData = i18n.locales.map((item: Locale) => {
+    return {
+      [item + '_title']: product[item][0].attributes.title,
+      [item + '_capacity']: product[item][0].attributes.capacity,
+      [item + '_image']: product[item][0].attributes.main_image,
+    };
+  });
+
+  const dataForStore = Object.assign(
+    {
       price,
-      description,
-      aromas,
-      information,
-      capacity,
-      main_image,
+      aroma: aromaName,
     },
-  } = product;
+    ...arrData,
+  );
 
   const { amount, add, quantity, pieces } = prodDescription;
+
   const addToCart = () => {
     if (count < 1) return;
 
-    addProduct(
-      {
-        title,
-        capacity,
-        price,
-        image: main_image,
-        aroma: aromaName,
-      },
-      count,
-    );
+    addProduct(dataForStore, count);
 
     toast.success(orderDescription.buttons.addToCartSuccessText);
 

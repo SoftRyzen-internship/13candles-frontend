@@ -96,10 +96,11 @@
         "aromaText": "Aroma",
         "capacityText": "Capacity",
         "amountText": "Amount",
-        "totalPriceText": "To be paid together",
+        "totalPriceText": "Total",
         "deleteProductBtn": "Remove product",
         "increaseQtyBtn": "Increase quantity",
-        "decreaseQtyBtn": "Decrease quantity"
+        "decreaseQtyBtn": "Decrease quantity",
+        "sum": "Sum"
       },
       "orderForm": {
         "title": "Fill in the details",

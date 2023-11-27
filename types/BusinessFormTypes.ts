@@ -63,6 +63,7 @@ export interface BusinessFormProps {
   staticData: FormStaticDataT;
   section: 'hero' | 'contacts' | 'cart';
   setPopUpType: Dispatch<SetStateAction<PopUpType>>;
+  className?: string;
 }
 
 export interface BtnWithBusinessFormModalProps {

@@ -20,8 +20,8 @@ export const useCartStore = createWithEqualityFn<ICartState>()(
           set(
             store => {
               const index = store.items.findIndex(
-                ({ product: { title, aroma } }) =>
-                  product.title === title && product.aroma === aroma,
+                ({ product: { en_title, aroma } }) =>
+                  product.en_title === en_title && product.aroma === aroma,
               );
 
               if (index === -1) {
@@ -46,7 +46,7 @@ export const useCartStore = createWithEqualityFn<ICartState>()(
           set(store => {
             const index = store.items.findIndex(
               ({ product }) =>
-                product.title === title && product.aroma === aroma,
+                product.en_title === title && product.aroma === aroma,
             );
 
             store.totalItems -= store.items[index].quantity;
@@ -56,6 +56,37 @@ export const useCartStore = createWithEqualityFn<ICartState>()(
             store.items.splice(index, 1);
           }),
 
+        addOneProduct: (title: string, aroma?: string) =>
+          set(store => {
+            const idx = store.items.findIndex(
+              ({ product }) =>
+                product.en_title === title && product.aroma === aroma,
+            );
+
+            const price = store.items[idx].product.price;
+
+            store.totalItems += 1;
+            store.totalPrice += price;
+
+            store.items[idx].quantity += 1;
+            store.items[idx].totalPrice += price;
+          }),
+
+        deleteOneProduct: (title: string, aroma?: string) =>
+          set(store => {
+            const idx = store.items.findIndex(
+              ({ product }) =>
+                product.en_title === title && product.aroma === aroma,
+            );
+
+            const price = store.items[idx].product.price;
+
+            store.totalItems -= 1;
+            store.totalPrice -= price;
+
+            store.items[idx].quantity -= 1;
+            store.items[idx].totalPrice -= price;
+          }),
         getOrder: () => {
           const { items, totalItems, totalPrice } = get();
           return { items, totalItems, totalPrice };

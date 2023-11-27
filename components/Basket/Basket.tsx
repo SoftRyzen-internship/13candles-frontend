@@ -2,11 +2,13 @@
 
 import { useState } from 'react';
 
+import { BasketOrder } from '../BasketOrder';
+import { BusinessForm } from '../BusinessForm';
+
 import { useCartStore } from '@/store';
 import { useRehydrate } from '@/utils/useRehydrate';
 
 import { BasketProps } from './types';
-import { BusinessForm } from '../BusinessForm';
 import { PopUpType } from '@/types';
 
 export const Basket: React.FC<BasketProps> = ({ title, data, form }) => {
@@ -16,83 +18,26 @@ export const Basket: React.FC<BasketProps> = ({ title, data, form }) => {
 
   useRehydrate();
   const selectedProducts = useCartStore(store => store.items);
-  const totalPrice = useCartStore(store => store.totalPrice);
-  const deleteProduct = useCartStore(store => store.deleteProduct);
 
   return (
     <div>
-      <h3 className="title-lg mb-4 border-b border-gray pb-4 md:mb-8 xl:mb-6 xl:pb-6">
+      <h3 className="title-lg relative mb-8 after:absolute after:bottom-[-16px] after:block after:h-[1px] after:w-full after:bg-gray md:mb-12 xl:mb-12 xl:after:bottom-[-24px]">
         {title}
       </h3>
 
       {selectedProducts.length > 0 ? (
-        // Placeholder for future order-list & order-form elements:
-        <div className="flex border">
-          <div className="flex items-end justify-between border">
-            <ul className="flex flex-col gap-2">
-              {selectedProducts.map(
-                ({ quantity, product: { title, aroma, capacity, price } }) => (
-                  <li key={aroma ? title + aroma : title}>
-                    <p className="font-bold">{title}</p>
-
-                    {aroma && (
-                      <p>
-                        {orderCard.aromaText} {aroma}
-                      </p>
-                    )}
-
-                    <p>
-                      {orderCard.capacityText}: {capacity}
-                    </p>
-
-                    <div className="flex gap-[32px]">
-                      <div>
-                        <button
-                          type="button"
-                          aria-label={orderCard.increaseQtyBtn}
-                        >
-                          +
-                        </button>
-
-                        <span>{quantity}</span>
-
-                        <button
-                          type="button"
-                          aria-label={orderCard.decreaseQtyBtn}
-                        >
-                          -
-                        </button>
-                      </div>
-
-                      <p>{price}</p>
-
-                      <button
-                        onClick={() => deleteProduct(title, aroma)}
-                        type="button"
-                        aria-label={orderCard.deleteProductBtn}
-                      >
-                        [delete icon]
-                      </button>
-                    </div>
-                  </li>
-                ),
-              )}
-            </ul>
-
-            <p>
-              {orderCard.totalPriceText} {totalPrice}
-            </p>
-          </div>
+        <div className="flex justify-between smOnly:flex-col smOnly:items-center smOnly:gap-6">
+          <BasketOrder products={selectedProducts} description={orderCard} />
           {popUpType === 'default' && (
             <BusinessForm
               staticData={form}
               section={'cart'}
               setPopUpType={setPopUpType}
+              className="md:mt-[110px] xl:mt-9"
             />
           )}
         </div>
       ) : (
-        // If users cart is empty or Send order was pressed:
         <>
           {popUpType === 'default' && (
             <p className="pb-11 pt-2 text-center text-lg font-medium md:pb-[104px] md:pt-4 xl:text-xl">
