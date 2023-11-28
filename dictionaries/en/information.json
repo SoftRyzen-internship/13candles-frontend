@@ -3,6 +3,7 @@
     "title": "Information",
     "buttons": [
       {
+        "id": "contract_offer",
         "text": "Offer contract",
         "data": [
           "mainTitle*_type_*Договір публічної оферти",
@@ -97,6 +98,7 @@
         ]
       },
       {
+        "id": "warranty_and_returns",
         "text": "Warranties and returns",
         "data": [
           "mainTitle*_type_*Гарантії та повернення",
@@ -126,6 +128,7 @@
         ]
       },
       {
+        "id": "delivery_and_payment",
         "text": "Delivery and payment",
         "data": [
           "mainTitle*_type_*Доставка і оплата",
@@ -161,6 +164,7 @@
         ]
       },
       {
+        "id": "website_terms_of_use",
         "text": "Terms of use of the site",
         "data": [
           "mainTitle*_type_*Правила користування сайтом",

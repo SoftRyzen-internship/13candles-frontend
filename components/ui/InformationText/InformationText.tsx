@@ -1,6 +1,22 @@
-import { InformationTextProps, TextType } from './types';
+import Markdown from 'react-markdown';
 
-export const InformationText: React.FC<InformationTextProps> = ({ text }) => {
+import { InformationTextProps, TextType } from './types';
+import React from 'react';
+
+// type Props = {
+//   children?: React.ReactNode;
+// };
+
+// const CustomH3: React.FC<Props> = ({ children }) => (
+//   <h3 className="title-lg mb-4 border-b border-gray pb-4 xl:mb-6 xl:pb-6">
+//     {children}
+//   </h3>
+// );
+
+export const InformationText: React.FC<InformationTextProps> = ({
+  text,
+  dynamic = false,
+}) => {
   // examples of the text from dictionaries, that this fuctions gets as a prop:
 
   // "mainTitle*_type_*Доставка і оплата"
@@ -17,7 +33,18 @@ export const InformationText: React.FC<InformationTextProps> = ({ text }) => {
 
   const [textType, content] = text.split('*_type_*') as [TextType, string];
 
-  return (
+  return dynamic ? (
+    <Markdown
+      components={
+        {
+          // p: React.Fragment,
+          // strong: CustomH3,
+        }
+      }
+    >
+      {text}
+    </Markdown>
+  ) : (
     <>
       {textType === 'mainTitle' && (
         <h3 className="title-lg mb-4 border-b border-gray pb-4 xl:mb-6 xl:pb-6">
