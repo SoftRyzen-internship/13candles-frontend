@@ -76,21 +76,21 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
         </div>
       </div>
 
-      <div className="xl:justify-left flex items-center justify-between xl:w-full">
+      <div className="flex items-center justify-between xl:w-full">
         <Counter
           count={count}
           setCount={handleClick}
-          className="xl:w-[220px]"
+          //className="xl:w-[220px]"
         />
 
-        <p className="font-montserrat text-lg  font-medium md:text-xl">
+        <p className="ml-2 font-montserrat text-lg font-medium md:text-xl">
           {totalPrice}&nbsp;₴
         </p>
 
         <button
           type="button"
           onClick={() => deleteProduct(en_title, aroma)}
-          className="xl:ml-auto"
+          className="ml-2"
         >
           <IconBasket width="24" height="24" />
         </button>
