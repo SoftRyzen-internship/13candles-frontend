@@ -63,7 +63,9 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
           </p>
 
           {aroma && (
-            <p className={`${en_capacity && 'mb-2 md:mb-1'} md:text-[12px]`}>
+            <p
+              className={`${en_capacity ? 'mb-2 md:mb-1' : ''} md:text-[12px]`}
+            >
               {description.aromaText} {aroma}
             </p>
           )}

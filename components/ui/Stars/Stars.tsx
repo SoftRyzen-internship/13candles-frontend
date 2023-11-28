@@ -8,7 +8,7 @@ export const Stars: React.FC<IStar> = ({
   count,
   active,
   caption,
-  className,
+  className = '',
 }) => {
   const starItems = new Array(count).fill('');
 

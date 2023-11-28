@@ -11,7 +11,7 @@ export const Aromas: React.FC<IProps> = ({
   aromas,
   prodDescription,
   setAromaName,
-  className,
+  className = '',
 }) => {
   const [shownItem, setShownItem] = useState(0);
 

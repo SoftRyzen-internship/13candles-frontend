@@ -22,7 +22,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   staticData,
   section,
   setPopUpType,
-  className,
+  className = '',
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { title, inputs, button } = staticData;
