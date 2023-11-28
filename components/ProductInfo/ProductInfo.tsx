@@ -33,9 +33,9 @@ export const ProductInfo: React.FC<IProductInfo> = ({
 
   const arrData = i18n.locales.map((item: Locale) => {
     return {
-      [item + '_title']: product[item][0].attributes.title,
-      [item + '_capacity']: product[item][0].attributes.capacity,
-      [item + '_image']: product[item][0].attributes.main_image,
+      [item + '_title']: product[item][0]?.attributes.title || '',
+      [item + '_capacity']: product[item][0]?.attributes.capacity || '',
+      [item + '_image']: product[item][0]?.attributes.main_image || {},
     };
   });
 
