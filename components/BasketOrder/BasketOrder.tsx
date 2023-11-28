@@ -45,7 +45,9 @@ export const BasketOrder: React.FC<IBasketOrderProps> = ({
 
       <div className="flex justify-between text-lg">
         <p className="font-medium">{totalPriceText}:</p>
-        <p className="font-montserrat font-bold xl:w-[135px]">{totalPrice} ₴</p>
+        <p className="font-montserrat font-bold xl:w-[151px]">
+          {totalPrice}&nbsp;₴
+        </p>
       </div>
     </div>
   );

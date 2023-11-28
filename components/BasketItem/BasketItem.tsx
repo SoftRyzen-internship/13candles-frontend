@@ -80,11 +80,11 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
         <Counter
           count={count}
           setCount={handleClick}
-          className="xl:w-[236px]"
+          className="xl:w-[220px]"
         />
 
         <p className="font-montserrat text-lg  font-medium md:text-xl">
-          {totalPrice} ₴
+          {totalPrice}&nbsp;₴
         </p>
 
         <button
