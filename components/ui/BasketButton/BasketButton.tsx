@@ -45,7 +45,7 @@ export const BasketButton: React.FC<BasketButtonProps> = ({
 
   const tagClasses = classNames(
     'bg-red-light absolute right-0 top-0 inline-flex h-3 w-3 items-center justify-center rounded-full text-[8px] font-bold leading-none text-white',
-    { 'text-[6px]': storedTotal > 99 },
+    { 'w-4': storedTotal > 99 },
   );
 
   return (
