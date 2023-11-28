@@ -58,11 +58,9 @@ export const Basket: React.FC<BasketProps> = ({ title, data, form }) => {
           {popUpType === 'success' && (
             <SuccessNotification staticData={cart.success} />
           )}
-          {popUpType === 'error' && (
-            <ErrorNotification staticData={cart.error} />
-          )}
         </>
       )}
+      {popUpType === 'error' && <ErrorNotification staticData={cart.error} />}
     </div>
   );
 };
