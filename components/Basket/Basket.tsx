@@ -4,6 +4,8 @@ import { useState } from 'react';
 
 import { BasketOrder } from '../BasketOrder';
 import { BusinessForm } from '../BusinessForm';
+import { SuccessNotification } from '../SuccessNotification';
+import { ErrorNotification } from '../ErrorNotification';
 
 import { useCartStore } from '@/store';
 import { useRehydrate } from '@/utils/useRehydrate';
@@ -15,19 +17,26 @@ export const Basket: React.FC<BasketProps> = ({ title, data, form }) => {
   const [popUpType, setPopUpType] = useState<PopUpType>('default');
 
   const { emptyBasketText, orderCard } = data;
+  const {
+    notifications: { cart },
+  } = form;
 
   useRehydrate();
   const selectedProducts = useCartStore(store => store.items);
 
   return (
     <div>
-      <h3 className="title-lg relative mb-8 after:absolute after:bottom-[-16px] after:block after:h-[1px] after:w-full after:bg-gray md:mb-12 xl:mb-12 xl:after:bottom-[-24px]">
-        {title}
-      </h3>
+      {popUpType === 'default' && (
+        <h3 className="title-lg relative mb-8 after:absolute after:bottom-[-16px] after:block after:h-[1px] after:w-full after:bg-gray md:mb-12 xl:mb-12 xl:after:bottom-[-24px]">
+          {title}
+        </h3>
+      )}
 
       {selectedProducts.length > 0 ? (
         <div className="flex justify-between smOnly:flex-col smOnly:items-center smOnly:gap-6">
-          <BasketOrder products={selectedProducts} description={orderCard} />
+          {popUpType === 'default' && (
+            <BasketOrder products={selectedProducts} description={orderCard} />
+          )}
           {popUpType === 'default' && (
             <BusinessForm
               staticData={form}
@@ -46,8 +55,12 @@ export const Basket: React.FC<BasketProps> = ({ title, data, form }) => {
               <span>{emptyBasketText.tip}</span>
             </p>
           )}
-          {popUpType === 'success' && <p>text about success</p>}
-          {popUpType === 'error' && <p>text about error</p>}
+          {popUpType === 'success' && (
+            <SuccessNotification staticData={cart.success} />
+          )}
+          {popUpType === 'error' && (
+            <ErrorNotification staticData={cart.error} />
+          )}
         </>
       )}
     </div>
