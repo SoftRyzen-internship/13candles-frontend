@@ -116,7 +116,7 @@
       "inputs": [
         {
           "name": "name",
-          "label": "Your name *",
+          "label": "Your name",
           "placeholder": "Ivanov Ivan",
           "type": "text",
           "validationData": [
@@ -149,7 +149,7 @@
         },
         {
           "name": "phone",
-          "label": "Your phone number *",
+          "label": "Your phone number",
           "placeholder": "+380981234567",
           "type": "text",
           "validationData": [
