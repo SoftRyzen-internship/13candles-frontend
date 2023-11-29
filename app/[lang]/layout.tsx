@@ -21,8 +21,6 @@ const raleway = Raleway({
   variable: '--font-raleway',
 });
 
-export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL as string;
-
 export const dynamicParams = false;
 export const dynamic = 'error';
 
@@ -31,6 +29,8 @@ export async function generateMetadata({
 }: {
   params: { lang: Locale };
 }): Promise<Metadata> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
+
   const { meta, metadataHome } = await getMetadata(lang);
 
   const { twitter, openGraph, icons, languages, manifest } = meta;
@@ -39,15 +39,15 @@ export async function generateMetadata({
   return {
     title,
     description,
-    metadataBase: new URL(BASE_URL),
+    metadataBase: new URL(baseUrl),
     manifest,
     alternates: {
-      canonical: `${BASE_URL}/${lang}`,
+      canonical: `${baseUrl}/${lang}`,
       languages,
     },
     keywords,
     twitter,
-    openGraph: { ...openGraph, url: `${BASE_URL}/${lang}` },
+    openGraph: { ...openGraph, url: `${baseUrl}/${lang}` },
     icons,
   };
 }

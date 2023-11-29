@@ -17,11 +17,13 @@ export interface IBusinessInput {
   validationData: validationDataItemType[];
 }
 
+export type SectionT = 'hero' | 'contacts' | 'cart';
+
 export interface BusinessInputProps {
   staticData: IBusinessInput;
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
-  section: 'hero' | 'contacts' | 'cart';
+  section: SectionT;
 }
 
 //popUp
@@ -61,7 +63,7 @@ export type FormStaticDataT = {
 
 export interface BusinessFormProps {
   staticData: FormStaticDataT;
-  section: 'hero' | 'contacts' | 'cart';
+  section: SectionT;
   setPopUpType: Dispatch<SetStateAction<PopUpType>>;
   className?: string;
 }
