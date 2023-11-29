@@ -1,17 +1,9 @@
+import React from 'react';
 import Markdown from 'react-markdown';
 
+import { CustomH3, CustomH4, CustomH5, CustomLi, CustomP } from './customTags';
+
 import { InformationTextProps, TextType } from './types';
-import React from 'react';
-
-// type Props = {
-//   children?: React.ReactNode;
-// };
-
-// const CustomH3: React.FC<Props> = ({ children }) => (
-//   <h3 className="title-lg mb-4 border-b border-gray pb-4 xl:mb-6 xl:pb-6">
-//     {children}
-//   </h3>
-// );
 
 export const InformationText: React.FC<InformationTextProps> = ({
   text,
@@ -35,12 +27,14 @@ export const InformationText: React.FC<InformationTextProps> = ({
 
   return dynamic ? (
     <Markdown
-      components={
-        {
-          // p: React.Fragment,
-          // strong: CustomH3,
-        }
-      }
+      components={{
+        h2: CustomH3,
+        h3: CustomH4,
+        h4: CustomH5,
+        strong: React.Fragment,
+        p: CustomP,
+        li: CustomLi,
+      }}
     >
       {text}
     </Markdown>

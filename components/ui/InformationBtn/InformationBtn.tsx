@@ -18,8 +18,6 @@ export const InformationBtn: React.FC<InformationBtnPtops> = ({
 
   const buttonClasses = classNames('link', className);
 
-  // console.log('dynamic data: ', dynamicData);
-
   return (
     <>
       <button
