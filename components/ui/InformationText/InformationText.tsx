@@ -45,7 +45,9 @@ export const InformationText: React.FC<InformationTextProps> = ({
           {content}
         </h3>
       )}
-      {textType === 'title' && <h4 className="title-md mb-4">{content}</h4>}
+      {textType === 'title' && (
+        <h4 className="title-md mb-4 uppercase">{content}</h4>
+      )}
       {textType === 'subtitle' && <h5 className="title-sm mb-3">{content}</h5>}
       {textType === 'text' && <p className="mb-6">{content}</p>}
     </>

@@ -7,7 +7,7 @@ export const CustomH3: React.FC<CustomTagProps> = ({ children }) => (
 );
 
 export const CustomH4: React.FC<CustomTagProps> = ({ children }) => (
-  <h4 className="title-md mb-4">{children}</h4>
+  <h4 className="title-md mb-4 uppercase">{children}</h4>
 );
 
 export const CustomH5: React.FC<CustomTagProps> = ({ children }) => (
