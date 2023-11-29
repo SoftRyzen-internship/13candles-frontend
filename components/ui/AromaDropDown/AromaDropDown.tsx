@@ -11,7 +11,7 @@ export const AromaDropDown: React.FC<IDropDown> = ({
   setShownItem,
   shownItem,
   aromas,
-  className,
+  className = '',
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
