@@ -22,8 +22,6 @@ const raleway = Raleway({
   variable: '--font-raleway',
 });
 
-// export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL as string;
-
 export const dynamicParams = false;
 export const dynamic = 'error';
 
