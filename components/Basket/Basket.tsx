@@ -60,7 +60,9 @@ export const Basket: React.FC<BasketProps> = ({ title, data, form }) => {
           )}
         </>
       )}
-      {popUpType === 'error' && <ErrorNotification staticData={cart.error} />}
+      {popUpType === 'error' && (
+        <ErrorNotification staticData={cart.error} section="cart" />
+      )}
     </div>
   );
 };
