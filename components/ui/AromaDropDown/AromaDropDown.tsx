@@ -11,7 +11,7 @@ export const AromaDropDown: React.FC<IDropDown> = ({
   setShownItem,
   shownItem,
   aromas,
-  className,
+  className = '',
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -49,7 +49,7 @@ export const AromaDropDown: React.FC<IDropDown> = ({
   return (
     <div
       ref={dropdownRef}
-      className={`${className} border-light relative flex w-[max-content] min-w-[179px] flex-col border smOnly:w-full`}
+      className={`${className} border-light relative flex w-[max-content] min-w-[179px] flex-col border`}
     >
       <button
         type="button"

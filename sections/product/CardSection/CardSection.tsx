@@ -15,7 +15,7 @@ import IconArrowDown from '/public/icons/icon_arrow-down.svg';
 import { i18n } from '@/i18n.config';
 
 export const CardSection: React.FC<ProdCardSectionProps> = async ({
-  className,
+  className = '',
   lang,
   category,
   product,

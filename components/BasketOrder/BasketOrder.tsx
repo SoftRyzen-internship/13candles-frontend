@@ -19,14 +19,15 @@ export const BasketOrder: React.FC<IBasketOrderProps> = ({
         {cardTitle}
       </h3>
 
+      <div className="mb-3 flex notXl:hidden">
+        <p className="w-[320px] shrink-0">{productTitle}</p>
+
+        <p className="w-[190px]">{qty}</p>
+
+        <p>{sum}</p>
+      </div>
+
       <ul className="mb-6 flex flex-col gap-4 xl:mb-12 xl:gap-3">
-        <li className="flex notXl:hidden">
-          <p className="w-[320px] shrink-0">{productTitle}</p>
-
-          <p className="w-[236px]">{qty}</p>
-
-          <p className="w-[135px]">{sum}</p>
-        </li>
         {products.map(productData => {
           const { product } = productData;
           return (
@@ -45,7 +46,7 @@ export const BasketOrder: React.FC<IBasketOrderProps> = ({
 
       <div className="flex justify-between text-lg">
         <p className="font-medium">{totalPriceText}:</p>
-        <p className="font-montserrat font-bold xl:w-[135px]">{totalPrice} ₴</p>
+        <p className="font-montserrat font-bold ">{totalPrice}&nbsp;₴</p>
       </div>
     </div>
   );

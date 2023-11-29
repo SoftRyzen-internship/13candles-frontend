@@ -22,7 +22,7 @@ npm run lint ||
         false;
 )
 
-# If everything passes... Now we can commit
+# # If everything passes... Now we can commit
 echo '🤔🤔🤔🤔... Alright... Code looks good to me... Run test-all script 🤔🤔🤔🤔'
 
 npm run test-all ||
