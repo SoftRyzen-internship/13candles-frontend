@@ -9,7 +9,6 @@ import { ContactsSection } from '@/sections/business/ContactsSection';
 
 import { getDictionary, getMetadata } from '@/lib/dictionary';
 
-import { BASE_URL } from '../layout';
 import { FOR_BUSINESS } from '@/data';
 
 import type { Locale } from '@/i18n.config';
@@ -19,6 +18,8 @@ export async function generateMetadata({
 }: {
   params: { lang: Locale };
 }): Promise<Metadata> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
+
   const { meta, metadataBusiness } = await getMetadata(lang);
 
   const { openGraph, icons, languages } = meta;
@@ -28,11 +29,11 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: `${BASE_URL}/${lang}${FOR_BUSINESS}`,
+      canonical: `${baseUrl}/${lang}${FOR_BUSINESS}`,
       languages,
     },
     keywords,
-    openGraph: { ...openGraph, url: `${BASE_URL}/${lang}${FOR_BUSINESS}` },
+    openGraph: { ...openGraph, url: `${baseUrl}/${lang}${FOR_BUSINESS}` },
     icons,
   };
 }
