@@ -27,8 +27,10 @@ export const HeroSection: React.FC<HeroProps> = ({
         </div>
 
         <div className="flex flex-col justify-center">
-          <p className="text-center md:text-left">{overtitle}</p>
-          <h1 className="section-title-secondary mt-[8px] text-center md:text-left xl:mt-[24px]">
+          <p className="text-center md:text-left smOnly:mx-auto smOnly:max-w-[280px]">
+            {overtitle}
+          </p>
+          <h1 className="section-title-secondary mt-[8px] text-center md:text-left xl:mt-[24px] smOnly:mx-auto smOnly:max-w-[420px]">
             {title}
           </h1>
 

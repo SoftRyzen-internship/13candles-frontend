@@ -15,6 +15,7 @@ export const Banner: React.FC<BannerProps> = ({
       className="h-full w-full object-cover object-center"
       width={1220}
       height={610}
+      priority
       src={url}
       alt={image_description}
       sizes="100wv"
