@@ -1,4 +1,5 @@
 import { FormStaticDataT } from '@/types';
+import { InfoData } from '@/types/Info';
 import { IOrderModalStatic } from '@/types/OrderModalStatic';
 
 export type FooterProps = {
@@ -26,9 +27,10 @@ export type FooterProps = {
   };
   information: {
     title: string;
-    buttons: { text: string; data: string[] }[];
+    buttons: { id: string; text: string; data: string[] }[];
     className?: string;
   };
+  dynamicInfo: InfoData;
   dataOrder: IOrderModalStatic;
   form: FormStaticDataT;
 };

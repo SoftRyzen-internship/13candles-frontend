@@ -111,6 +111,9 @@ a:focus-visible .link::before,
 }
 
 /* slider product */
+#product-page.swiper {
+  @apply h-full;
+}
 
 #product-page .swiper-button-prev,
 #product-page .swiper-button-next {
