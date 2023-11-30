@@ -49,7 +49,7 @@ export const AromaDropDown: React.FC<IDropDown> = ({
   return (
     <div
       ref={dropdownRef}
-      className={`${className} border-light relative flex w-[max-content] min-w-[179px] flex-col border`}
+      className={`${className} border-light relative flex w-[max-content] min-w-[188px] flex-col border`}
     >
       <button
         type="button"

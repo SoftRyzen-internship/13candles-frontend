@@ -7,4 +7,5 @@ export interface ButtonProps {
   disabled?: boolean;
   className?: string;
   theme?: 'dark' | 'white';
+  ariaLabel?: string;
 }

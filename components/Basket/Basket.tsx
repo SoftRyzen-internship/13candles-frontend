@@ -33,7 +33,7 @@ export const Basket: React.FC<BasketProps> = ({ title, data, form }) => {
       )}
 
       {selectedProducts.length > 0 ? (
-        <div className="flex justify-between smOnly:flex-col smOnly:items-center smOnly:gap-6">
+        <div className="flex justify-between smOnly:flex-col smOnly:gap-6 notXl:items-center">
           {popUpType === 'default' && (
             <BasketOrder products={selectedProducts} description={orderCard} />
           )}
@@ -42,7 +42,7 @@ export const Basket: React.FC<BasketProps> = ({ title, data, form }) => {
               staticData={form}
               section={'cart'}
               setPopUpType={setPopUpType}
-              className="md:mt-[110px] xl:mt-9"
+              className="xl:mt-9"
             />
           )}
         </div>

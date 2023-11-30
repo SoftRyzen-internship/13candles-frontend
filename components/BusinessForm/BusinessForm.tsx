@@ -22,6 +22,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   staticData,
   section,
   setPopUpType,
+  className = '',
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { title, inputs, button } = staticData;
@@ -96,7 +97,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   );
 
   return (
-    <div className={windowClass}>
+    <div className={`${windowClass} ${className}`}>
       <h2 className={titleClass}>
         {section === 'hero' && title.hero}
         {section === 'contacts' && title.contacts}

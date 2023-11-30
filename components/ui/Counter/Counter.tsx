@@ -23,8 +23,8 @@ export const Counter: FC<ICounterProps> = ({
 
   const counterClass = classnames(
     'border border-light flex items-center justify-between',
-    { 'min-w-[91px] h-[36px] p-1': !size },
-    { 'min-w-[63px] w-[max-content] h-[24px]': size == 'sm' },
+    { 'w-full min-w-[102px] h-[36px] p-1': !size },
+    { 'w-full min-w-[84px] w-[max-content] h-[24px]': size == 'sm' },
   );
   const textClass = classnames(
     'text-light',
@@ -44,6 +44,7 @@ export const Counter: FC<ICounterProps> = ({
           type="button"
           disabled={count <= 1}
           onClick={decrement}
+          aria-label="remove one"
         >
           {size == 'sm' ? (
             <MinusSmIcon width={24} height={24} />
@@ -54,7 +55,7 @@ export const Counter: FC<ICounterProps> = ({
 
         <span className={textClass}>{count}</span>
 
-        <button type="button" onClick={increment}>
+        <button type="button" onClick={increment} aria-label="add one">
           {size == 'sm' ? (
             <PlusSmIcon width={24} height={24} />
           ) : (

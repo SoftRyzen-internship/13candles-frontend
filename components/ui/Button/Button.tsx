@@ -14,6 +14,7 @@ export const Button: React.FC<ButtonProps> = ({
   buttonType,
   disabled,
   theme,
+  ariaLabel,
   onClick,
 }) => {
   const btn = classNames(
@@ -51,6 +52,7 @@ export const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       className={btnStyles}
       onClick={onClick}
+      aria-label={ariaLabel}
     >
       {label}
     </button>
