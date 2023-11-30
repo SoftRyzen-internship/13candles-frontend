@@ -87,7 +87,7 @@
       "titleCart": "Cart",
       "emptyBasketText": {
         "subtitle": "There are no products added to the cart.",
-        "tip": "Return to the catalog to add the item you wish to purchase."
+        "tip": "Add the product you want to buy to the cart."
       },
       "orderCard": {
         "cardTitle": "Your order",

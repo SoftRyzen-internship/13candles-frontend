@@ -10,7 +10,7 @@ import { StaticCategoriesList } from '@/components/CategoriesList/StaticCategori
 import { getCommonDictionaries } from '@/lib/dictionary';
 
 export const CatalogSection: React.FC<CatalogSectionProps> = async ({
-  className,
+  className = '',
   isHomePage = false,
   lang,
 }) => {
