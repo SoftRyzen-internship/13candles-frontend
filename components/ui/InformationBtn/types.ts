@@ -1,6 +1,6 @@
 export interface InformationBtnPtops {
   children: React.ReactNode;
-  data: string[];
+  data: string;
   dynamicData: string;
   className?: string;
 }
