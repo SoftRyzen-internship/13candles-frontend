@@ -16,7 +16,7 @@ import { Locale, i18n } from '@/i18n.config';
 
 export const ProductInfo: React.FC<IProductInfo> = ({
   product,
-  className,
+  className = '',
   prodDescription,
   orderDescription,
   aromasData,

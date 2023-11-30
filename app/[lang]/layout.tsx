@@ -5,6 +5,7 @@ import { Header } from '@/layout/Header';
 import { Footer } from '@/layout/Footer';
 
 import { getDictionary, getMetadata } from '@/lib/dictionary';
+import { fetchInfo } from '@/api/fetchInfo';
 
 import { Locale, i18n } from '@/i18n.config';
 
@@ -68,6 +69,9 @@ export default async function RootLayout({
     information,
     businessPage: { form },
   } = await getDictionary(lang);
+
+  const dynamicInfo = await fetchInfo(lang);
+
   const { footer, header, orderModal } = common;
 
   return (
@@ -81,6 +85,7 @@ export default async function RootLayout({
           footer={footer}
           dataOrder={orderModal}
           information={information}
+          dynamicInfo={dynamicInfo}
           form={form}
         />
         <div id="modal" />

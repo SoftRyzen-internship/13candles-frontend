@@ -7,7 +7,7 @@ import { OurManufactureSectionProps } from './types';
 export const OurManufactureSection: FC<OurManufactureSectionProps> = ({
   image,
   textBlock,
-  className,
+  className = '',
 }) => {
   const { src, alt } = image;
   const { title, description1, description2, description3 } = textBlock;

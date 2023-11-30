@@ -16,6 +16,7 @@ import { HOME } from '@/data/routes';
 
 export const Footer: React.FC<FooterProps> = ({
   information,
+  dynamicInfo,
   footer: {
     logoAriaLabelText,
     contacts,
@@ -48,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({
           {isHomePage && (
             <FooterNavRow data={restProps} dataOrder={dataOrder} form={form} />
           )}
-          <Information information={information} />
+          <Information information={information} dynamicInfo={dynamicInfo} />
           <div>
             <SocialsMenu socials={social} title={social_text} />
             <SoftRyzen softRyzen={soft_ryzen} />
