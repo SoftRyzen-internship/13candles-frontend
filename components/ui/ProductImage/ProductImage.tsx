@@ -17,6 +17,7 @@ export const ProductImage: React.FC<ImageType> = ({
       className="h-full w-full object-cover object-center"
       width={652}
       height={650}
+      priority
       src={url}
       alt={image_description}
       sizes="(min-width: 768px) 50wv ,100wv"

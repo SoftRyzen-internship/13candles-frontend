@@ -1,11 +1,13 @@
 'use client';
 
 import { FC, useState } from 'react';
+
 import { Button } from '@/components/ui/Button';
 import { ModalWindow } from '@/components/ui/ModalWindow';
 import { BusinessForm } from '@/components/BusinessForm/BusinessForm';
 import { SuccessNotification } from '@/components/SuccessNotification/SuccessNotification';
 import { ErrorNotification } from '@/components/ErrorNotification/ErrorNotification';
+
 import { BtnWithBusinessFormModalProps, PopUpType } from '@/types';
 
 export const BtnWithBusinessFormModal: FC<BtnWithBusinessFormModalProps> = ({
@@ -28,7 +30,7 @@ export const BtnWithBusinessFormModal: FC<BtnWithBusinessFormModalProps> = ({
     }, 1000);
   };
   return (
-    <div className="mt-[16px] md:w-[211px] xl:mt-[48px]">
+    <div className="mt-[16px] w-full max-w-[280px] md:w-[211px] md:max-w-[211px] xl:mt-[48px] smOnly:mx-auto">
       <Button
         tag="button"
         label={label}
