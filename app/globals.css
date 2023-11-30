@@ -107,7 +107,7 @@ a:focus-visible .link::before,
 }
 
 #homepage-hero .swiper-pagination {
-  @apply mt-[20px] md:mt-[50px] xl:mt-[16px];
+  @apply static mt-[16px];
 }
 
 /* slider product */
