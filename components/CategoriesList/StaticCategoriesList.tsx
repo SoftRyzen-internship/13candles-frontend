@@ -6,7 +6,7 @@ import { StaticCategoryCard } from '../ui/CategoryCard/StaticCategoryCard';
 export const StaticCategoriesList: React.FC<StaticCategoriesListProps> = ({
   staticCategories,
   errorText,
-  className,
+  className = '',
 }) => {
   const listClasses = classNames('flex flex-wrap gap-4 xl:gap-2', className);
 

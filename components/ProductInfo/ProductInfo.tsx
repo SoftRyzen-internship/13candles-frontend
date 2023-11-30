@@ -16,7 +16,7 @@ import { Locale, i18n } from '@/i18n.config';
 
 export const ProductInfo: React.FC<IProductInfo> = ({
   product,
-  className,
+  className = '',
   prodDescription,
   orderDescription,
   aromasData,
@@ -33,9 +33,9 @@ export const ProductInfo: React.FC<IProductInfo> = ({
 
   const arrData = i18n.locales.map((item: Locale) => {
     return {
-      [item + '_title']: product[item][0].attributes.title,
-      [item + '_capacity']: product[item][0].attributes.capacity,
-      [item + '_image']: product[item][0].attributes.main_image,
+      [item + '_title']: product[item][0]?.attributes.title || '',
+      [item + '_capacity']: product[item][0]?.attributes.capacity || '',
+      [item + '_image']: product[item][0]?.attributes.main_image || {},
     };
   });
 
@@ -99,21 +99,21 @@ export const ProductInfo: React.FC<IProductInfo> = ({
         />
       </div>
 
-      <div className="mb-4 justify-between xl:mb-6 xl:flex">
+      <div className="mb-4 flex flex-col items-center md:justify-between xl:mb-6 xl:flex-row">
         <Button
           tag="button"
           label={add}
           onClick={addToCart}
           buttonType="button"
           theme="white"
-          className="xl:w-[242px]"
+          className="xl:w-[242px] smOnly:max-w-[280px]"
         />
 
         <BasketButton
           isIcon={false}
           data={orderDescription}
           form={form}
-          className="xl:w-[266px]"
+          className="xl:w-[266px] smOnly:max-w-[280px]"
         />
       </div>
 

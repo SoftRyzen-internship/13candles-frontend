@@ -9,7 +9,7 @@ export const ProductsList: React.FC<ProductsListProps> = ({
   products,
   lang,
   category,
-  className,
+  className = '',
 }) => {
   const listClasses = classNames(
     'flex flex-wrap gap-[16px] xl:gap-[24px] ',
