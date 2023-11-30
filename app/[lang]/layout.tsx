@@ -5,6 +5,7 @@ import { Header } from '@/layout/Header';
 import { Footer } from '@/layout/Footer';
 
 import { getDictionary, getMetadata } from '@/lib/dictionary';
+import { fetchInfo } from '@/api/fetchInfo';
 
 import { Locale, i18n } from '@/i18n.config';
 
@@ -21,8 +22,6 @@ const raleway = Raleway({
   variable: '--font-raleway',
 });
 
-export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL as string;
-
 export const dynamicParams = false;
 export const dynamic = 'error';
 
@@ -31,6 +30,8 @@ export async function generateMetadata({
 }: {
   params: { lang: Locale };
 }): Promise<Metadata> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
+
   const { meta, metadataHome } = await getMetadata(lang);
 
   const { twitter, openGraph, icons, languages, manifest } = meta;
@@ -39,15 +40,15 @@ export async function generateMetadata({
   return {
     title,
     description,
-    metadataBase: new URL(BASE_URL),
+    metadataBase: new URL(baseUrl),
     manifest,
     alternates: {
-      canonical: `${BASE_URL}/${lang}`,
+      canonical: `${baseUrl}/${lang}`,
       languages,
     },
     keywords,
     twitter,
-    openGraph: { ...openGraph, url: `${BASE_URL}/${lang}` },
+    openGraph: { ...openGraph, url: `${baseUrl}/${lang}` },
     icons,
   };
 }
@@ -68,6 +69,9 @@ export default async function RootLayout({
     information,
     businessPage: { form },
   } = await getDictionary(lang);
+
+  const dynamicInfo = await fetchInfo(lang);
+
   const { footer, header, orderModal } = common;
 
   return (
@@ -81,6 +85,7 @@ export default async function RootLayout({
           footer={footer}
           dataOrder={orderModal}
           information={information}
+          dynamicInfo={dynamicInfo}
           form={form}
         />
         <div id="modal" />

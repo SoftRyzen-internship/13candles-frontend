@@ -12,7 +12,7 @@ export const ProductImage: React.FC<ImageType> = ({
   },
   image_description,
 }) => (
-  <div className="h-[320px] w-full md:h-[360px] xl:h-[650px]">
+  <div className="h-full w-full md:h-[360px] xl:h-[650px]">
     <Image
       className="h-full w-full object-cover object-center"
       width={652}

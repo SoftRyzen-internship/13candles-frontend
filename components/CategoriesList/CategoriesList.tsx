@@ -6,7 +6,7 @@ import { CategoriesListProps } from './types';
 export const CategoriesList: React.FC<CategoriesListProps> = ({
   categories,
   lang,
-  className,
+  className = '',
 }) => {
   const listClasses = classNames('flex flex-wrap gap-4 xl:gap-2', className);
 

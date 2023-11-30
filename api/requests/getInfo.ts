@@ -2,7 +2,7 @@ import { gql } from 'graphql-request';
 
 export const getInfo = gql`
   query ($locale: I18NLocaleCode) {
-    information(locale: $locale, pagination: { limit: 100 }) {
+    information(locale: $locale) {
       data {
         attributes {
           contract_offer

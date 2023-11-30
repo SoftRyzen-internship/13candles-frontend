@@ -10,6 +10,7 @@ import { InformationBtnPtops } from './types';
 export const InformationBtn: React.FC<InformationBtnPtops> = ({
   children,
   data,
+  dynamicData,
   className = '',
 }) => {
   const [showModal, setShowModal] = useState(false);
@@ -28,9 +29,11 @@ export const InformationBtn: React.FC<InformationBtnPtops> = ({
       </button>
 
       <ModalWindow onModalClose={onToggleShowModal} showModal={showModal}>
-        {data.map(text => (
-          <InformationText key={text} text={text} />
-        ))}
+        {dynamicData && dynamicData.length > 0 ? (
+          <InformationText text={dynamicData} dynamic={true} />
+        ) : (
+          data.map(text => <InformationText key={text} text={text} />)
+        )}
       </ModalWindow>
     </>
   );

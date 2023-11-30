@@ -11,7 +11,10 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
   images,
   className = '',
 }) => {
-  const wrapClasses = classNames('w-full md:w-[360px] xl:w-[652px]', className);
+  const wrapClasses = classNames(
+    'w-full overflow-hidden md:w-[360px] xl:w-[652px] smOnly:aspect-[280/320]',
+    className,
+  );
 
   return (
     <div className={wrapClasses}>

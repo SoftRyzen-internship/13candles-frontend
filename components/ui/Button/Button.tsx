@@ -10,7 +10,7 @@ export const Button: React.FC<ButtonProps> = ({
   tag = 'a',
   label,
   href,
-  className,
+  className = '',
   buttonType,
   disabled,
   theme,
