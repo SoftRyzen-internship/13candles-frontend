@@ -27,7 +27,11 @@ export type FooterProps = {
   };
   information: {
     title: string;
-    buttons: { id: string; text: string; data: string[] }[];
+    buttons: {
+      id: string;
+      text: string;
+      data: string;
+    }[];
     className?: string;
   };
   dynamicInfo: InfoData;

@@ -57,7 +57,7 @@ export const CardSection: React.FC<ProdCardSectionProps> = async ({
         <div className="mb-8 border-b border-black-light/25 pb-[21px] md:mb-9 xl:mb-10 ">
           <Link
             href={`./${lang}/${category}`}
-            className="inline-flex items-center font-medium"
+            className="inline-flex items-center text-lg font-medium"
           >
             <IconArrowDown width={24} height={24} className="rotate-90" />
 
