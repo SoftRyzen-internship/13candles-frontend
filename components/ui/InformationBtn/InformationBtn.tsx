@@ -18,6 +18,9 @@ export const InformationBtn: React.FC<InformationBtnPtops> = ({
 
   const buttonClasses = classNames('link', className);
 
+  const informationText =
+    dynamicData && dynamicData.length > 0 ? dynamicData : data;
+
   return (
     <>
       <button
@@ -29,11 +32,7 @@ export const InformationBtn: React.FC<InformationBtnPtops> = ({
       </button>
 
       <ModalWindow onModalClose={onToggleShowModal} showModal={showModal}>
-        {dynamicData && dynamicData.length > 0 ? (
-          <InformationText text={dynamicData} dynamic={true} />
-        ) : (
-          data.map(text => <InformationText key={text} text={text} />)
-        )}
+        <InformationText text={informationText} />
       </ModalWindow>
     </>
   );

@@ -144,7 +144,12 @@
             {
               "propName": "notAllowedCombinations",
               "propValue": "^(?!.*(\\s-|-\\s|--)).*$",
-              "propMessage": "combination with dash and space is not allowed"
+              "propMessage": "two dashes or dash and space is not allowed"
+            },
+            {
+              "propName": "notAllowedEndWithDash",
+              "propValue": "^(?!.*(-$|'$))",
+              "propMessage": "only ending with a letter is allowed"
             }
           ]
         },

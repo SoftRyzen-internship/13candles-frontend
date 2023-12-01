@@ -175,6 +175,11 @@
               "propName": "notAllowedCombinations",
               "propValue": "^(?!.*(\\s-|-\\s|--)).*$",
               "propMessage": "не має бути поруч тире та пробіл"
+            },
+            {
+              "propName": "notAllowedEndWithDash",
+              "propValue": "^(?!.*(-$|'$))",
+              "propMessage": "має закінчуватися літерою"
             }
           ]
         },
@@ -187,12 +192,12 @@
             {
               "propName": "minLength",
               "propValue": "12",
-              "propMessage": "мінімум 12 цифр"
+              "propMessage": "мінімум 11 цифр"
             },
             {
               "propName": "maxLength",
               "propValue": "13",
-              "propMessage": "максимум 70 цифр"
+              "propMessage": "максимум 12 цифр"
             },
             {
               "propName": "required",
