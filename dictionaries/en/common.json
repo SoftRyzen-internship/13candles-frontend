@@ -2,12 +2,12 @@
   "common": {
     "header": {
       "sidePanelMenu": {
-        "openPanelBtnAriaText": "image of the sidebar button",
-        "closePanelBtnAriaText": "image of the sidebar close button"
+        "openPanelBtnAriaText": "Sidebar open button",
+        "closePanelBtnAriaText": "Sidebar close button"
       },
       "mobileMenu": {
-        "openMenuBtnAriaText": "image of the mobile menu button",
-        "closeMenuBtnAriaText": "image of the mobile menu close button"
+        "openMenuBtnAriaText": "Mobile menu open button",
+        "closeMenuBtnAriaText": "Mobile menu close button"
       },
       "nav": [
         {
