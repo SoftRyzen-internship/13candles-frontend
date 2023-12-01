@@ -21,6 +21,10 @@ export function makeSchema(inputs: IBusinessInput[]): any {
       .max(
         Number(inputs[0].validationData[1].propValue),
         inputs[0].validationData[1].propMessage,
+      )
+      .matches(
+        RegExp(inputs[0].validationData[5].propValue),
+        inputs[0].validationData[5].propMessage,
       ),
     phone: string()
       .trim()
