@@ -69,7 +69,7 @@ export const AromaDropDown: React.FC<IDropDown> = ({
         <ul className="absolute left-0 top-[40px] z-10 flex w-full flex-col bg-white shadow-dropdown">
           {aromas?.map(({ id, attributes: { Title } }, idx) => {
             const linkClassName = classNames(
-              'w-full block truncate px-[16px] py-[12px] text-center hover:bg-gray-light focus:bg-gray-light md:text-left text-base font-normal',
+              'w-full block truncate px-[16px] py-[12px] hover:bg-gray-light focus:bg-gray-light md:text-left text-base font-normal',
               { 'pointer-events-none bg-gray-light': idx === shownItem },
             );
 

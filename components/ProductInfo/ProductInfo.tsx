@@ -58,6 +58,11 @@ export const ProductInfo: React.FC<IProductInfo> = ({
   const MD_P = ({ children }: CustomTagProps) => (
     <p className="mb-3 last:mb-0 md:mb-4 xl:mb-2">{children}</p>
   );
+  const MD_P_Star = ({ children }: CustomTagProps) => (
+    <p className="first-child:before:content-['*'] mb-3 last:mb-0 md:mb-4 xl:mb-2">
+      {children}
+    </p>
+  );
 
   const addToCart = () => {
     if (count < 1) return;
@@ -137,7 +142,15 @@ export const ProductInfo: React.FC<IProductInfo> = ({
 
       <div className="mb-4 border-t border-black-light/25 xl:mb-6"></div>
 
-      <p>{information}</p>
+      <div>
+        <Markdown
+          components={{
+            p: MD_P_Star,
+          }}
+        >
+          {information}
+        </Markdown>
+      </div>
 
       <ToastContainer position="top-center" autoClose={2000} />
     </div>
