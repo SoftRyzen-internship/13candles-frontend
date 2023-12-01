@@ -29,6 +29,10 @@ export const ProductInfo: React.FC<IProductInfo> = ({
   const [aromaName, setAromaName] = useState('');
   const addProduct = useCartStore(store => store.addProduct);
 
+  const {
+    orderCard: { arias },
+  } = orderDescription;
+
   useEffect(() => {
     setCount(1);
   }, [aromaName]);
@@ -57,11 +61,6 @@ export const ProductInfo: React.FC<IProductInfo> = ({
 
   const MD_P = ({ children }: CustomTagProps) => (
     <p className="mb-3 last:mb-0 md:mb-4 xl:mb-2">{children}</p>
-  );
-  const MD_P_Star = ({ children }: CustomTagProps) => (
-    <p className="first-child:before:content-['*'] mb-3 last:mb-0 md:mb-4 xl:mb-2">
-      {children}
-    </p>
   );
 
   const addToCart = () => {
@@ -119,6 +118,8 @@ export const ProductInfo: React.FC<IProductInfo> = ({
           count={count}
           setCount={setCount}
           className="xl:ml-[82px]"
+          ariaMinus={arias.delOne}
+          ariaPlus={arias.addOne}
         />
       </div>
 
@@ -142,14 +143,17 @@ export const ProductInfo: React.FC<IProductInfo> = ({
 
       <div className="mb-4 border-t border-black-light/25 xl:mb-6"></div>
 
-      <div>
-        <Markdown
-          components={{
-            p: MD_P_Star,
-          }}
-        >
-          {information}
-        </Markdown>
+      <div className="flex">
+        <p>*</p>
+        <div>
+          <Markdown
+            components={{
+              p: MD_P,
+            }}
+          >
+            {information}
+          </Markdown>
+        </div>
       </div>
 
       <ToastContainer position="top-center" autoClose={2000} />

@@ -17,6 +17,8 @@ export const Counter: FC<ICounterProps> = ({
   size,
   count,
   setCount,
+  ariaMinus,
+  ariaPlus,
 }) => {
   const increment = () => setCount(count + 1);
   const decrement = () => setCount(count - 1);
@@ -44,7 +46,7 @@ export const Counter: FC<ICounterProps> = ({
           type="button"
           disabled={count <= 1}
           onClick={decrement}
-          aria-label="remove one"
+          aria-label={ariaMinus}
         >
           {size == 'sm' ? (
             <MinusSmIcon width={24} height={24} />
@@ -55,7 +57,7 @@ export const Counter: FC<ICounterProps> = ({
 
         <span className={textClass}>{count}</span>
 
-        <button type="button" onClick={increment} aria-label="add one">
+        <button type="button" onClick={increment} aria-label={ariaPlus}>
           {size == 'sm' ? (
             <PlusSmIcon width={24} height={24} />
           ) : (
