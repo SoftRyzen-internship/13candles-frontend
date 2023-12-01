@@ -122,7 +122,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
           type="submit"
           disabled={isLoading}
           className={
-            'common-transition mx-auto block h-[47px] w-full cursor-pointer bg-black-light px-0 text-center text-[20px] font-medium leading-6 text-white xl:border xl:hover:bg-white xl:hover:text-black-light xl:active:bg-white xl:active:text-black-light'
+            'common-transition mx-auto block h-[47px] w-full cursor-pointer bg-black-light px-0 text-center text-[20px] font-medium leading-6 text-white xl:border xl:hover:bg-white xl:hover:text-black-light xl:active:bg-white xl:active:text-black-light smOnly:mx-auto smOnly:max-w-[280px]'
           }
         >
           {isLoading && (

@@ -2,12 +2,12 @@
   "common": {
     "header": {
       "sidePanelMenu": {
-        "openPanelBtnAriaText": "Зображення кпопки бічної панелі",
-        "closePanelBtnAriaText": "Зображення кпопки закриття бічної панелі"
+        "openPanelBtnAriaText": "Кнопка відкриття бічної панелі",
+        "closePanelBtnAriaText": "Кнопка закриття бічної панелі"
       },
       "mobileMenu": {
-        "openMenuBtnAriaText": "Зображення кпопки мобільного меню",
-        "closeMenuBtnAriaText": "Зображення кпопки закриття мобільного меню"
+        "openMenuBtnAriaText": "Кнопка відкриття мобільного меню",
+        "closeMenuBtnAriaText": "Кнопка закриття мобільного меню"
       },
       "nav": [
         {
@@ -78,7 +78,7 @@
     "orderModal": {
       "buttons": {
         "cartBtnText": "Кошик",
-        "cartBtnAriaLabel": "Відкрити кошик",
+        "cartBtnAriaLabel": "Кнопка відкриття кошика",
         "addToCartBtn": "Додати у кошик",
         "addToCartSuccessText": "Додано в кошик",
         "makeOrderBtn": "Оформити покупку"

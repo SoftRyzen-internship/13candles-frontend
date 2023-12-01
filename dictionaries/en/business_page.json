@@ -90,6 +90,7 @@
     },
     "contactsSection": {
       "staticData": {
+        "hiddenTitle": "Contacts",
         "logoAriaLabelText": "Link with company logo",
         "contacts_text": "Contacts",
         "social_text": "Social networks",

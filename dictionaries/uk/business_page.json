@@ -120,6 +120,7 @@
     },
     "contactsSection": {
       "staticData": {
+        "hiddenTitle": "Контакти",
         "logoAriaLabelText": "Посилання із логотипом компанії",
         "contacts_text": "Контакти",
         "social_text": "Соціальні мережі",
