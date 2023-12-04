@@ -63,7 +63,7 @@ export const createMetadata = async ({
       case 'category':
         return `${baseUrl}/${lang}/${category}`;
       case 'product':
-        return `${baseUrl}/${lang}/${product}`;
+        return `${baseUrl}/${lang}/${category}/${product}`;
       default:
         return `${baseUrl}/${lang}`;
     }
