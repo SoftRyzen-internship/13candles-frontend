@@ -1,6 +1,7 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
+import Markdown from 'react-markdown';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -13,6 +14,7 @@ import { Counter } from '../ui/Counter';
 import { Button } from '../ui/Button';
 import { BasketButton } from '../ui/BasketButton';
 import { Locale, i18n } from '@/i18n.config';
+import { CustomTagProps } from '../ui/InformationText/types';
 
 export const ProductInfo: React.FC<IProductInfo> = ({
   product,
@@ -26,6 +28,14 @@ export const ProductInfo: React.FC<IProductInfo> = ({
   const [count, setCount] = useState(1);
   const [aromaName, setAromaName] = useState('');
   const addProduct = useCartStore(store => store.addProduct);
+
+  const {
+    orderCard: { arias },
+  } = orderDescription;
+
+  useEffect(() => {
+    setCount(1);
+  }, [aromaName]);
 
   const {
     attributes: { title, price, description, aromas, information, capacity },
@@ -49,6 +59,10 @@ export const ProductInfo: React.FC<IProductInfo> = ({
 
   const { amount, add, quantity, pieces } = prodDescription;
 
+  const MD_P = ({ children }: CustomTagProps) => (
+    <p className="mb-3 last:mb-0 md:mb-4 xl:mb-2">{children}</p>
+  );
+
   const addToCart = () => {
     if (count < 1) return;
 
@@ -67,7 +81,15 @@ export const ProductInfo: React.FC<IProductInfo> = ({
         {title}
       </h2>
 
-      <p className="mb-4 xl:mb-6">{description}</p>
+      <div className="mb-4 xl:mb-6">
+        <Markdown
+          components={{
+            p: MD_P,
+          }}
+        >
+          {description}
+        </Markdown>
+      </div>
 
       {capacity && (
         <p className="mb-4 xl:mb-6">
@@ -85,9 +107,9 @@ export const ProductInfo: React.FC<IProductInfo> = ({
         />
       )}
 
-      <div className="mb-4 flex justify-between md:justify-normal xl:mb-6">
+      <div className="mb-4 flex justify-between xl:mb-6 xl:justify-normal">
         <p className="font-montserrat text-[20px] font-medium">
-          {`${price} ₴ / ${pieces}`}
+          {`${price} ₴ / ${pieces}.`}
         </p>
 
         <Counter
@@ -95,7 +117,9 @@ export const ProductInfo: React.FC<IProductInfo> = ({
           size="sm"
           count={count}
           setCount={setCount}
-          className="md:ml-[82px]"
+          className="xl:ml-[82px]"
+          ariaMinus={arias.delOne}
+          ariaPlus={arias.addOne}
         />
       </div>
 
@@ -119,7 +143,18 @@ export const ProductInfo: React.FC<IProductInfo> = ({
 
       <div className="mb-4 border-t border-black-light/25 xl:mb-6"></div>
 
-      <p>{information}</p>
+      <div className="flex">
+        <p>*</p>
+        <div>
+          <Markdown
+            components={{
+              p: MD_P,
+            }}
+          >
+            {information}
+          </Markdown>
+        </div>
+      </div>
 
       <ToastContainer position="top-center" autoClose={2000} />
     </div>

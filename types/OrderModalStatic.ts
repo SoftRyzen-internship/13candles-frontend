@@ -10,6 +10,11 @@ export interface IOrderCardStatic {
   increaseQtyBtn: string;
   decreaseQtyBtn: string;
   sum: string;
+  arias: {
+    addOne: string;
+    delOne: string;
+    delete: string;
+  };
 }
 
 export interface IOrderModalStatic {
