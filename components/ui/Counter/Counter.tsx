@@ -37,7 +37,11 @@ export const Counter: FC<ICounterProps> = ({
   return (
     <div className={`${className} inline-flex items-center`}>
       {caption && (
-        <span className={`${textClass} pr-[8px] font-semibold`}>{caption}</span>
+        <span
+          className={`${textClass} whitespace-nowrap pr-[8px] font-semibold`}
+        >
+          {caption}
+        </span>
       )}
 
       <div className={counterClass}>
