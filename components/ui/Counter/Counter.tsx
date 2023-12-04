@@ -40,7 +40,7 @@ export const Counter: FC<ICounterProps> = ({
         <span
           className={`${textClass} whitespace-nowrap pr-[8px] font-semibold`}
         >
-          {caption}
+          {caption}:
         </span>
       )}
 
