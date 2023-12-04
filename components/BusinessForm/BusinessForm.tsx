@@ -22,6 +22,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   staticData,
   section,
   setPopUpType,
+  className = '',
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { title, inputs, button } = staticData;
@@ -75,7 +76,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   };
 
   const windowClass = classnames({
-    'flex flex-col justify-between h-[259px] w-[280px] md:w-[250px] xl:h-[315px] xl:w-[284px]':
+    'flex flex-col justify-between h-[259px] w-full md:w-[250px] xl:h-[315px] xl:w-[284px]':
       section === 'cart',
   });
 
@@ -96,7 +97,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   );
 
   return (
-    <div className={windowClass}>
+    <div className={`${windowClass} ${className}`}>
       <h2 className={titleClass}>
         {section === 'hero' && title.hero}
         {section === 'contacts' && title.contacts}
