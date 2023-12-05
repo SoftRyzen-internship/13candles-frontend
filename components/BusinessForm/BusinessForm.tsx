@@ -76,7 +76,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   };
 
   const windowClass = classnames({
-    'flex flex-col justify-between h-[259px] w-full md:w-[250px] xl:h-[315px] xl:w-[284px]':
+    'h-[277px] w-full md:w-[250px] xl:h-[315px] xl:w-[284px]':
       section === 'cart',
   });
 
@@ -85,7 +85,8 @@ export const BusinessForm: FC<BusinessFormProps> = ({
       section === 'hero',
     'section-title-secondary mb-6 xl:mb-10 smOnly:text-center w-full max-w-[480px] md:max-w-[350px] xl:max-w-[500px] whitespace-pre-wrap':
       section === 'contacts',
-    'text-[20px] font-medium smOnly:text-center': section === 'cart',
+    'text-[20px] font-medium smOnly:text-center mb-6 xl:mb-12':
+      section === 'cart',
   });
 
   const formClass = classnames(
@@ -96,6 +97,11 @@ export const BusinessForm: FC<BusinessFormProps> = ({
     },
   );
 
+  const inputWrap = classnames('flex w-full flex-col gap-4', {
+    'xl:gap-6': section === 'cart',
+    'xl:gap-9': section !== 'cart',
+  });
+
   return (
     <div className={`${windowClass} ${className}`}>
       <h2 className={titleClass}>
@@ -104,7 +110,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
         {section === 'cart' && title.cart}
       </h2>
       <form className={formClass} onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex w-full flex-col gap-4 xl:gap-9">
+        <div className={inputWrap}>
           {inputs
             .filter(input =>
               section === 'cart' && input.name === 'email' ? false : true,
