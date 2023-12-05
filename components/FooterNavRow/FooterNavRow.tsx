@@ -46,6 +46,7 @@ export const FooterNavRow: React.FC<FooterNavRowProps> = ({
           </li>
           <li>
             <BusinessLink
+              className="xl:font-medium"
               isIcon={false}
               text={forBusinessBtnText}
               isAnchor={isBusinessPage ? true : false}

@@ -16,8 +16,6 @@ import { makeSchema } from '../../utils/schema';
 import { useCartStore } from '@/store';
 import { BusinessFormProps } from '@/types';
 
-const FORM_DATA_KEY = 'form_data';
-
 export const BusinessForm: FC<BusinessFormProps> = ({
   staticData,
   section,
@@ -42,7 +40,9 @@ export const BusinessForm: FC<BusinessFormProps> = ({
     resolver: yupResolver(makeSchema(inputs)),
   });
 
-  useFormPersist(FORM_DATA_KEY, { watch, setValue });
+  const CURRENT_FORM_DATA_KEY = 'form_data_' + section;
+
+  useFormPersist(CURRENT_FORM_DATA_KEY, { watch, setValue });
 
   const onSubmit: SubmitHandler<FieldValues> = async formData => {
     try {
@@ -64,7 +64,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
       if (isSuccess) {
         reset();
         resetOrder();
-        sessionStorage.removeItem(FORM_DATA_KEY);
+        sessionStorage.removeItem(CURRENT_FORM_DATA_KEY);
         setPopUpType('success');
       }
     } catch (error) {
