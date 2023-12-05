@@ -82,7 +82,8 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
         <Counter
           count={count}
           setCount={handleClick}
-          //className="xl:w-[220px]"
+          ariaMinus={description.arias.delOne}
+          ariaPlus={description.arias.addOne}
         />
 
         <p className="ml-2 font-montserrat text-lg font-medium md:text-xl">
@@ -92,6 +93,7 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
         <button
           type="button"
           onClick={() => deleteProduct(en_title, aroma)}
+          aria-label={description.arias.delete}
           className="ml-2"
         >
           <IconBasket width="24" height="24" />

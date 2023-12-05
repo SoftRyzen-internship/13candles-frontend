@@ -100,7 +100,12 @@
         "deleteProductBtn": "Remove product",
         "increaseQtyBtn": "Increase quantity",
         "decreaseQtyBtn": "Decrease quantity",
-        "sum": "Sum"
+        "sum": "Sum",
+        "arias": {
+          "addOne": "Button to add one product unit",
+          "delOne": "Button to delete one product unit",
+          "delete": "Product removal button"
+        }
       },
       "orderForm": {
         "title": "Fill in the details",
