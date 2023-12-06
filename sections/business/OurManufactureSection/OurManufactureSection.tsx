@@ -14,7 +14,7 @@ export const OurManufactureSection: FC<OurManufactureSectionProps> = ({
 
   const sectionClass = classNames('section xl:py-[50px]', className);
   return (
-    <section id="helpful" className={sectionClass}>
+    <section id="manufacture" className={sectionClass}>
       <div className="container flex md:justify-between smOnly:flex-col-reverse">
         <div className="md:w-[334px] xl:mt-[15px] xl:w-[578px]">
           <h2 className="mb-4 text-lg font-bold leading-[1.17] md:text-xl xl:mb-10 xl:text-xxl">
