@@ -76,7 +76,7 @@ export const BusinessForm: FC<BusinessFormProps> = ({
   };
 
   const windowClass = classnames({
-    'h-[277px] w-full md:w-[250px] xl:h-[315px] xl:w-[284px]':
+    'h-[277px] w-full md:w-[250px] xl:h-[325px] xl:w-[284px]':
       section === 'cart',
   });
 

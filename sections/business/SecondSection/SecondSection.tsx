@@ -20,6 +20,7 @@ export const SecondSection: FC<SecondSectionProps> = ({
             alt={alt}
             sizes="(max-width: 767px) 440px, (max-width: 1279px) 704px, 1220px"
             className="grayscale transition-all duration-300"
+            priority
           />
         </div>
         <ul className="flex flex-col gap-4 md:flex-row md:justify-between md:gap-0">
