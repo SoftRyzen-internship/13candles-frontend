@@ -37,7 +37,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <p className="mb-[12px] mt-[20px]">{title}</p>
       <p className="mt-auto flex justify-between font-montserrat">
         <span>{`${price} ₴`}</span>
-        <span className=" text-gray">{capacity}</span>
+        {capacity && <span className=" text-gray">{capacity}</span>}
       </p>
     </Link>
   );
