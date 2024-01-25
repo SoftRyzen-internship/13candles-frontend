@@ -34,8 +34,6 @@ export async function generateStaticParams({
     return { lang: lang, category: category.slug };
   });
 
-  console.log(staticParams);
-
   return staticParams;
 }
 
@@ -47,6 +45,8 @@ export default async function CategoryPage({
   const staticDictionary = await getDictionary(lang);
 
   const products = await fetchProducts(lang, category);
+
+  console.log(products);
 
   const categories = await fetchCategories(lang);
 

@@ -69,7 +69,6 @@ export const BusinessForm: FC<BusinessFormProps> = ({
       }
     } catch (error) {
       setPopUpType('error');
-      console.error('Something went wrong');
     } finally {
       setIsLoading(false);
     }

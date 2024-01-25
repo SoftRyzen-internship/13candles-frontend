@@ -17,6 +17,7 @@ export const fetchProducts = async (
     );
 
     const result = data.products.data;
+
     return result;
   } catch (error) {
     return [];
